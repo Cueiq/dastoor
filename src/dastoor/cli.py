@@ -1,4 +1,4 @@
-"""gramdex test | tag | score"""
+"""dastoor test | tag | score"""
 
 from __future__ import annotations
 
@@ -110,15 +110,15 @@ def export(args) -> int:
             "example": data["note"]["forms"][0]["text"] if data["note"].get("forms") else "",
             "note": data["note"],
             "exercises": data.get("exercises", []),
-            "note_from": f"gramdex:{data['id']}@{digest}",
+            "note_from": f"dastoor:{data['id']}@{digest}",
         }
-    json.dump({"gramdex": 1, "points": points}, sys.stdout, ensure_ascii=False, indent=1)
+    json.dump({"dastoor": 1, "points": points}, sys.stdout, ensure_ascii=False, indent=1)
     print()
     return 0
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(prog="gramdex")
+    parser = argparse.ArgumentParser(prog="dastoor")
     parser.add_argument("--model", default=MODEL, help="the spaCy pipeline")
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("test", help="run every point's tests")

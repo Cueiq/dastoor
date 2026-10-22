@@ -1,5 +1,5 @@
 [project]
-name = "gramdex"
+name = "dastoor"
 version = "0.1.0"
 description = "Finds the grammar points an English sentence uses, by tested rules, and gives each one's note"
 readme = "README.md"
@@ -11,7 +11,7 @@ dependencies = [
 ]
 
 [project.scripts]
-gramdex = "gramdex.cli:main"
+dastoor = "dastoor.cli:main"
 
 [build-system]
 requires = ["hatchling"]

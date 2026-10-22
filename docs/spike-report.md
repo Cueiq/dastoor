@@ -87,7 +87,7 @@ often.
 ## What was learned beyond the numbers
 
 1. **Subtitles break sentences across cues.** *I am going...* / *to look for
-   a job.* Parsed cue by cue, the rule missed it. Gramdex now joins a cue
+   a job.* Parsed cue by cue, the rule missed it. Dastoor now joins a cue
    that ends on a comma or without a stop to the next. It joins a cue that
    trails off (*...*) only when the next carries on in small letters. This
    alone took `be-going-to`'s recall against the guides from 0.33 to 1.00.

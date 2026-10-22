@@ -1,6 +1,6 @@
-# Gramdex
+# Dastoor
 
-*Gramdex* is a grammar index for English learners. Given a sentence, it
+*Dastoor* (دستور, Persian for "grammar") is a grammar index for English learners. Given a sentence, it
 finds the grammar points the sentence uses (*have been + -ing*, *used to*,
 *must have + past participle*), and the exact words that make each one.
 For every point it has a learner's note: what it does, how it is built, the
@@ -13,9 +13,7 @@ match.
 
 It is made for learning from films and series, so subtitles are its first
 input: it joins a sentence that a subtitle breaks across lines. It works on
-any English sentence. Bembegoo, an app for learning English from films, uses
-it to mark the grammar in an episode's lines, and to fill in its guides'
-grammar notes.
+any English sentence.
 
 ## What it has
 
@@ -34,7 +32,7 @@ it isn't tagged at all. The method and every number are in
 
 ## Install
 
-Gramdex needs Python 3.11 or later and [uv](https://docs.astral.sh/uv/).
+Dastoor needs Python 3.11 or later and [uv](https://docs.astral.sh/uv/).
 
 ```bash
 uv venv --python 3.12
@@ -53,11 +51,11 @@ uv pip install "spacy[transformers]>=3.8,<3.9" "en_core_web_trf @ https://github
 ## Use
 
 ```bash
-gramdex test                                      # every point's tests
-gramdex --model en_core_web_trf tag episode.srt   # each line's points
-gramdex tag episode.srt --json                    # the same, as JSON
-gramdex export                                    # every note, as one JSON file
-gramdex score <courses folder> --split test       # score the rules against Bembegoo's guides
+dastoor test                                      # every point's tests
+dastoor --model en_core_web_trf tag episode.srt   # each line's points
+dastoor tag episode.srt --json                    # the same, as JSON
+dastoor export                                    # every note, as one JSON file
+dastoor score <courses folder> --split test       # score the rules on lessons whose grammar is marked
 ```
 
 `--model` picks the spaCy pipeline; the small one is the default.
@@ -97,24 +95,24 @@ exercises: [ … ]                    # choose, fix, rewrite
 A rule is either `tokens`, a spaCy Matcher pattern of words in order, or a
 `tree`: a word, the words that must or mustn't hang on it, and the word it
 hangs on. The format is described in
-[src/gramdex/rules.py](src/gramdex/rules.py). A point may also say:
+[src/dastoor/rules.py](src/dastoor/rules.py). A point may also say:
 
 - `needs_meaning: true` when its words can't settle what it means;
 - `tag: false` when its rule shouldn't mark lines at all;
 - `aliases` for other ids the same point goes by.
 
-The note has the shape of a grammar entry in Bembegoo's guides, so a guide
-can take it as it is.
+Every note has the same shape, so an app can show it, or a lesson take it,
+as it is.
 
 ## Adding a point
 
 1. Write its rules and its tests. Include sentences it must match, and the
    look-alikes it mustn't: *I'm used to it* is not *used to + verb*.
-2. Run `gramdex test` on both models.
+2. Run `dastoor test` on both models.
 3. Score it on real subtitles, and read what it matched and what it missed.
    Tune on one half of the files (`--split dev`) and report on the other
    (`--split test`).
-4. Write its note and exercises, as Gramdex's own. Nothing is copied from
+4. Write its note and exercises, as Dastoor's own. Nothing is copied from
    the English Grammar Profile or the Core Inventory.
 
 Quote any word YAML could read as true or false (`"no"`, `"yes"`): the
@@ -125,7 +123,7 @@ loader refuses one unquoted.
 - **The code** is [MIT](LICENSE).
 - **The points** (their rules, tests, notes and exercises) are [CC BY-SA
   4.0](points/LICENSE.md): use and adapt them, also commercially, crediting
-  Gramdex and sharing what you make from them alike.
+  Dastoor and sharing what you make from them alike.
 
 ## Sources
 
@@ -135,8 +133,8 @@ Laboratory, Tokyo University of Foreign Studies), which may be used for
 commercial purposes when cited. Its rows carry each item's level in the
 English Grammar Profile, the Core Inventory and Pearson's GSE too. A point's
 `level` is the English Grammar Profile's lowest, as CEFR-J records it. Where
-no item has one, it is CEFR-J's own, or the level Bembegoo's guides gave
-it (`level_from`).
+no item has one, it is CEFR-J's own, or the level the lessons it was scored
+on gave it (`level_from`).
 
 ## Why it exists
 
@@ -144,4 +142,4 @@ There are lists of grammar points by level: the English Grammar Profile,
 the Core Inventory and CEFR-J. There are research tools that find grammar in
 text, such as POLKE (a closed API) and GrammarTagger (non-commercial
 models). None is open, and none gives both the matching and a learner's
-notes and exercises. Gramdex aims to be that.
+notes and exercises. Dastoor aims to be that.

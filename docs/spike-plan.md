@@ -86,10 +86,10 @@ Python and spaCy. spaCy's Matcher handles token patterns, and its
 DependencyMatcher handles parse trees. Rust has nothing as good for parsing
 English.
 
-- `gramdex test`: runs every point's tests. A failing test fails the run.
-- `gramdex tag <file.srt> --json`: every line's points, with each match's
+- `dastoor test`: runs every point's tests. A failing test fails the run.
+- `dastoor tag <file.srt> --json`: every line's points, with each match's
   form and the words it spans.
-- `gramdex score`: the spike's scoring, below.
+- `dastoor score`: the spike's scoring, below.
 
 Both spaCy models are tried: `en_core_web_sm` (small and fast) and
 `en_core_web_trf` (more accurate, needs PyTorch). The spike reports both, so
@@ -120,7 +120,7 @@ the spike says why: the parser, the pattern, or the line itself.
 ## What the spike delivers
 
 1. The 10 point files, their tests passing.
-2. `gramdex test`, `tag` and `score`.
+2. `dastoor test`, `tag` and `score`.
 3. A report: each point's precision and recall, both models, the time per
    episode, and the mistakes grouped by cause.
 4. A recommendation: build the library this way, a hybrid, or not at all.
@@ -128,8 +128,8 @@ the spike says why: the parser, the pattern, or the line itself.
 ## Not in the spike
 
 - The notes and exercises.
-- Bembegoo's side: prepare calling `gramdex tag`, and the short entry for a
-  point Gramdex has.
+- Bembegoo's side: prepare calling `dastoor tag`, and the short entry for a
+  point Dastoor has.
 - Points beyond these 10; the CEFR-J list sets which come next.
 - A public repository: it stays local until the owner says otherwise.
 
