@@ -1,5 +1,7 @@
 id: look-adjective
-title: { en: "look / sound / feel + adjective" }
+title: { en: "look / sound / feel + adjective", fa: "look / sound / feel + صفت: به نظر رسیدن" }
+# What a learner may search it by, in English and Persian.
+keywords: ["look", "sound", "feel", "seem", "smell", "taste", "linking verb", "به نظر رسیدن", "فعل ربطی"]
 topic: verb_patterns
 cefrj: ["195", "195-1", "195-2", "195-3"]
 match:

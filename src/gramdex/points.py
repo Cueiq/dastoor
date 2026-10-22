@@ -26,6 +26,8 @@ class Point:
     tag: bool = True
     # Other ids the guides gave the same point, for scoring against them.
     aliases: list[str] = field(default_factory=list)
+    # What a learner may search it by, in English and Persian.
+    keywords: list[str] = field(default_factory=list)
     tests: dict = field(default_factory=dict)
     rules: Rules | None = None
 
@@ -67,6 +69,7 @@ def load(nlp, folder: Path = POINTS, only: set[str] | None = None) -> list[Point
             needs_meaning=bool(data.get("needs_meaning", False)),
             tag=bool(data.get("tag", True)),
             aliases=list(data.get("aliases", [])),
+            keywords=[str(word) for word in data.get("keywords", [])],
             tests=data.get("tests", {}),
         )
         point.rules = Rules(point.id, point.match, point.exclude, nlp.vocab)

@@ -1,5 +1,7 @@
 id: past-continuous
-title: { en: "was / were + -ing" }
+title: { en: "was / were + -ing", fa: "گذشتهٔ استمراری (was / were + -ing)" }
+# What a learner may search it by, in English and Persian.
+keywords: ["past continuous", "past progressive", "was -ing", "were -ing", "گذشتهٔ استمراری", "ماضی استمراری"]
 topic: past
 cefrj: ["66", "66-1", "66-2", "66-3"]
 match:

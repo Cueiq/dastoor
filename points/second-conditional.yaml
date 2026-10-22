@@ -1,5 +1,7 @@
 id: second-conditional
-title: { en: "If + past, … would + verb" }
+title: { en: "If + past, … would + verb", fa: "شرطی نوع دوم (اگر + گذشته، would)" }
+# What a learner may search it by, in English and Persian.
+keywords: ["second conditional", "if", "would", "شرطی نوع دوم", "اگر", "خیالی"]
 topic: conditions_wishes
 cefrj: ["215", "215-1"]
 match:

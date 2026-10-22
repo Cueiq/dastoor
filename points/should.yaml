@@ -1,5 +1,7 @@
 id: should
-title: { en: "should + verb" }
+title: { en: "should + verb", fa: "should: بهتر است (توصیه)" }
+# What a learner may search it by, in English and Persian.
+keywords: ["should", "shouldn't", "advice", "توصیه", "بهتره"]
 topic: obligation
 cefrj: ["139", "139-1", "139-2", "139-3"]
 match:

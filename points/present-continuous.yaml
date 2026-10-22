@@ -1,5 +1,7 @@
 id: present-continuous
-title: { en: "am / is / are + -ing" }
+title: { en: "am / is / are + -ing", fa: "حال استمراری (am / is / are + -ing)" }
+# What a learner may search it by, in English and Persian.
+keywords: ["present continuous", "present progressive", "-ing", "حال استمراری", "دارم انجام می‌دهم"]
 topic: present
 cefrj: ["61", "61-1", "61-2", "61-3"]
 match:

@@ -1,5 +1,7 @@
 id: must-have-past-participle
-title: { en: "must have + past participle" }
+title: { en: "must have + past participle", fa: "must have + اسم مفعول: حدس دربارهٔ گذشته" }
+# What a learner may search it by, in English and Persian.
+keywords: ["must have", "past guess", "deduction", "حتماً بوده", "حدس دربارهٔ گذشته"]
 topic: guessing
 cefrj: []
 match:

@@ -68,7 +68,8 @@ One YAML file per point in [points/](points/), named by its id:
 
 ```yaml
 id: used-to
-title: { en: "used to + verb" }
+title: { en: "used to + verb", fa: "used to: عادت یا حالتِ گذشته" }
+keywords: ["used to", "past habit", "قبلاً", "عادت گذشته"]   # to search it by
 topic: past_habits
 cefrj: ["140", "140-1", "140-2"]   # its items in the CEFR-J Grammar Profile
 match:                              # what finds it: spaCy patterns

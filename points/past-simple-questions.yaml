@@ -1,5 +1,7 @@
 id: past-simple-questions
-title: { en: "Did + subject + verb?" }
+title: { en: "Did + subject + verb?", fa: "سؤال در گذشتهٔ ساده (Did …?)" }
+# What a learner may search it by, in English and Persian.
+keywords: ["did", "past simple question", "گذشتهٔ ساده", "ماضی ساده", "سؤال"]
 topic: questions
 cefrj: ["65-2", "65-3"]
 match:

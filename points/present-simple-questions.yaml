@@ -1,5 +1,7 @@
 id: present-simple-questions
-title: { en: "Do / Does + subject + verb?" }
+title: { en: "Do / Does + subject + verb?", fa: "سؤال در حال ساده (Do / Does …?)" }
+# What a learner may search it by, in English and Persian.
+keywords: ["do", "does", "present simple question", "حال ساده", "سؤال"]
 topic: questions
 cefrj: ["59-2", "59-3", "60-2", "60-3"]
 # Known false match: "Don't you worry." is an order, told from "Don't you

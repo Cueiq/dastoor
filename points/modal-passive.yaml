@@ -1,5 +1,7 @@
 id: modal-passive
-title: { en: "modal + be + past participle" }
+title: { en: "modal + be + past participle", fa: "مجهول با فعل وجهی (can be done)" }
+# What a learner may search it by, in English and Persian.
+keywords: ["passive", "modal passive", "can be", "must be", "مجهول", "فعل وجهی"]
 topic: passive
 cefrj: ["82", "82-1", "82-2", "82-3"]
 match:

@@ -1,5 +1,7 @@
 id: have-to
-title: { en: "have to + verb" }
+title: { en: "have to + verb", fa: "have to: مجبور بودن" }
+# What a learner may search it by, in English and Persian.
+keywords: ["have to", "has to", "had to", "gotta", "got to", "obligation", "مجبور", "باید", "لازم"]
 topic: obligation
 cefrj: ["127", "127-1", "127-2", "127-3", "128", "128-1", "128-2", "128-3"]
 match:

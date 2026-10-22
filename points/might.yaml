@@ -1,5 +1,7 @@
 id: might
-title: { en: "might + verb" }
+title: { en: "might + verb", fa: "might / may: شاید" }
+# What a learner may search it by, in English and Persian.
+keywords: ["might", "may", "possibility", "maybe", "شاید", "احتمال", "ممکن است"]
 topic: guessing
 cefrj: ["129", "129-1", "129-2", "129-3"]
 match:

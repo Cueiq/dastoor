@@ -1,5 +1,7 @@
 id: superlatives
-title: { en: "the + adjective + -est / the most + adjective" }
+title: { en: "the + adjective + -est / the most + adjective", fa: "صفت عالی (ـ‌ترین)" }
+# What a learner may search it by, in English and Persian.
+keywords: ["superlative", "-est", "most", "the best", "صفت عالی", "ـ‌ترین"]
 topic: comparing
 cefrj: ["40", "41"]
 match:

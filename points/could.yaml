@@ -1,5 +1,7 @@
 id: could
-title: { en: "could + verb" }
+title: { en: "could + verb", fa: "could: توانستن در گذشته و درخواست مؤدبانه" }
+# What a learner may search it by, in English and Persian.
+keywords: ["could", "couldn't", "past ability", "polite request", "possibility", "می‌توانستم", "مؤدبانه", "احتمال"]
 topic: ability
 cefrj: ["124", "124-1", "124-2", "124-3"]
 # The guides' two names for it.

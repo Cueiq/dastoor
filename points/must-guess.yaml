@@ -1,5 +1,7 @@
 id: must-guess
-title: { en: "must be (a guess)" }
+title: { en: "must be (a guess)", fa: "must be: حدس قوی" }
+# What a learner may search it by, in English and Persian.
+keywords: ["must be", "guess", "deduction", "حتماً", "حدس", "استنتاج"]
 topic: guessing
 cefrj: []
 # "You must be quiet" is an order: the words can't tell.

@@ -29,6 +29,12 @@ def test(args) -> int:
     failed = 0
     total = 0
     for point in points_module.load(nlp):
+        # A learner finds a point by its names: one in Persian, and words
+        # to search it by.
+        total += 1
+        if not point.title.get("fa") or not point.keywords:
+            failed += 1
+            print(f"FAIL {point.id}: needs a Persian title (title.fa) and keywords")
         for sentence in point.tests.get("match", []):
             total += 1
             if not found_in(point, nlp, sentence):
@@ -95,6 +101,7 @@ def export(args) -> int:
             "title": data.get("title", {}),
             "level": data.get("level"),
             "topic": data.get("topic"),
+            "keywords": data.get("keywords", []),
             "needs_meaning": bool(data.get("needs_meaning", False)),
             "tag": data.get("tag", True),
             "example": data["note"]["forms"][0]["text"] if data["note"].get("forms") else "",

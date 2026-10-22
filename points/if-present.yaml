@@ -1,5 +1,7 @@
 id: if-present
-title: { en: "If + present, … (the result)" }
+title: { en: "If + present, … (the result)", fa: "شرطی نوع اول (اگر + حال)" }
+# What a learner may search it by, in English and Persian.
+keywords: ["if", "first conditional", "zero conditional", "شرطی نوع اول", "اگر", "جملهٔ شرطی"]
 topic: conditions_wishes
 cefrj: ["156"]
 # The guides' point: if + a present-tense verb, whatever the result

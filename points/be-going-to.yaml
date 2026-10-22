@@ -1,5 +1,7 @@
 id: be-going-to
-title: { en: "be going to + verb" }
+title: { en: "be going to + verb", fa: "be going to: برنامهٔ آینده" }
+# What a learner may search it by, in English and Persian.
+keywords: ["going to", "gonna", "plan", "future", "آینده", "برنامه", "قصد"]
 topic: future
 cefrj: ["122", "122-1", "122-2", "122-3"]
 match:

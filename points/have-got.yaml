@@ -1,5 +1,7 @@
 id: have-got
-title: { en: "have got (= have)" }
+title: { en: "have got (= have)", fa: "have got: داشتن" }
+# What a learner may search it by, in English and Persian.
+keywords: ["have got", "has got", "got", "possession", "داشتن", "مالکیت"]
 topic: present
 cefrj: []
 # "I've got the job" is got as been given, not have: the words can't tell.

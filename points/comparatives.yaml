@@ -1,5 +1,7 @@
 id: comparatives
-title: { en: "adjective + -er / more + adjective" }
+title: { en: "adjective + -er / more + adjective", fa: "صفت تفضیلی (ـ‌تر)" }
+# What a learner may search it by, in English and Persian.
+keywords: ["comparative", "-er", "more", "than", "تفضیلی", "ـ‌تر", "مقایسه"]
 topic: comparing
 cefrj: ["38", "39"]
 match:

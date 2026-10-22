@@ -1,5 +1,7 @@
 id: lets
-title: { en: "Let's + verb" }
+title: { en: "Let's + verb", fa: "Let's: بیا … (پیشنهاد)" }
+# What a learner may search it by, in English and Persian.
+keywords: ["let's", "let us", "suggestion", "پیشنهاد", "بیا", "بیایید"]
 topic: frames
 cefrj: ["120", "120-1"]
 match:

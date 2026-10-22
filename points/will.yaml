@@ -1,5 +1,7 @@
 id: will
-title: { en: "will + verb" }
+title: { en: "will + verb", fa: "will: آینده، تصمیم و قول" }
+# What a learner may search it by, in English and Persian.
+keywords: ["will", "'ll", "won't", "future", "decision", "promise", "آینده", "تصمیم", "قول"]
 topic: future
 cefrj: ["141", "141-1", "141-2", "141-3"]
 # One learner's note for will and all its uses: a decision made now, a

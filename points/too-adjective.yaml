@@ -1,5 +1,7 @@
 id: too-adjective
-title: { en: "too + adjective" }
+title: { en: "too + adjective", fa: "too + صفت: زیادی" }
+# What a learner may search it by, in English and Persian.
+keywords: ["too", "زیادی", "بیش از حد"]
 topic: comparing
 cefrj: ["48"]
 match:
