@@ -62,7 +62,7 @@ level_from: egp
 note:
   gist:
     en: 'Am, is or are + a past participle, when what is done matters more than who does it: English is spoken here. By + the doer, when it''s worth saying.'
-    fa: 'am، is یا are و قسمت سوم فعل، وقتی کاری که انجام می‌شود مهم‌تر از کسی است که انجامش می‌دهد: English is spoken here. اگر گفتنِ انجام‌دهنده لازم باشد، با by می‌آید.'
+    fa: 'am، is یا are و اسم مفعول، وقتی کاری که انجام می‌شود مهم‌تر از کسی است که انجامش می‌دهد: English is spoken here. اگر گفتنِ انجام‌دهنده لازم باشد، با by می‌آید.'
   forms:
   - kind: positive
     text: It's called a centaur.
@@ -78,7 +78,7 @@ note:
     right: This cake is made by my mum.
     why:
       en: 'After is, use the past participle: made, not make.'
-      fa: 'بعد از is قسمت سوم فعل بیاور: made، نه make.'
+      fa: 'بعد از is اسم مفعول بیاور: made، نه make.'
   - wrong: English speaks here.
     right: English is spoken here.
     why:
@@ -113,7 +113,7 @@ exercises:
   answer: are made
   why:
     en: are + past participle.
-    fa: are و قسمت سوم فعل.
+    fa: are و اسم مفعول.
 - id: shop-closed
   kind: fix
   wrong: The shop close on Sundays.
@@ -132,4 +132,4 @@ exercises:
   - English is spoken here.
   why:
     en: The thing done comes first, with is + past participle.
-    fa: چیزی که کار رویش انجام می‌شود اول می‌آید، با is و قسمت سوم فعل.
+    fa: چیزی که کار رویش انجام می‌شود اول می‌آید، با is و اسم مفعول.

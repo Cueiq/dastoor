@@ -39,7 +39,7 @@ level_from: egp
 note:
   gist:
     en: 'Was or were + a past participle, for something done in the past when who did it doesn''t matter: I was born in Tehran.'
-    fa: 'was یا were و قسمت سوم فعل، برای کاری که در گذشته انجام شده و مهم نیست چه کسی انجامش داده: I was born in Tehran.'
+    fa: 'was یا were و اسم مفعول، برای کاری که در گذشته انجام شده و مهم نیست چه کسی انجامش داده: I was born in Tehran.'
   forms:
   - kind: positive
     text: It was made in China.
@@ -60,7 +60,7 @@ note:
     right: My phone was stolen.
     why:
       en: 'Use the past participle: stolen, not stole.'
-      fa: 'قسمت سوم فعل بیاور: stolen، نه stole.'
+      fa: 'اسم مفعول بیاور: stolen، نه stole.'
   - wrong: The windows was broken.
     right: The windows were broken.
     why:
@@ -90,7 +90,7 @@ exercises:
   answer: was built
   why:
     en: was + past participle.
-    fa: was و قسمت سوم فعل.
+    fa: was و اسم مفعول.
 - id: were-given
   kind: fix
   wrong: We was given badges.
@@ -109,4 +109,4 @@ exercises:
   - My bike was stolen.
   why:
     en: What was done to comes first, with was + past participle.
-    fa: چیزی که کار رویش انجام شد اول می‌آید، با was و قسمت سوم فعل.
+    fa: چیزی که کار رویش انجام شد اول می‌آید، با was و اسم مفعول.
