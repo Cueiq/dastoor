@@ -21,6 +21,8 @@ match:
       word: { TAG: VBG, DEP: attr }
       head: { word: { LOWER: { IN: [am, is, are, "'m", "'re", "'s"] } } }
 exclude:
+  # all-knowing, good-looking: an adjective made with -ing, not a verb.
+  - tokens: [ { TAG: HYPH }, { LOWER: { REGEX: "ing$" } } ]
   # gonna, which the parser may leave without its verb.
   - tokens: [ { LOWER: gon }, { LOWER: na } ]
 tests:
@@ -36,6 +38,7 @@ tests:
     - "I've been waiting."
     - "I was sleeping."
     - "We're gonna die."
+    - "I don't need to tell him. He's all-knowing."
 
 # The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
 # English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own

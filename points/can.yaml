@@ -16,6 +16,13 @@ match:
         # can't have + past participle is a guess about the past.
         - { DEP: aux, LOWER: { IN: [have, "'ve", ve] } }
         - { DEP: auxpass }
+  # can + be + -ing: what may be going on, or what will be.
+  - form: be-ing
+    tree:
+      word: { TAG: VBG }
+      has:
+        - { DEP: aux, LOWER: { IN: [can, ca, cannot, "can't"] } }
+        - { DEP: aux, LEMMA: be }
 tests:
   words: [can, "can't", cannot]
   match:
@@ -23,6 +30,7 @@ tests:
     - "She can't drive."
     - "Can you speak English?"
     - "I cannot believe it."
+    - "This can't be happening."
   no_match:
     - "He can't have seen us."
     - "It can be fixed."

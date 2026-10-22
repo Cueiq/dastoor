@@ -12,7 +12,14 @@ match:
     tree:
       word: { TAG: { IN: [JJ, RB] } }
       has: [ { DEP: advmod, LOWER: { IN: [more, less] } } ]
+  # more + a participle said of something: more pressing, less worried.
+  - form: more-participle
+    tree:
+      word: { TAG: { IN: [VBG, VBN] }, DEP: { IN: [acomp, amod] } }
+      has: [ { DEP: advmod, LOWER: { IN: [more, less] } } ]
 exclude:
+  # more importantly: a fixed phrase, not a comparison.
+  - tokens: [ { LOWER: more }, { LOWER: importantly } ]
   # had better is a modal: We'd better go.
   - tree:
       word: { LOWER: better }
@@ -33,6 +40,7 @@ tests:
     - "This one's better."
     - "Could you speak more slowly?"
     - "It's actually fewer."
+    - "That has to be more pressing than the quality of your work."
   no_match:
     - "I'm a teacher."
     - "I never knew."
@@ -40,6 +48,7 @@ tests:
     - "I want more money."
     - "We'd better not."
     - "Eunice is no longer my boss!"
+    - "More importantly, who trapped us here?"
 
 # The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
 # English Grammar Profile's level as CEFR-J records it (egp), or Bembegoo's

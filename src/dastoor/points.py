@@ -38,11 +38,14 @@ class Point:
 
 def _no_booleans(value, where: str) -> None:
     """YAML reads an unquoted no, yes, on or off as true or false: a word
-    must be quoted to be a word."""
+    must be quoted to be a word. A Matcher flag (IS_SENT_START, IS_PUNCT…)
+    is the one place true or false is meant."""
     if isinstance(value, bool):
         raise ValueError(f"{where}: {value} where a word should be; quote it (\"no\")")
     if isinstance(value, dict):
         for key, each in value.items():
+            if str(key).startswith("IS_") and isinstance(each, bool):
+                continue
             _no_booleans(each, f"{where}.{key}")
     if isinstance(value, list):
         for at, each in enumerate(value):

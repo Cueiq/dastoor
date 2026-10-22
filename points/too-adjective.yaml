@@ -12,16 +12,24 @@ match:
   # too good-looking: the subtitle's hyphen splits the word.
   - form: hyphen
     tokens: [ { LOWER: too }, { POS: ADJ }, { TEXT: "-" }, { POS: { IN: [ADJ, VERB, NOUN] } } ]
+exclude:
+  # (That's) too bad: a fixed phrase for "a pity", not too much of
+  # something; not too bad is.
+  - tokens: [ { LOWER: too, IS_SENT_START: true }, { LOWER: bad } ]
+  - tokens: [ { LOWER: { NOT_IN: [not, "n't"] } }, { LOWER: too }, { LOWER: bad } ]
 tests:
   words: [too]
   match:
     - "It's too late."
+    - "That's not too bad, five months ago."
     - "This coffee is too hot to drink."
     - "You're driving too fast."
   no_match:
     - "Me too."
     - "It's too much."
     - "I love you too."
+    - "Too bad the shop went out of business."
+    - "Oh, that's too bad."
 
 # The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
 # English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own

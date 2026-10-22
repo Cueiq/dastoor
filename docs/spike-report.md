@@ -256,3 +256,44 @@ them, with their faults fixed. Merged points get one note covering every use:
 127 marks in all. Most come from A1 points: the present continuous on 39
 lines, *can* on 14. Stuart is a B1 course, and a guide teaches what is at the
 course's level and above.
+
+## Fresh lines (2026-10-22)
+
+Four more episodes of the sitcom, 1,093 sentences no rule had been tuned
+on, scored with the transformer model and every match read.
+
+**309 distinct matches, 300 right: 0.97.** By point, all right except:
+
+| point | read | wrong |
+|---|---:|---|
+| `can` | 43 | *Can that talk, Soldier.* (to can: to stop) |
+| `comparatives` | 13 | *More importantly* |
+| `present-continuous` | 50 | *He's all-knowing.* |
+| `present-simple-questions` | 26 | *Don't you say a word.* |
+| `superlatives` | 7 | *Best I could tell*, a fixed phrase |
+| `too-adjective` | 3 | *Too bad*, a fixed phrase |
+| `would-past-habit` | 5 | all five: hypotheses and *I'd like*, as expected; it isn't tagged |
+
+`must`, `must be`, `must have` and the modal passive had no lines: one more
+sitcom isn't enough for them.
+
+**Real misses** in the unmatched samples: a modal with *be* + *-ing* (*This
+can't be happening*, *He could be holding them*, *We'll be seeing you*);
+*if I didn't mean it* after the result; *everything we've got*; *more
+pressing than*; *doesn't feel very thought-out*; *hasn't happened* after
+*Huh.*, which the parser reads as a past tense; *does any of this have to
+do with*; *do you wanna*.
+
+**Fixed after reading** (each with a test): every miss above, and every
+wrong match but *Can that talk*. Two misses only the transformer model
+finds stay out of the tests: *everything we've got going on*, where the
+small model reads *got* as a helper. Over the 39 subtitles scored before,
+the fixes added 25 right matches (most of them present perfects whose
+participle the parser had read as a past tense: *I've told you*, *we've
+had*) and took away 3 wrong ones (*Don't you worry.* twice as a question,
+*More importantly*).
+
+Left as they are, by design: *might want to* (the rule leaves out the
+polite suggestion), *Don't you say a word* as an order (a subject makes it
+another frame), and the present perfect passive (*has been stopped*: the
+passive is its own point).

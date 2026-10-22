@@ -9,7 +9,9 @@ aliases: [present-perfect-experience]
 match:
   - form: have
     tree:
-      word: { TAG: VBN, LOWER: { NOT_IN: [got, gotten] } }
+      # A past tense the parser hangs on have is its participle misread:
+      # "Huh. Maybe it hasn't happened yet."
+      word: { TAG: { IN: [VBN, VBD] }, LOWER: { NOT_IN: [got, gotten] } }
       # have as a finite verb: not "supposed to have been", "Better have
       # finished" (had better).
       has: [ { DEP: aux, LOWER: { IN: [have, has, "'ve", ve, haven't, hasn't] }, TAG: { IN: [VBP, VBZ] } } ]
@@ -42,6 +44,7 @@ tests:
     - "I haven't been there."
     - "She has finished her homework."
     - "It's been a long day."
+    - "Huh. Maybe it hasn't happened yet."
   no_match:
     - "I've got a car."
     - "I've got to go."

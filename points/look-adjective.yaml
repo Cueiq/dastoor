@@ -9,6 +9,11 @@ match:
     tree:
       word: { LEMMA: { IN: [look, sound, feel, seem, smell, taste] } }
       has: [ { DEP: { IN: [acomp, oprd] }, POS: ADJ } ]
+  # A participle as the adjective: it looks broken, doesn't feel thought-out.
+  - form: participle
+    tree:
+      word: { LEMMA: { IN: [look, sound, feel, seem, smell, taste] } }
+      has: [ { DEP: acomp, TAG: VBN } ]
 tests:
   words: [look, looks, sound, sounds, feel, feels, seem, seems]
   match:
@@ -17,6 +22,8 @@ tests:
     - "I feel sick."
     - "It smells good in here."
     - "She seems nice."
+    - "This doesn't feel very thought-out."
+    - "She looked surprised."
   no_match:
     - "It sounds like a plan."
     - "Look at that!"

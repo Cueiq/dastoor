@@ -18,6 +18,8 @@ exclude:
   - tokens: [ { LOWER: best }, { LOWER: man } ]
   # for the best: a fixed phrase.
   - tokens: [ { LOWER: for }, { LOWER: the }, { LOWER: best } ]
+  # (As) best I could tell: a fixed phrase for "as far as I know".
+  - tokens: [ { LOWER: best }, { POS: PRON }, { LOWER: { IN: [can, could] } }, { LOWER: tell } ]
   # at least, at best: fixed phrases.
   - tokens: [ { LOWER: at }, { LOWER: { IN: [least, best, worst, last] } } ]
 tests:
@@ -34,6 +36,7 @@ tests:
     - "Will you be my best man?"
     - "It most certainly is not."
     - "It's for the best."
+    - "Best I could tell, we're with the new releases."
 
 # The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
 # English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own

@@ -14,6 +14,18 @@ match:
         has: [ { DEP: aux, LOWER: { IN: [would, "'d", could, might] } } ]
         # would have + past participle is the third conditional.
         lacks: [ { DEP: aux, LOWER: { IN: [have, "'ve", ve] } } ]
+  # if + didn't + verb: I wouldn't say it if I didn't mean it.
+  - form: past-not
+    tree:
+      word: { DEP: advcl, TAG: VB }
+      has:
+        - { DEP: mark, LOWER: if }
+        - { DEP: aux, LOWER: did }
+        - { DEP: neg }
+      head:
+        word: {}
+        has: [ { DEP: aux, LOWER: { IN: [would, "'d", could, might] } } ]
+        lacks: [ { DEP: aux, LOWER: { IN: [have, "'ve", ve] } } ]
   - form: could
     tree:
       word: { DEP: advcl, TAG: VB }
@@ -32,6 +44,8 @@ tests:
     - "If I were you, I would call her."
     - "What would you do if you won?"
     - "If you could fly, where would you go?"
+    - "I wouldn't think it if I didn't mean it."
+    - "If you didn't help me, I would fail."
   no_match:
     - "If you were there, you saw it."
     - "If it rains, we'll stay home."

@@ -17,6 +17,32 @@ match:
       # So do you still want…?
       - { POS: ADV, OP: "*" }
       - { TAG: VB }
+  # Does any of this make sense?
+  - form: of
+    tokens:
+      - { LOWER: { IN: [do, does, "don't", "doesn't"] } }
+      - { LOWER: "n't", OP: "?" }
+      - { LOWER: { IN: [any, all, some, none, each, either, neither] } }
+      - { LOWER: of }
+      - { POS: { IN: [PRON, DET, NOUN, PROPN] } }
+      # After does, a present the parser reads is the base form.
+      - { TAG: { IN: [VB, VBP] } }
+  # Do you wanna…?
+  - form: wanna
+    tokens:
+      - { LOWER: { IN: [do, does, "don't", "doesn't"] } }
+      - { LOWER: "n't", OP: "?" }
+      - { POS: { IN: [PRON, PROPN] } }
+      - { LOWER: wanna }
+      - { TAG: VB }
+exclude:
+  # Don't you say a word.: an order with its subject, not a question.
+  - tokens:
+      - { LOWER: { IN: [do, "don't"] }, IS_SENT_START: true }
+      - { LOWER: "n't", OP: "?" }
+      - { LOWER: you }
+      - { IS_PUNCT: false, OP: "*" }
+      - { LOWER: "." }
 tests:
   words: [do, does, "don't", "doesn't"]
   match:
@@ -26,11 +52,14 @@ tests:
     - "Where does he live?"
     - "Don't you see?"
     - "So do you still want to be a waiter?"
+    - "What does any of this have to do with me?"
+    - "What do you wanna apologize for?"
   no_match:
     - "I do like it."
     - "Do it now."
     - "Did you see that?"
     - "I don't know."
+    - "Don't you say a word."
 
 # The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
 # English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own

@@ -17,6 +17,13 @@ match:
         # will have + past participle is another point.
         - { DEP: aux, LOWER: { IN: [have, "'ve", ve] } }
         - { DEP: auxpass }
+  # will + be + -ing: what may be going on, or what will be.
+  - form: be-ing
+    tree:
+      word: { TAG: VBG }
+      has:
+        - { DEP: aux, LOWER: { IN: [will, "'ll", ll, wo, "won't"] } }
+        - { DEP: aux, LEMMA: be }
 tests:
   words: [will, "'ll", "won't"]
   match:
@@ -24,6 +31,7 @@ tests:
     - "I'll call you tomorrow."
     - "We won't tell anyone."
     - "Will you marry me?"
+    - "We'll be seeing you soon."
   no_match:
     - "I'll have finished by then."
     - "It'll be done tomorrow."

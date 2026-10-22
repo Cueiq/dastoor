@@ -15,6 +15,13 @@ match:
         # got X, or got X on / ready, which the parser makes a clause.
         - { DEP: { IN: [dobj, ccomp] } }
       lacks: [ { DEP: xcomp } ]
+  # What you've got, the thing it is said of before it: all the money you've got.
+  - form: relative
+    tree:
+      word: { LOWER: got, DEP: relcl }
+      has: [ { DEP: aux, LOWER: { IN: [have, has, "'ve", "'s", ve, s] } } ]
+      # something I've got to tell you: have got to, needing to.
+      lacks: [ { DEP: xcomp } ]
 tests:
   words: [got]
   match:
@@ -23,8 +30,9 @@ tests:
     - "She's got blue eyes."
     - "We haven't got time."
     - "Mr Whizzy hasn't got any clothes on!"
+    - "Is that all the money you've got?"
   no_match:
-    - "I've got to go."
+    - "Hector, there's something I've got to tell you."
     - "I got a car yesterday."
     - "He got angry."
 

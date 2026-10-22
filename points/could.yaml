@@ -16,6 +16,13 @@ match:
       lacks:
         - { DEP: aux, LOWER: { IN: [have, "'ve", ve] } }
         - { DEP: auxpass }
+  # could + be + -ing: what may be going on, or what will be.
+  - form: be-ing
+    tree:
+      word: { TAG: VBG }
+      has:
+        - { DEP: aux, LOWER: { IN: [could, "couldn't"] } }
+        - { DEP: aux, LEMMA: be }
 tests:
   words: [could, "couldn't"]
   match:
@@ -23,6 +30,7 @@ tests:
     - "I couldn't sleep last night."
     - "Could you help me?"
     - "It could rain later."
+    - "He could be holding them in a little sandwich bag."
   no_match:
     - "You could have told me."
     - "It could be fixed."
