@@ -8,6 +8,10 @@ requires-python = ">=3.11"
 dependencies = [
     "pyyaml>=6",
     "spacy>=3.8,<3.9",
+    # NumPy 2.4 on x86-64 Linux needs SSE4.2 and POPCNT (x86-64-v2), which
+    # a VPS's plainest virtual CPU (QEMU's kvm64) doesn't show; 2.3 needs
+    # only SSE3.
+    "numpy<2.4; sys_platform == 'linux' and platform_machine == 'x86_64'",
 ]
 
 [project.scripts]
