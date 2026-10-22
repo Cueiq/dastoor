@@ -23,8 +23,7 @@ import zlib
 from collections import defaultdict
 from pathlib import Path
 
-import spacy
-
+from . import model
 from . import points as points_module
 from .subtitles import pieces, read
 
@@ -68,7 +67,7 @@ def run(args) -> int:
     courses = Path(args.courses).expanduser()
     out = Path(args.out)
     (out / "samples").mkdir(parents=True, exist_ok=True)
-    nlp = spacy.load(args.model)
+    nlp = model.load(args.model)
     points = points_module.load(nlp)
     wanted = {point.id for point in points}
 

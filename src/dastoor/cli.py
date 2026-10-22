@@ -9,9 +9,9 @@ import sys
 import time
 from pathlib import Path
 
-import spacy
 import yaml
 
+from . import model as model_module
 from . import points as points_module
 from . import score as score_module
 from .subtitles import pieces, read
@@ -25,7 +25,7 @@ def found_in(point, nlp, sentence: str) -> list[str]:
 
 
 def test(args) -> int:
-    nlp = spacy.load(args.model)
+    nlp = model_module.load(args.model)
     failed = 0
     total = 0
     for point in points_module.load(nlp):
@@ -54,7 +54,7 @@ def tag(args) -> int:
     """Each cue's points. A sentence broken across cues is parsed whole, and
     a match counts for every cue its words are in. Points that ask not to be
     tagged (`tag: false`) are left out: their rules mislead more than help."""
-    nlp = spacy.load(args.model)
+    nlp = model_module.load(args.model)
     points = [point for point in points_module.load(nlp) if point.tag]
     lines = read(Path(args.file))
     by_cue: dict[int, list[dict]] = {}
@@ -134,7 +134,11 @@ def main(argv: list[str] | None = None) -> int:
     scoring.add_argument("--split", choices=["dev", "test"], help="score on one half of the files only")
     args = parser.parse_args(argv)
     started = time.time()
-    code = {"test": test, "tag": tag, "export": export, "score": score_module.run}[args.command](args)
+    try:
+        code = {"test": test, "tag": tag, "export": export, "score": score_module.run}[args.command](args)
+    except model_module.MissingModel as error:
+        print(f"dastoor: {error}", file=sys.stderr)
+        return 2
     print(f"({time.time() - started:.1f} s)", file=sys.stderr)
     return code
 

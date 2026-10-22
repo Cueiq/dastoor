@@ -1,0 +1,38 @@
+# Every point's tests. With the small model on each push and pull request;
+# with the transformer model, about 1 GB with PyTorch, each Monday and when
+# run by hand.
+name: test
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 4 * * 1"
+  workflow_dispatch:
+
+jobs:
+  small:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+          enable-cache: true
+      - run: uv sync --locked
+      # Loading the points checks them too: a word YAML reads as true or
+      # false, unquoted, fails the load.
+      - run: uv run --locked dastoor test
+      - run: uv run --locked dastoor export > /dev/null
+
+  transformer:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+          enable-cache: true
+      - run: uv sync --locked --all-groups
+      - run: uv run --locked --all-groups dastoor --model en_core_web_trf test

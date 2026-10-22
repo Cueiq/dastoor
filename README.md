@@ -35,18 +35,16 @@ it isn't tagged at all. The method and every number are in
 Dastoor needs Python 3.11 or later and [uv](https://docs.astral.sh/uv/).
 
 ```bash
-uv venv --python 3.12
-uv pip install -e .
-uv pip install "en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl"
+uv sync                # Dastoor and spaCy's small English model
+uv sync --all-groups   # and the transformer model too
 ```
 
 The small model is 15 MB and runs at about 1,300 sentences a second. The
 transformer model is more accurate: on comparatives, about 0.94 precision
-against the small model's 0.81. It needs about 1 GB with PyTorch:
-
-```bash
-uv pip install "spacy[transformers]>=3.8,<3.9" "en_core_web_trf @ https://github.com/explosion/spacy-models/releases/download/en_core_web_trf-3.8.0/en_core_web_trf-3.8.0-py3-none-any.whl"
-```
+against the small model's 0.81. It needs about 1 GB with PyTorch (the CPU
+build, on Linux). The models are in the project's dependency groups (`sm`,
+`trf`): a plain `uv sync` or `uv run` keeps only the small one, so with the
+transformer, sync with `--all-groups` and run with `uv run --all-groups`.
 
 ## Use
 
