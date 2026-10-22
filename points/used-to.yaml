@@ -1,0 +1,110 @@
+id: used-to
+title: { en: "used to + verb" }
+topic: past_habits
+cefrj: ["140", "140-1", "140-2"]
+match:
+  - form: all
+    tree:
+      word: { LOWER: { IN: [used, use] } }
+      has:
+        - word: { DEP: xcomp, TAG: VB }
+          has: [ { DEP: aux, LOWER: to } ]
+      lacks:
+        # be used to (+ noun or -ing) is another point.
+        - { LEMMA: be, DEP: { IN: [aux, auxpass] } }
+        # "used the money to buy": use + something + to.
+        - { DEP: dobj }
+tests:
+  words: [used, use]
+  match:
+    - "We used to live here."
+    - "I didn't use to like it."
+    - "Did you use to play?"
+    - "My dad used to say that, you know."
+    - "You used to part your hair on the other side."
+  no_match:
+    - "I'm used to the noise."
+    - "She's getting used to living alone."
+    - "They used two cars."
+    - "We used the money to buy food."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), or Bembegoo's
+# guides' where no item has it (guides).
+level: B1
+level_from: egp
+note:
+  gist:
+    en: Used to + a plain verb, for something that happened often or was true in the past, and isn't now.
+    fa: used to و فعل ساده، برای کاری که در گذشته زیاد انجام می‌شد یا چیزی که قبلاً درست بود و حالا نیست؛ مثل «قبلاً … می‌…» در فارسی.
+  forms:
+  - kind: positive
+    text: I used to live in Tehran.
+    mark: used to live
+  - kind: negative
+    text: I didn't use to like coffee.
+    mark: didn't use to like
+  - kind: question
+    text: Did you use to play football?
+    mark: Did you use to play
+  mistakes:
+  - wrong: I am used to live here.
+    right: I used to live here.
+    why:
+      en: Used to + verb has no am, is or are before it.
+      fa: قبل از «used to» با فعل ساده، «am»، «is» یا «are» نمی‌آید.
+  - wrong: He used to played football.
+    right: He used to play football.
+    why:
+      en: After used to comes the plain verb.
+      fa: بعد از «used to» شکل سادهٔ فعل می‌آید.
+  - wrong: I didn't used to like coffee.
+    right: I didn't use to like coffee.
+    why:
+      en: After did or didn't, write use to, without -d.
+      fa: بعد از «did» یا «didn't»، «use to» بدون d نوشته می‌شود.
+  contrast:
+  - term: be used to + -ing
+    example: I'm used to getting up early.
+    why:
+      en: Be used to + -ing means something is normal for you now, not a past habit.
+      fa: «be used to» با ing یعنی چیزی الان برایت عادی است، نه عادتی در گذشته.
+    point: be-used-to
+  - term: would + verb (past habit)
+    example: Every summer we would go to the sea.
+    why:
+      en: Would also tells past habits, but only actions, not states like be or live.
+      fa: «would» هم عادت گذشته را می‌گوید، ولی فقط برای کارها، نه حالت‌هایی مثل «be» یا «live».
+    point: would-past-habit
+exercises:
+- id: live-shiraz
+  kind: choose
+  sentence: I ___ live in Tehran, but now I live in Shiraz.
+  options:
+  - used to
+  - use to
+  - was used to
+  answer: used to
+  why:
+    en: 'True in the past, not now: used to + verb.'
+    fa: 'در گذشته درست بود، حالا نه: used to + فعل.'
+- id: used-to-lives
+  kind: fix
+  wrong: She used to lives in Paris.
+  right:
+  - She used to live in Paris.
+  why:
+    en: 'After used to comes the plain verb: live.'
+    fa: 'بعد از used to فعل ساده می‌آید: live.'
+- id: was-a-cinema
+  kind: rewrite
+  instruction:
+    en: Say it with used to.
+    fa: با used to بگو.
+  from: In the past this building was a cinema. Now it is a gym.
+  answers:
+  - This building used to be a cinema.
+  - It used to be a cinema.
+  why:
+    en: 'What was true before but isn''t now: used to + verb.'
+    fa: 'چیزی که قبلاً درست بود و حالا نیست: used to + فعل.'

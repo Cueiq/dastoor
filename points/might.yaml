@@ -1,0 +1,110 @@
+id: might
+title: { en: "might + verb" }
+topic: guessing
+cefrj: ["129", "129-1", "129-2", "129-3"]
+match:
+  - form: all
+    tree:
+      word: { TAG: VB }
+      has: [ { DEP: aux, LOWER: { IN: [might, "mightn't", may] } } ]
+      lacks:
+        - { DEP: aux, LOWER: { IN: [have, "'ve", ve] } }
+        - { DEP: auxpass }
+exclude:
+  # might as well: a fixed phrase, a suggestion.
+  - tokens: [ { LOWER: { IN: [might, may] } }, { LOWER: as }, { LOWER: well } ]
+  # might want to / might wanna: polite advice, a fixed phrase.
+  - tokens: [ { LOWER: { IN: [might, may] } }, { LEMMA: want } ]
+  - tokens: [ { LOWER: { IN: [might, may] } }, { LOWER: { IN: [wan, wanna] } } ]
+  # May I…? asks permission.
+  - tokens: [ { LOWER: may }, { POS: PRON }, { TAG: VB } ]
+tests:
+  words: [might, may]
+  match:
+    - "It might rain."
+    - "He might be at home."
+    - "We may need help."
+    - "Don't answer the phone. It might be the tarantula."
+  no_match:
+    - "We might as well go."
+    - "May I come in?"
+    - "She might have left."
+    - "You might wanna take it easy."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or Bembegoo's guides' where no item has one (guides).
+level: A2
+level_from: egp
+note:
+  gist:
+    en: 'Might (or may) + a plain verb: something is possible, but not sure: It might rain later.'
+    fa: 'might (یا may) و فعل ساده: چیزی ممکن است، ولی مطمئن نیست: It might rain later یعنی «شاید بعداً باران بیاید».'
+  forms:
+  - kind: positive
+    text: It might rain later.
+    mark: might rain
+  - kind: negative
+    text: He might not come.
+    mark: might not come
+  mistakes:
+  - wrong: He might to come late.
+    right: He might come late.
+    why:
+      en: After might comes the plain verb, with no to.
+      fa: بعد از «might» فعل ساده می‌آید، بدون «to».
+  - wrong: She might comes today.
+    right: She might come today.
+    why:
+      en: After might, the verb has no -s.
+      fa: بعد از «might» فعل s نمی‌گیرد.
+  - wrong: Maybe he might come.
+    right: He might come.
+    why:
+      en: Might already means maybe; don't say both.
+      fa: «might» خودش یعنی «شاید»؛ هر دو را با هم نگو.
+  contrast:
+  - term: must be (a guess)
+    example: The lights are on. She must be home.
+    why:
+      en: Must is almost sure; might is only maybe.
+      fa: «must» یعنی تقریباً مطمئنی؛ «might» یعنی شاید.
+    point: must-guess
+  - term: will + verb
+    example: It will rain tomorrow.
+    why:
+      en: Will is what you expect; might is only possible.
+      fa: «will» چیزی است که انتظارش را داری؛ «might» فقط ممکن است.
+    point: will
+exercises:
+- id: umbrella
+  kind: choose
+  sentence: Take an umbrella. It ___ rain later.
+  options:
+  - might
+  - might to
+  - mights
+  answer: might
+  why:
+    en: 'Possible, not sure: might + verb.'
+    fa: 'ممکن، ولی نامطمئن: might + فعل.'
+- id: might-to-come
+  kind: fix
+  wrong: He might to come late.
+  right:
+  - He might come late.
+  why:
+    en: No to after might.
+    fa: بعد از might حرف to نمی‌آید.
+- id: maybe-home
+  kind: rewrite
+  instruction:
+    en: Say it with might.
+    fa: با might بگو.
+  from: Maybe Anna is at home.
+  answers:
+  - Anna might be at home.
+  - Anna may be at home.
+  why:
+    en: Maybe → might + be.
+    fa: maybe ← might + be.

@@ -1,0 +1,156 @@
+id: if-present
+title: { en: "If + present, … (the result)" }
+topic: conditions_wishes
+cefrj: ["156"]
+# The guides' point: if + a present-tense verb, whatever the result
+# (will, must, an order, the present). If + past, … would is the second
+# conditional.
+match:
+  - form: present
+    tree:
+      word: { DEP: advcl, TAG: { IN: [VBP, VBZ] } }
+      has: [ { DEP: mark, LOWER: if } ]
+      head:
+        word: {}
+        lacks: [ { DEP: aux, LOWER: { IN: [would, "'d", could, might] } } ]
+  # If you don't tell me…: the verb with its do.
+  - form: do
+    tree:
+      word: { DEP: advcl, TAG: VB }
+      has:
+        - { DEP: mark, LOWER: if }
+        - { DEP: aux, LOWER: { IN: [do, does, "don't", "doesn't"] } }
+      head:
+        word: {}
+        lacks: [ { DEP: aux, LOWER: { IN: [would, "'d", could, might] } } ]
+  # If it's raining…, if you're coming…: be + -ing in the if part.
+  - form: be-ing
+    tree:
+      word: { DEP: advcl, TAG: VBG }
+      has:
+        - { DEP: mark, LOWER: if }
+        - { DEP: aux, LOWER: { IN: [am, is, are, "'m", "'re", "'s"] } }
+      head:
+        word: {}
+        lacks: [ { DEP: aux, LOWER: { IN: [would, "'d", could, might] } } ]
+  # if we cannot eat animals, if you can't be good: a modal in the if part.
+  - form: modal
+    tree:
+      word: { DEP: advcl, TAG: VB }
+      has:
+        - { DEP: mark, LOWER: if }
+        - { DEP: aux, LOWER: { IN: [can, cannot, "can't", ca, must, may] } }
+      head:
+        word: {}
+        lacks: [ { DEP: aux, LOWER: { IN: [would, "'d", could, might] } } ]
+  # If you're strong enough. If that's OK: an if part said alone.
+  - form: alone
+    tree:
+      word: { DEP: ROOT, TAG: { IN: [VBP, VBZ] } }
+      has: [ { DEP: mark, LOWER: if } ]
+exclude:
+  # I wonder if…, see if…: if as whether.
+  - tree:
+      word: { DEP: { IN: [ccomp, xcomp] } }
+      has: [ { DEP: mark, LOWER: if } ]
+  - tokens: [ { LEMMA: { IN: [see, wonder, know, ask, check] } }, { LOWER: if } ]
+  # What if…? and even if… are points of their own.
+  - tokens: [ { LOWER: what }, { LOWER: if } ]
+  - tokens: [ { LOWER: even }, { LOWER: if } ]
+  - tokens: [ { LEMMA: mind }, { LOWER: if } ]
+tests:
+  words: [if]
+  match:
+    - "If it rains, we'll stay home."
+    - "I'll call you if I need help."
+    - "If you don't tell me, I won't know."
+    - "If you touch my bike again, you are out."
+    - "If you want more money, you must work hard."
+    - "If we cannot eat animals, what will we eat?"
+    - "If that's OK with your mother."
+  no_match:
+    - "If I had money, I'd buy it."
+    - "I wonder if he'll come."
+    - "What if we just stay here?"
+    - "See if that doesn't help."
+    - "You mind if we stand up?"
+    - "Even if you're right, we'll all be dead."
+    - "If I were you, I would go."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or Bembegoo's guides' where no item has one (guides).
+level: A2
+level_from: egp
+note:
+  gist:
+    en: 'If + the present, then the result: something that may really happen, and what happens then, often with will: If it rains, we''ll stay home.'
+    fa: 'if با زمان حال و بعد نتیجه: چیزی که واقعاً ممکن است اتفاق بیفتد و آنچه آن‌وقت می‌شود، اغلب با will: If it rains, we''ll stay home یعنی «اگر باران بیاید، خانه می‌مانیم».'
+  forms:
+  - kind: positive
+    text: If it rains, I will stay at home.
+    mark: If it rains, I will stay
+  - kind: negative
+    text: If you don't eat, you will be hungry.
+    mark: If you don't eat, you will be
+  - kind: question
+    text: What will you do if it rains?
+    mark: will you do if it rains
+  mistakes:
+  - wrong: If you will come, I will be happy.
+    right: If you come, I will be happy.
+    why:
+      en: After if comes the present, not will.
+      fa: بعد از «if» زمان حال می‌آید، نه «will»؛ مثل «اگر بیایی» در فارسی.
+  - wrong: If I see him, I tell him.
+    right: If I see him, I will tell him.
+    why:
+      en: A result in the future usually takes will.
+      fa: نتیجه‌ای در آینده معمولاً «will» می‌گیرد.
+  contrast:
+  - term: If + past, … would + verb
+    example: If I had money, I would buy it.
+    why:
+      en: If + present is a real possibility; if + past is imagined.
+      fa: «if» با حال احتمالی واقعی است؛ «if» با گذشته خیالی.
+    point: second-conditional
+  - term: when + present
+    example: When I get home, I'll call you.
+    why:
+      en: When is sure to happen; if may not.
+      fa: «when» حتماً اتفاق می‌افتد؛ «if» شاید نیفتد.
+exercises:
+- id: rains-tomorrow
+  kind: choose
+  sentence: If it ___ tomorrow, we will stay home.
+  options:
+  - rains
+  - will rain
+  - rained
+  answer: rains
+  why:
+    en: 'After if: the present.'
+    fa: 'بعد از if: زمان حال.'
+- id: if-will-see
+  kind: fix
+  wrong: If I will see Anna, I will tell her.
+  right:
+  - If I see Anna, I will tell her.
+  - If I see Anna, I'll tell her.
+  why:
+    en: No will after if.
+    fa: بعد از if کلمهٔ will نمی‌آید.
+- id: cold-coat
+  kind: rewrite
+  instruction:
+    en: Say it as one sentence with if.
+    fa: در یک جمله با if بگو.
+  from: Maybe it will be cold. Then I will wear a coat.
+  answers:
+  - If it is cold, I will wear a coat.
+  - If it's cold, I'll wear a coat.
+  - If it is cold, I'll wear a coat.
+  - If it's cold, I will wear a coat.
+  why:
+    en: If + present, will + verb.
+    fa: If + حال، will + فعل.

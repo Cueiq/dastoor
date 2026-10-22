@@ -1,0 +1,109 @@
+id: present-perfect-continuous
+title: { en: "have been + -ing" }
+topic: perfect
+cefrj: ["63", "63-1", "63-2", "63-3"]
+match:
+  - form: all
+    tree:
+      word: { TAG: VBG }
+      has:
+        # 's on an -ing verb beside been is always has, however the parser
+        # labels it (aux, auxpass, even nsubj); 'd is had: another point.
+        - { LOWER: { IN: [have, has, "'ve", "'s", ve] } }
+        - { DEP: aux, LOWER: been }
+tests:
+  words: [been]
+  match:
+    - "I've been doing a little research."
+    - "She hasn't been sleeping well."
+    - "Have you been waiting long?"
+    - "It's been raining all day."
+    - "How long have you been working here?"
+    - "Someone's been sending me messages."
+  no_match:
+    - "I've been to Paris."
+    - "He's been chosen."
+    - "I had been waiting for an hour."
+    - "It's been a long day."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), or Bembegoo's
+# guides' where no item has it (guides).
+level: B1
+level_from: egp
+note:
+  gist:
+    en: Have or has + been + an -ing verb, for something that started in the past and is still going on, or has only just stopped.
+    fa: have یا has و بعد been و فعل ingدار، برای کاری که در گذشته شروع شده و هنوز ادامه دارد یا تازه تمام شده.
+  forms:
+  - kind: positive
+    text: She's been studying all day.
+    mark: '''s been studying'
+  - kind: negative
+    text: I haven't been sleeping well.
+    mark: haven't been sleeping
+  - kind: question
+    text: How long have you been learning English?
+    mark: have you been learning
+  mistakes:
+  - wrong: I'm waiting for an hour.
+    right: I've been waiting for an hour.
+    why:
+      en: For something that started in the past and goes on now, use have been + -ing, not the present.
+      fa: برای کاری که در گذشته شروع شده و هنوز ادامه دارد «have been» و فعل ingدار بیاور، نه زمان حال؛ هرچند در فارسی می‌گوییم «یک ساعت است منتظرم».
+  - wrong: I've been learning English since two years.
+    right: I've been learning English for two years.
+    why:
+      en: Use for with a length of time, since with a starting point.
+      fa: با مدت زمان «for» بیاور و با نقطهٔ شروع «since»؛ «دو سال است» یعنی «for two years».
+  - wrong: I've been knowing him for years.
+    right: I've known him for years.
+    why:
+      en: Verbs like know, like and have (own) don't take -ing here.
+      fa: فعل‌هایی مثل «know»، «like» و «have» (به معنی داشتن) اینجا ing نمی‌گیرند.
+  contrast:
+  - term: have + past participle (experience)
+    example: I've been to Paris twice.
+    why:
+      en: That tells an experience; have been + -ing is an activity that is still going on.
+      fa: آن یک تجربه را می‌گوید؛ «have been» با ing کاری است که هنوز ادامه دارد.
+    point: present-perfect-experience
+  - term: have + past participle (result)
+    example: I've finished my homework.
+    why:
+      en: The simple form shows what is done; the -ing form shows the activity.
+      fa: شکل ساده نتیجه را نشان می‌دهد و شکل ingدار خودِ کار را.
+    point: present-perfect
+exercises:
+- id: tired-studying
+  kind: choose
+  sentence: She's tired because she ___ all day.
+  options:
+  - has been studying
+  - has studying
+  - is been studying
+  answer: has been studying
+  why:
+    en: has + been + verb-ing.
+    fa: has + been + فعل ingدار.
+- id: living-since
+  kind: fix
+  wrong: We are living here since 2019.
+  right:
+  - We've been living here since 2019.
+  - We have been living here since 2019.
+  why:
+    en: Since 2019 up to now needs have been + -ing.
+    fa: «since 2019» تا حالا، «have been» و فعل ingدار می‌خواهد.
+- id: still-learning
+  kind: rewrite
+  instruction:
+    en: Say it with have been + -ing.
+    fa: با «have been» و فعل ingدار بگو.
+  from: I started learning English two years ago, and I'm still learning it.
+  answers:
+  - I've been learning English for two years.
+  - I have been learning English for two years.
+  why:
+    en: 'Started in the past and still going on: have been + -ing.'
+    fa: 'از گذشته شروع شده و هنوز ادامه دارد: have been + ing.'

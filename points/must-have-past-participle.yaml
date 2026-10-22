@@ -1,0 +1,99 @@
+id: must-have-past-participle
+title: { en: "must have + past participle" }
+topic: guessing
+cefrj: []
+match:
+  - form: all
+    tree:
+      word: { TAG: VBN }
+      has:
+        - { DEP: aux, LOWER: must }
+        - { DEP: aux, LOWER: { IN: [have, "'ve", ve] } }
+tests:
+  words: [must]
+  match:
+    - "She must have left early."
+    - "You must've been tired."
+    - "They must have known."
+    - "It must have been a mistake."
+  no_match:
+    - "You must have a ticket."
+    - "You must be tired."
+    - "We must leave now."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), or Bembegoo's
+# guides' where no item has it (guides).
+level: B1
+level_from: guides
+note:
+  gist:
+    en: Must have + a past participle, for a guess about the past that you're almost sure of.
+    fa: must have و اسم مفعول، برای حدسی دربارهٔ گذشته که تقریباً از آن مطمئنی؛ مثل «حتماً … بوده» در فارسی.
+  forms:
+  - kind: positive
+    text: She must have left early.
+    mark: must have left
+  - kind: negative
+    text: He can't have seen us.
+    mark: can't have seen
+  mistakes:
+  - wrong: She must left early.
+    right: She must have left early.
+    why:
+      en: A guess about the past needs have + past participle after must.
+      fa: برای حدس دربارهٔ گذشته، بعد از «must» باید «have» و اسم مفعول بیاید.
+  - wrong: You must have called me yesterday, but you didn't.
+    right: You should have called me yesterday, but you didn't.
+    why:
+      en: Must have is a sure guess; for something right that didn't happen, use should have.
+      fa: «must have» حدسِ مطمئن است؛ برای کاری که درست بود ولی انجام نشد «should have» بگو، هرچند در فارسی هر دو «باید» است.
+  - wrong: He must have forget his keys.
+    right: He must have forgotten his keys.
+    why:
+      en: After must have comes the past participle.
+      fa: بعد از «must have» اسم مفعول (قسمت سوم فعل) می‌آید.
+  contrast:
+  - term: may have + past participle
+    example: She may have left early.
+    why:
+      en: May have is only a possible guess; must have means you are almost sure.
+      fa: «may have» فقط یک احتمال است؛ «must have» یعنی تقریباً مطمئنی.
+    point: may-have-past-participle
+  - term: must be (a guess about now)
+    example: She must be at home.
+    why:
+      en: Must be is a guess about now; must have been is a guess about before.
+      fa: «must be» حدس دربارهٔ حالاست و «must have been» حدس دربارهٔ گذشته.
+    point: must-guess
+exercises:
+- id: lights-off
+  kind: choose
+  sentence: The lights are off. They ___ to bed early.
+  options:
+  - must have gone
+  - must go
+  - must have go
+  answer: must have gone
+  why:
+    en: 'A sure guess about the past: must have + past participle.'
+    fa: 'حدس مطمئن دربارهٔ گذشته: must have + اسم مفعول.'
+- id: must-have-went
+  kind: fix
+  wrong: She must have went home.
+  right:
+  - She must have gone home.
+  why:
+    en: The past participle of go is gone.
+    fa: اسم مفعول «go» می‌شود «gone».
+- id: sure-she-left
+  kind: rewrite
+  instruction:
+    en: Say it as a sure guess, with must have.
+    fa: به‌صورت حدسِ مطمئن و با must have بگو.
+  from: I'm sure she left early.
+  answers:
+  - She must have left early.
+  why:
+    en: 'A sure guess about the past: must have + left.'
+    fa: 'حدس مطمئن دربارهٔ گذشته: must have + left.'

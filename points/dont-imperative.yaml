@@ -1,0 +1,104 @@
+id: dont-imperative
+title: { en: "Don't + verb" }
+topic: frames
+cefrj: ["117-1"]
+match:
+  - form: all
+    tree:
+      word: { TAG: VB }
+      has:
+        - { DEP: aux, LOWER: { IN: [do, "don't"] } }
+        - { DEP: neg }
+      # Don't you dare: a subject makes it another frame.
+      lacks: [ { DEP: { IN: [nsubj, nsubjpass, expl] } } ]
+tests:
+  words: ["don't", "do not"]
+  match:
+    - "Don't go!"
+    - "Don't touch that."
+    - "Please don't tell him."
+    - "Do not open the door."
+  no_match:
+    - "Don't you dare!"
+    - "I don't know."
+    - "Why don't we go?"
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or Bembegoo's guides' where no item has one (guides).
+level: A2
+level_from: egp
+note:
+  gist:
+    en: 'Don''t + a plain verb tells someone not to do something: Don''t touch that!'
+    fa: 'don''t و فعل ساده به کسی می‌گوید کاری را نکند: Don''t touch that! یعنی «به آن دست نزن!»'
+  forms:
+  - kind: negative
+    text: Don't open the door.
+    mark: Don't open
+  - kind: negative
+    text: Please don't tell him.
+    mark: don't tell
+  - kind: negative
+    text: Don't be silly.
+    mark: Don't be
+  mistakes:
+  - wrong: Not cry, please.
+    right: Please don't cry.
+    why:
+      en: To tell someone not to do something, start with don't, not not.
+      fa: برای «نکن» با «don't» شروع کن، نه «not».
+  - wrong: Don't to go.
+    right: Don't go.
+    why:
+      en: After don't comes the plain verb, with no to.
+      fa: بعد از «don't» فعل ساده می‌آید، بدون «to».
+  - wrong: You don't go!
+    right: Don't go!
+    why:
+      en: An order has no you before don't.
+      fa: در دستور، قبل از «don't» کلمهٔ «you» نمی‌آید.
+  contrast:
+  - term: Let's not + verb
+    example: Let's not go out tonight.
+    why:
+      en: Let's not includes you; don't tells someone else.
+      fa: «let's not» خودت را هم شامل می‌شود؛ «don't» به دیگری می‌گوید.
+    point: lets
+  - term: I don't + verb
+    example: I don't like fish.
+    why:
+      en: With a subject, don't makes a plain negative, not an order.
+      fa: با فاعل، «don't» جملهٔ منفی معمولی می‌سازد، نه دستور.
+exercises:
+- id: dont-be-late
+  kind: choose
+  sentence: Please don't ___ late.
+  options:
+  - be
+  - to be
+  - being
+  answer: be
+  why:
+    en: 'Don''t + the plain verb: be.'
+    fa: 'don''t + فعل ساده: be.'
+- id: not-cry
+  kind: fix
+  wrong: Not cry, please.
+  right:
+  - Please don't cry.
+  - Don't cry, please.
+  why:
+    en: Start with don't.
+    fa: با don't شروع کن.
+- id: open-door
+  kind: rewrite
+  instruction:
+    en: Tell them not to do it.
+    fa: بگو این کار را نکنند.
+  from: Open the door.
+  answers:
+  - Don't open the door.
+  why:
+    en: Don't + the plain verb.
+    fa: don't + فعل ساده.

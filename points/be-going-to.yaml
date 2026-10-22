@@ -1,0 +1,120 @@
+id: be-going-to
+title: { en: "be going to + verb" }
+topic: future
+cefrj: ["122", "122-1", "122-2", "122-3"]
+match:
+  - form: with-be
+    tree:
+      word: { LOWER: { IN: [going, gon] } }
+      has:
+        # be by its forms: the parser may take "Nick's" for a possessive.
+        - { DEP: aux, LOWER: { IN: [am, is, are, was, were, be, been, "'m", "'re", "'s", m, re, s] } }
+        # going to + verb, or a passive: going to be explained.
+        - word: { DEP: xcomp, TAG: { IN: [VB, VBN] } }
+          has: [ { DEP: aux, LOWER: { IN: [to, na] } } ]
+  # A subtitle drops what is understood: "Gonna be fun.", "You gonna tell him?"
+  - form: without-be
+    tree:
+      word: { LOWER: { IN: [going, gon] } }
+      has:
+        - word: { DEP: xcomp, TAG: { IN: [VB, VBN] } }
+          has: [ { DEP: aux, LOWER: { IN: [to, na] } } ]
+      lacks: [ { DEP: aux } ]
+  # gonna + verb, whatever the parser makes of gonna (the larger model may
+  # call it a helper, like will).
+  - form: gonna
+    tokens: [ { LOWER: gon }, { LOWER: na }, { LOWER: "not", OP: "?" }, { TAG: VB } ]
+tests:
+  words: [going, gonna]
+  match:
+    - "I'm going to tell him."
+    - "We're not gonna make it."
+    - "Are you going to eat that?"
+    - "It was going to be a surprise."
+    - "Gonna be fun."
+    - "Nick's going to be in a film."
+    - "Everything's going to be explained."
+    - "You gonna tell him?"
+  no_match:
+    - "I'm going to the shop."
+    - "Where are you going?"
+    - "She's going home now."
+    - "What's going on?"
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), or Bembegoo's
+# guides' where no item has it (guides).
+level: A2
+level_from: egp
+note:
+  gist:
+    en: Am, is or are + going to + a plain verb, for a plan you have already made, or for something you can see is about to happen.
+    fa: am، is یا are و بعد going to و فعل ساده، برای برنامه‌ای که از قبل داری، یا چیزی که از نشانه‌هایش پیداست به‌زودی اتفاق می‌افتد.
+  forms:
+  - kind: positive
+    text: I'm going to cook tonight.
+    mark: '''m going to cook'
+  - kind: negative
+    text: We aren't going to play today.
+    mark: aren't going to play
+  - kind: question
+    text: Are you going to call her?
+    mark: Are you going to call
+  mistakes:
+  - wrong: I going to buy a dress.
+    right: I'm going to buy a dress.
+    why:
+      en: Don't drop am, is or are before going to.
+      fa: «am»، «is» یا «are» را قبل از «going to» جا نینداز.
+  - wrong: She's going to buys a car.
+    right: She's going to buy a car.
+    why:
+      en: After going to comes the plain verb, without -s.
+      fa: بعد از «going to» فعل ساده می‌آید، بدون s.
+  - wrong: Tomorrow I visit my grandma.
+    right: Tomorrow I'm going to visit my grandma.
+    why:
+      en: For a plan, English doesn't use the present simple the way Persian does.
+      fa: برای برنامهٔ آینده، انگلیسی مثل فارسی زمان حال نمی‌آورد؛ «فردا می‌روم پیش مادربزرگ» در انگلیسی با going to گفته می‌شود.
+  contrast:
+  - term: I'll + verb
+    example: The phone is ringing. I'll answer it.
+    why:
+      en: Going to is a plan you made before; I'll is a decision you make now.
+      fa: «going to» برنامه‌ای است که از قبل داشتی؛ «I'll» تصمیمی است که همین لحظه می‌گیری.
+    point: will
+exercises:
+- id: parents-are
+  kind: choose
+  sentence: My parents ___ going to visit us on Friday.
+  options:
+  - are
+  - is
+  - will
+  answer: are
+  why:
+    en: My parents means they, so we say are going to.
+    fa: «my parents» یعنی «they»؛ پس «are going to» می‌گوییم.
+- id: i-going-to
+  kind: fix
+  wrong: I going to buy a dress.
+  right:
+  - I'm going to buy a dress.
+  - I am going to buy a dress.
+  why:
+    en: Am is needed before going to.
+    fa: پیش از going to به am نیاز داریم.
+- id: plan-tonight
+  kind: rewrite
+  instruction:
+    en: Say your plan with going to.
+    fa: برنامه‌ات را با going to بگو.
+  from: 'My plan for tonight: watch a film.'
+  answers:
+  - I'm going to watch a film tonight.
+  - I am going to watch a film tonight.
+  - Tonight I'm going to watch a film.
+  - Tonight I am going to watch a film.
+  why:
+    en: 'A plan you already have: am going to + verb.'
+    fa: 'برنامه‌ای که از قبل داری: am going to + فعل.'

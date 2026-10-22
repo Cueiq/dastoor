@@ -1,0 +1,103 @@
+id: too-adjective
+title: { en: "too + adjective" }
+topic: comparing
+cefrj: ["48"]
+match:
+  - form: all
+    tree:
+      word: { TAG: { IN: [JJ, RB] }, LOWER: { NOT_IN: [much, many, little, few] } }
+      has: [ { DEP: advmod, LOWER: too } ]
+  # too good-looking: the subtitle's hyphen splits the word.
+  - form: hyphen
+    tokens: [ { LOWER: too }, { POS: ADJ }, { TEXT: "-" }, { POS: { IN: [ADJ, VERB, NOUN] } } ]
+tests:
+  words: [too]
+  match:
+    - "It's too late."
+    - "This coffee is too hot to drink."
+    - "You're driving too fast."
+  no_match:
+    - "Me too."
+    - "It's too much."
+    - "I love you too."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or Bembegoo's guides' where no item has one (guides).
+level: A2
+level_from: guides
+note:
+  gist:
+    en: 'Too + an adjective: more than is good or possible, a problem: It''s too expensive for me.'
+    fa: 'too و صفت: بیشتر از آنچه خوب یا ممکن است، یعنی مشکل: It''s too expensive for me یعنی «برای من زیادی گران است».'
+  forms:
+  - kind: positive
+    text: This tea is too hot.
+    mark: too hot
+  - kind: positive
+    text: It's too expensive for me.
+    mark: too expensive
+  - kind: positive
+    text: He's too young to drive.
+    mark: too young to
+  mistakes:
+  - wrong: This cake is too delicious!
+    right: This cake is very delicious!
+    why:
+      en: Too shows a problem; to say something is nice, use very.
+      fa: «too» مشکل را نشان می‌دهد؛ برای تعریف «very» بگو، هرچند در فارسی «خیلی» برای هر دو است.
+  - wrong: The shoes are too much expensive.
+    right: The shoes are too expensive.
+    why:
+      en: Before an adjective, too alone, not too much.
+      fa: قبل از صفت فقط «too»، نه «too much».
+  - wrong: She is too young for drive.
+    right: She is too young to drive.
+    why:
+      en: Too + adjective + to + verb.
+      fa: too + صفت + to + فعل.
+  contrast:
+  - term: very + adjective
+    example: This tea is very hot, but I like it.
+    why:
+      en: Very only makes it stronger; too says it's a problem.
+      fa: «very» فقط شدیدترش می‌کند؛ «too» می‌گوید مشکل است.
+  - term: too many / too much
+    example: There are too many eggs.
+    why:
+      en: 'Before a noun: too many or too much.'
+      fa: 'قبل از اسم: too many یا too much.'
+    point: too-many-much
+exercises:
+- id: soup-hot
+  kind: choose
+  sentence: The soup is ___ hot to eat.
+  options:
+  - too
+  - too much
+  - very
+  answer: too
+  why:
+    en: 'A problem: too + adjective + to.'
+    fa: 'مشکل: too + صفت + to.'
+- id: too-much-expensive
+  kind: fix
+  wrong: The shoes are too much expensive.
+  right:
+  - The shoes are too expensive.
+  why:
+    en: Too alone before an adjective.
+    fa: قبل از صفت فقط too.
+- id: room-small
+  kind: rewrite
+  instruction:
+    en: Say it in one sentence with too.
+    fa: در یک جمله با too بگو.
+  from: This room is very small. We can't sleep here.
+  answers:
+  - This room is too small to sleep in.
+  - This room is too small for us to sleep in.
+  - This room is too small.
+  why:
+    en: 'Too + adjective: the problem.'
+    fa: 'too + صفت: مشکل.'

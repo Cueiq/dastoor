@@ -1,0 +1,107 @@
+id: have-got
+title: { en: "have got (= have)" }
+topic: present
+cefrj: []
+# "I've got the job" is got as been given, not have: the words can't tell.
+needs_meaning: true
+match:
+  - form: all
+    tree:
+      word: { LOWER: got }
+      has:
+        - { LOWER: { IN: [have, has, "'ve", "'s", ve, s, haven't, hasn't] } }
+        # got X, or got X on / ready, which the parser makes a clause.
+        - { DEP: { IN: [dobj, ccomp] } }
+      lacks: [ { DEP: xcomp } ]
+tests:
+  words: [got]
+  match:
+    - "I've got a car."
+    - "Have you got a pen?"
+    - "She's got blue eyes."
+    - "We haven't got time."
+    - "Mr Whizzy hasn't got any clothes on!"
+  no_match:
+    - "I've got to go."
+    - "I got a car yesterday."
+    - "He got angry."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or Bembegoo's guides' where no item has one (guides).
+level: B1
+level_from: guides
+note:
+  gist:
+    en: 'Have got means have, in everyday British English, for owning, family, looks and illness: I''ve got a car. She''s got blue eyes.'
+    fa: 'have got یعنی «داشتن»، در انگلیسیِ روزمره (به‌خصوص بریتانیایی)، برای مالکیت، خانواده، ظاهر و بیماری: I''ve got a car و She''s got blue eyes.'
+  forms:
+  - kind: positive
+    text: She's got two brothers.
+    mark: '''s got'
+  - kind: negative
+    text: I haven't got any money.
+    mark: haven't got
+  - kind: question
+    text: Have you got a pen?
+    mark: Have you got
+  mistakes:
+  - wrong: He have got a dog.
+    right: He has got a dog.
+    why:
+      en: With he, she and it, use has got.
+      fa: با he، she و it بگو «has got».
+  - wrong: Do you have got a pen?
+    right: Have you got a pen?
+    why:
+      en: Have got makes questions with have, not do.
+      fa: سؤالِ «have got» با «have» ساخته می‌شود، نه «do».
+  - wrong: I had got a car last year.
+    right: I had a car last year.
+    why:
+      en: For the past, use had, not had got.
+      fa: برای گذشته «had» بگو، نه «had got».
+  contrast:
+  - term: have
+    example: She has a new car.
+    why:
+      en: Have and have got mean the same here; have got is more casual.
+      fa: اینجا «have» و «have got» یکی‌اند؛ «have got» خودمانی‌تر است.
+  - term: have got to + verb
+    example: I've got to go now.
+    why:
+      en: 'With to and a verb, it means must: have to.'
+      fa: 'با to و فعل یعنی «باید»: همان have to.'
+    point: have-to
+exercises:
+- id: two-brothers
+  kind: choose
+  sentence: She ___ got two brothers.
+  options:
+  - has
+  - have
+  - is
+  answer: has
+  why:
+    en: She takes has got.
+    fa: she با has got می‌آید.
+- id: do-you-have-got
+  kind: fix
+  wrong: Do you have got a pen?
+  right:
+  - Have you got a pen?
+  why:
+    en: The question starts with have.
+    fa: سؤال با have شروع می‌شود.
+- id: blue-eyes
+  kind: rewrite
+  instruction:
+    en: Say it with have got.
+    fa: با have got بگو.
+  from: My sister has blue eyes.
+  answers:
+  - My sister has got blue eyes.
+  - My sister's got blue eyes.
+  why:
+    en: Has → has got, the same meaning.
+    fa: has ← has got، با همان معنی.

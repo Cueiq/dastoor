@@ -1,0 +1,103 @@
+id: must-obligation
+title: { en: "must + verb (have to)" }
+topic: obligation
+cefrj: ["135", "135-1", "135-2", "135-3"]
+# "You must love her" is a guess: the words can't tell.
+needs_meaning: true
+match:
+  - form: all
+    tree:
+      word: { TAG: VB, LEMMA: { NOT_IN: [be] } }
+      has: [ { DEP: aux, LOWER: { IN: [must, mustn't] } } ]
+      lacks: [ { DEP: aux, LOWER: { IN: [have, "'ve", ve] } } ]
+tests:
+  words: [must, mustn't]
+  match:
+    - "You must go now."
+    - "We must not tell anyone."
+    - "You mustn't touch that."
+    - "Must I wear a tie?"
+  no_match:
+    - "You must be tired."
+    - "She must have left."
+    - "It must be done today."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), or Bembegoo's
+# guides' where no item has it (guides).
+level: A2
+level_from: egp
+note:
+  gist:
+    en: 'Must + a plain verb: something is necessary, or very important to do, often because the speaker feels so.'
+    fa: 'must و فعل ساده: انجام کاری لازم یا خیلی مهم است، اغلب چون خودِ گوینده این‌طور می‌خواهد؛ مثل «باید» در فارسی.'
+  forms:
+  - kind: positive
+    text: I must go now.
+    mark: must go
+  - kind: negative
+    text: You mustn't run here.
+    mark: mustn't run
+  - kind: question
+    text: Must I wear a tie?
+    mark: Must I wear
+  mistakes:
+  - wrong: We must to go now.
+    right: We must go now.
+    why:
+      en: After must comes the plain verb, with no to.
+      fa: بعد از «must» خودِ فعل می‌آید، بدون «to».
+  - wrong: He musts go.
+    right: He must go.
+    why:
+      en: Must never takes -s.
+      fa: «must» هیچ‌وقت s نمی‌گیرد، حتی با he و she.
+  - wrong: Yesterday I must go to work.
+    right: Yesterday I had to go to work.
+    why:
+      en: Must has no past; use had to.
+      fa: «must» گذشته ندارد؛ برای گذشته «had to» می‌گوییم.
+  contrast:
+  - term: don't have to + verb
+    example: You mustn't park here. / You don't have to pay.
+    why:
+      en: Mustn't means it isn't allowed; don't have to means it isn't necessary.
+      fa: «mustn't» یعنی اجازه نداری؛ «don't have to» یعنی لازم نیست. در فارسی اولی «نباید» است و دومی «لازم نیست».
+    point: have-to
+  - term: must (almost sure)
+    example: He has ten cars. He must be rich.
+    why:
+      en: Must can also mean you are almost sure, not that something is necessary.
+      fa: «must» می‌تواند یعنی «حتماً این‌طور است»، یعنی حدسی قوی، نه اجبار.
+    point: must-guess
+exercises:
+- id: red-light
+  kind: choose
+  sentence: The light is red. You ___ stop.
+  options:
+  - must
+  - mustn't
+  - don't must
+  answer: must
+  why:
+    en: 'Stopping is necessary: must. Its negative is mustn''t, never don''t must.'
+    fa: 'ایستادن لازم است: «must». منفی‌اش «mustn''t» است، نه «don''t must».'
+- id: must-to-go
+  kind: fix
+  wrong: We must to go now.
+  right:
+  - We must go now.
+  why:
+    en: After must comes the plain verb.
+    fa: بعد از must فعل ساده می‌آید.
+- id: wash-hands
+  kind: rewrite
+  instruction:
+    en: Say it with must.
+    fa: با must بگو.
+  from: You need to wash your hands.
+  answers:
+  - You must wash your hands.
+  why:
+    en: Must + verb says it is necessary.
+    fa: must + فعل همان «باید» است.

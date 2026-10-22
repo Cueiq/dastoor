@@ -1,0 +1,120 @@
+id: present-continuous
+title: { en: "am / is / are + -ing" }
+topic: present
+cefrj: ["61", "61-1", "61-2", "61-3"]
+match:
+  - form: all
+    tree:
+      word: { TAG: VBG }
+      has: [ { DEP: { IN: [aux, auxpass] }, LOWER: { IN: [am, is, are, "'m", "'re", "'s", m, re, s, "isn't", "aren't"] } } ]
+      lacks:
+        # have been + -ing, and will be + -ing, are other points.
+        - { DEP: aux, LOWER: { IN: [been, be] } }
+        # going to + verb is be-going-to.
+        - word: { DEP: xcomp }
+          has: [ { DEP: aux, LOWER: { IN: [to, na] } } ]
+  # It's raining: the small model may hang the -ing word on 's.
+  - form: attr
+    tree:
+      word: { TAG: VBG, DEP: attr }
+      head: { word: { LOWER: { IN: [am, is, are, "'m", "'re", "'s"] } } }
+exclude:
+  # gonna, which the parser may leave without its verb.
+  - tokens: [ { LOWER: gon }, { LOWER: na } ]
+tests:
+  words: [ing]
+  match:
+    - "I'm sleeping."
+    - "What are you doing?"
+    - "She isn't listening."
+    - "I'm leaving tomorrow."
+    - "It's raining."
+  no_match:
+    - "I'm going to tell him."
+    - "I've been waiting."
+    - "I was sleeping."
+    - "We're gonna die."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or Bembegoo's guides' where no item has one (guides).
+level: A1
+level_from: egp
+note:
+  gist:
+    en: Am, is or are + an -ing verb, for what is happening now (What are you doing?), or for a plan already arranged (I'm meeting Ali tomorrow).
+    fa: am، is یا are و بعد فعل ingدار، برای کاری که همین حالا در جریان است (What are you doing?) یا برنامه‌ای که قرارش گذاشته شده (I'm meeting Ali tomorrow).
+  forms:
+  - kind: positive
+    text: I'm reading a book.
+    mark: '''m reading'
+  - kind: negative
+    text: She isn't sleeping.
+    mark: isn't sleeping
+  - kind: question
+    text: What are you doing?
+    mark: are you doing
+  - kind: positive
+    text: I'm meeting Ali tomorrow.
+    mark: '''m meeting'
+  mistakes:
+  - wrong: What you doing?
+    right: What are you doing?
+    why:
+      en: Don't drop am, is or are.
+      fa: «am»، «is» یا «are» را جا نینداز.
+  - wrong: What do you do now?
+    right: What are you doing now?
+    why:
+      en: For right now, use am, is or are + -ing; in Persian the same verb does both.
+      fa: برای همین لحظه am، is یا are و ing بیاور؛ در فارسی «چی کار می‌کنی؟» برای هر دو است، ولی انگلیسی فرق می‌گذارد.
+  - wrong: I come to your house tomorrow.
+    right: I'm coming to your house tomorrow.
+    why:
+      en: For a plan already made, use am, is or are + -ing.
+      fa: برای برنامه‌ای که قرارش گذاشته شده، am، is یا are و ing بیاور.
+  contrast:
+  - term: do / does + verb (present simple)
+    example: I read every night.
+    why:
+      en: The present simple is for habits; the -ing form is for now.
+      fa: حال ساده برای عادت است؛ شکل ingدار برای حالا.
+    point: present-simple-questions
+  - term: be going to + verb
+    example: I'm going to visit my grandma.
+    why:
+      en: Both tell plans; -ing is an arrangement with a time, going to an intention.
+      fa: هر دو برنامه را می‌گویند؛ ingدار قراری با زمانِ مشخص است و going to تصمیم و قصد.
+    point: be-going-to
+exercises:
+- id: doing-now
+  kind: choose
+  sentence: What ___ you doing now?
+  options:
+  - are
+  - do
+  - is
+  answer: are
+  why:
+    en: 'Now: are + you + -ing.'
+    fa: 'حالا: are + you + ing.'
+- id: what-you-doing
+  kind: fix
+  wrong: What you doing?
+  right:
+  - What are you doing?
+  why:
+    en: Are is needed before you.
+    fa: پیش از you به are نیاز است.
+- id: london-next-week
+  kind: rewrite
+  instruction:
+    en: Say the plan with -ing.
+    fa: برنامه را با ing بگو.
+  from: 'Our plan: we go to London next week.'
+  answers:
+  - We're going to London next week.
+  - We are going to London next week.
+  why:
+    en: 'An arranged plan: are + -ing.'
+    fa: 'برنامهٔ قطعی: are + ing.'

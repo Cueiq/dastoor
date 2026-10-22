@@ -1,0 +1,98 @@
+id: modal-passive
+title: { en: "modal + be + past participle" }
+topic: passive
+cefrj: ["82", "82-1", "82-2", "82-3"]
+match:
+  - form: all
+    tree:
+      word: { TAG: VBN }
+      has:
+        - { DEP: aux, TAG: MD }
+        - { DEP: auxpass, LEMMA: be }
+tests:
+  words: [be]
+  match:
+    - "It can be fixed."
+    - "This must be done today."
+    - "You'll be paid on Friday."
+    - "It shouldn't be allowed."
+  no_match:
+    - "It must be nice."
+    - "You can be happy here."
+    - "It was fixed yesterday."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), or Bembegoo's
+# guides' where no item has it (guides).
+level: B2
+level_from: egp
+note:
+  gist:
+    en: 'A modal (can, must, should, will…) + be + a past participle: what can, must or will be done to something, without saying who does it.'
+    fa: 'فعل کمکی‌ای مثل can، must، should یا will و بعد be و اسم مفعول: کاری که می‌شود، باید یا قرار است روی چیزی انجام شود، بی‌آنکه بگوییم چه کسی انجامش می‌دهد.'
+  forms:
+  - kind: positive
+    text: The tickets can be bought online.
+    mark: can be bought
+  - kind: positive
+    text: The form must be signed by a parent.
+    mark: must be signed
+  - kind: negative
+    text: This door can't be opened from outside.
+    mark: can't be opened
+  - kind: question
+    text: Can this phone be repaired?
+    mark: Can this phone be repaired
+  mistakes:
+  - wrong: This problem can fix easily.
+    right: This problem can be fixed easily.
+    why:
+      en: When the thing receives the action, you need be + past participle.
+      fa: وقتی کار روی خودِ آن چیز انجام می‌شود، «be» و اسم مفعول لازم است؛ مثل «حل می‌شود» در فارسی.
+  - wrong: It can be fix.
+    right: It can be fixed.
+    why:
+      en: After be comes the past participle, not the plain verb.
+      fa: بعد از «be» اسم مفعول می‌آید، نه شکل سادهٔ فعل.
+  - wrong: It must to be done today.
+    right: It must be done today.
+    why:
+      en: No to after can, must or should.
+      fa: بعد از «can»، «must» و «should» کلمهٔ «to» نمی‌آید.
+  contrast:
+  - term: modal + verb (active)
+    example: We can fix the problem.
+    why:
+      en: The active says who does it; the passive puts the thing first and often leaves out who.
+      fa: جملهٔ معلوم می‌گوید چه کسی کار را می‌کند؛ مجهول خودِ آن چیز را اول می‌آورد و اغلب انجام‌دهنده را نمی‌گوید.
+exercises:
+- id: shoes-washed
+  kind: choose
+  sentence: These shoes can ___ in the washing machine.
+  options:
+  - be washed
+  - wash
+  - washed
+  answer: be washed
+  why:
+    en: 'Shoes don''t wash; they are washed: can + be + past participle.'
+    fa: 'کفش‌ها خودشان نمی‌شویند، شسته می‌شوند: can + be + اسم مفعول.'
+- id: form-signed
+  kind: fix
+  wrong: The form must be sign by a parent.
+  right:
+  - The form must be signed by a parent.
+  why:
+    en: 'The passive needs the past participle: signed.'
+    fa: 'مجهول اسم مفعول می‌خواهد: signed.'
+- id: shops-found
+  kind: rewrite
+  instruction:
+    en: Start with These shops.
+    fa: جمله را با These shops شروع کن.
+  from: You can find these shops everywhere.
+  answers:
+  - These shops can be found everywhere.
+  why:
+    en: The new subject takes can + be + found.
+    fa: نهاد تازه با can + be + found می‌آید.

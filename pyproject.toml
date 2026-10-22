@@ -1,0 +1,18 @@
+[project]
+name = "gramdex"
+version = "0.1.0"
+description = "Finds the grammar points an English sentence uses, by tested rules, and gives each one's note"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+dependencies = [
+    "pyyaml>=6",
+    "spacy>=3.8,<3.9",
+]
+
+[project.scripts]
+gramdex = "gramdex.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

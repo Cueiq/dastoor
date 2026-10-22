@@ -1,0 +1,109 @@
+id: superlatives
+title: { en: "the + adjective + -est / the most + adjective" }
+topic: comparing
+cefrj: ["40", "41"]
+match:
+  - form: est
+    tree:
+      word: { TAG: { IN: [JJS, RBS] }, LOWER: { NOT_IN: [most, least] } }
+  - form: most
+    tree:
+      # most + an adjective; most certainly is an intensifier.
+      word: { TAG: JJ }
+      has: [ { DEP: advmod, LOWER: { IN: [most, least] } } ]
+exclude:
+  # best man: a wedding's, not a comparison.
+  - tokens: [ { LOWER: best }, { LOWER: man } ]
+  # for the best: a fixed phrase.
+  - tokens: [ { LOWER: for }, { LOWER: the }, { LOWER: best } ]
+  # at least, at best: fixed phrases.
+  - tokens: [ { LOWER: at }, { LOWER: { IN: [least, best, worst, last] } } ]
+tests:
+  words: [est, most, best, worst]
+  match:
+    - "She's the best."
+    - "It's the most beautiful place."
+    - "He's the tallest boy in the class."
+    - "That was the worst day ever."
+  no_match:
+    - "Most people agree."
+    - "At least we tried."
+    - "I like it most."
+    - "Will you be my best man?"
+    - "It most certainly is not."
+    - "It's for the best."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or Bembegoo's guides' where no item has one (guides).
+level: A2
+level_from: egp
+note:
+  gist:
+    en: 'The + adjective + -est (the tallest), or the most + a longer adjective (the most beautiful): more than all the others.'
+    fa: 'the و صفت با est (the tallest)، یا the most و صفت بلندتر (the most beautiful): بیشتر از همهٔ بقیه؛ مثل «ـ‌ترین» در فارسی.'
+  forms:
+  - kind: positive
+    text: He is the tallest boy in the class.
+    mark: the tallest
+  - kind: positive
+    text: It's the most beautiful place in the world.
+    mark: the most beautiful
+  - kind: positive
+    text: That was the worst day ever.
+    mark: the worst
+  mistakes:
+  - wrong: This is the most cheap shop.
+    right: This is the cheapest shop.
+    why:
+      en: Short words take -est, not most.
+      fa: کلمه‌های کوتاه est می‌گیرند، نه «most».
+  - wrong: He is tallest boy in the class.
+    right: He is the tallest boy in the class.
+    why:
+      en: Don't forget the before the -est word.
+      fa: «the» را قبل از کلمهٔ estدار جا نینداز.
+  - wrong: She is the best student of the class.
+    right: She is the best student in the class.
+    why:
+      en: With a place or a group like a class, use in, not of.
+      fa: با مکان یا گروهی مثل کلاس «in» بیاور، نه «of»؛ «بهترین شاگردِ کلاس» در انگلیسی in می‌خواهد.
+  contrast:
+  - term: adjective + -er (than)
+    example: Ali is taller than Reza.
+    why:
+      en: -er compares two; the -est compares with all.
+      fa: er دو چیز را مقایسه می‌کند؛ the و est با همه.
+    point: comparatives
+exercises:
+- id: tallest-class
+  kind: choose
+  sentence: He is the ___ boy in the class.
+  options:
+  - tallest
+  - taller
+  - most tall
+  answer: tallest
+  why:
+    en: 'All the class: the + -est.'
+    fa: 'کل کلاس: the + est.'
+- id: most-cheap
+  kind: fix
+  wrong: This is the most cheap shop.
+  right:
+  - This is the cheapest shop.
+  why:
+    en: 'Cheap is short: cheapest.'
+    fa: 'cheap کوتاه است: cheapest.'
+- id: most-beautiful
+  kind: rewrite
+  instruction:
+    en: Say it with the most.
+    fa: با the most بگو.
+  from: No place in the world is as beautiful as this.
+  answers:
+  - This is the most beautiful place in the world.
+  - It's the most beautiful place in the world.
+  why:
+    en: 'Beautiful is long: the most beautiful.'
+    fa: 'beautiful بلند است: the most beautiful.'

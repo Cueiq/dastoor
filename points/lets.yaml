@@ -1,0 +1,100 @@
+id: lets
+title: { en: "Let's + verb" }
+topic: frames
+cefrj: ["120", "120-1"]
+match:
+  - form: all
+    tokens:
+      - { LOWER: let }
+      - { LOWER: { IN: ["'s", s] } }
+      - { LOWER: { IN: ["not"] }, OP: "?" }
+      # Let's just check…
+      - { POS: ADV, OP: "*" }
+      - { TAG: VB }
+tests:
+  words: ["let's"]
+  match:
+    - "Let's go."
+    - "Let's have a party!"
+    - "Let's not fight."
+    - "Let's just check the other box."
+  no_match:
+    - "Let me go."
+    - "Let it be."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or Bembegoo's guides' where no item has one (guides).
+level: A2
+level_from: egp
+note:
+  gist:
+    en: 'Let''s + a plain verb asks the people with you to do something together: Let''s go!'
+    fa: 'let''s و فعل ساده از آدم‌هایی که با تو هستند می‌خواهد کاری را با هم بکنید: Let''s go! یعنی «بریم!»'
+  forms:
+  - kind: positive
+    text: Let's go home.
+    mark: Let's go
+  - kind: negative
+    text: Let's not watch TV tonight.
+    mark: Let's not watch
+  mistakes:
+  - wrong: Let's to watch a film.
+    right: Let's watch a film.
+    why:
+      en: After let's comes the plain verb, with no to.
+      fa: بعد از «let's» فعل ساده می‌آید، بدون «to».
+  - wrong: Let's going to the park.
+    right: Let's go to the park.
+    why:
+      en: The plain verb, not -ing.
+      fa: فعل ساده، نه ingدار.
+  - wrong: Let's don't fight.
+    right: Let's not fight.
+    why:
+      en: The negative is let's not, not let's don't.
+      fa: منفی‌اش «let's not» است، نه «let's don't».
+  contrast:
+  - term: Let me + verb
+    example: Let me help you.
+    why:
+      en: Let me is you alone; let's is all of us.
+      fa: «let me» یعنی فقط خودم؛ «let's» یعنی همه‌مان.
+  - term: Don't + verb
+    example: Don't go home.
+    why:
+      en: Don't tells someone else; let's not includes you.
+      fa: «don't» به دیگری می‌گوید؛ «let's not» خودت را هم شامل می‌شود.
+    point: dont-imperative
+exercises:
+- id: hot-beach
+  kind: choose
+  sentence: It's hot. Let's ___ to the beach.
+  options:
+  - go
+  - to go
+  - going
+  answer: go
+  why:
+    en: Let's + the plain verb.
+    fa: let's + فعل ساده.
+- id: lets-to-watch
+  kind: fix
+  wrong: Let's to watch a film.
+  right:
+  - Let's watch a film.
+  why:
+    en: No to after let's.
+    fa: بعد از let's حرف to نمی‌آید.
+- id: eat-now
+  kind: rewrite
+  instruction:
+    en: Suggest it with let's.
+    fa: با let's پیشنهاد بده.
+  from: We can eat now. Do you want to?
+  answers:
+  - Let's eat now.
+  - Let's eat.
+  why:
+    en: 'A suggestion for us: let''s + verb.'
+    fa: 'پیشنهاد برای همه‌مان: let''s + فعل.'

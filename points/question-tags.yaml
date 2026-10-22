@@ -1,0 +1,113 @@
+id: question-tags
+title: { en: "…, isn't it? / …, don't we?" }
+topic: questions
+cefrj: ["193", "193-1"]
+# Known false match: a short question after a comma ("Okay, is it?") looks
+# just like a tag.
+match:
+  - form: tag
+    tokens:
+      - { TEXT: "," }
+      - { LOWER: { IN: [is, are, was, were, am, do, does, did, have, has, had, can, could, will, wo, would, should, ai, "isn't", "aren't", "don't", "doesn't", "didn't", "won't", "can't"] } }
+      - { LOWER: "n't", OP: "?" }
+      - { POS: PRON }
+      - { TEXT: "?" }
+  # …, don't we, Bridget?
+  - form: tag-name
+    tokens:
+      - { TEXT: "," }
+      - { LOWER: { IN: [is, are, was, were, am, do, does, did, have, has, had, can, could, will, wo, would, should, ai, "isn't", "aren't", "don't", "doesn't", "didn't", "won't", "can't"] } }
+      - { LOWER: "n't", OP: "?" }
+      - { POS: PRON }
+      - { TEXT: "," }
+      - { POS: PROPN, OP: "+" }
+      - { TEXT: "?" }
+exclude:
+  # A reply, not a tag: Oh, is he? Sorry, is it…?
+  - tokens:
+      - { LOWER: { IN: [oh, sorry, okay, ok, well, yeah, "yes", "no", so, really, hey, um, uh] } }
+      - { TEXT: "," }
+tests:
+  words: ["isn't", "aren't", "don't", "doesn't", "didn't", "won't", "can't", "wasn't"]
+  match:
+    - "It's late, isn't it?"
+    - "You won't tell, will you?"
+    - "We're friends, aren't we?"
+    - "She called, didn't she?"
+    - "We go to the library too, don't we, Bridget?"
+  no_match:
+    - "Isn't it late?"
+    - "Right?"
+    - "Oh, is he?"
+    - "Sorry, is it Voldemort?"
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or Bembegoo's guides' where no item has one (guides).
+level: A2
+level_from: egp
+note:
+  gist:
+    en: 'A short question at the end of a sentence, to check something or ask someone to agree: It''s cold, isn''t it? You like tea, don''t you?'
+    fa: 'سؤال کوتاهی در آخر جمله، برای اطمینان یا اینکه طرف موافقت کند: It''s cold, isn''t it? مثل «سرده، نه؟» در فارسی.'
+  forms:
+  - kind: positive
+    text: You like tea, don't you?
+    mark: don't you
+  - kind: negative
+    text: It isn't cold, is it?
+    mark: is it
+  mistakes:
+  - wrong: You like tea, isn't it?
+    right: You like tea, don't you?
+    why:
+      en: The tag copies the sentence's verb and person; isn't it is not a tag for everything.
+      fa: سؤال کوتاه فعل و شخصِ جمله را تکرار می‌کند؛ «isn't it» برای همه‌چیز نیست، هرچند «نه؟» فارسی برای همه است.
+  - wrong: She lives here, don't she?
+    right: She lives here, doesn't she?
+    why:
+      en: With he, she and it, the tag uses doesn't.
+      fa: با he، she و it سؤال کوتاه «doesn't» می‌گیرد.
+  - wrong: It's late, is it?
+    right: It's late, isn't it?
+    why:
+      en: After a positive sentence, the tag is negative.
+      fa: بعد از جملهٔ مثبت، سؤال کوتاه منفی است.
+  contrast:
+  - term: so + auxiliary + subject
+    example: I like tea. So do I.
+    why:
+      en: So do I agrees; a tag asks.
+      fa: «so do I» موافقت است؛ سؤال کوتاه می‌پرسد.
+    point: so-do-i
+exercises:
+- id: like-tea
+  kind: choose
+  sentence: You like tea, ___?
+  options:
+  - don't you
+  - isn't it
+  - do you
+  answer: don't you
+  why:
+    en: Like takes do; positive sentence, negative tag.
+    fa: like با do می‌آید؛ جملهٔ مثبت، سؤال منفی.
+- id: lives-dont-she
+  kind: fix
+  wrong: She lives here, don't she?
+  right:
+  - She lives here, doesn't she?
+  why:
+    en: She takes doesn't.
+    fa: she با doesn't می‌آید.
+- id: isnt-cold
+  kind: choose
+  sentence: It isn't cold, ___?
+  options:
+  - is it
+  - isn't it
+  - doesn't it
+  answer: is it
+  why:
+    en: Negative sentence, positive tag.
+    fa: جملهٔ منفی، سؤال مثبت.

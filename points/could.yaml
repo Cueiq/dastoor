@@ -1,0 +1,109 @@
+id: could
+title: { en: "could + verb" }
+topic: ability
+cefrj: ["124", "124-1", "124-2", "124-3"]
+# The guides' two names for it.
+aliases: [could-past-ability]
+# One note for could and its uses: past ability, a polite request, a
+# possibility, a suggestion (owner, 2026-10-22).
+match:
+  - form: all
+    tree:
+      word: { TAG: VB }
+      has: [ { DEP: aux, LOWER: { IN: [could, "couldn't"] } } ]
+      lacks:
+        - { DEP: aux, LOWER: { IN: [have, "'ve", ve] } }
+        - { DEP: auxpass }
+tests:
+  words: [could, "couldn't"]
+  match:
+    - "When I was five, I could read."
+    - "I couldn't sleep last night."
+    - "Could you help me?"
+    - "It could rain later."
+  no_match:
+    - "You could have told me."
+    - "It could be fixed."
+    - "I can swim."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or Bembegoo's guides' where no item has one (guides).
+level: A2
+level_from: egp
+note:
+  gist:
+    en: 'Could + a plain verb: what someone was able to do in the past (I could read at four), a polite request (Could you help me?), or something possible (It could rain).'
+    fa: 'could و فعل ساده: کاری که کسی در گذشته می‌توانست (I could read at four)، درخواستی مؤدبانه (Could you help me?)، یا چیزی ممکن (It could rain).'
+  forms:
+  - kind: positive
+    text: I could swim when I was five.
+    mark: could swim
+  - kind: negative
+    text: I couldn't sleep last night.
+    mark: couldn't sleep
+  - kind: question
+    text: Could you pass the salt, please?
+    mark: Could you pass
+  mistakes:
+  - wrong: I could to run fast when I was young.
+    right: I could run fast when I was young.
+    why:
+      en: After could comes the plain verb, with no to.
+      fa: بعد از «could» فعل ساده می‌آید، بدون «to».
+  - wrong: When I was five, I can swim.
+    right: When I was five, I could swim.
+    why:
+      en: For the past, use could, not can.
+      fa: برای گذشته «could» بیاور، نه «can».
+  - wrong: The fire was big, but everyone could escape.
+    right: The fire was big, but everyone was able to escape.
+    why:
+      en: For one success at one moment, use was able to or managed to, not could.
+      fa: برای یک موفقیت در یک لحظه «was able to» یا «managed to» بگو، نه «could».
+  contrast:
+  - term: can + verb
+    example: I can swim now.
+    why:
+      en: Can is now; could is the past, or politer.
+      fa: «can» برای حالاست؛ «could» برای گذشته، یا مؤدبانه‌تر.
+    point: can
+  - term: might + verb
+    example: It might rain later.
+    why:
+      en: Could and might both say possible; might is often less sure.
+      fa: «could» و «might» هر دو یعنی ممکن است؛ «might» اغلب کم‌اطمینان‌تر است.
+    point: might
+exercises:
+- id: five-swim
+  kind: choose
+  sentence: When I was five, I ___ swim.
+  options:
+  - could
+  - can
+  - could to
+  answer: could
+  why:
+    en: 'Past ability: could.'
+    fa: 'توانایی در گذشته: could.'
+- id: could-to-run
+  kind: fix
+  wrong: I could to run fast when I was young.
+  right:
+  - I could run fast when I was young.
+  why:
+    en: No to after could.
+    fa: بعد از could حرف to نمی‌آید.
+- id: polite-window
+  kind: rewrite
+  instruction:
+    en: Ask politely with could.
+    fa: با could مؤدبانه بخواه.
+  from: Open the window.
+  answers:
+  - Could you open the window?
+  - Could you open the window, please?
+  - Could you please open the window?
+  why:
+    en: 'A polite request: Could you + verb?'
+    fa: 'درخواستِ مؤدبانه: Could you + فعل؟'

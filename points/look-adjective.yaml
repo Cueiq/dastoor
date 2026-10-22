@@ -1,0 +1,101 @@
+id: look-adjective
+title: { en: "look / sound / feel + adjective" }
+topic: verb_patterns
+cefrj: ["195", "195-1", "195-2", "195-3"]
+match:
+  - form: all
+    tree:
+      word: { LEMMA: { IN: [look, sound, feel, seem, smell, taste] } }
+      has: [ { DEP: { IN: [acomp, oprd] }, POS: ADJ } ]
+tests:
+  words: [look, looks, sound, sounds, feel, feels, seem, seems]
+  match:
+    - "You look great."
+    - "That sounds amazing."
+    - "I feel sick."
+    - "It smells good in here."
+    - "She seems nice."
+  no_match:
+    - "It sounds like a plan."
+    - "Look at that!"
+    - "I feel like a pizza."
+    - "She looked carefully."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or Bembegoo's guides' where no item has one (guides).
+level: A2
+level_from: egp
+note:
+  gist:
+    en: 'Look, sound, feel, smell, taste or seem + an adjective, for how something seems to you: You look tired.'
+    fa: 'look، sound، feel، smell، taste یا seem و بعد صفت، برای اینکه چیزی به نظرت چطور می‌آید: You look tired یعنی «خسته به نظر می‌رسی».'
+  forms:
+  - kind: positive
+    text: You look happy.
+    mark: look happy
+  - kind: negative
+    text: The soup doesn't smell good.
+    mark: doesn't smell good
+  - kind: question
+    text: Does it taste good?
+    mark: Does it taste good
+  mistakes:
+  - wrong: She looks beautifully.
+    right: She looks beautiful.
+    why:
+      en: After look, sound and smell comes an adjective, not a word with -ly.
+      fa: بعد از look، sound و smell صفت می‌آید، نه کلمهٔ lyدار.
+  - wrong: You look like tired.
+    right: You look tired.
+    why:
+      en: Before an adjective, no like.
+      fa: قبل از صفت، like نمی‌آید.
+  - wrong: It sounds a good idea.
+    right: It sounds like a good idea.
+    why:
+      en: 'Before a noun, use like: sound like, look like.'
+      fa: 'قبل از اسم، like لازم است: sound like و look like.'
+  contrast:
+  - term: look like + noun
+    example: He looks like his father.
+    why:
+      en: Look + adjective says how someone seems; look like + noun says who or what they are like.
+      fa: look و صفت می‌گوید کسی چطور به نظر می‌رسد؛ look like و اسم می‌گوید شبیه چه کسی یا چه چیزی است.
+  - term: good / well
+    example: She sings well.
+    why:
+      en: After an action verb comes well; after look or feel, good.
+      fa: بعد از فعلِ کاری مثل sing، well می‌آید؛ بعد از look یا feel، good.
+    point: good-well
+exercises:
+- id: happy-today
+  kind: choose
+  sentence: You ___ happy today.
+  options:
+  - look
+  - look like
+  - are looking like
+  answer: look
+  why:
+    en: 'Look + an adjective: look happy.'
+    fa: 'look + صفت: look happy.'
+- id: looks-beautifully
+  kind: fix
+  wrong: She looks beautifully.
+  right:
+  - She looks beautiful.
+  why:
+    en: After look comes an adjective, not -ly.
+    fa: بعد از look صفت می‌آید، نه lyدار.
+- id: seem-tired
+  kind: rewrite
+  instruction:
+    en: Say it with look.
+    fa: با look بگو.
+  from: I think you are tired.
+  answers:
+  - You look tired.
+  why:
+    en: 'How you seem: look + adjective.'
+    fa: 'چطور به نظر می‌رسی: look + صفت.'

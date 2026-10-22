@@ -1,0 +1,112 @@
+id: would-past-habit
+title: { en: "would + verb (what you used to do)" }
+topic: past_habits
+cefrj: []
+# Most would + verb is a condition or a wish; the words rarely tell.
+needs_meaning: true
+# Right one time in twenty in the spike (docs/spike-report.md): not tagged.
+tag: false
+match:
+  - form: all
+    tree:
+      word: { TAG: VB, LEMMA: { NOT_IN: [like, love, rather, mind, prefer, say, be, want, imagine, guess, think] } }
+      has: [ { DEP: aux, LOWER: { IN: [would, "'d"] } } ]
+      lacks:
+        - { DEP: aux, LOWER: { IN: [have, "'ve", ve] } }
+        - word: { DEP: advcl }
+          has: [ { DEP: mark, LOWER: if } ]
+exclude:
+  # would + you: a question or an offer.
+  - tokens:
+      - { LOWER: { IN: [would, "'d"] } }
+      - { POS: PRON }
+tests:
+  words: [would]
+  match:
+    - "We would play for hours."
+    - "Every summer my dad would take us to the lake."
+  no_match:
+    - "I would go if I could."
+    - "Would you like some tea?"
+    - "I'd love to."
+    - "I would have called."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), or Bembegoo's
+# guides' where no item has it (guides).
+level: B1
+level_from: guides
+note:
+  gist:
+    en: Would + a plain verb, for something someone did again and again in the past, once the past time is clear (When I was a child, …).
+    fa: would و فعل ساده، برای کاری که کسی در گذشته بارها انجام می‌داد، وقتی زمانِ گذشته از قبل روشن شده باشد (وقتی بچه بودم، …).
+  forms:
+  - kind: positive
+    text: Every summer we would go to the sea.
+    mark: would go
+  - kind: negative
+    text: As a child, he wouldn't eat vegetables.
+    mark: wouldn't eat
+  mistakes:
+  - wrong: As a child, I would live in Tehran.
+    right: As a child, I used to live in Tehran.
+    why:
+      en: Would is for repeated actions, not for states like live, have or know.
+      fa: «would» برای کارهای تکراری است، نه حالت‌هایی مثل «live»، «have» یا «know»؛ هر «می‌…» فارسی را نمی‌شود با «would» گفت.
+  - wrong: Every summer we would went to the beach.
+    right: Every summer we would go to the beach.
+    why:
+      en: After would comes the plain verb.
+      fa: بعد از «would» شکل سادهٔ فعل می‌آید.
+  - wrong: When I was a child, I would to play outside.
+    right: When I was a child, I would play outside.
+    why:
+      en: No to after would.
+      fa: بعد از «would» کلمهٔ «to» نمی‌آید.
+  contrast:
+  - term: used to + verb
+    example: I used to live in Tehran.
+    why:
+      en: Used to works for actions and states; would only for repeated actions.
+      fa: «used to» هم برای کار و هم برای حالت است؛ «would» فقط برای کار تکراری.
+    point: used-to
+  - term: would + verb (imagined)
+    example: A bigger house would be nice.
+    why:
+      en: That would is about something imagined, not about the past.
+      fa: آن «would» دربارهٔ چیزی خیالی است، نه گذشته.
+    point: would-imagined
+exercises:
+- id: grandma-bread
+  kind: choose
+  sentence: When I was little, my grandma ___ bake bread every Friday.
+  options:
+  - would
+  - will
+  - would to
+  answer: would
+  why:
+    en: 'A habit in the past: would, then the verb without to.'
+    fa: 'عادتی در گذشته: would و بعد فعل بدون to.'
+- id: red-bike
+  kind: choose
+  sentence: As a child I ___ a red bike.
+  options:
+  - used to have
+  - would have
+  - would to have
+  answer: used to have
+  why:
+    en: Have here is a state, so use used to.
+    fa: «have» اینجا حالت است، پس «used to» لازم است.
+- id: grandfather-stories
+  kind: rewrite
+  instruction:
+    en: Say it with would.
+    fa: با would بگو.
+  from: My grandfather used to tell us stories.
+  answers:
+  - My grandfather would tell us stories.
+  why:
+    en: For repeated actions, used to + verb can become would + verb.
+    fa: برای کارهای تکراری، used to + فعل را می‌شود با would + فعل گفت.

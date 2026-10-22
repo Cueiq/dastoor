@@ -1,0 +1,108 @@
+id: must-guess
+title: { en: "must be (a guess)" }
+topic: guessing
+cefrj: []
+# "You must be quiet" is an order: the words can't tell.
+needs_meaning: true
+match:
+  - form: be
+    tree:
+      word: { LEMMA: be, TAG: VB }
+      has: [ { DEP: aux, LOWER: must } ]
+  - form: be-ing
+    tree:
+      word: { TAG: VBG }
+      has:
+        - { DEP: aux, LOWER: must }
+        - { DEP: aux, LEMMA: be }
+tests:
+  words: [must]
+  match:
+    - "You must be tired."
+    - "That must be Howard."
+    - "You must be joking."
+    - "It must be nice."
+  no_match:
+    - "You must go now."
+    - "It must be done today."
+    - "She must have been tired."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), or Bembegoo's
+# guides' where no item has it (guides).
+level: A2
+level_from: guides
+note:
+  gist:
+    en: 'Must be: you are almost sure something is true, because of what you see or know.'
+    fa: 'must be: تقریباً مطمئنی چیزی درست است، به خاطر آنچه می‌بینی یا می‌دانی؛ مثل «حتماً … است» در فارسی.'
+  forms:
+  - kind: positive
+    text: He has ten cars. He must be rich.
+    mark: must be
+  - kind: positive
+    text: You must be joking!
+    mark: must be joking
+  - kind: negative
+    text: He can't be at home. His car isn't here.
+    mark: can't be
+  mistakes:
+  - wrong: He mustn't be at home. His car isn't here.
+    right: He can't be at home. His car isn't here.
+    why:
+      en: 'For a sure guess that something isn''t true, say can''t be: mustn''t means it isn''t allowed.'
+      fa: برای حدسِ مطمئن که چیزی درست نیست «can't be» بگو؛ «mustn't» یعنی اجازه نیست، نه حدس.
+  - wrong: He must is at home.
+    right: He must be at home.
+    why:
+      en: After must, use be, not is or are.
+      fa: بعد از «must» فعل «be» می‌آید، نه «is» یا «are».
+  - wrong: She must to be tired.
+    right: She must be tired.
+    why:
+      en: After must comes the plain verb, with no to.
+      fa: بعد از «must» خودِ فعل می‌آید، بدون «to».
+  contrast:
+  - term: must + verb (necessary)
+    example: I must go now.
+    why:
+      en: That must means it is necessary; this must means you are almost sure.
+      fa: آن «must» یعنی لازم است؛ این «must» یعنی تقریباً مطمئنی.
+    point: must-obligation
+  - term: might + verb
+    example: He might be at home.
+    why:
+      en: Must is almost sure; might is only maybe.
+      fa: «must» یعنی تقریباً مطمئنی؛ «might» یعنی شاید.
+    point: might
+exercises:
+- id: anna-at-six
+  kind: choose
+  sentence: 'The phone is ringing. It ___ be Anna: she always calls at six.'
+  options:
+  - must
+  - mustn't
+  - can't
+  answer: must
+  why:
+    en: 'She always calls at six, so we are almost sure: must be.'
+    fa: 'همیشه ساعت شش زنگ می‌زند، پس تقریباً مطمئنیم: «must be».'
+- id: mustnt-be-home
+  kind: fix
+  wrong: He mustn't be at home. His car isn't here.
+  right:
+  - He can't be at home. His car isn't here.
+  why:
+    en: 'A sure guess that something isn''t true: can''t be.'
+    fa: 'حدس مطمئن که چیزی درست نیست: can''t be.'
+- id: annas-brother
+  kind: rewrite
+  instruction:
+    en: Say you are sure, with must.
+    fa: با must بگو که مطمئنی.
+  from: I'm sure he is Anna's brother.
+  answers:
+  - He must be Anna's brother.
+  why:
+    en: Must be shows a strong guess.
+    fa: must be حدس قوی را نشان می‌دهد.

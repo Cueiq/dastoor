@@ -1,0 +1,108 @@
+id: can
+title: { en: "can / can't + verb" }
+topic: ability
+cefrj: ["123", "123-1", "123-2", "123-3"]
+# One note for can and its uses: ability, permission, a request, a
+# possibility (owner, 2026-10-22). The guides taught ability alone.
+aliases: [can-ability]
+match:
+  - form: all
+    tree:
+      word: { TAG: VB }
+      has: [ { DEP: aux, LOWER: { IN: [can, ca, cannot, "can't"] } } ]
+      lacks:
+        # can't have + past participle is a guess about the past.
+        - { DEP: aux, LOWER: { IN: [have, "'ve", ve] } }
+        - { DEP: auxpass }
+tests:
+  words: [can, "can't", cannot]
+  match:
+    - "I can swim."
+    - "She can't drive."
+    - "Can you speak English?"
+    - "I cannot believe it."
+  no_match:
+    - "He can't have seen us."
+    - "It can be fixed."
+    - "I could swim."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or Bembegoo's guides' where no item has one (guides).
+level: A1
+level_from: egp
+note:
+  gist:
+    en: 'Can or can''t + a plain verb: what someone is able to do (I can swim), what is allowed (You can go now), or a request (Can you help me?).'
+    fa: 'can یا can''t و فعل ساده: کاری که کسی بلد است یا از دستش برمی‌آید (I can swim)، کاری که اجازه داری (You can go now)، یا درخواست (Can you help me?).'
+  forms:
+  - kind: positive
+    text: I can swim.
+    mark: can swim
+  - kind: negative
+    text: She can't cook.
+    mark: can't cook
+  - kind: question
+    text: Can you help me?
+    mark: Can you help
+  mistakes:
+  - wrong: I can to speak English.
+    right: I can speak English.
+    why:
+      en: After can comes the plain verb, with no to.
+      fa: بعد از «can» فعل ساده می‌آید، بدون «to».
+  - wrong: He cans swim.
+    right: He can swim.
+    why:
+      en: Can never takes -s.
+      fa: «can» هیچ‌وقت s نمی‌گیرد.
+  - wrong: Do you can swim?
+    right: Can you swim?
+    why:
+      en: To ask, put can first; don't use do.
+      fa: برای سؤال «can» را اول بیاور؛ «do» لازم نیست.
+  contrast:
+  - term: could + verb
+    example: I could swim when I was five.
+    why:
+      en: Could is can in the past, and a politer way to ask.
+      fa: «could» گذشتهٔ can است و راهِ مؤدبانه‌ترِ درخواست.
+    point: could
+  - term: must + verb
+    example: You must wear a seatbelt.
+    why:
+      en: Can is allowed; must is necessary.
+      fa: «can» یعنی مجازی؛ «must» یعنی واجب است.
+    point: must-obligation
+exercises:
+- id: can-swim
+  kind: choose
+  sentence: ___ you swim?
+  options:
+  - Can
+  - Do you can
+  - Are
+  answer: Can
+  why:
+    en: 'A question: can first.'
+    fa: 'سؤال: اول can.'
+- id: can-to-cook
+  kind: fix
+  wrong: She can to cook very well.
+  right:
+  - She can cook very well.
+  why:
+    en: No to after can.
+    fa: بعد از can حرف to نمی‌آید.
+- id: not-able
+  kind: rewrite
+  instruction:
+    en: Say it with can't.
+    fa: با can't بگو.
+  from: I am not able to swim.
+  answers:
+  - I can't swim.
+  - I cannot swim.
+  why:
+    en: 'Not able: can''t + verb.'
+    fa: 'نمی‌توانم: can''t + فعل.'

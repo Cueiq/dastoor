@@ -1,0 +1,108 @@
+id: past-simple-questions
+title: { en: "Did + subject + verb?" }
+topic: questions
+cefrj: ["65-2", "65-3"]
+match:
+  - form: all
+    tokens:
+      - { LOWER: { IN: [did, "didn't"] } }
+      - { LOWER: "n't", OP: "?" }
+      - { TAG: { IN: [DT, "PRP$"] }, OP: "?" }
+      # What did your last slave die of?
+      - { POS: ADJ, OP: "*" }
+      - { POS: { IN: [PRON, PROPN, NOUN] } }
+      # So do you still want…?
+      - { POS: ADV, OP: "*" }
+      - { TAG: VB }
+tests:
+  words: [did, "didn't"]
+  match:
+    - "Did you see that?"
+    - "What did he say?"
+    - "Didn't you hear me?"
+    - "Did your dad call?"
+    - "What did your last slave die of?"
+  no_match:
+    - "I did it."
+    - "You didn't tell me."
+    - "Do you like it?"
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or Bembegoo's guides' where no item has one (guides).
+level: A2
+level_from: egp
+note:
+  gist:
+    en: 'Did + the person + a plain verb, for a question about the past: Did you see that? Where did you go?'
+    fa: 'did و بعد شخص و فعل ساده، برای سؤال دربارهٔ گذشته: Did you see that? و Where did you go?'
+  forms:
+  - kind: question
+    text: Did you see Ali?
+    mark: Did you see
+  - kind: question
+    text: Where did you go?
+    mark: did you go
+  - kind: question
+    text: Why didn't you come?
+    mark: didn't you come
+  mistakes:
+  - wrong: How did he guessed?
+    right: How did he guess?
+    why:
+      en: 'After did, the verb has no -ed: did already says it''s past.'
+      fa: 'بعد از «did» فعل ed نمی‌گیرد: خودِ did گذشته بودن را می‌گوید.'
+  - wrong: Where you went?
+    right: Where did you go?
+    why:
+      en: A question about the past needs did before the person.
+      fa: سؤال دربارهٔ گذشته پیش از شخص «did» می‌خواهد.
+  - wrong: Did she went home?
+    right: Did she go home?
+    why:
+      en: 'After did comes the plain verb: go, not went.'
+      fa: 'بعد از «did» فعل ساده می‌آید: go، نه went.'
+  contrast:
+  - term: do / does + subject + verb?
+    example: Where do you live?
+    why:
+      en: Do and does ask about now or always; did about the past.
+      fa: «do» و «does» دربارهٔ حالا یا همیشه می‌پرسند؛ «did» دربارهٔ گذشته.
+    point: present-simple-questions
+  - term: was / were + subject?
+    example: Were you at home?
+    why:
+      en: 'With be, the question needs no did: Were you…?'
+      fa: 'با فعل be، سؤال «did» نمی‌خواهد: Were you…?'
+    point: was-were
+exercises:
+- id: buy-yesterday
+  kind: choose
+  sentence: Why ___ he buy the dress yesterday?
+  options:
+  - did
+  - does
+  - was
+  answer: did
+  why:
+    en: 'Yesterday: a question with did.'
+    fa: 'yesterday: سؤال با did.'
+- id: did-guessed
+  kind: fix
+  wrong: How did he guessed?
+  right:
+  - How did he guess?
+  why:
+    en: After did, the plain verb.
+    fa: بعد از did فعل ساده.
+- id: bought-dress
+  kind: rewrite
+  instruction:
+    en: Ask what he bought.
+    fa: بپرس چه خرید.
+  from: Hector bought a dress.
+  answers:
+  - What did Hector buy?
+  why:
+    en: What + did + Hector + buy (not bought).
+    fa: What + did + Hector + buy (نه bought).

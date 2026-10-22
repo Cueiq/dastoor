@@ -1,0 +1,116 @@
+id: have-to
+title: { en: "have to + verb" }
+topic: obligation
+cefrj: ["127", "127-1", "127-2", "127-3", "128", "128-1", "128-2", "128-3"]
+match:
+  - form: have-to
+    tree:
+      word: { LEMMA: have }
+      has:
+        - word: { DEP: xcomp, TAG: VB }
+          has: [ { DEP: aux, LOWER: to } ]
+      lacks: [ { DEP: dobj } ]
+  # have got to, gotta: the same, said more.
+  - form: got-to
+    tree:
+      word: { LOWER: got }
+      has:
+        - word: { DEP: xcomp, TAG: VB }
+          has: [ { DEP: aux, LOWER: { IN: [to, ta] } } ]
+tests:
+  words: [have, has, had, "gotta", got]
+  match:
+    - "I have to go."
+    - "She doesn't have to come."
+    - "Do we have to leave?"
+    - "I had to work late."
+    - "I've got to go."
+    - "I gotta go."
+  no_match:
+    - "I have something to do."
+    - "I have a car."
+    - "I've got a car."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or Bembegoo's guides' where no item has one (guides).
+level: A2
+level_from: egp
+note:
+  gist:
+    en: 'Have to (or have got to, gotta) + a plain verb: something is necessary, often because of a rule or the situation: I have to work tomorrow.'
+    fa: 'have to (یا have got to و gotta) و فعل ساده: کاری لازم است، اغلب به خاطر قانون یا شرایط: I have to work tomorrow یعنی «فردا باید کار کنم».'
+  forms:
+  - kind: positive
+    text: I have to go now.
+    mark: have to go
+  - kind: negative
+    text: You don't have to come.
+    mark: don't have to come
+  - kind: question
+    text: Do we have to wait?
+    mark: Do we have to wait
+  - kind: positive
+    text: I've got to go.
+    mark: '''ve got to go'
+  mistakes:
+  - wrong: She have to go home now.
+    right: She has to go home now.
+    why:
+      en: With he, she and it, it is has to.
+      fa: با he، she و it می‌شود «has to».
+  - wrong: I have go to school.
+    right: I have to go to school.
+    why:
+      en: Don't forget to after have.
+      fa: «to» را بعد از «have» جا نینداز.
+  - wrong: You don't have to smoke here.
+    right: You mustn't smoke here.
+    why:
+      en: Don't have to means it isn't needed; to say it isn't allowed, use mustn't.
+      fa: «don't have to» یعنی لازم نیست؛ برای «اجازه نیست» بگو «mustn't»، هرچند در فارسی هر دو ممکن است «نباید» ترجمه شوند.
+  contrast:
+  - term: must + verb
+    example: I must call my mum.
+    why:
+      en: Must is often what the speaker feels; have to, a rule or the situation.
+      fa: «must» بیشتر حس خودِ گوینده است؛ «have to» قانون یا شرایط.
+    point: must-obligation
+  - term: have got (= have)
+    example: I've got a car.
+    why:
+      en: Without to and a verb, have got means have.
+      fa: بدون to و فعل، «have got» یعنی «داشتن».
+    point: have-got
+exercises:
+- id: homework
+  kind: choose
+  sentence: I can't play now. I ___ do my homework.
+  options:
+  - have to
+  - has to
+  - have
+  answer: have to
+  why:
+    en: I + have to + verb.
+    fa: I + have to + فعل.
+- id: she-have-to
+  kind: fix
+  wrong: She have to go home now.
+  right:
+  - She has to go home now.
+  why:
+    en: She takes has to.
+    fa: she با has to می‌آید.
+- id: not-necessary
+  kind: rewrite
+  instruction:
+    en: Say it isn't necessary, with don't have to.
+    fa: با don't have to بگو لازم نیست.
+  from: It isn't necessary for you to come.
+  answers:
+  - You don't have to come.
+  - You do not have to come.
+  why:
+    en: 'Not necessary: don''t have to.'
+    fa: 'لازم نیست: don''t have to.'

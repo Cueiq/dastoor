@@ -1,0 +1,146 @@
+# Gramdex
+
+*Gramdex* is a grammar index for English learners. Given a sentence, it
+finds the grammar points the sentence uses (*have been + -ing*, *used to*,
+*must have + past participle*), and the exact words that make each one.
+For every point it has a learner's note: what it does, how it is built, the
+mistakes learners make with it (Persian speakers' first), what it is easily
+confused with, and exercises.
+
+No language model is called. Points are found by rules over spaCy's parse
+of the sentence, and every rule is tested on sentences it must and must not
+match.
+
+It is made for learning from films and series, so subtitles are its first
+input: it joins a sentence that a subtitle breaks across lines. It works on
+any English sentence. Bembegoo, an app for learning English from films, uses
+it to mark the grammar in an episode's lines, and to fill in its guides'
+grammar notes.
+
+## What it has
+
+**30 points, A1–B2**, each with its rules, its tests and its note. Most are
+told by their form:
+
+| told by | points | how well (on film subtitles) |
+|---|---|---|
+| form | 25: the present continuous and perfect, *going to*, *will*, *can*, *could*, *might*, *should*, *have to*, passives, comparatives, superlatives, conditionals, question tags, *let's*… | most 0.96–1.00 precision, every match read on a held-out half of the subtitles; a few points have too few lines yet to tell |
+| meaning | 5: *must* (a guess or an obligation?), *must be*, *have got*, *would* for a past habit | the rule finds the line; its meaning is left to the reader |
+
+A meaning point's matches are marked as candidates: the words alone can't
+settle them. *Would* for a past habit is right so rarely by its form that
+it isn't tagged at all. The method and every number are in
+[docs/spike-report.md](docs/spike-report.md).
+
+## Install
+
+Gramdex needs Python 3.11 or later and [uv](https://docs.astral.sh/uv/).
+
+```bash
+uv venv --python 3.12
+uv pip install -e .
+uv pip install "en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl"
+```
+
+The small model is 15 MB and runs at about 1,300 sentences a second. The
+transformer model is more accurate: on comparatives, about 0.94 precision
+against the small model's 0.81. It needs about 1 GB with PyTorch:
+
+```bash
+uv pip install "spacy[transformers]>=3.8,<3.9" "en_core_web_trf @ https://github.com/explosion/spacy-models/releases/download/en_core_web_trf-3.8.0/en_core_web_trf-3.8.0-py3-none-any.whl"
+```
+
+## Use
+
+```bash
+gramdex test                                      # every point's tests
+gramdex --model en_core_web_trf tag episode.srt   # each line's points
+gramdex tag episode.srt --json                    # the same, as JSON
+gramdex export                                    # every note, as one JSON file
+gramdex score <courses folder> --split test       # score the rules against Bembegoo's guides
+```
+
+`--model` picks the spaCy pipeline; the small one is the default.
+
+## A point
+
+One YAML file per point in [points/](points/), named by its id:
+
+```yaml
+id: used-to
+title: { en: "used to + verb" }
+topic: past_habits
+cefrj: ["140", "140-1", "140-2"]   # its items in the CEFR-J Grammar Profile
+match:                              # what finds it: spaCy patterns
+  - form: all
+    tree:                           # a word and the words around it
+      word: { LOWER: { IN: [used, use] } }
+      has:
+        - word: { DEP: xcomp, TAG: VB }
+          has: [ { DEP: aux, LOWER: to } ]
+      lacks: [ { LEMMA: be, DEP: { IN: [aux, auxpass] } } ]
+exclude: []                         # look-alikes to leave out
+tests:
+  words: [used, use]                # to sample lines that may use it
+  match: ["We used to live here."]
+  no_match: ["I'm used to the noise."]
+level: B1                           # the learner's note
+note:
+  gist: { en: "…", fa: "…" }
+  forms: [ … ]                      # how it is built, an example each
+  mistakes: [ … ]                   # wrong, right and why
+  contrast: [ … ]                   # what not to mix it up with
+exercises: [ … ]                    # choose, fix, rewrite
+```
+
+A rule is either `tokens`, a spaCy Matcher pattern of words in order, or a
+`tree`: a word, the words that must or mustn't hang on it, and the word it
+hangs on. The format is described in
+[src/gramdex/rules.py](src/gramdex/rules.py). A point may also say:
+
+- `needs_meaning: true` when its words can't settle what it means;
+- `tag: false` when its rule shouldn't mark lines at all;
+- `aliases` for other ids the same point goes by.
+
+The note has the shape of a grammar entry in Bembegoo's guides, so a guide
+can take it as it is.
+
+## Adding a point
+
+1. Write its rules and its tests. Include sentences it must match, and the
+   look-alikes it mustn't: *I'm used to it* is not *used to + verb*.
+2. Run `gramdex test` on both models.
+3. Score it on real subtitles, and read what it matched and what it missed.
+   Tune on one half of the files (`--split dev`) and report on the other
+   (`--split test`).
+4. Write its note and exercises, as Gramdex's own. Nothing is copied from
+   the English Grammar Profile or the Core Inventory.
+
+Quote any word YAML could read as true or false (`"no"`, `"yes"`): the
+loader refuses one unquoted.
+
+## Licence
+
+- **The code** is [MIT](LICENSE).
+- **The points** (their rules, tests, notes and exercises) are [CC BY-SA
+  4.0](points/LICENSE.md): use and adapt them, also commercially, crediting
+  Gramdex and sharing what you make from them alike.
+
+## Sources
+
+Levels come from the [CEFR-J Grammar
+Profile](https://github.com/openlanguageprofiles/olp-en-cefrj) (Tono
+Laboratory, Tokyo University of Foreign Studies), which may be used for
+commercial purposes when cited. Its rows carry each item's level in the
+English Grammar Profile, the Core Inventory and Pearson's GSE too. A point's
+`level` is the English Grammar Profile's lowest, as CEFR-J records it. Where
+no item has one, it is CEFR-J's own, or the level Bembegoo's guides gave
+it (`level_from`).
+
+## Why it exists
+
+There are lists of grammar points by level: the English Grammar Profile,
+the Core Inventory and CEFR-J. There are research tools that find grammar in
+text, such as POLKE (a closed API) and GrammarTagger (non-commercial
+models). None is open, and none gives both the matching and a learner's
+notes and exercises. Gramdex aims to be that.

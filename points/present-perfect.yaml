@@ -1,0 +1,130 @@
+id: present-perfect
+title: { en: "have / has + past participle" }
+topic: perfect
+cefrj: ["62", "62-1", "62-2", "62-3"]
+# The guides taught it as two points: a result, and an experience (ever).
+aliases: [present-perfect-experience]
+match:
+  - form: have
+    tree:
+      word: { TAG: VBN, LOWER: { NOT_IN: [got, gotten] } }
+      # have as a finite verb: not "supposed to have been", "Better have
+      # finished" (had better).
+      has: [ { DEP: aux, LOWER: { IN: [have, has, "'ve", ve, haven't, hasn't] }, TAG: { IN: [VBP, VBZ] } } ]
+      lacks:
+        - { DEP: auxpass }
+        - { DEP: aux, TAG: MD }
+        - { DEP: aux, LOWER: been }
+  # 's + participle is has or is; the parser calling 's a helper (not a
+  # passive's) is taken as has, and been after 's is always has.
+  - form: s
+    tree:
+      word: { TAG: VBN, LOWER: { NOT_IN: [got, gotten] } }
+      has: [ { DEP: aux, LOWER: { IN: ["'s", s] } } ]
+      lacks:
+        - { DEP: auxpass }
+        - { DEP: aux, TAG: MD }
+  - form: s-been
+    tree:
+      word: { LOWER: been }
+      has: [ { LOWER: { IN: ["'s", s] } } ]
+      lacks: [ { DEP: aux, TAG: MD } ]
+exclude:
+  # (had) better have + past participle: a warning, not the present perfect.
+  - tokens: [ { LOWER: better }, { LOWER: have } ]
+tests:
+  words: [have, has, "'ve", "haven't", "hasn't", been]
+  match:
+    - "I've seen it."
+    - "Have you ever been to Paris?"
+    - "I haven't been there."
+    - "She has finished her homework."
+    - "It's been a long day."
+  no_match:
+    - "I've got a car."
+    - "I've got to go."
+    - "It's done."
+    - "You must have seen it."
+    - "I've been waiting for an hour."
+    - "It has been fixed."
+    - "He was the me I was supposed to have been."
+    - "Better have finished what?"
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or Bembegoo's guides' where no item has one (guides).
+level: B1
+level_from: egp
+note:
+  gist:
+    en: 'Have or has + a past participle, for something done before now whose time isn''t said: what you have done in your life (Have you ever been to London?), or what has happened with a result now (I''ve lost my keys).'
+    fa: 'have یا has و بعد اسم مفعول، برای کاری که پیش از حالا انجام شده و زمانش گفته نمی‌شود: تجربه‌های زندگی (Have you ever been to London?) یا اتفاقی که نتیجه‌اش الان پیداست (I''ve lost my keys).'
+  forms:
+  - kind: positive
+    text: I have seen this film.
+    mark: have seen
+  - kind: negative
+    text: She hasn't finished her homework.
+    mark: hasn't finished
+  - kind: question
+    text: Have you ever been to London?
+    mark: Have you ever been
+  mistakes:
+  - wrong: I have seen him yesterday.
+    right: I saw him yesterday.
+    why:
+      en: With a finished time like yesterday, use the past simple.
+      fa: با زمانی تمام‌شده مثل «yesterday» گذشتهٔ ساده بیاور؛ در فارسی «دیروز دیدمش» است، نه «دیده‌ام».
+  - wrong: Have you ever went to Rome?
+    right: Have you ever been to Rome?
+    why:
+      en: After have comes the past participle (been, seen), not the past (went, saw).
+      fa: بعد از «have» اسم مفعول (been، seen) می‌آید، نه گذشته (went، saw).
+  - wrong: She have been to Paris.
+    right: She has been to Paris.
+    why:
+      en: He, she and it take has.
+      fa: he، she و it با «has» می‌آیند.
+  contrast:
+  - term: past simple
+    example: I went to London last year.
+    why:
+      en: The past simple says when; the present perfect doesn't.
+      fa: گذشتهٔ ساده می‌گوید کی؛ حال کامل زمان را نمی‌گوید.
+  - term: have been + -ing
+    example: I've been watching this show all week.
+    why:
+      en: That one is an activity still going on.
+      fa: آن یکی کاری است که هنوز ادامه دارد.
+    point: present-perfect-continuous
+exercises:
+- id: never-london
+  kind: choose
+  sentence: I ___ never been to London.
+  options:
+  - have
+  - has
+  - am
+  answer: have
+  why:
+    en: I + have + past participle.
+    fa: I + have + اسم مفعول.
+- id: seen-yesterday
+  kind: fix
+  wrong: I have seen him yesterday.
+  right:
+  - I saw him yesterday.
+  why:
+    en: 'Yesterday is a finished time: past simple.'
+    fa: 'yesterday زمانی تمام‌شده است: گذشتهٔ ساده.'
+- id: ever-ride
+  kind: rewrite
+  instruction:
+    en: Ask with Have you ever…?
+    fa: با Have you ever…? بپرس.
+  from: Did you ride a horse at any time in your life?
+  answers:
+  - Have you ever ridden a horse?
+  why:
+    en: 'At any time in your life: have + ever + past participle.'
+    fa: 'در هر زمانی از زندگی: have + ever + اسم مفعول.'

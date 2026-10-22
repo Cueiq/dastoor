@@ -1,0 +1,95 @@
+id: past-continuous
+title: { en: "was / were + -ing" }
+topic: past
+cefrj: ["66", "66-1", "66-2", "66-3"]
+match:
+  - form: all
+    tree:
+      word: { TAG: VBG, LOWER: { NOT_IN: [going, gon] } }
+      has: [ { DEP: aux, LOWER: { IN: [was, were, "wasn't", "weren't"] } } ]
+tests:
+  words: [was, were]
+  match:
+    - "I was sleeping."
+    - "What were you doing?"
+    - "She wasn't listening."
+    - "We were saving it, but he ate it."
+  no_match:
+    - "It was going to rain."
+    - "I was tired."
+    - "I'm sleeping."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or Bembegoo's guides' where no item has one (guides).
+level: A2
+level_from: egp
+note:
+  gist:
+    en: 'Was or were + an -ing verb, for something going on at a time in the past, often when something else happened: I was sleeping when you called.'
+    fa: 'was یا were و بعد فعل ingدار، برای کاری که در زمانی از گذشته در جریان بود، اغلب وقتی اتفاق دیگری افتاد: I was sleeping when you called یعنی «وقتی زنگ زدی خواب بودم».'
+  forms:
+  - kind: positive
+    text: I was sleeping when you called.
+    mark: was sleeping
+  - kind: negative
+    text: She wasn't listening to me.
+    mark: wasn't listening
+  - kind: question
+    text: What were you doing at eight?
+    mark: were you doing
+  mistakes:
+  - wrong: I was knowing the answer.
+    right: I knew the answer.
+    why:
+      en: Verbs like know, like and want don't usually take -ing.
+      fa: فعل‌هایی مثل «know»، «like» و «want» معمولاً ing نمی‌گیرند.
+  - wrong: I was save it for my birthday.
+    right: I was saving it for my birthday.
+    why:
+      en: After was or were, the verb takes -ing.
+      fa: بعد از «was» یا «were» فعل ing می‌گیرد.
+  - wrong: They was watching TV.
+    right: They were watching TV.
+    why:
+      en: You, we and they take were.
+      fa: you، we و they با «were» می‌آیند.
+  contrast:
+  - term: past simple
+    example: I watched a film last night.
+    why:
+      en: The past simple tells a finished action; was + -ing, an action in progress then.
+      fa: گذشتهٔ ساده کاری تمام‌شده را می‌گوید؛ was و ing کاری که آن موقع در جریان بود.
+exercises:
+- id: rain-shop
+  kind: choose
+  sentence: I ___ to the shop when it started to rain.
+  options:
+  - was walking
+  - walking
+  - was walk
+  answer: was walking
+  why:
+    en: 'In progress then: was + -ing.'
+    fa: 'در جریانِ آن موقع: was + ing.'
+- id: was-save
+  kind: fix
+  wrong: I was save it for my birthday, but I spent it.
+  right:
+  - I was saving it for my birthday, but I spent it.
+  why:
+    en: 'Was + -ing: saving.'
+    fa: 'was + ing: saving.'
+- id: phone-rang
+  kind: rewrite
+  instruction:
+    en: Say it with was + -ing and when.
+    fa: با was + ing و when بگو.
+  from: I had a shower. In the middle of it, the phone rang.
+  answers:
+  - I was having a shower when the phone rang.
+  - The phone rang when I was having a shower.
+  - The phone rang while I was having a shower.
+  why:
+    en: 'The longer action: was + -ing; what cut in: past simple.'
+    fa: 'کار طولانی‌تر: was + ing؛ آنچه وسطش آمد: گذشتهٔ ساده.'

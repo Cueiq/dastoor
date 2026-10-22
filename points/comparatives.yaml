@@ -1,0 +1,117 @@
+id: comparatives
+title: { en: "adjective + -er / more + adjective" }
+topic: comparing
+cefrj: ["38", "39"]
+match:
+  - form: er
+    tree:
+      word: { TAG: { IN: [JJR, RBR] }, LOWER: { NOT_IN: [more, less, later, rather, further, earlier] } }
+  - form: more
+    tree:
+      word: { TAG: { IN: [JJ, RB] } }
+      has: [ { DEP: advmod, LOWER: { IN: [more, less] } } ]
+exclude:
+  # had better is a modal: We'd better go.
+  - tree:
+      word: { LOWER: better }
+      head: { word: { LOWER: { IN: ["'d", had] } } }
+  - tree:
+      word: { LOWER: better }
+      has: [ { LOWER: { IN: ["'d", had] } } ]
+  # no longer: a fixed phrase, not a comparison.
+  - tree:
+      word: { LOWER: longer }
+      has: [ { LOWER: "no" } ]
+tests:
+  words: [more, than, er]
+  match:
+    - "She's bigger than me."
+    - "It's more expensive than I thought."
+    - "Run faster!"
+    - "This one's better."
+    - "Could you speak more slowly?"
+    - "It's actually fewer."
+  no_match:
+    - "I'm a teacher."
+    - "I never knew."
+    - "See you later."
+    - "I want more money."
+    - "We'd better not."
+    - "Eunice is no longer my boss!"
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), or Bembegoo's
+# guides' where no item has it (guides).
+level: A2
+level_from: egp
+note:
+  gist:
+    en: 'To compare two things: a short adjective or adverb + -er (faster), or more + a longer one (more beautiful), then than.'
+    fa: 'برای مقایسهٔ دو چیز: صفت یا قید کوتاه با er (faster)، یا more و صفت بلندتر (more beautiful)، و بعد than؛ مثل «ـ‌تر از» در فارسی.'
+  forms:
+  - kind: positive
+    text: A car is faster than a bike.
+    mark: faster than
+  - kind: positive
+    text: This room is more beautiful than mine.
+    mark: more beautiful than
+  - kind: positive
+    text: Her English is better than mine.
+    mark: better than
+  mistakes:
+  - wrong: Ali is taller from Reza.
+    right: Ali is taller than Reza.
+    why:
+      en: After -er comes than, not from.
+      fa: در فارسی می‌گوییم «از رضا بلندتر»، ولی در انگلیسی بعد از er کلمهٔ «than» می‌آید، نه «from».
+  - wrong: She runs more fast than me.
+    right: She runs faster than me.
+    why:
+      en: Short words take -er, not more.
+      fa: کلمه‌های کوتاه er می‌گیرند، نه «more».
+  - wrong: This one is more better.
+    right: This one is better.
+    why:
+      en: Better already means more good; don't add more.
+      fa: «better» خودش یعنی «بهتر» و «more» نمی‌خواهد.
+  contrast:
+  - term: the + adjective + -est
+    example: He is the fastest in the class.
+    why:
+      en: -er compares two; the -est is more than all the others.
+      fa: er دو چیز را مقایسه می‌کند؛ the و est یعنی از همه بیشتر.
+    point: superlatives
+exercises:
+- id: car-faster
+  kind: choose
+  sentence: A car is ___ than a bike.
+  options:
+  - faster
+  - more fast
+  - fastest
+  answer: faster
+  why:
+    en: 'Fast is short: fast + -er, then than.'
+    fa: 'fast کوتاه است: fast + er و بعد than.'
+- id: taller-from
+  kind: fix
+  wrong: Ali is taller from Reza.
+  right:
+  - Ali is taller than Reza.
+  why:
+    en: After -er comes than.
+    fa: بعد از er کلمهٔ than می‌آید.
+- id: brother-younger
+  kind: rewrite
+  instruction:
+    en: Say who is younger.
+    fa: بگو چه کسی جوان‌تر است.
+  from: My brother is 20. I am 18.
+  answers:
+  - I'm younger than my brother.
+  - I am younger than my brother.
+  - I'm two years younger than my brother.
+  - I am two years younger than my brother.
+  why:
+    en: Young + -er = younger, then than.
+    fa: young + er = younger و بعد than.

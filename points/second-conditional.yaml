@@ -1,0 +1,119 @@
+id: second-conditional
+title: { en: "If + past, … would + verb" }
+topic: conditions_wishes
+cefrj: ["215", "215-1"]
+match:
+  - form: past
+    tree:
+      word: { DEP: advcl, TAG: VBD }
+      has: [ { DEP: mark, LOWER: if } ]
+      head:
+        word: {}
+        has: [ { DEP: aux, LOWER: { IN: [would, "'d", could, might] } } ]
+        # would have + past participle is the third conditional.
+        lacks: [ { DEP: aux, LOWER: { IN: [have, "'ve", ve] } } ]
+  - form: could
+    tree:
+      word: { DEP: advcl, TAG: VB }
+      has:
+        - { DEP: mark, LOWER: if }
+        - { DEP: aux, LOWER: could }
+      head:
+        word: {}
+        has: [ { DEP: aux, LOWER: { IN: [would, "'d"] } } ]
+        lacks: [ { DEP: aux, LOWER: { IN: [have, "'ve", ve] } } ]
+tests:
+  words: [if]
+  match:
+    - "If I had money, I'd buy it."
+    - "I'd buy it if I had money."
+    - "If I were you, I would call her."
+    - "What would you do if you won?"
+    - "If you could fly, where would you go?"
+  no_match:
+    - "If you were there, you saw it."
+    - "If it rains, we'll stay home."
+    - "If I'd known, I would have come."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), or Bembegoo's
+# guides' where no item has it (guides).
+level: A2
+level_from: egp
+note:
+  gist:
+    en: 'If + the past, … would + a verb: something imagined, or not true now, and what would happen then.'
+    fa: 'If با زمان گذشته و بعد would و فعل: چیزی خیالی یا ناراست در زمان حال، و اینکه آن‌وقت چه می‌شد؛ مثل «اگر … داشتم، … می‌خریدم» در فارسی.'
+  forms:
+  - kind: positive
+    text: If I had more time, I'd learn the piano.
+    mark: If I had more time, I'd learn
+  - kind: negative
+    text: If it wasn't so cold, we'd go out.
+    mark: If it wasn't so cold, we'd go
+  - kind: question
+    text: What would you do if you won a lot of money?
+    mark: would you do if you won
+  mistakes:
+  - wrong: If I would have money, I would buy it.
+    right: If I had money, I would buy it.
+    why:
+      en: 'No would in the if part: use the past.'
+      fa: در بخش «if» از «would» استفاده نکن، گذشته بیاور؛ در فارسی هر دو بخش «می‌…» دارند («اگر پول داشتم، می‌خریدم») ولی در انگلیسی نه.
+  - wrong: If I knew his number, I will call him.
+    right: If I knew his number, I would call him.
+    why:
+      en: With if + past, the other part takes would, not will.
+      fa: وقتی بخش «if» گذشته است، بخش دیگر «would» می‌گیرد، نه «will».
+  - wrong: If I would be you, I'd say yes.
+    right: If I were you, I'd say yes.
+    why:
+      en: After if, use were or was, not would be.
+      fa: بعد از «if»، «were» یا «was» بیاور، نه «would be».
+  contrast:
+  - term: If + present, … will + verb
+    example: If it rains, I'll stay home.
+    why:
+      en: If + present is a real possibility; if + past is imagined or not true now.
+      fa: «if» با حال برای احتمالی واقعی است؛ «if» با گذشته برای چیزی خیالی یا ناراست در حال.
+  - term: would have + past participle
+    example: If I had known, I would have come.
+    why:
+      en: 'That one is about the past: something that didn''t happen.'
+      fa: 'آن یکی دربارهٔ گذشته است: چیزی که اتفاق نیفتاد.'
+    point: would-have-past-participle
+exercises:
+- id: if-i-had
+  kind: choose
+  sentence: If I ___ more time, I'd learn to play the piano.
+  options:
+  - had
+  - have
+  - will have
+  answer: had
+  why:
+    en: 'Not true now: if + past, would + verb.'
+    fa: 'چیزی که الان درست نیست: If + گذشته، would + فعل.'
+- id: i-will-call
+  kind: fix
+  wrong: If I knew his number, I will call him.
+  right:
+  - If I knew his number, I would call him.
+  - If I knew his number, I'd call him.
+  why:
+    en: With if + past, the other half takes would.
+    fa: با If + گذشته، نیمهٔ دیگر would می‌گیرد.
+- id: not-rich
+  kind: rewrite
+  instruction:
+    en: Say what you would do, with if … would.
+    fa: با If … would بگو چه می‌کردی.
+  from: I'm not rich, so I don't travel much.
+  answers:
+  - If I were rich, I'd travel more.
+  - If I were rich, I would travel more.
+  - If I was rich, I'd travel more.
+  - If I was rich, I would travel more.
+  why:
+    en: 'Not true now: if + past (were), then would + verb.'
+    fa: 'چیزی که الان درست نیست: If + گذشته (were)، بعد would + فعل.'

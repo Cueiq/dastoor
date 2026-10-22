@@ -1,0 +1,109 @@
+id: should
+title: { en: "should + verb" }
+topic: obligation
+cefrj: ["139", "139-1", "139-2", "139-3"]
+match:
+  - form: all
+    tree:
+      word: { TAG: VB }
+      has: [ { DEP: aux, LOWER: { IN: [should, shouldn't] } } ]
+      # should have + past participle is another point.
+      lacks: [ { DEP: aux, LOWER: { IN: [have, "'ve", ve] } } ]
+  # Should it be glowing? should + be + -ing.
+  - form: be-ing
+    tree:
+      word: { TAG: VBG }
+      has:
+        - { DEP: aux, LOWER: { IN: [should, shouldn't] } }
+        - { DEP: aux, LEMMA: be }
+tests:
+  words: [should, shouldn't]
+  match:
+    - "You should go."
+    - "We shouldn't tell him."
+    - "Should I call her?"
+    - "Perhaps we should leave."
+    - "Should it be glowing?"
+  no_match:
+    - "You should have told me."
+    - "I would go."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or Bembegoo's guides' where no item has one (guides).
+level: A2
+level_from: egp
+note:
+  gist:
+    en: 'Should + a plain verb, for advice, or for what is right to do: You should rest.'
+    fa: 'should و فعل ساده، برای توصیه یا کاری که درستش این است: You should rest یعنی «بهتره استراحت کنی».'
+  forms:
+  - kind: positive
+    text: You should drink more water.
+    mark: should drink
+  - kind: negative
+    text: You shouldn't eat so late.
+    mark: shouldn't eat
+  - kind: question
+    text: What should I wear?
+    mark: should I wear
+  mistakes:
+  - wrong: You should to go home.
+    right: You should go home.
+    why:
+      en: After should comes the plain verb, with no to.
+      fa: بعد از «should» فعل ساده می‌آید، بدون «to».
+  - wrong: He shoulds go to bed.
+    right: He should go to bed.
+    why:
+      en: Should never takes -s.
+      fa: «should» هیچ‌وقت s نمی‌گیرد.
+  - wrong: You should went to bed early yesterday.
+    right: You should have gone to bed early yesterday.
+    why:
+      en: For the past, use should have + past participle.
+      fa: برای گذشته «should have» و اسم مفعول بیاور.
+  contrast:
+  - term: must + verb
+    example: You must stop at a red light.
+    why:
+      en: Should is advice; must says it is necessary.
+      fa: «should» توصیه است؛ «must» یعنی واجب است.
+    point: must-obligation
+  - term: have to + verb
+    example: I have to work tomorrow.
+    why:
+      en: Have to is a need from outside; should is what would be good.
+      fa: «have to» اجباری از بیرون است؛ «should» کاری است که بهتر است.
+    point: have-to
+exercises:
+- id: tired-early
+  kind: choose
+  sentence: She is tired. She ___ go to bed early.
+  options:
+  - should
+  - should to
+  - shoulds
+  answer: should
+  why:
+    en: 'Advice: should + the plain verb.'
+    fa: 'توصیه: should + فعل ساده.'
+- id: should-to-go
+  kind: fix
+  wrong: You should to go home.
+  right:
+  - You should go home.
+  why:
+    en: No to after should.
+    fa: بعد از should حرف to نمی‌آید.
+- id: advice-doctor
+  kind: rewrite
+  instruction:
+    en: Give the advice with should.
+    fa: توصیه را با should بگو.
+  from: Seeing a doctor is a good idea for you.
+  answers:
+  - You should see a doctor.
+  why:
+    en: 'Advice: you should + verb.'
+    fa: 'توصیه: you should + فعل.'

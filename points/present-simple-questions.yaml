@@ -1,0 +1,111 @@
+id: present-simple-questions
+title: { en: "Do / Does + subject + verb?" }
+topic: questions
+cefrj: ["59-2", "59-3", "60-2", "60-3"]
+# Known false match: "Don't you worry." is an order, told from "Don't you
+# see?" only by its stop.
+match:
+  - form: all
+    tokens:
+      - { LOWER: { IN: [do, does, "don't", "doesn't"] } }
+      - { LOWER: "n't", OP: "?" }
+      - { TAG: { IN: [DT, "PRP$"] }, OP: "?" }
+      - { POS: ADJ, OP: "*" }
+      - { POS: { IN: [PRON, PROPN, NOUN] } }
+      # So do you still want…?
+      - { POS: ADV, OP: "*" }
+      - { TAG: VB }
+tests:
+  words: [do, does, "don't", "doesn't"]
+  match:
+    - "Do you like it?"
+    - "Does your mom know?"
+    - "What do you do?"
+    - "Where does he live?"
+    - "Don't you see?"
+    - "So do you still want to be a waiter?"
+  no_match:
+    - "I do like it."
+    - "Do it now."
+    - "Did you see that?"
+    - "I don't know."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or Bembegoo's guides' where no item has one (guides).
+level: A1
+level_from: cefrj
+note:
+  gist:
+    en: 'Do or does + the person + a plain verb, for a question in the present simple: Do you like cats? Where does he work?'
+    fa: 'do یا does، بعد شخص و بعد فعل ساده، برای سؤال در زمان حال ساده: Do you like cats? و Where does he work?'
+  forms:
+  - kind: question
+    text: Do you like cats?
+    mark: Do you like
+  - kind: question
+    text: Where does he work?
+    mark: does he work
+  - kind: question
+    text: Why don't you like fish?
+    mark: don't you like
+  mistakes:
+  - wrong: Where you live?
+    right: Where do you live?
+    why:
+      en: A question in the present simple needs do or does before the person.
+      fa: سؤال در حال ساده پیش از شخص «do» یا «does» می‌خواهد؛ در فارسی فقط لحن سؤال است، ولی انگلیسی کلمهٔ جدا می‌خواهد.
+  - wrong: Does he likes tea?
+    right: Does he like tea?
+    why:
+      en: After does, the verb has no -s.
+      fa: بعد از «does» فعل s نمی‌گیرد.
+  - wrong: Do she like pizza?
+    right: Does she like pizza?
+    why:
+      en: He, she and it take does, not do.
+      fa: he، she و it با «does» می‌آیند، نه «do».
+  contrast:
+  - term: did + subject + verb?
+    example: Where did you go?
+    why:
+      en: Did asks about the past; do and does about now or always.
+      fa: «did» دربارهٔ گذشته می‌پرسد؛ «do» و «does» دربارهٔ حالا یا همیشه.
+    point: past-simple-questions
+  - term: am / is / are + subject + verb-ing?
+    example: What are you doing?
+    why:
+      en: That asks about right now; do you do asks about usually.
+      fa: آن دربارهٔ همین لحظه می‌پرسد؛ do you do دربارهٔ معمولاً.
+    point: present-continuous
+exercises:
+- id: annie-pizza
+  kind: choose
+  sentence: ___ Annie like pizza?
+  options:
+  - Does
+  - Do
+  - Is
+  answer: Does
+  why:
+    en: 'Annie is she: does.'
+    fa: 'Annie یعنی she: does.'
+- id: where-you-work
+  kind: fix
+  wrong: Where you work?
+  right:
+  - Where do you work?
+  why:
+    en: The question needs do before you.
+    fa: سؤال پیش از you به do نیاز دارد.
+- id: hector-tea
+  kind: rewrite
+  instruction:
+    en: Ask about it with does.
+    fa: با does دربارهٔ آن بپرس.
+  from: Hector likes tea.
+  answers:
+  - Does Hector like tea?
+  why:
+    en: 'Does + he + the plain verb: like, not likes.'
+    fa: 'does + he + فعل ساده: like، نه likes.'
