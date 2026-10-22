@@ -160,4 +160,15 @@ class Rules:
         unique: dict[tuple[int, ...], Found] = {}
         for each in kept:
             unique.setdefault(each.words, each)
-        return sorted(unique.values(), key=lambda each: each.words)
+        # A form finding part of what another form found is the same use
+        # ('m gonna tell, and gonna tell in it); a form inside its own
+        # larger match is another use (a clause in a clause).
+        uses = [
+            each
+            for each in unique.values()
+            if not any(
+                other.form != each.form and set(each.words) < set(other.words)
+                for other in unique.values()
+            )
+        ]
+        return sorted(uses, key=lambda each: each.words)

@@ -54,6 +54,11 @@ class Serve(unittest.TestCase):
         self.assertTrue(going)
         self.assertEqual(text[going[0]["start"] : going[0]["end"]], going[0]["words"])
 
+    def test_one_use_found_by_two_forms_is_marked_once(self):
+        answer = self.ask(json.dumps({"text": "I'm gonna tell him."}))
+        going = [mark["words"] for mark in answer["points"] if mark["point"] == "be-going-to"]
+        self.assertEqual(going, ["'m gonna tell"])
+
     def test_a_meaning_point_is_a_candidate(self):
         answer = self.ask(json.dumps({"text": "You must be tired."}))
         self.assertIsNone(answer["id"])
