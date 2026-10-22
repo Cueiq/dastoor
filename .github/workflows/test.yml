@@ -24,6 +24,7 @@ jobs:
       # false, unquoted, fails the load.
       - run: uv run --locked dastoor test
       - run: uv run --locked dastoor export > /dev/null
+      - run: uv run --locked python -m unittest discover -s tests
 
   transformer:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'

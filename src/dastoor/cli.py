@@ -1,4 +1,4 @@
-"""dastoor test | tag | score"""
+"""dastoor test | tag | export | score | serve"""
 
 from __future__ import annotations
 
@@ -87,6 +87,59 @@ def tag(args) -> int:
     return 0
 
 
+def marks(nlp, points, text: str) -> dict:
+    """What one text uses: each point's match, its words and where they are
+    in `text` (characters, as Python counts them: code points), and the
+    text's sentences, in order."""
+    doc = nlp(text)
+    found = []
+    for point in points:
+        for each in point.find(doc):
+            span = doc[each.start : each.end]
+            found.append(
+                {
+                    "point": point.id,
+                    "form": each.form,
+                    "words": span.text,
+                    "start": span.start_char,
+                    "end": span.end_char,
+                    "candidate": point.needs_meaning,
+                }
+            )
+    found.sort(key=lambda mark: (mark["start"], mark["end"], mark["point"]))
+    return {"sentences": [[sentence.start_char, sentence.end_char] for sentence in doc.sents], "points": found}
+
+
+def serve(args) -> int:
+    """The model loaded once, then a text a line: each line of stdin a JSON
+    request, `{"id": …, "text": "…"}`, each answered by one line of stdout,
+    the id given back with the text's marks (`marks`), or an `error`. The
+    first line out says it is ready. Points that ask not to be tagged are
+    left out, as `tag` leaves them."""
+    nlp = model_module.load(args.model)
+    points = [point for point in points_module.load(nlp) if point.tag]
+
+    def say(answer: dict) -> None:
+        print(json.dumps(answer, ensure_ascii=False), flush=True)
+
+    say({"ready": True, "model": args.model, "points": len(points)})
+    for line in sys.stdin:
+        if not line.strip():
+            continue
+        try:
+            request = json.loads(line)
+        except ValueError as error:
+            say({"id": None, "error": f"not JSON: {error}"})
+            continue
+        asked = request.get("id") if isinstance(request, dict) else None
+        text = request.get("text") if isinstance(request, dict) else None
+        if not isinstance(text, str):
+            say({"id": asked, "error": "a request needs its text"})
+            continue
+        say({"id": asked, **marks(nlp, points, text)})
+    return 0
+
+
 def export(args) -> int:
     """Every point's note and exercises, as one JSON file for a tool that
     fills them in (Bembegoo's build). Each carries `note_from`: its id and a
@@ -127,6 +180,7 @@ def main(argv: list[str] | None = None) -> int:
     tagging.add_argument("--json", action="store_true")
     tagging.add_argument("--all", action="store_true", help="lines with no point too")
     commands.add_parser("export", help="every point's note, as JSON")
+    commands.add_parser("serve", help="answer texts line by line on stdin, the model loaded once")
     scoring = commands.add_parser("score", help="the spike's scoring against Bembegoo's guides")
     scoring.add_argument("courses", help="the folder of Bembegoo courses")
     scoring.add_argument("--out", default="spike", help="where the report and samples go")
@@ -135,7 +189,7 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     started = time.time()
     try:
-        code = {"test": test, "tag": tag, "export": export, "score": score_module.run}[args.command](args)
+        code = {"test": test, "tag": tag, "export": export, "score": score_module.run, "serve": serve}[args.command](args)
     except model_module.MissingModel as error:
         print(f"dastoor: {error}", file=sys.stderr)
         return 2

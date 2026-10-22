@@ -53,10 +53,28 @@ dastoor test                                      # every point's tests
 dastoor --model en_core_web_trf tag episode.srt   # each line's points
 dastoor tag episode.srt --json                    # the same, as JSON
 dastoor export                                    # every note, as one JSON file
+dastoor serve                                     # a text a line, the model loaded once
 dastoor score <courses folder> --split test       # score the rules on lessons whose grammar is marked
 ```
 
 `--model` picks the spaCy pipeline; the small one is the default.
+
+`serve` is for an app that asks about one text at a time: loading the model
+takes a few seconds, answering a sentence a few milliseconds (3 ms with the
+small model, 14 ms with the transformer, on a laptop). It reads one JSON
+request a line on stdin and answers each with one line on stdout; the first
+line out says it is ready:
+
+```console
+$ dastoor serve
+{"ready": true, "model": "en_core_web_sm", "points": 37}
+{"id": 1, "text": "She said she was tired."}
+{"id": 1, "sentences": [[0, 23]], "points": [{"point": "reported-speech", "form": "said", "words": "said she was", "start": 4, "end": 16, "candidate": false}]}
+```
+
+`start` and `end` count characters as Python does (code points). A point
+whose meaning its form can't settle comes as a `candidate`; points that ask
+not to be tagged are left out, as `tag` leaves them.
 
 ## A point
 
