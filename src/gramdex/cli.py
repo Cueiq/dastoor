@@ -102,6 +102,9 @@ def export(args) -> int:
             "level": data.get("level"),
             "topic": data.get("topic"),
             "keywords": data.get("keywords", []),
+            # The other ids guides gave the point: a guide's note on one is
+            # this point's.
+            "aliases": data.get("aliases", []),
             "needs_meaning": bool(data.get("needs_meaning", False)),
             "tag": data.get("tag", True),
             "example": data["note"]["forms"][0]["text"] if data["note"].get("forms") else "",
