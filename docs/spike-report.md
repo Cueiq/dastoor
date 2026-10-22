@@ -297,3 +297,47 @@ Left as they are, by design: *might want to* (the rule leaves out the
 polite suggestion), *Don't you say a word* as an order (a subject makes it
 another frame), and the present perfect passive (*has been stopped*: the
 passive is its own point).
+
+## Eight more (2026-10-22)
+
+The first of the topics that had no point, and the commonest patterns in
+the subtitles: verb + to + verb, verb + -ing, some and any, so and such,
+the present and the past passive, relative clauses and reported speech.
+Tuned on the dev half, graded on the test half with the transformer model,
+every match read.
+
+| point | read | wrong |
+|---|---:|---|
+| `verb-to-infinitive` | 50 | |
+| `verb-ing` | 25 | |
+| `some-any` | 50 | |
+| `so-such` | 50 | |
+| `present-passive` | 24 | *He's broken through*, *She's written to the wrong apartment*: has, not is |
+| `past-passive` | 9 | |
+| `relative-clauses` | 50 | *whose dog has Nick found?*, a question |
+| `reported-speech` | 21 | *The tarantula said / why are 400 tins…?*: the words as asked |
+| **these 8** | **279** | **4: 0.99** |
+
+The guides' lines for three of them (`keep-ing`, `stop-ing`,
+`remember-ing`, `learn-to`, `such-a`, now aliases) were all found.
+
+**Fixed after grading** (each with a test): the wrong matches but *written
+to*, which a passive can be as well (*it's written in English*); and the
+misses *what would you like to drink?*, *I love dancing* (the parser takes
+love for a helper), *any more tissues*. A new speaker's dash written
+without a space (*-Stop talking and listen.*) now starts a new voice: over
+the 39 subtitles scored before, the old points lost no match by it and
+found more (*Can we come in?*, *I'm listening.*).
+
+`'s` + a past participle is is or has. The rule takes it as is only when
+the verb has no object or particle after it and isn't one nearly always
+used actively (*got*, *happened*, *been*, *left*…).
+
+**Levels**, by the rule every point follows (the English Grammar Profile's
+lowest, as CEFR-J records it), give two that look wrong for a learner:
+verb + -ing is B2 (CEFR-J's own level for it is A1) and reported speech A1.
+The owner set them by hand: A2 and B1, as the Core Inventory has them
+(`level_from: hand`).
+
+A rule value may now hold more than one test (`{ REGEX: "ing$", NOT_IN:
+[thing] }`): each must hold. Before, only the first was read.

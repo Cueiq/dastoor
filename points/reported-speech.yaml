@@ -1,0 +1,134 @@
+id: reported-speech
+title: { en: "said (that) he was… (reported speech)", fa: "نقل قول غیرمستقیم (said he was…)" }
+# What a learner may search it by, in English and Persian.
+keywords: ["reported speech", "indirect speech", "said that", "told me", "asked if", "نقل قول غیرمستقیم", "گفت که"]
+topic: reporting
+cefrj: ["200", "201"]
+match:
+  - form: said
+    tree:
+      word: { LEMMA: { IN: [say, tell, explain, mention, promise, admit, claim, report] }, TAG: { IN: [VBD, VBN] } }
+      has: [ { DEP: ccomp, POS: { IN: [VERB, AUX] } } ]
+  - form: asked
+    tree:
+      word: { LEMMA: { IN: [ask, wonder] }, TAG: { IN: [VBD, VBN] } }
+      has:
+        - word: { DEP: ccomp }
+          has: [ { LOWER: { IN: [if, whether, what, where, when, why, how, who] } } ]
+exclude:
+  # The words as they were said, in quotes: He said, "I'm tired." /
+  # "I was there," she said.
+  - tokens: [ { LEMMA: { IN: [say, tell, ask] } }, { POS: { IN: [PRON, PROPN] }, OP: "?" }, { TEXT: { IN: [",", ":"] }, OP: "?" }, { TEXT: { IN: ['"', "“", "'", "‘", "''", "``"] } } ]
+  - tokens: [ { TEXT: { IN: ['"', "”", "'", "’", "''"] } }, { POS: { IN: [PRON, PROPN, NOUN, DET] }, OP: "*" }, { LEMMA: { IN: [say, tell, ask] } } ]
+  # Or a question in its asked order: The tarantula said / why are 400 tins
+  # downstairs? (reported, it is "why there were").
+  - tokens: [ { LEMMA: { IN: [say, tell, ask] }, TAG: { IN: [VBD, VBN] } }, { POS: { IN: [PRON, PROPN] }, OP: "*" }, { LOWER: { IN: [why, what, where, how, when, who] } }, { POS: AUX } ]
+  # Or after a comma, without quotes: I said, what are you doing? / I've
+  # told you before, nobody uses my bike.
+  - tokens: [ { LEMMA: { IN: [say, tell, ask] }, TAG: { IN: [VBD, VBN] } }, { POS: { IN: [PRON, PROPN, ADV] }, OP: "*" }, { TEXT: { IN: [",", ":"] } } ]
+tests:
+  words: [said, told, asked]
+  match:
+    - "She said she was tired."
+    - "He told me he'd call."
+    - "You said you'd help."
+    - "A moment ago, she said that her mother was her best friend."
+    - "She asked if I was OK."
+    - "Now, listen, Mum, I've told you I love Annie."
+  no_match:
+    - "He said, \"I'm tired.\""
+    - "\"I was there,\" she said."
+    - "He told me to go."
+    - "Who said that?"
+    - "My father said, ''If you want more money, you must work hard.''"
+    - "I said, what are you listening to?"
+    - "The tarantula said why are 400 tins of dog food downstairs?"
+    - "Nick, I've told you before, nobody uses my bike."
+    - "She says she's busy."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or Bembegoo's guides' where no item has one (guides).
+# Set by hand (owner, 2026-10-22): the English Grammar Profile's A1 is for
+# a plain "he says"; the Core Inventory has reported speech at B1-B2, where
+# the tense moving back is taught.
+level: B1
+level_from: hand
+note:
+  gist:
+    en: 'Say or tell + what someone said, in your words, not theirs: She said she was tired. The verb often moves back in time: am becomes was, will becomes would.'
+    fa: 'say یا tell و حرفِ کسی به زبانِ خودت، نه عینِ کلماتش: She said she was tired. فعل معمولاً یک زمان عقب می‌رود: am می‌شود was و will می‌شود would.'
+  forms:
+  - kind: positive
+    text: She said she was tired.
+    mark: said she was
+  - kind: positive
+    text: She asked if I was OK.
+    mark: asked if I was
+  - kind: negative
+    text: He told me he wouldn't come.
+    mark: told me he wouldn't come
+  - kind: question
+    text: Did she say she'd call?
+    mark: say she'd call
+  mistakes:
+  - wrong: He said me he was busy.
+    right: He told me he was busy.
+    why:
+      en: 'Say takes no person after it; tell does: told me, said to me.'
+      fa: 'بعد از say کسی نمی‌آید ولی بعد از tell می‌آید: told me، یا said to me.'
+  - wrong: She asked where was I.
+    right: She asked where I was.
+    why:
+      en: A reported question keeps the order of a statement.
+      fa: 'سؤالِ نقل‌شده ترتیبِ جملهٔ خبری دارد: where I was، نه where was I.'
+  - wrong: He said, he is tired.
+    right: He said he was tired.
+    why:
+      en: 'Without quotes, the words are yours: no comma, and the verb moves back.'
+      fa: 'بدون گیومه حرفِ خودت است: ویرگول نمی‌خواهد و فعل یک زمان عقب می‌رود.'
+  contrast:
+  - term: the words in quotes
+    example: He said, "I'm tired."
+    why:
+      en: In quotes, the words are theirs, as they said them.
+      fa: داخل گیومه عینِ کلماتِ خودِ اوست.
+    point: null
+  - term: tell + someone + to + verb
+    example: He told me to go.
+    why:
+      en: That reports an order or advice, with to + a verb.
+      fa: آن دستور یا توصیه را نقل می‌کند، با to و فعل.
+    point: null
+exercises:
+- id: told-me
+  kind: choose
+  sentence: He ___ me he was busy.
+  options:
+  - told
+  - said
+  - spoke
+  answer: told
+  why:
+    en: tell + a person.
+    fa: tell و بعد کسی.
+- id: where-station
+  kind: fix
+  wrong: She asked me where was the station.
+  right:
+  - She asked me where the station was.
+  why:
+    en: 'Statement order: the station was.'
+    fa: 'ترتیبِ جملهٔ خبری: the station was.'
+- id: she-said-tired
+  kind: rewrite
+  instruction:
+    en: 'Report it: start with She said.'
+    fa: نقلش کن و با She said شروع کن.
+  from: '"I''m tired," she said.'
+  answers:
+  - She said she was tired.
+  - She said that she was tired.
+  why:
+    en: Her I becomes she, and am becomes was.
+    fa: I می‌شود she و am می‌شود was.

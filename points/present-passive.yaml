@@ -1,0 +1,135 @@
+id: present-passive
+title: { en: "am / is / are + past participle (it's made)", fa: "مجهول حال ساده (it's made)" }
+# What a learner may search it by, in English and Persian.
+keywords: ["passive", "present passive", "is made", "is called", "مجهول", "مجهول حال"]
+topic: passive
+cefrj: ["73", "73-1", "73-2", "73-3"]
+match:
+  - form: all
+    tree:
+      word: { TAG: VBN, LOWER: { NOT_IN: [supposed, used, gone, come, done, tired, bored, interested, excited, scared, worried, married, confused, surprised, pleased, amazed, shocked, disappointed, embarrassed, frightened, terrified, annoyed, finished, dressed, engaged, lost, stuck, screwed, involved, prepared, allowed] } }
+      has: [ { DEP: auxpass, LOWER: { IN: [am, is, are, "'m", "'re", m, re, isn't, aren't] } } ]
+      lacks:
+        - { DEP: aux, TAG: MD }
+        # it's been fixed, it was being fixed: other tenses.
+        - { DEP: auxpass, LOWER: { IN: [been, being] } }
+        - { DEP: aux, LOWER: { IN: [have, has, "'ve", ve, been, being, had] } }
+  # 's is is or has. Has, with a verb that is nearly always active after it
+  # (she's got, what's happened, there's been), or with an object after
+  # the verb (he's invited me): not the passive.
+  - form: s
+    tree:
+      word: { TAG: VBN, LOWER: { NOT_IN: [supposed, used, gone, come, done, tired, bored, interested, excited, scared, worried, married, confused, surprised, pleased, amazed, shocked, disappointed, embarrassed, frightened, terrified, annoyed, finished, dressed, engaged, lost, stuck, screwed, involved, prepared, allowed, got, gotten, been, happened, arrived, become, died, fallen, grown, stopped, started, begun, heard, seen, had, left, gotta] } }
+      has: [ { DEP: auxpass, LOWER: { IN: ["'s", s] } } ]
+      lacks:
+        - { DEP: aux, TAG: MD }
+        - { DEP: auxpass, LOWER: { IN: [been, being] } }
+        - { DEP: aux, LOWER: { IN: [have, has, "'ve", ve, been, being, had] } }
+        - { DEP: { IN: [dobj, dative, ccomp, xcomp, prt] } }
+tests:
+  words: [is, are, am, "'s", "'re", "'m"]
+  match:
+    - "English is spoken here."
+    - "It's called a centaur."
+    - "Cars are made in this factory."
+    - "I'm not invited."
+    - "Is it made of wood?"
+    - "I don't know. I think it's broken."
+    - "It's filled with all kinds of rock samples."
+    - "It's made in China."
+    - "A chicken that is kept in a small box to lay her eggs."
+  no_match:
+    - "It was made in China."
+    - "It can be fixed."
+    - "It's been fixed."
+    - "I'm tired."
+    - "You're supposed to know."
+    - "He's gone."
+    - "I'm used to it."
+    - "It's being repaired."
+    - "So, she's got no one to look after Lucas."
+    - "What's happened?"
+    - "He's invited me to dinner tonight."
+    - "Guess what. There's been a diamond robbery in London."
+    - "He's never heard of Channel 9?"
+    - "Look at him. He's broken through. And it's a goal!"
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or Bembegoo's guides' where no item has one (guides).
+level: A2
+level_from: egp
+note:
+  gist:
+    en: 'Am, is or are + a past participle, when what is done matters more than who does it: English is spoken here. By + the doer, when it''s worth saying.'
+    fa: 'am، is یا are و قسمت سوم فعل، وقتی کاری که انجام می‌شود مهم‌تر از کسی است که انجامش می‌دهد: English is spoken here. اگر گفتنِ انجام‌دهنده لازم باشد، با by می‌آید.'
+  forms:
+  - kind: positive
+    text: It's called a centaur.
+    mark: '''s called'
+  - kind: negative
+    text: I'm not invited.
+    mark: '''m not invited'
+  - kind: question
+    text: Is it made of wood?
+    mark: Is it made
+  mistakes:
+  - wrong: This cake is make by my mum.
+    right: This cake is made by my mum.
+    why:
+      en: 'After is, use the past participle: made, not make.'
+      fa: 'بعد از is قسمت سوم فعل بیاور: made، نه make.'
+  - wrong: English speaks here.
+    right: English is spoken here.
+    why:
+      en: English doesn't speak; people speak it. Use is + spoken.
+      fa: زبان انگلیسی حرف نمی‌زند، مردم آن را حرف می‌زنند؛ is spoken بیاور. «اینجا انگلیسی صحبت می‌شود» در فارسی هم مجهول است.
+  - wrong: The windows is cleaned every week.
+    right: The windows are cleaned every week.
+    why:
+      en: For more than one, use are.
+      fa: برای جمع are بیاور.
+  contrast:
+  - term: was / were + past participle
+    example: It was made in China.
+    why:
+      en: That tells what was done in the past.
+      fa: آن کاری را می‌گوید که در گذشته انجام شده.
+    point: past-passive
+  - term: modal + be + past participle
+    example: It can be fixed.
+    why:
+      en: With can, must or will, the passive takes be.
+      fa: با can، must یا will، مجهول be می‌گیرد.
+    point: modal-passive
+exercises:
+- id: are-made
+  kind: choose
+  sentence: Cars ___ in this factory.
+  options:
+  - are made
+  - make
+  - are make
+  answer: are made
+  why:
+    en: are + past participle.
+    fa: are و قسمت سوم فعل.
+- id: shop-closed
+  kind: fix
+  wrong: The shop close on Sundays.
+  right:
+  - The shop is closed on Sundays.
+  why:
+    en: 'The shop doesn''t close itself here: is + closed.'
+    fa: 'مغازه خودش کاری نمی‌کند، بسته می‌شود: is closed.'
+- id: spoken-here
+  kind: rewrite
+  instruction:
+    en: Say it in the passive.
+    fa: مجهولش را بگو.
+  from: They speak English here.
+  answers:
+  - English is spoken here.
+  why:
+    en: The thing done comes first, with is + past participle.
+    fa: چیزی که کار رویش انجام می‌شود اول می‌آید، با is و قسمت سوم فعل.

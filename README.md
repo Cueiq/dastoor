@@ -17,12 +17,12 @@ any English sentence.
 
 ## What it has
 
-**30 points, A1–B2**, each with its rules, its tests and its note. Most are
+**38 points, A1–B2**, each with its rules, its tests and its note. Most are
 told by their form:
 
 | told by | points | how well (on film subtitles) |
 |---|---|---|
-| form | 25: the present continuous and perfect, *going to*, *will*, *can*, *could*, *might*, *should*, *have to*, passives, comparatives, superlatives, conditionals, question tags, *let's*… | most 0.96–1.00 precision, every match read on a held-out half of the subtitles; a few points have too few lines yet to tell |
+| form | 33: the present continuous and perfect, *going to*, *will*, *can*, *could*, *might*, *should*, *have to*, the passive, comparatives, superlatives, *so* and *such*, conditionals, question tags, *let's*, *some* and *any*, verb + *to* or *-ing*, relative clauses, reported speech… | most 0.96–1.00 precision, every match read on a held-out half of the subtitles; a few points have too few lines yet to tell |
 | meaning | 5: *must* (a guess or an obligation?), *must be*, *have got*, *would* for a past habit | the rule finds the line; its meaning is left to the reader |
 
 A meaning point's matches are marked as candidates: the words alone can't
@@ -132,7 +132,9 @@ commercial purposes when cited. Its rows carry each item's level in the
 English Grammar Profile, the Core Inventory and Pearson's GSE too. A point's
 `level` is the English Grammar Profile's lowest, as CEFR-J records it. Where
 no item has one, it is CEFR-J's own, or the level the lessons it was scored
-on gave it (`level_from`).
+on gave it. A few are set by hand where that level would mislead a learner,
+each with its reason in its file (`level_from: hand`): verb + *-ing* is A2,
+not the profile's B2.
 
 ## Why it exists
 

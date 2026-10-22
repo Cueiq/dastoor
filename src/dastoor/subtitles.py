@@ -13,8 +13,9 @@ SOUND = re.compile(r"\([^)]*\)|\[[^\]]*\]")
 MUSIC = re.compile(r"♪[^♪]*♪|♪")
 # A speaker's name in capitals before what they say: "BERT: It's me."
 SPEAKER = re.compile(r"(^|(?<=[-–]\s))[A-Z][A-Z .']+:\s*")
-# A new voice: a dash at a line's start, or after a sentence's end.
-VOICE = re.compile(r"(?:^|(?<=[.!?…]\s)|(?<=\n))\s*[-–]\s+")
+# A new voice: a dash at a line's start, or after a sentence's end, with
+# or without a space after it ("-Stop talking").
+VOICE = re.compile(r"(?:^|(?<=[.!?…]\s)|(?<=\n))\s*[-–](?:\s+|(?=[A-Za-z\"'‘“]))")
 
 
 @dataclass

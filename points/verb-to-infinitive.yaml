@@ -1,0 +1,139 @@
+id: verb-to-infinitive
+title: { en: "verb + to + verb (want to go)", fa: "فعل + to + فعل (want to go)" }
+# What a learner may search it by, in English and Persian.
+keywords: ["want to", "need to", "decide to", "to-infinitive", "infinitive", "مصدر با to", "فعل با to"]
+# The ids guides gave the same point.
+aliases: [learn-to]
+topic: verb_patterns
+cefrj: ["101", "102"]
+match:
+  - form: all
+    tree:
+      word: { TAG: VB, DEP: xcomp }
+      has: [ { DEP: aux, LOWER: { IN: [to, na] } } ]
+      lacks:
+        # to + verb with its own doer is another pattern: I want you to stay.
+        - { DEP: nsubj }
+      head:
+        word: { POS: VERB, LEMMA: { NOT_IN: [be, have, use, ought, suppose, get, got, go] } }
+        lacks:
+          - { DEP: dobj }
+          # be destined to, be asked to: a passive.
+          - { DEP: auxpass }
+  # wanna + verb: one word, however the parser hangs it.
+  - form: wanna
+    tokens: [ { LOWER: wanna }, { TAG: VB } ]
+  # going to + verb is be-going-to; going there to + verb is this.
+  - form: go
+    tree:
+      word: { TAG: VB, DEP: xcomp }
+      has: [ { DEP: aux, LOWER: to } ]
+      head:
+        word: { LEMMA: go, TAG: { NOT_IN: [VBG] } }
+exclude:
+  # how to + verb is another point: I know how to use it, what to wear.
+  - tokens: [ { LOWER: { IN: [how, what, where, when, which, who, whether] } }, { LOWER: to }, { TAG: VB } ]
+tests:
+  words: [to, wanna]
+  match:
+    - "I want to go home."
+    - "She decided not to come."
+    - "We need to talk."
+    - "I'd like to see it."
+    - "He forgot to call me."
+    - "Try to relax."
+    - "Do you wanna dance?"
+    - "Right, what would you like to drink?"
+  no_match:
+    - "I'm going to call her."
+    - "You have to go."
+    - "I used to live here."
+    - "You're supposed to know."
+    - "I want you to stay."
+    - "It's time to go."
+    - "I'm ready to leave."
+    - "We've got to go."
+    - "We don't really know how to use it."
+    - "Denise, you and I are destined to be together."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or Bembegoo's guides' where no item has one (guides).
+level: A1
+level_from: egp
+note:
+  gist:
+    en: 'Some verbs take to + a verb after them: want, need, decide, try, hope, forget, learn, would like. The second verb is in its base form.'
+    fa: 'بعد از بعضی فعل‌ها to و شکل سادهٔ فعل می‌آید: want، need، decide، try، hope، forget، learn و would like.'
+  forms:
+  - kind: positive
+    text: I want to go home.
+    mark: want to go
+  - kind: negative
+    text: She decided not to come.
+    mark: decided not to come
+  - kind: question
+    text: Do you need to leave now?
+    mark: need to leave
+  mistakes:
+  - wrong: I want go home.
+    right: I want to go home.
+    why:
+      en: After want, put to before the next verb.
+      fa: بعد از want قبل از فعل بعدی to بیاور؛ در فارسی می‌گوییم «می‌خواهم بروم» و چیزی بینشان نیست.
+  - wrong: She decided to not come.
+    right: She decided not to come.
+    why:
+      en: Not goes before to.
+      fa: «not» قبل از to می‌آید، نه بعد از آن.
+  - wrong: I'd like going to the cinema.
+    right: I'd like to go to the cinema.
+    why:
+      en: Would like takes to + a verb, not -ing.
+      fa: «would like» با to و فعل ساده می‌آید، نه با ing.
+  contrast:
+  - term: verb + -ing (enjoy doing)
+    example: I enjoy swimming.
+    why:
+      en: Verbs like enjoy, mind and finish take -ing, not to.
+      fa: فعل‌هایی مثل enjoy، mind و finish فعل ingدار می‌گیرند، نه to.
+    point: verb-ing
+  - term: be going to + verb
+    example: I'm going to call her.
+    why:
+      en: That is the future, a plan; want to is what you wish.
+      fa: آن آینده است و برنامه را می‌گوید؛ want to خواستن را.
+    point: be-going-to
+exercises:
+- id: need-talk
+  kind: choose
+  sentence: We need ___ to them.
+  options:
+  - to talk
+  - talking
+  - talk
+  answer: to talk
+  why:
+    en: need + to + verb.
+    fa: need و بعد to و فعل ساده.
+- id: forgot-call
+  kind: fix
+  wrong: He forgot call me.
+  right:
+  - He forgot to call me.
+  why:
+    en: 'forget + to + verb: he didn''t do it.'
+    fa: forget با to یعنی کاری را که باید می‌کرد یادش رفت.
+- id: decided-stay
+  kind: rewrite
+  instruction:
+    en: Say it with decide + to.
+    fa: با decide و to بگو.
+  from: I've thought about it, and I'll stay here.
+  answers:
+  - I've decided to stay here.
+  - I have decided to stay here.
+  - I decided to stay here.
+  why:
+    en: decide + to + verb.
+    fa: decide و بعد to و فعل ساده.

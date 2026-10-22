@@ -1,0 +1,130 @@
+id: so-such
+title: { en: "so + adjective, such (a) + noun (so tired, such a mess)", fa: "so و such برای تأکید (so tired، such a mess)" }
+# What a learner may search it by, in English and Persian.
+keywords: ["so", "such", "so ... that", "such a", "خیلی", "آن‌قدر", "چنان"]
+# The ids guides gave the same point.
+aliases: [such-a]
+topic: comparing
+cefrj: ["45", "46", "47"]
+match:
+  - form: so
+    tree:
+      word: { POS: { IN: [ADJ, ADV] }, LOWER: { NOT_IN: [much, many, far, long, little, few] } }
+      has: [ { DEP: advmod, LOWER: so } ]
+  # so good-looking: the subtitle's hyphen splits the word.
+  - form: hyphen
+    tokens: [ { LOWER: so }, { POS: ADJ }, { TEXT: "-" }, { POS: { IN: [ADJ, VERB, NOUN] } } ]
+  - form: hyphen
+    tokens: [ { LOWER: so }, { TEXT: { REGEX: "^[a-z]+-$" } }, { POS: { IN: [ADJ, VERB, NOUN] } } ]
+  - form: such
+    tree:
+      word: { POS: NOUN }
+      has: [ { DEP: { IN: [amod, predet, det] }, LOWER: such } ]
+exclude:
+  # So, back to work?: so opening the sentence, not before an adjective.
+  - tokens: [ { LOWER: so }, { IS_PUNCT: true } ]
+  # So far, so good: a fixed phrase.
+  - tokens: [ { LOWER: so }, { LOWER: far }, { IS_PUNCT: true, OP: "?" }, { LOWER: so }, { LOWER: good } ]
+  # such as: an example, not emphasis.
+  - tokens: [ { LOWER: such }, { LOWER: as } ]
+tests:
+  words: [so, such]
+  match:
+    - "I'm so tired."
+    - "It was such a mess."
+    - "She's such a nice person."
+    - "He talks so fast."
+    - "It was so cold that we stayed in."
+    - "They are so beautiful in their glass boxes."
+    - "You think he's vain. / But he's so good- looking."
+  no_match:
+    - "So we left."
+    - "I think so."
+    - "Thanks so much."
+    - "So far, so good."
+    - "So, back to screaming?"
+    - "I like big cities such as London."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or Bembegoo's guides' where no item has one (guides).
+level: B1
+level_from: egp
+note:
+  gist:
+    en: 'So + an adjective or adverb, such (a) + a noun, to make it stronger: so tired, such a mess. Often with that and what came of it: so cold that we stayed in.'
+    fa: 'so قبل از صفت یا قید و such (a) قبل از اسم، برای تأکید: so tired و such a mess. خیلی وقت‌ها با that و نتیجه‌اش می‌آید: so cold that we stayed in.'
+  forms:
+  - kind: positive
+    text: I'm so tired.
+    mark: so tired
+  - kind: positive
+    text: It was such a mess.
+    mark: such a mess
+  - kind: negative
+    text: It's not such a bad world.
+    mark: such a bad world
+  - kind: question
+    text: Why are you so angry?
+    mark: so angry
+  mistakes:
+  - wrong: It was so a good film.
+    right: It was such a good film.
+    why:
+      en: Before a or a noun, use such, not so.
+      fa: قبل از a یا اسم such بیاور، نه so.
+  - wrong: She is such kind.
+    right: She is so kind.
+    why:
+      en: Before an adjective alone, use so.
+      fa: قبل از صفتِ تنها so بیاور.
+  - wrong: I'm very tired that I can't walk.
+    right: I'm so tired that I can't walk.
+    why:
+      en: With that and a result, use so, not very.
+      fa: وقتی نتیجه را با that می‌آوری so بیاور، نه very؛ «آن‌قدر خسته‌ام که…» یعنی so tired that.
+  contrast:
+  - term: too + adjective
+    example: It's too cold to swim.
+    why:
+      en: Too means more than is good; so only makes it stronger.
+      fa: too یعنی بیش از اندازه، تا حدی که مانع کاری شود؛ so فقط تأکید می‌کند.
+    point: too-adjective
+  - term: very + adjective
+    example: It's very cold.
+    why:
+      en: Very makes it stronger too, but takes no that after it.
+      fa: very هم تأکید می‌کند ولی بعدش that و نتیجه نمی‌آید.
+    point: null
+exercises:
+- id: such-nice
+  kind: choose
+  sentence: She's ___ a nice person.
+  options:
+  - such
+  - so
+  - very
+  answer: such
+  why:
+    en: such + a + noun.
+    fa: such و a و اسم.
+- id: such-long
+  kind: fix
+  wrong: It was so a long day.
+  right:
+  - It was such a long day.
+  why:
+    en: Before a, use such.
+    fa: قبل از a، such بیاور.
+- id: so-cold-that
+  kind: rewrite
+  instruction:
+    en: Join them with so … that.
+    fa: با so … that وصلشان کن.
+  from: It was very cold. We stayed at home.
+  answers:
+  - It was so cold that we stayed at home.
+  - It was so cold we stayed at home.
+  why:
+    en: so + adjective + that + what came of it.
+    fa: so و صفت و that و نتیجه.

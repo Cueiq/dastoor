@@ -1,0 +1,112 @@
+id: past-passive
+title: { en: "was / were + past participle (it was made)", fa: "مجهول گذشتهٔ ساده (it was made)" }
+# What a learner may search it by, in English and Persian.
+keywords: ["passive", "past passive", "was made", "was born", "مجهول", "مجهول گذشته"]
+topic: passive
+cefrj: ["76", "76-1", "76-2", "76-3"]
+match:
+  - form: all
+    tree:
+      word: { TAG: VBN, LOWER: { NOT_IN: [supposed, used, gone, come, done, tired, bored, interested, excited, scared, worried, married, confused, surprised, pleased, amazed, shocked, disappointed, embarrassed, frightened, terrified, annoyed, finished, dressed, engaged, lost, stuck, screwed, involved, prepared, allowed] } }
+      has: [ { DEP: auxpass, LOWER: { IN: [was, were, wasn't, weren't] } } ]
+      lacks:
+        - { DEP: aux, TAG: MD }
+        # it's been fixed, it was being fixed: other tenses.
+        - { DEP: auxpass, LOWER: { IN: [been, being] } }
+        - { DEP: aux, LOWER: { IN: [have, has, had, "'d", been, being] } }
+tests:
+  words: [was, were]
+  match:
+    - "It was made in China."
+    - "I was born in Tehran."
+    - "The windows were broken."
+    - "We weren't told."
+    - "Was it stolen?"
+    - "Stuart was entangled with the fate of the universe."
+  no_match:
+    - "It is made here."
+    - "I was tired."
+    - "We were supposed to go."
+    - "It was being repaired."
+    - "She had been told."
+    - "He was gone."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or Bembegoo's guides' where no item has one (guides).
+level: A2
+level_from: egp
+note:
+  gist:
+    en: 'Was or were + a past participle, for something done in the past when who did it doesn''t matter: I was born in Tehran.'
+    fa: 'was یا were و قسمت سوم فعل، برای کاری که در گذشته انجام شده و مهم نیست چه کسی انجامش داده: I was born in Tehran.'
+  forms:
+  - kind: positive
+    text: It was made in China.
+    mark: was made
+  - kind: negative
+    text: We weren't told.
+    mark: weren't told
+  - kind: question
+    text: Was it stolen?
+    mark: Was it stolen
+  mistakes:
+  - wrong: I born in 1990.
+    right: I was born in 1990.
+    why:
+      en: Born needs was or were.
+      fa: born بدون was یا were نمی‌آید؛ «به دنیا آمدم» در انگلیسی مجهول است.
+  - wrong: My phone was stole.
+    right: My phone was stolen.
+    why:
+      en: 'Use the past participle: stolen, not stole.'
+      fa: 'قسمت سوم فعل بیاور: stolen، نه stole.'
+  - wrong: The windows was broken.
+    right: The windows were broken.
+    why:
+      en: For more than one, use were.
+      fa: برای جمع were بیاور.
+  contrast:
+  - term: am / is / are + past participle
+    example: It's made here.
+    why:
+      en: That is what is done now, or always.
+      fa: آن کاری است که حالا یا همیشه انجام می‌شود.
+    point: present-passive
+  - term: was / were + -ing
+    example: I was walking home.
+    why:
+      en: That is what someone was doing, not what was done to them.
+      fa: آن کاری است که کسی در حال انجامش بود، نه کاری که رویش انجام شد.
+    point: past-continuous
+exercises:
+- id: built-1920
+  kind: choose
+  sentence: This house ___ in 1920.
+  options:
+  - was built
+  - built
+  - was build
+  answer: was built
+  why:
+    en: was + past participle.
+    fa: was و قسمت سوم فعل.
+- id: were-given
+  kind: fix
+  wrong: We was given badges.
+  right:
+  - We were given badges.
+  why:
+    en: With we, were.
+    fa: با we، were بیاور.
+- id: bike-stolen
+  kind: rewrite
+  instruction:
+    en: Say it in the passive.
+    fa: مجهولش را بگو.
+  from: Someone stole my bike.
+  answers:
+  - My bike was stolen.
+  why:
+    en: What was done to comes first, with was + past participle.
+    fa: چیزی که کار رویش انجام شد اول می‌آید، با was و قسمت سوم فعل.

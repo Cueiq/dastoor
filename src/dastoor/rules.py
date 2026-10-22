@@ -55,13 +55,17 @@ def _value_matches(value, wanted) -> bool:
     # Words compare without case: a subtitle's capitals are its own.
     value = value.lower()
     if isinstance(wanted, dict):
-        if "IN" in wanted:
-            return value in {str(each).lower() for each in wanted["IN"]}
-        if "NOT_IN" in wanted:
-            return value not in {str(each).lower() for each in wanted["NOT_IN"]}
-        if "REGEX" in wanted:
-            return re.search(wanted["REGEX"], value, re.IGNORECASE) is not None
-        raise ValueError(f"unknown test {wanted}")
+        # Every test given must hold: { REGEX: "ing$", NOT_IN: [thing] }.
+        unknown = set(wanted) - {"IN", "NOT_IN", "REGEX"}
+        if unknown or not wanted:
+            raise ValueError(f"unknown test {wanted}")
+        if "IN" in wanted and value not in {str(each).lower() for each in wanted["IN"]}:
+            return False
+        if "NOT_IN" in wanted and value in {str(each).lower() for each in wanted["NOT_IN"]}:
+            return False
+        if "REGEX" in wanted and re.search(wanted["REGEX"], value, re.IGNORECASE) is None:
+            return False
+        return True
     return value == str(wanted).lower()
 
 

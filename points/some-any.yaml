@@ -1,0 +1,118 @@
+id: some-any
+title: { en: "some / any (something, anything, nobody…)", fa: "some و any (و something، anything، nobody…)" }
+# What a learner may search it by, in English and Persian.
+keywords: ["some", "any", "something", "anything", "nobody", "nothing", "مقداری", "هیچ", "کسی", "چیزی"]
+topic: determiners
+cefrj: ["15", "24"]
+match:
+  - form: some-any
+    tree:
+      word: { LOWER: { IN: [some, any] }, POS: { IN: [DET, PRON] } }
+  - form: words
+    tree:
+      word: { LOWER: { IN: [something, anything, nothing, someone, anyone, somebody, anybody, nobody, somewhere, anywhere, nowhere] } }
+exclude:
+  # any longer, any more, any better: an adverb, not some or any.
+  - tokens: [ { LOWER: any }, { TAG: { IN: [JJR, RBR] }, LOWER: { NOT_IN: [more, less] } } ]
+  - tokens: [ { LOWER: any }, { LOWER: longer } ]
+  # any more at the end (I don't need to hear any more); any more tissues is.
+  - tokens: [ { LOWER: any }, { LOWER: more }, { IS_PUNCT: true } ]
+tests:
+  words: [some, any, something, anything, nothing, someone, anyone, nobody, somebody, anybody, somewhere, anywhere, nowhere]
+  match:
+    - "I have some money."
+    - "Do you have any questions?"
+    - "I don't know anything."
+    - "Somebody's at the door."
+    - "Nobody understands!"
+    - "Is anyone there?"
+    - "There isn't any milk."
+    - "Nick, are there any more tissues?"
+  no_match:
+    - "Sometimes I walk."
+    - "I can't wait any longer."
+    - "Anyway, let's go."
+    - "Everyone is here."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or Bembegoo's guides' where no item has one (guides).
+level: A1
+level_from: egp
+note:
+  gist:
+    en: 'Some in a sentence that says yes: some money, something. Any after not and in questions: any money, anything. Some in a question offers or asks for something.'
+    fa: 'some در جملهٔ مثبت: some money و something. any بعد از not و در سؤال: any money و anything. some در سؤالی که چیزی تعارف می‌کند یا می‌خواهد هم می‌آید.'
+  forms:
+  - kind: positive
+    text: I've got some water.
+    mark: some
+  - kind: negative
+    text: There isn't any milk.
+    mark: any
+  - kind: question
+    text: Did you hear anything?
+    mark: anything
+  mistakes:
+  - wrong: I don't know nothing.
+    right: I don't know anything.
+    why:
+      en: 'One negative is enough: not + any, or no alone.'
+      fa: 'یک منفی کافی است: not با any، یا فقط no. در فارسی می‌گوییم «هیچ‌چیز نمی‌دانم» ولی انگلیسی دو منفی نمی‌گیرد.'
+  - wrong: There isn't some milk.
+    right: There isn't any milk.
+    why:
+      en: After not, use any.
+      fa: بعد از not، any بیاور.
+  - wrong: I have any questions.
+    right: I have some questions.
+    why:
+      en: In a sentence that says yes, use some.
+      fa: در جملهٔ مثبت some بیاور.
+  contrast:
+  - term: no / nothing / nobody
+    example: There's no milk.
+    why:
+      en: 'No already makes it negative: no not with it.'
+      fa: no خودش جمله را منفی می‌کند و not لازم ندارد.
+    point: null
+  - term: every / everyone
+    example: Everyone is here.
+    why:
+      en: Every means all of them, not some.
+      fa: every یعنی همه، نه چند تا.
+    point: null
+exercises:
+- id: isnt-any
+  kind: choose
+  sentence: There isn't ___ milk in the fridge.
+  options:
+  - any
+  - some
+  - 'no'
+  answer: any
+  why:
+    en: not + any.
+    fa: not و any.
+- id: didnt-see
+  kind: fix
+  wrong: I didn't see nobody.
+  right:
+  - I didn't see anybody.
+  - I didn't see anyone.
+  - I saw nobody.
+  why:
+    en: 'One negative: not + anybody, or nobody alone.'
+    fa: 'یک منفی: not با anybody، یا فقط nobody.'
+- id: no-bread
+  kind: rewrite
+  instruction:
+    en: Say it with not + any.
+    fa: با not و any بگو.
+  from: There's no bread.
+  answers:
+  - There isn't any bread.
+  - There is not any bread.
+  why:
+    en: no = not any.
+    fa: no یعنی not any.

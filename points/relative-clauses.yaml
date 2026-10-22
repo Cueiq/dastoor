@@ -1,0 +1,132 @@
+id: relative-clauses
+title: { en: "who / which / that (the man who lives…)", fa: "جملهٔ موصولی با who، which، that" }
+# What a learner may search it by, in English and Persian.
+keywords: ["relative clause", "who", "which", "that", "جملهٔ موصولی", "ضمیر موصولی", "که"]
+topic: linking
+cefrj: ["172", "173", "174", "175", "177", "178", "179"]
+match:
+  - form: pronoun
+    tree:
+      word: { DEP: relcl }
+      has: [ { LOWER: { IN: [who, which, that, whom] }, DEP: { IN: [nsubj, nsubjpass, dobj, pobj, attr] } } ]
+  # the man whose car…
+  - form: whose
+    tree:
+      word: { DEP: relcl }
+      has:
+        - word: {}
+          has: [ { LOWER: whose } ]
+  # the money you've got: no who, which or that.
+  - form: omitted
+    tree:
+      word: { DEP: relcl, POS: { IN: [VERB, AUX] } }
+      has: [ { DEP: { IN: [nsubj, nsubjpass] }, LOWER: { NOT_IN: [who, which, that, whom, what] } } ]
+      lacks:
+        - { LOWER: { IN: [who, which, that, whom, whose, where, when, why, what, how] } }
+        - { DEP: mark }
+      head:
+        word: { POS: { IN: [NOUN, PRON, PROPN] } }
+exclude:
+  # Whose dog has Nick found?: a question.
+  - tokens: [ { LOWER: whose, IS_SENT_START: true } ]
+tests:
+  words: [who, which, that]
+  match:
+    - "A chicken that is kept in a small box."
+    - "The man who lives next door is a doctor."
+    - "This is the book which I told you about."
+    - "Is that all the money you've got?"
+    - "The girl I met yesterday called me."
+    - "I know a woman whose son is a pilot."
+  no_match:
+    - "Who are you?"
+    - "Whose dog has Nick found?"
+    - "I think that he's right."
+    - "Which one do you want?"
+    - "I know where he lives."
+    - "That's the place where we met."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or Bembegoo's guides' where no item has one (guides).
+level: A2
+level_from: egp
+note:
+  gist:
+    en: 'Who for people, which for things, that for either, to say which one you mean: the man who lives next door. When it is the object of what follows, you can leave it out: the film (that) I saw.'
+    fa: 'who برای آدم، which برای چیز و that برای هر دو، تا بگویی منظورت کدام است: the man who lives next door. وقتی مفعولِ جملهٔ بعدش است، می‌شود نیاوردش: the film (that) I saw.'
+  forms:
+  - kind: positive
+    text: The man who lives next door is a doctor.
+    mark: who lives
+  - kind: positive
+    text: Is that all the money you've got?
+    mark: money you've got
+  - kind: negative
+    text: It's a shop that doesn't open on Sundays.
+    mark: that doesn't open
+  - kind: question
+    text: Who's the girl that called you?
+    mark: that called
+  mistakes:
+  - wrong: The man who he lives next door is a doctor.
+    right: The man who lives next door is a doctor.
+    why:
+      en: 'Who already stands for him: don''t add he.'
+      fa: who خودش جای او را می‌گیرد، he را تکرار نکن؛ در فارسی می‌گوییم «مردی که او…» ولی انگلیسی ضمیر دوباره نمی‌خواهد.
+  - wrong: The book what I read was good.
+    right: The book that I read was good.
+    why:
+      en: After a noun, use that or which, not what.
+      fa: بعد از اسم that یا which بیاور، نه what.
+  - wrong: The girl which I met is French.
+    right: The girl who I met is French.
+    why:
+      en: For people, who or that.
+      fa: برای آدم who یا that بیاور.
+  contrast:
+  - term: who / which in a question
+    example: Who are you?
+    why:
+      en: That asks; a relative clause tells which one.
+      fa: آن سؤال می‌پرسد؛ جملهٔ موصولی می‌گوید کدام.
+    point: null
+  - term: where for a place
+    example: That's the place where we met.
+    why:
+      en: For a place, where.
+      fa: برای مکان where می‌آید.
+    point: null
+exercises:
+- id: whose-son
+  kind: choose
+  sentence: I know a woman ___ son is a pilot.
+  options:
+  - whose
+  - who
+  - which
+  answer: whose
+  why:
+    en: 'whose: her son.'
+    fa: whose یعنی «پسرِ او».
+- id: who-called
+  kind: fix
+  wrong: The man who he called me is my uncle.
+  right:
+  - The man who called me is my uncle.
+  - The man that called me is my uncle.
+  why:
+    en: 'Who is the subject: no he.'
+    fa: who فاعل است و he لازم نیست.
+- id: friend-who
+  kind: rewrite
+  instruction:
+    en: Join them with who.
+    fa: با who وصلشان کن.
+  from: I have a friend. She speaks five languages.
+  answers:
+  - I have a friend who speaks five languages.
+  - I have a friend that speaks five languages.
+  why:
+    en: who + verb, for a person.
+    fa: who و فعل، برای آدم.

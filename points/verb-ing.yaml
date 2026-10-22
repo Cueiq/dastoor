@@ -1,0 +1,144 @@
+id: verb-ing
+title: { en: "verb + -ing (enjoy doing)", fa: "فعل + فعل ingدار (enjoy doing)" }
+# What a learner may search it by, in English and Persian.
+keywords: ["enjoy doing", "stop doing", "keep doing", "gerund", "-ing", "اسم مصدر", "فعل ingدار"]
+# The ids guides gave the same point.
+aliases: [keep-ing, stop-ing, remember-ing]
+topic: verb_patterns
+cefrj: ["112", "113"]
+match:
+  - form: all
+    tree:
+      word: { TAG: VBG, DEP: { IN: [xcomp, dobj, ccomp] } }
+      lacks: [ { DEP: { IN: [aux, nsubj] } } ]
+      # The verbs that take -ing after them.
+      head:
+        word: { LEMMA: { IN: [enjoy, mind, stop, keep, finish, avoid, start, begin, love, hate, like, miss, quit, imagine, suggest, practise, practice, consider, deny, risk, admit, stand, recommend, continue, prefer, remember, forget, regret, try, quit, mention, can't stand] }, POS: VERB }
+  # I love dancing: the parser may take love for a helper.
+  - form: helper
+    tree:
+      word: { TAG: VBG }
+      has: [ { DEP: aux, LEMMA: { IN: [enjoy, mind, stop, keep, finish, avoid, start, begin, love, hate, like, miss, quit, imagine, consider, practise, practice, continue, prefer, remember, regret] } } ]
+  # The parser may take a bare -ing word after these verbs for a noun:
+  # I enjoy swimming. With the, my, an adjective…, it is one: I miss the meeting.
+  - form: noun
+    tree:
+      word: { TAG: NN, DEP: dobj, LOWER: { REGEX: "^[a-z]{2,}ing$", NOT_IN: [thing, nothing, something, anything, everything, king, ring, spring, string, sting, wing, morning, evening, wedding, building, ceiling, pudding, darling, ending, meeting, feeling, painting, clothing, timing] } }
+      lacks: [ { DEP: { IN: [det, poss, amod, compound, nummod, prep] } } ]
+      head:
+        word: { LEMMA: { IN: [enjoy, mind, stop, keep, finish, avoid, start, begin, love, hate, like, miss, quit, imagine, suggest, practise, practice, consider, deny, risk, admit, stand, recommend, continue, prefer, remember, forget, regret, try, mention, give, carry] } }
+  # give up, carry on, keep on + -ing.
+  - form: phrasal
+    tree:
+      word: { TAG: VBG, DEP: { IN: [xcomp, dobj, ccomp, pcomp] } }
+      lacks: [ { DEP: { IN: [aux, nsubj] } } ]
+      head:
+        word: { LEMMA: { IN: [give, carry, keep, go] } }
+        has: [ { DEP: prt, LOWER: { IN: [up, "on"] } } ]
+tests:
+  words: [enjoy, enjoyed, stop, stopped, keep, keeps, kept, mind, start, started, finish, finished, love, loves, hate, try, tried, miss, imagine, avoid, quit, remember, forget, regret, give]
+  match:
+    - "I enjoy swimming."
+    - "Stop talking!"
+    - "Do you mind waiting?"
+    - "She keeps calling me."
+    - "I've finished cleaning the kitchen."
+    - "We should keep running for our lives."
+    - "He gave up smoking."
+    - "Oh, I love dancing!"
+    - "Stop talking and listen."
+  no_match:
+    - "I'm swimming."
+    - "I stopped to rest."
+    - "I want to go."
+    - "I saw him running."
+    - "Keep the change."
+    - "I miss the meeting."
+    - "I like the ring."
+    - "I like fish and chips."
+    - "Sure, I'll give you hope."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or Bembegoo's guides' where no item has one (guides).
+# Set by hand (owner, 2026-10-22): the English Grammar Profile's B2 is for
+# the pattern at large; the Core Inventory has it at A1-A2 and CEFR-J at A1,
+# and a learner meets enjoy doing long before B2.
+level: A2
+level_from: hand
+note:
+  gist:
+    en: 'After some verbs the next verb takes -ing: enjoy, mind, finish, keep, stop, avoid, imagine, give up. Love, like, hate and start take -ing or to.'
+    fa: 'بعد از بعضی فعل‌ها فعل بعدی ing می‌گیرد: enjoy، mind، finish، keep، stop، avoid، imagine و give up. فعل‌های love، like، hate و start هم با ing می‌آیند و هم با to.'
+  forms:
+  - kind: positive
+    text: I enjoy swimming.
+    mark: enjoy swimming
+  - kind: negative
+    text: She doesn't mind waiting.
+    mark: mind waiting
+  - kind: question
+    text: Have you finished cleaning the kitchen?
+    mark: finished cleaning
+  mistakes:
+  - wrong: I enjoy to swim.
+    right: I enjoy swimming.
+    why:
+      en: Enjoy takes -ing, never to.
+      fa: enjoy همیشه با ing می‌آید، هیچ‌وقت با to.
+  - wrong: Do you mind to wait?
+    right: Do you mind waiting?
+    why:
+      en: Mind takes -ing.
+      fa: mind با ing می‌آید.
+  - wrong: I stopped to smoke last year.
+    right: I stopped smoking last year.
+    why:
+      en: Stop + -ing is not doing it any more; stop + to is stopping in order to do it.
+      fa: stop با ing یعنی دیگر آن کار را نکردن؛ stop با to یعنی دست نگه داشتن تا کار دیگری بکنی.
+  contrast:
+  - term: verb + to + verb (want to go)
+    example: I want to swim.
+    why:
+      en: Verbs like want, need and decide take to + a verb.
+      fa: فعل‌هایی مثل want، need و decide با to و فعل ساده می‌آیند.
+    point: verb-to-infinitive
+  - term: am / is / are + -ing
+    example: I'm swimming.
+    why:
+      en: That is what is going on now; here -ing follows another verb.
+      fa: آن کاری است که همین حالا در جریان است؛ اینجا ing بعد از فعل دیگری می‌آید.
+    point: present-continuous
+exercises:
+- id: mind-opening
+  kind: choose
+  sentence: Do you mind ___ the window?
+  options:
+  - opening
+  - to open
+  - open
+  answer: opening
+  why:
+    en: mind + -ing.
+    fa: mind و فعل ingدار.
+- id: keeps-calling
+  kind: fix
+  wrong: She keeps to call me.
+  right:
+  - She keeps calling me.
+  why:
+    en: 'keep + -ing: again and again.'
+    fa: keep با ing یعنی پشت سر هم.
+- id: gave-up
+  kind: rewrite
+  instruction:
+    en: Say it with give up + -ing.
+    fa: با give up و فعل ingدار بگو.
+  from: He doesn't smoke any more.
+  answers:
+  - He's given up smoking.
+  - He has given up smoking.
+  - He gave up smoking.
+  why:
+    en: 'give up + -ing: stop doing it for good.'
+    fa: give up با ing یعنی برای همیشه کنار گذاشتن.
