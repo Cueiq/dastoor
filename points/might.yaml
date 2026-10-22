@@ -64,19 +64,19 @@ note:
     right: He might come.
     why:
       en: Might already means maybe; don't say both.
-      fa: «might» خودش یعنی «شاید»؛ هر دو را با هم نگو.
+      fa: «might» خودش یعنی «شاید»؛ هر دو را با هم نگویید.
   contrast:
   - term: must be (a guess)
     example: The lights are on. She must be home.
     why:
       en: Must is almost sure; might is only maybe.
-      fa: «must» یعنی تقریباً مطمئنی؛ «might» یعنی شاید.
+      fa: «must» یعنی تقریباً مطمئنید؛ «might» یعنی شاید.
     point: must-guess
   - term: will + verb
     example: It will rain tomorrow.
     why:
       en: Will is what you expect; might is only possible.
-      fa: «will» چیزی است که انتظارش را داری؛ «might» فقط ممکن است.
+      fa: «will» چیزی است که انتظارش را دارید؛ «might» فقط ممکن است.
     point: will
 exercises:
 - id: umbrella
@@ -102,7 +102,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Say it with might.
-    fa: با might بگو.
+    fa: با might بگویید.
   from: Maybe Anna is at home.
   answers:
   - Anna might be at home.

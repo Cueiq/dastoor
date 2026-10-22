@@ -38,7 +38,7 @@ level_from: egp
 note:
   gist:
     en: 'Look, sound, feel, smell, taste or seem + an adjective, for how something seems to you: You look tired.'
-    fa: 'look، sound، feel، smell، taste یا seem و بعد صفت، برای اینکه چیزی به نظرت چطور می‌آید: You look tired یعنی «خسته به نظر می‌رسی».'
+    fa: 'look، sound، feel، smell، taste یا seem و بعد صفت، برای اینکه چیزی به نظرتان چطور می‌آید: You look tired یعنی «خسته به نظر می‌رسی».'
   forms:
   - kind: positive
     text: You look happy.
@@ -101,10 +101,10 @@ exercises:
   kind: rewrite
   instruction:
     en: Say it with look.
-    fa: با look بگو.
+    fa: با look بگویید.
   from: I think you are tired.
   answers:
   - You look tired.
   why:
     en: 'How you seem: look + adjective.'
-    fa: 'چطور به نظر می‌رسی: look + صفت.'
+    fa: 'اینکه کسی چطور به نظر می‌رسد: look + صفت.'

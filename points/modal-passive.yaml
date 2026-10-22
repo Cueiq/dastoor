@@ -91,7 +91,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Start with These shops.
-    fa: جمله را با These shops شروع کن.
+    fa: جمله را با These shops شروع کنید.
   from: You can find these shops everywhere.
   answers:
   - These shops can be found everywhere.

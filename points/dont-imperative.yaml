@@ -49,7 +49,7 @@ note:
     right: Please don't cry.
     why:
       en: To tell someone not to do something, start with don't, not not.
-      fa: برای «نکن» با «don't» شروع کن، نه «not».
+      fa: برای «نکن» با «don't» شروع کنید، نه «not».
   - wrong: Don't to go.
     right: Don't go.
     why:
@@ -65,7 +65,7 @@ note:
     example: Let's not go out tonight.
     why:
       en: Let's not includes you; don't tells someone else.
-      fa: «let's not» خودت را هم شامل می‌شود؛ «don't» به دیگری می‌گوید.
+      fa: «let's not» خودتان را هم شامل می‌شود؛ «don't» به دیگری می‌گوید.
     point: lets
   - term: I don't + verb
     example: I don't like fish.
@@ -92,12 +92,12 @@ exercises:
   - Don't cry, please.
   why:
     en: Start with don't.
-    fa: با don't شروع کن.
+    fa: با don't شروع کنید.
 - id: open-door
   kind: rewrite
   instruction:
     en: Tell them not to do it.
-    fa: بگو این کار را نکنند.
+    fa: بگویید این کار را نکنند.
   from: Open the door.
   answers:
   - Don't open the door.

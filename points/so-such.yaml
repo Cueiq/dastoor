@@ -72,17 +72,17 @@ note:
     right: It was such a good film.
     why:
       en: Before a or a noun, use such, not so.
-      fa: قبل از a یا اسم such بیاور، نه so.
+      fa: قبل از a یا اسم such بیاورید، نه so.
   - wrong: She is such kind.
     right: She is so kind.
     why:
       en: Before an adjective alone, use so.
-      fa: قبل از صفتِ تنها so بیاور.
+      fa: قبل از صفتِ تنها so بیاورید.
   - wrong: I'm very tired that I can't walk.
     right: I'm so tired that I can't walk.
     why:
       en: With that and a result, use so, not very.
-      fa: وقتی نتیجه را با that می‌آوری so بیاور، نه very؛ «آن‌قدر خسته‌ام که…» یعنی so tired that.
+      fa: وقتی نتیجه را با that می‌آورید so بیاورید، نه very؛ «آن‌قدر خسته‌ام که…» یعنی so tired that.
   contrast:
   - term: too + adjective
     example: It's too cold to swim.
@@ -115,12 +115,12 @@ exercises:
   - It was such a long day.
   why:
     en: Before a, use such.
-    fa: قبل از a، such بیاور.
+    fa: قبل از a، such بیاورید.
 - id: so-cold-that
   kind: rewrite
   instruction:
     en: Join them with so … that.
-    fa: با so … that وصلشان کن.
+    fa: با so … that وصلشان کنید.
   from: It was very cold. We stayed at home.
   answers:
   - It was so cold that we stayed at home.

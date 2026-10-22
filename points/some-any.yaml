@@ -63,12 +63,12 @@ note:
     right: There isn't any milk.
     why:
       en: After not, use any.
-      fa: بعد از not، any بیاور.
+      fa: بعد از not، any بیاورید.
   - wrong: I have any questions.
     right: I have some questions.
     why:
       en: In a sentence that says yes, use some.
-      fa: در جملهٔ مثبت some بیاور.
+      fa: در جملهٔ مثبت some بیاورید.
   contrast:
   - term: no / nothing / nobody
     example: There's no milk.
@@ -108,7 +108,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Say it with not + any.
-    fa: با not و any بگو.
+    fa: با not و any بگویید.
   from: There's no bread.
   answers:
   - There isn't any bread.

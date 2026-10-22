@@ -80,7 +80,7 @@ note:
     right: I want to go home.
     why:
       en: After want, put to before the next verb.
-      fa: بعد از want قبل از فعل بعدی to بیاور؛ در فارسی می‌گوییم «می‌خواهم بروم» و چیزی بینشان نیست.
+      fa: بعد از want قبل از فعل بعدی to بیاورید؛ در فارسی می‌گوییم «می‌خواهم بروم» و چیزی بینشان نیست.
   - wrong: She decided to not come.
     right: She decided not to come.
     why:
@@ -128,7 +128,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Say it with decide + to.
-    fa: با decide و to بگو.
+    fa: با decide و to بگویید.
   from: I've thought about it, and I'll stay here.
   answers:
   - I've decided to stay here.

@@ -1,5 +1,5 @@
 id: lets
-title: { en: "Let's + verb", fa: "Let's: بیا … (پیشنهاد)" }
+title: { en: "Let's + verb", fa: "Let's: بیایید … (پیشنهاد)" }
 # What a learner may search it by, in English and Persian.
 keywords: ["let's", "let us", "suggestion", "پیشنهاد", "بیا", "بیایید"]
 topic: frames
@@ -32,7 +32,7 @@ level_from: egp
 note:
   gist:
     en: 'Let''s + a plain verb asks the people with you to do something together: Let''s go!'
-    fa: 'let''s و فعل ساده از آدم‌هایی که با تو هستند می‌خواهد کاری را با هم بکنید: Let''s go! یعنی «بریم!»'
+    fa: 'let''s و فعل ساده از آدم‌هایی که با شما هستند می‌خواهد کاری را با هم بکنید: Let''s go! یعنی «بریم!»'
   forms:
   - kind: positive
     text: Let's go home.
@@ -66,7 +66,7 @@ note:
     example: Don't go home.
     why:
       en: Don't tells someone else; let's not includes you.
-      fa: «don't» به دیگری می‌گوید؛ «let's not» خودت را هم شامل می‌شود.
+      fa: «don't» به دیگری می‌گوید؛ «let's not» خودتان را هم شامل می‌شود.
     point: dont-imperative
 exercises:
 - id: hot-beach
@@ -92,7 +92,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Suggest it with let's.
-    fa: با let's پیشنهاد بده.
+    fa: با let's پیشنهاد بدهید.
   from: We can eat now. Do you want to?
   answers:
   - Let's eat now.

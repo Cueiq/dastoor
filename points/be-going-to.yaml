@@ -51,7 +51,7 @@ level_from: egp
 note:
   gist:
     en: Am, is or are + going to + a plain verb, for a plan you have already made, or for something you can see is about to happen.
-    fa: am، is یا are و بعد going to و فعل ساده، برای برنامه‌ای که از قبل داری، یا چیزی که از نشانه‌هایش پیداست به‌زودی اتفاق می‌افتد.
+    fa: am، is یا are و بعد going to و فعل ساده، برای برنامه‌ای که از قبل دارید، یا چیزی که از نشانه‌هایش پیداست به‌زودی اتفاق می‌افتد.
   forms:
   - kind: positive
     text: I'm going to cook tonight.
@@ -67,7 +67,7 @@ note:
     right: I'm going to buy a dress.
     why:
       en: Don't drop am, is or are before going to.
-      fa: «am»، «is» یا «are» را قبل از «going to» جا نینداز.
+      fa: «am»، «is» یا «are» را قبل از «going to» جا نیندازید.
   - wrong: She's going to buys a car.
     right: She's going to buy a car.
     why:
@@ -83,7 +83,7 @@ note:
     example: The phone is ringing. I'll answer it.
     why:
       en: Going to is a plan you made before; I'll is a decision you make now.
-      fa: «going to» برنامه‌ای است که از قبل داشتی؛ «I'll» تصمیمی است که همین لحظه می‌گیری.
+      fa: «going to» برنامه‌ای است که از قبل داشتید؛ «I'll» تصمیمی است که همین لحظه می‌گیرید.
     point: will
 exercises:
 - id: parents-are
@@ -110,7 +110,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Say your plan with going to.
-    fa: برنامه‌ات را با going to بگو.
+    fa: برنامه‌تان را با going to بگویید.
   from: 'My plan for tonight: watch a film.'
   answers:
   - I'm going to watch a film tonight.
@@ -119,4 +119,4 @@ exercises:
   - Tonight I am going to watch a film.
   why:
     en: 'A plan you already have: am going to + verb.'
-    fa: 'برنامه‌ای که از قبل داری: am going to + فعل.'
+    fa: 'برنامه‌ای که از قبل دارید: am going to + فعل.'

@@ -146,7 +146,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Say it as one sentence with if.
-    fa: در یک جمله با if بگو.
+    fa: در یک جمله با if بگویید.
   from: Maybe it will be cold. Then I will wear a coat.
   answers:
   - If it is cold, I will wear a coat.

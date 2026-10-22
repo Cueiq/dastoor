@@ -67,12 +67,12 @@ note:
     right: He is the tallest boy in the class.
     why:
       en: Don't forget the before the -est word.
-      fa: «the» را قبل از کلمهٔ estدار جا نینداز.
+      fa: «the» را قبل از کلمهٔ estدار جا نیندازید.
   - wrong: She is the best student of the class.
     right: She is the best student in the class.
     why:
       en: With a place or a group like a class, use in, not of.
-      fa: با مکان یا گروهی مثل کلاس «in» بیاور، نه «of»؛ «بهترین شاگردِ کلاس» در انگلیسی in می‌خواهد.
+      fa: با مکان یا گروهی مثل کلاس «in» بیاورید، نه «of»؛ «بهترین شاگردِ کلاس» در انگلیسی in می‌خواهد.
   contrast:
   - term: adjective + -er (than)
     example: Ali is taller than Reza.
@@ -104,7 +104,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Say it with the most.
-    fa: با the most بگو.
+    fa: با the most بگویید.
   from: No place in the world is as beautiful as this.
   answers:
   - This is the most beautiful place in the world.

@@ -47,7 +47,7 @@ note:
     right: You were supposed to call me.
     why:
       en: 'Don''t forget be: am, is, are, was or were.'
-      fa: '«be» را جا نینداز: am، is، are، was یا were.'
+      fa: '«be» را جا نیندازید: am، is، are، was یا were.'
   - wrong: The shop isn't suppose to open today.
     right: The shop isn't supposed to open today.
     why:
@@ -63,7 +63,7 @@ note:
     example: You should call your mother.
     why:
       en: Should is your own advice; be supposed to is what a plan or others expect.
-      fa: «should» توصیهٔ خودت است؛ «be supposed to» چیزی است که برنامه یا دیگران انتظار دارند.
+      fa: «should» توصیهٔ خودتان است؛ «be supposed to» چیزی است که برنامه یا دیگران انتظار دارند.
     point: should
 exercises:
 - id: call-arrived
@@ -89,7 +89,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Say it with be supposed to.
-    fa: با be supposed to بگو.
+    fa: با be supposed to بگویید.
   from: The plan says the train leaves at six.
   answers:
   - The train is supposed to leave at six.

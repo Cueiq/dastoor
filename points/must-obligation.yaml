@@ -64,7 +64,7 @@ note:
     example: You mustn't park here. / You don't have to pay.
     why:
       en: Mustn't means it isn't allowed; don't have to means it isn't necessary.
-      fa: «mustn't» یعنی اجازه نداری؛ «don't have to» یعنی لازم نیست. در فارسی اولی «نباید» است و دومی «لازم نیست».
+      fa: «mustn't» یعنی اجازه ندارید؛ «don't have to» یعنی لازم نیست. در فارسی اولی «نباید» است و دومی «لازم نیست».
     point: have-to
   - term: must (almost sure)
     example: He has ten cars. He must be rich.
@@ -96,7 +96,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Say it with must.
-    fa: با must بگو.
+    fa: با must بگویید.
   from: You need to wash your hands.
   answers:
   - You must wash your hands.

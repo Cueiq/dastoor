@@ -70,7 +70,7 @@ note:
     example: I'm used to getting up early.
     why:
       en: Be used to + -ing means something is normal for you now, not a past habit.
-      fa: «be used to» با ing یعنی چیزی الان برایت عادی است، نه عادتی در گذشته.
+      fa: «be used to» با ing یعنی چیزی الان برایتان عادی است، نه عادتی در گذشته.
     point: be-used-to
   - term: would + verb (past habit)
     example: Every summer we would go to the sea.
@@ -102,7 +102,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Say it with used to.
-    fa: با used to بگو.
+    fa: با used to بگویید.
   from: In the past this building was a cinema. Now it is a gym.
   answers:
   - This building used to be a cinema.

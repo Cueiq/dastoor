@@ -67,17 +67,17 @@ note:
     right: What are you doing?
     why:
       en: Don't drop am, is or are.
-      fa: «am»، «is» یا «are» را جا نینداز.
+      fa: «am»، «is» یا «are» را جا نیندازید.
   - wrong: What do you do now?
     right: What are you doing now?
     why:
       en: For right now, use am, is or are + -ing; in Persian the same verb does both.
-      fa: برای همین لحظه am، is یا are و ing بیاور؛ در فارسی «چی کار می‌کنی؟» برای هر دو است، ولی انگلیسی فرق می‌گذارد.
+      fa: برای همین لحظه am، is یا are و ing بیاورید؛ در فارسی «چی کار می‌کنی؟» برای هر دو است، ولی انگلیسی فرق می‌گذارد.
   - wrong: I come to your house tomorrow.
     right: I'm coming to your house tomorrow.
     why:
       en: For a plan already made, use am, is or are + -ing.
-      fa: برای برنامه‌ای که قرارش گذاشته شده، am، is یا are و ing بیاور.
+      fa: برای برنامه‌ای که قرارش گذاشته شده، am، is یا are و ing بیاورید.
   contrast:
   - term: do / does + verb (present simple)
     example: I read every night.
@@ -115,7 +115,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Say the plan with -ing.
-    fa: برنامه را با ing بگو.
+    fa: برنامه را با ing بگویید.
   from: 'Our plan: we go to London next week.'
   answers:
   - We're going to London next week.

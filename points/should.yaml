@@ -64,7 +64,7 @@ note:
     right: You should have gone to bed early yesterday.
     why:
       en: For the past, use should have + past participle.
-      fa: برای گذشته «should have» و اسم مفعول بیاور.
+      fa: برای گذشته «should have» و اسم مفعول بیاورید.
   contrast:
   - term: must + verb
     example: You must stop at a red light.
@@ -102,7 +102,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Give the advice with should.
-    fa: توصیه را با should بگو.
+    fa: توصیه را با should بگویید.
   from: Seeing a doctor is a good idea for you.
   answers:
   - You should see a doctor.

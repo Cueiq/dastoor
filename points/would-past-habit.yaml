@@ -105,7 +105,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Say it with would.
-    fa: با would بگو.
+    fa: با would بگویید.
   from: My grandfather used to tell us stories.
   answers:
   - My grandfather would tell us stories.

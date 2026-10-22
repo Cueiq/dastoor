@@ -31,7 +31,7 @@ level_from: guides
 note:
   gist:
     en: Must have + a past participle, for a guess about the past that you're almost sure of.
-    fa: must have و اسم مفعول، برای حدسی دربارهٔ گذشته که تقریباً از آن مطمئنی؛ مثل «حتماً … بوده» در فارسی.
+    fa: must have و اسم مفعول، برای حدسی دربارهٔ گذشته که تقریباً از آن مطمئنید؛ مثل «حتماً … بوده» در فارسی.
   forms:
   - kind: positive
     text: She must have left early.
@@ -49,7 +49,7 @@ note:
     right: You should have called me yesterday, but you didn't.
     why:
       en: Must have is a sure guess; for something right that didn't happen, use should have.
-      fa: «must have» حدسِ مطمئن است؛ برای کاری که درست بود ولی انجام نشد «should have» بگو، هرچند در فارسی هر دو «باید» است.
+      fa: «must have» حدسِ مطمئن است؛ برای کاری که درست بود ولی انجام نشد «should have» بگویید، هرچند در فارسی هر دو «باید» است.
   - wrong: He must have forget his keys.
     right: He must have forgotten his keys.
     why:
@@ -60,7 +60,7 @@ note:
     example: She may have left early.
     why:
       en: May have is only a possible guess; must have means you are almost sure.
-      fa: «may have» فقط یک احتمال است؛ «must have» یعنی تقریباً مطمئنی.
+      fa: «may have» فقط یک احتمال است؛ «must have» یعنی تقریباً مطمئنید.
     point: may-have-past-participle
   - term: must be (a guess about now)
     example: She must be at home.
@@ -92,7 +92,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Say it as a sure guess, with must have.
-    fa: به‌صورت حدسِ مطمئن و با must have بگو.
+    fa: به‌صورت حدسِ مطمئن و با must have بگویید.
   from: I'm sure she left early.
   answers:
   - She must have left early.

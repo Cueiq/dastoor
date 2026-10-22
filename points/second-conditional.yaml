@@ -75,7 +75,7 @@ note:
     right: If I had money, I would buy it.
     why:
       en: 'No would in the if part: use the past.'
-      fa: در بخش «if» از «would» استفاده نکن، گذشته بیاور؛ در فارسی هر دو بخش «می‌…» دارند («اگر پول داشتم، می‌خریدم») ولی در انگلیسی نه.
+      fa: در بخش «if» از «would» استفاده نکنید، گذشته بیاورید؛ در فارسی هر دو بخش «می‌…» دارند («اگر پول داشتم، می‌خریدم») ولی در انگلیسی نه.
   - wrong: If I knew his number, I will call him.
     right: If I knew his number, I would call him.
     why:
@@ -85,7 +85,7 @@ note:
     right: If I were you, I'd say yes.
     why:
       en: After if, use were or was, not would be.
-      fa: بعد از «if»، «were» یا «was» بیاور، نه «would be».
+      fa: بعد از «if»، «were» یا «was» بیاورید، نه «would be».
   contrast:
   - term: If + present, … will + verb
     example: If it rains, I'll stay home.
@@ -123,7 +123,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Say what you would do, with if … would.
-    fa: با If … would بگو چه می‌کردی.
+    fa: با If … would بگویید چه می‌کردید.
   from: I'm not rich, so I don't travel much.
   answers:
   - If I were rich, I'd travel more.

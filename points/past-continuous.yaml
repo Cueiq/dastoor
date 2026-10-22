@@ -86,7 +86,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Say it with was + -ing and when.
-    fa: با was + ing و when بگو.
+    fa: با was + ing و when بگویید.
   from: I had a shower. In the middle of it, the phone rang.
   answers:
   - I was having a shower when the phone rang.

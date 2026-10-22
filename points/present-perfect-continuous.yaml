@@ -52,12 +52,12 @@ note:
     right: I've been waiting for an hour.
     why:
       en: For something that started in the past and goes on now, use have been + -ing, not the present.
-      fa: برای کاری که در گذشته شروع شده و هنوز ادامه دارد «have been» و فعل ingدار بیاور، نه زمان حال؛ هرچند در فارسی می‌گوییم «یک ساعت است منتظرم».
+      fa: برای کاری که در گذشته شروع شده و هنوز ادامه دارد «have been» و فعل ingدار بیاورید، نه زمان حال؛ هرچند در فارسی می‌گوییم «یک ساعت است منتظرم».
   - wrong: I've been learning English since two years.
     right: I've been learning English for two years.
     why:
       en: Use for with a length of time, since with a starting point.
-      fa: با مدت زمان «for» بیاور و با نقطهٔ شروع «since»؛ «دو سال است» یعنی «for two years».
+      fa: با مدت زمان «for» بیاورید و با نقطهٔ شروع «since»؛ «دو سال است» یعنی «for two years».
   - wrong: I've been knowing him for years.
     right: I've known him for years.
     why:
@@ -101,7 +101,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Say it with have been + -ing.
-    fa: با «have been» و فعل ingدار بگو.
+    fa: با «have been» و فعل ingدار بگویید.
   from: I started learning English two years ago, and I'm still learning it.
   answers:
   - I've been learning English for two years.

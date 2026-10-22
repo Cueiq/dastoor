@@ -116,7 +116,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Say who is younger.
-    fa: بگو چه کسی جوان‌تر است.
+    fa: بگویید چه کسی جوان‌تر است.
   from: My brother is 20. I am 18.
   answers:
   - I'm younger than my brother.

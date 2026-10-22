@@ -44,7 +44,7 @@ level_from: egp
 note:
   gist:
     en: 'Can or can''t + a plain verb: what someone is able to do (I can swim), what is allowed (You can go now), or a request (Can you help me?).'
-    fa: 'can یا can''t و فعل ساده: کاری که کسی بلد است یا از دستش برمی‌آید (I can swim)، کاری که اجازه داری (You can go now)، یا درخواست (Can you help me?).'
+    fa: 'can یا can''t و فعل ساده: کاری که کسی بلد است یا از دستش برمی‌آید (I can swim)، کاری که اجازه دارید (You can go now)، یا درخواست (Can you help me?).'
   forms:
   - kind: positive
     text: I can swim.
@@ -70,7 +70,7 @@ note:
     right: Can you swim?
     why:
       en: To ask, put can first; don't use do.
-      fa: برای سؤال «can» را اول بیاور؛ «do» لازم نیست.
+      fa: برای سؤال «can» را اول بیاورید؛ «do» لازم نیست.
   contrast:
   - term: could + verb
     example: I could swim when I was five.
@@ -82,7 +82,7 @@ note:
     example: You must wear a seatbelt.
     why:
       en: Can is allowed; must is necessary.
-      fa: «can» یعنی مجازی؛ «must» یعنی واجب است.
+      fa: «can» یعنی مجازید؛ «must» یعنی واجب است.
     point: must-obligation
 exercises:
 - id: can-swim
@@ -108,7 +108,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Say it with can't.
-    fa: با can't بگو.
+    fa: با can't بگویید.
   from: I am not able to swim.
   answers:
   - I can't swim.

@@ -60,12 +60,12 @@ note:
     right: My phone was stolen.
     why:
       en: 'Use the past participle: stolen, not stole.'
-      fa: 'اسم مفعول بیاور: stolen، نه stole.'
+      fa: 'اسم مفعول بیاورید: stolen، نه stole.'
   - wrong: The windows was broken.
     right: The windows were broken.
     why:
       en: For more than one, use were.
-      fa: برای جمع were بیاور.
+      fa: برای جمع were بیاورید.
   contrast:
   - term: am / is / are + past participle
     example: It's made here.
@@ -98,12 +98,12 @@ exercises:
   - We were given badges.
   why:
     en: With we, were.
-    fa: با we، were بیاور.
+    fa: با we، were بیاورید.
 - id: bike-stolen
   kind: rewrite
   instruction:
     en: Say it in the passive.
-    fa: مجهولش را بگو.
+    fa: مجهولش را بگویید.
   from: Someone stole my bike.
   answers:
   - My bike was stolen.

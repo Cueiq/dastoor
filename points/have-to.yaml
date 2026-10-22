@@ -65,12 +65,12 @@ note:
     right: I have to go to school.
     why:
       en: Don't forget to after have.
-      fa: «to» را بعد از «have» جا نینداز.
+      fa: «to» را بعد از «have» جا نیندازید.
   - wrong: You don't have to smoke here.
     right: You mustn't smoke here.
     why:
       en: Don't have to means it isn't needed; to say it isn't allowed, use mustn't.
-      fa: «don't have to» یعنی لازم نیست؛ برای «اجازه نیست» بگو «mustn't»، هرچند در فارسی هر دو ممکن است «نباید» ترجمه شوند.
+      fa: «don't have to» یعنی لازم نیست؛ برای «اجازه نیست» بگویید «mustn't»، هرچند در فارسی هر دو ممکن است «نباید» ترجمه شوند.
   contrast:
   - term: must + verb
     example: I must call my mum.
@@ -108,7 +108,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Say it isn't necessary, with don't have to.
-    fa: با don't have to بگو لازم نیست.
+    fa: با don't have to بگویید لازم نیست.
   from: It isn't necessary for you to come.
   answers:
   - You don't have to come.

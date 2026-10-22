@@ -54,7 +54,7 @@ level_from: egp
 note:
   gist:
     en: 'Who for people, which for things, that for either, to say which one you mean: the man who lives next door. When it is the object of what follows, you can leave it out: the film (that) I saw.'
-    fa: 'who برای آدم، which برای چیز و that برای هر دو، تا بگویی منظورت کدام است: the man who lives next door. وقتی مفعولِ جملهٔ بعدش است، می‌شود نیاوردش: the film (that) I saw.'
+    fa: 'who برای آدم، which برای چیز و that برای هر دو، تا بگویید منظورتان کدام است: the man who lives next door. وقتی مفعولِ جملهٔ بعدش است، می‌شود نیاوردش: the film (that) I saw.'
   forms:
   - kind: positive
     text: The man who lives next door is a doctor.
@@ -73,17 +73,17 @@ note:
     right: The man who lives next door is a doctor.
     why:
       en: 'Who already stands for him: don''t add he.'
-      fa: who خودش جای او را می‌گیرد، he را تکرار نکن؛ در فارسی می‌گوییم «مردی که او…» ولی انگلیسی ضمیر دوباره نمی‌خواهد.
+      fa: who خودش جای او را می‌گیرد، he را تکرار نکنید؛ در فارسی می‌گوییم «مردی که او…» ولی انگلیسی ضمیر دوباره نمی‌خواهد.
   - wrong: The book what I read was good.
     right: The book that I read was good.
     why:
       en: After a noun, use that or which, not what.
-      fa: بعد از اسم that یا which بیاور، نه what.
+      fa: بعد از اسم that یا which بیاورید، نه what.
   - wrong: The girl which I met is French.
     right: The girl who I met is French.
     why:
       en: For people, who or that.
-      fa: برای آدم who یا that بیاور.
+      fa: برای آدم who یا that بیاورید.
   contrast:
   - term: who / which in a question
     example: Who are you?
@@ -122,7 +122,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Join them with who.
-    fa: با who وصلشان کن.
+    fa: با who وصلشان کنید.
   from: I have a friend. She speaks five languages.
   answers:
   - I have a friend who speaks five languages.

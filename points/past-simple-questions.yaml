@@ -101,7 +101,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Ask what he bought.
-    fa: بپرس چه خرید.
+    fa: بپرسید چه خرید.
   from: Hector bought a dress.
   answers:
   - What did Hector buy?

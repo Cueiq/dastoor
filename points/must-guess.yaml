@@ -37,7 +37,7 @@ level_from: guides
 note:
   gist:
     en: 'Must be: you are almost sure something is true, because of what you see or know.'
-    fa: 'must be: تقریباً مطمئنی چیزی درست است، به خاطر آنچه می‌بینی یا می‌دانی؛ مثل «حتماً … است» در فارسی.'
+    fa: 'must be: تقریباً مطمئنید چیزی درست است، به خاطر آنچه می‌بینید یا می‌دانید؛ مثل «حتماً … است» در فارسی.'
   forms:
   - kind: positive
     text: He has ten cars. He must be rich.
@@ -53,7 +53,7 @@ note:
     right: He can't be at home. His car isn't here.
     why:
       en: 'For a sure guess that something isn''t true, say can''t be: mustn''t means it isn''t allowed.'
-      fa: برای حدسِ مطمئن که چیزی درست نیست «can't be» بگو؛ «mustn't» یعنی اجازه نیست، نه حدس.
+      fa: برای حدسِ مطمئن که چیزی درست نیست «can't be» بگویید؛ «mustn't» یعنی اجازه نیست، نه حدس.
   - wrong: He must is at home.
     right: He must be at home.
     why:
@@ -69,13 +69,13 @@ note:
     example: I must go now.
     why:
       en: That must means it is necessary; this must means you are almost sure.
-      fa: آن «must» یعنی لازم است؛ این «must» یعنی تقریباً مطمئنی.
+      fa: آن «must» یعنی لازم است؛ این «must» یعنی تقریباً مطمئنید.
     point: must-obligation
   - term: might + verb
     example: He might be at home.
     why:
       en: Must is almost sure; might is only maybe.
-      fa: «must» یعنی تقریباً مطمئنی؛ «might» یعنی شاید.
+      fa: «must» یعنی تقریباً مطمئنید؛ «might» یعنی شاید.
     point: might
 exercises:
 - id: anna-at-six
@@ -101,7 +101,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Say you are sure, with must.
-    fa: با must بگو که مطمئنی.
+    fa: با must بگویید که مطمئنید.
   from: I'm sure he is Anna's brother.
   answers:
   - He must be Anna's brother.

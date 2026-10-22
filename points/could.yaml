@@ -65,12 +65,12 @@ note:
     right: When I was five, I could swim.
     why:
       en: For the past, use could, not can.
-      fa: برای گذشته «could» بیاور، نه «can».
+      fa: برای گذشته «could» بیاورید، نه «can».
   - wrong: The fire was big, but everyone could escape.
     right: The fire was big, but everyone was able to escape.
     why:
       en: For one success at one moment, use was able to or managed to, not could.
-      fa: برای یک موفقیت در یک لحظه «was able to» یا «managed to» بگو، نه «could».
+      fa: برای یک موفقیت در یک لحظه «was able to» یا «managed to» بگویید، نه «could».
   contrast:
   - term: can + verb
     example: I can swim now.
@@ -108,7 +108,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Ask politely with could.
-    fa: با could مؤدبانه بخواه.
+    fa: با could مؤدبانه بخواهید.
   from: Open the window.
   answers:
   - Could you open the window?

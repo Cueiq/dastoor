@@ -55,7 +55,7 @@ note:
     right: This cake is very delicious!
     why:
       en: Too shows a problem; to say something is nice, use very.
-      fa: «too» مشکل را نشان می‌دهد؛ برای تعریف «very» بگو، هرچند در فارسی «خیلی» برای هر دو است.
+      fa: «too» مشکل را نشان می‌دهد؛ برای تعریف «very» بگویید، هرچند در فارسی «خیلی» برای هر دو است.
   - wrong: The shoes are too much expensive.
     right: The shoes are too expensive.
     why:
@@ -102,7 +102,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Say it in one sentence with too.
-    fa: در یک جمله با too بگو.
+    fa: در یک جمله با too بگویید.
   from: This room is very small. We can't sleep here.
   answers:
   - This room is too small to sleep in.

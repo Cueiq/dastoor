@@ -60,7 +60,7 @@ note:
     right: He has got a dog.
     why:
       en: With he, she and it, use has got.
-      fa: با he، she و it بگو «has got».
+      fa: با he، she و it بگویید «has got».
   - wrong: Do you have got a pen?
     right: Have you got a pen?
     why:
@@ -70,7 +70,7 @@ note:
     right: I had a car last year.
     why:
       en: For the past, use had, not had got.
-      fa: برای گذشته «had» بگو، نه «had got».
+      fa: برای گذشته «had» بگویید، نه «had got».
   contrast:
   - term: have
     example: She has a new car.
@@ -107,7 +107,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Say it with have got.
-    fa: با have got بگو.
+    fa: با have got بگویید.
   from: My sister has blue eyes.
   answers:
   - My sister has got blue eyes.

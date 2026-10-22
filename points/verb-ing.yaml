@@ -133,7 +133,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Say it with give up + -ing.
-    fa: با give up و فعل ingدار بگو.
+    fa: با give up و فعل ingدار بگویید.
   from: He doesn't smoke any more.
   answers:
   - He's given up smoking.

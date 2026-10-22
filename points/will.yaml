@@ -45,7 +45,7 @@ level_from: egp
 note:
   gist:
     en: 'Will (''ll) + a plain verb, for the future: a decision made as you speak (I''ll answer it), an offer or promise (I''ll help you), or what you think will happen (It''ll rain).'
-    fa: 'will (یا ''ll) و فعل ساده، برای آینده: تصمیمی که همین حالا می‌گیری (I''ll answer it)، پیشنهاد یا قول (I''ll help you)، یا چیزی که فکر می‌کنی اتفاق می‌افتد (It''ll rain).'
+    fa: 'will (یا ''ll) و فعل ساده، برای آینده: تصمیمی که همین حالا می‌گیرید (I''ll answer it)، پیشنهاد یا قول (I''ll help you)، یا چیزی که فکر می‌کنید اتفاق می‌افتد (It''ll rain).'
   forms:
   - kind: positive
     text: The phone's ringing. I'll answer it.
@@ -66,7 +66,7 @@ note:
     right: The phone is ringing. I'll answer it.
     why:
       en: For a decision as you speak, use I'll, not the present, though Persian says «جواب می‌دم».
-      fa: برای تصمیمِ همین لحظه «I'll» بگو، نه زمان حال، هرچند در فارسی می‌گوییم «جواب می‌دم».
+      fa: برای تصمیمِ همین لحظه «I'll» بگویید، نه زمان حال، هرچند در فارسی می‌گوییم «جواب می‌دم».
   - wrong: If it will rain, we'll stay home.
     right: If it rains, we'll stay home.
     why:
@@ -96,7 +96,7 @@ exercises:
   answer: I'll
   why:
     en: 'Decided just now: I''ll.'
-    fa: 'همین حالا تصمیم گرفتی: I''ll.'
+    fa: 'همین حالا تصمیم گرفتید: I''ll.'
 - id: will-to-help
   kind: fix
   wrong: I will to help you.
@@ -110,7 +110,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Make it a promise with will.
-    fa: با will قول بده.
+    fa: با will قول بدهید.
   from: 'I promise: a phone call from me tomorrow.'
   answers:
   - I'll call you tomorrow.

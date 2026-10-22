@@ -133,7 +133,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Ask about it with does.
-    fa: با does دربارهٔ آن بپرس.
+    fa: با does دربارهٔ آن بپرسید.
   from: Hector likes tea.
   answers:
   - Does Hector like tea?

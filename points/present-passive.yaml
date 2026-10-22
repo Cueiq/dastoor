@@ -78,17 +78,17 @@ note:
     right: This cake is made by my mum.
     why:
       en: 'After is, use the past participle: made, not make.'
-      fa: 'بعد از is اسم مفعول بیاور: made، نه make.'
+      fa: 'بعد از is اسم مفعول بیاورید: made، نه make.'
   - wrong: English speaks here.
     right: English is spoken here.
     why:
       en: English doesn't speak; people speak it. Use is + spoken.
-      fa: زبان انگلیسی حرف نمی‌زند، مردم آن را حرف می‌زنند؛ is spoken بیاور. «اینجا انگلیسی صحبت می‌شود» در فارسی هم مجهول است.
+      fa: زبان انگلیسی حرف نمی‌زند، مردم آن را حرف می‌زنند؛ is spoken بیاورید. «اینجا انگلیسی صحبت می‌شود» در فارسی هم مجهول است.
   - wrong: The windows is cleaned every week.
     right: The windows are cleaned every week.
     why:
       en: For more than one, use are.
-      fa: برای جمع are بیاور.
+      fa: برای جمع are بیاورید.
   contrast:
   - term: was / were + past participle
     example: It was made in China.
@@ -126,7 +126,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Say it in the passive.
-    fa: مجهولش را بگو.
+    fa: مجهولش را بگویید.
   from: They speak English here.
   answers:
   - English is spoken here.

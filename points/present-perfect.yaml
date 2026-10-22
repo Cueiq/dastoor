@@ -79,7 +79,7 @@ note:
     right: I saw him yesterday.
     why:
       en: With a finished time like yesterday, use the past simple.
-      fa: با زمانی تمام‌شده مثل «yesterday» گذشتهٔ ساده بیاور؛ در فارسی «دیروز دیدمش» است، نه «دیده‌ام».
+      fa: با زمانی تمام‌شده مثل «yesterday» گذشتهٔ ساده بیاورید؛ در فارسی «دیروز دیدمش» است، نه «دیده‌ام».
   - wrong: Have you ever went to Rome?
     right: Have you ever been to Rome?
     why:
@@ -126,7 +126,7 @@ exercises:
   kind: rewrite
   instruction:
     en: Ask with Have you ever…?
-    fa: با Have you ever…? بپرس.
+    fa: با Have you ever…? بپرسید.
   from: Did you ride a horse at any time in your life?
   answers:
   - Have you ever ridden a horse?

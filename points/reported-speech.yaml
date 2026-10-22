@@ -57,7 +57,7 @@ level_from: hand
 note:
   gist:
     en: 'Say or tell + what someone said, in your words, not theirs: She said she was tired. The verb often moves back in time: am becomes was, will becomes would.'
-    fa: 'say یا tell و حرفِ کسی به زبانِ خودت، نه عینِ کلماتش: She said she was tired. فعل معمولاً یک زمان عقب می‌رود: am می‌شود was و will می‌شود would.'
+    fa: 'say یا tell و حرفِ کسی به زبانِ خودتان، نه عینِ کلماتش: She said she was tired. فعل معمولاً یک زمان عقب می‌رود: am می‌شود was و will می‌شود would.'
   forms:
   - kind: positive
     text: She said she was tired.
@@ -86,7 +86,7 @@ note:
     right: He said he was tired.
     why:
       en: 'Without quotes, the words are yours: no comma, and the verb moves back.'
-      fa: 'بدون گیومه حرفِ خودت است: ویرگول نمی‌خواهد و فعل یک زمان عقب می‌رود.'
+      fa: 'بدون گیومه حرفِ خودتان است: ویرگول نمی‌خواهد و فعل یک زمان عقب می‌رود.'
   contrast:
   - term: the words in quotes
     example: He said, "I'm tired."
@@ -124,7 +124,7 @@ exercises:
   kind: rewrite
   instruction:
     en: 'Report it: start with She said.'
-    fa: نقلش کن و با She said شروع کن.
+    fa: نقلش کنید و با She said شروع کنید.
   from: '"I''m tired," she said.'
   answers:
   - She said she was tired.
