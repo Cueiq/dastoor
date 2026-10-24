@@ -4,6 +4,10 @@ title: { en: "verb + to + verb (want to go)", fa: "فعل + to + فعل (want to
 keywords: ["want to", "need to", "decide to", "to-infinitive", "infinitive", "مصدر با to", "فعل با to"]
 # The ids guides gave the same point.
 aliases: [learn-to]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  goal: combine-verbs
 topic: verb_patterns
 cefrj: ["101", "102"]
 match:

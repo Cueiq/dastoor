@@ -11,6 +11,14 @@ from .rules import Found, Rules
 
 POINTS = Path(__file__).resolve().parents[2] / "points"
 
+# Where a book shows a point beyond its topic (`place:` in its file): on the
+# tenses' timeline, by the kind of action and when it is (an action lasting
+# up to now is between past and now), and under what a learner wants to do
+# with a sentence.
+TIMELINE_ROWS = ("once", "ongoing", "up-to-now", "habit", "passive")
+TIMELINE_WHEN = ("past", "now", "future")
+GOALS = ("ask", "need", "able", "guess", "if", "compare", "emphasise", "combine-verbs", "report", "passive", "everyday")
+
 
 @dataclass
 class Point:
@@ -28,6 +36,8 @@ class Point:
     aliases: list[str] = field(default_factory=list)
     # What a learner may search it by, in English and Persian.
     keywords: list[str] = field(default_factory=list)
+    # Its place on a book's timeline and among its goals.
+    place: dict = field(default_factory=dict)
     tests: dict = field(default_factory=dict)
     rules: Rules | None = None
 
@@ -52,6 +62,28 @@ def _no_booleans(value, where: str) -> None:
             _no_booleans(each, f"{where}[{at}]")
 
 
+def check_place(place, where: str) -> None:
+    """A point's place: a timeline row (and, but for up-to-now, when), and a
+    goal, each one the book knows; either may be left out."""
+    if not place:
+        return
+    unknown = set(place) - {"timeline", "goal"}
+    if unknown:
+        raise ValueError(f"{where}: place has {sorted(unknown)}; it takes timeline and goal")
+    timeline = place.get("timeline")
+    if timeline is not None:
+        row, when = timeline.get("row"), timeline.get("when")
+        if row not in TIMELINE_ROWS:
+            raise ValueError(f"{where}: timeline row {row!r} isn't one of {TIMELINE_ROWS}")
+        if row == "up-to-now" and when is not None:
+            raise ValueError(f"{where}: up-to-now is between past and now: no when")
+        if row != "up-to-now" and when not in TIMELINE_WHEN:
+            raise ValueError(f"{where}: timeline when {when!r} isn't one of {TIMELINE_WHEN}")
+    goal = place.get("goal")
+    if goal is not None and goal not in GOALS:
+        raise ValueError(f"{where}: goal {goal!r} isn't one of {GOALS}")
+
+
 def load(nlp, folder: Path = POINTS, only: set[str] | None = None) -> list[Point]:
     points = []
     for path in sorted(folder.glob("*.yaml")):
@@ -60,6 +92,7 @@ def load(nlp, folder: Path = POINTS, only: set[str] | None = None) -> list[Point
             raise ValueError(f"{path.name}: its id is {data['id']}")
         _no_booleans(data.get("match"), f"{path.name}: match")
         _no_booleans(data.get("exclude"), f"{path.name}: exclude")
+        check_place(data.get("place"), path.name)
         if only and data["id"] not in only:
             continue
         point = Point(
@@ -73,6 +106,7 @@ def load(nlp, folder: Path = POINTS, only: set[str] | None = None) -> list[Point
             tag=bool(data.get("tag", True)),
             aliases=list(data.get("aliases", [])),
             keywords=[str(word) for word in data.get("keywords", [])],
+            place=data.get("place", {}),
             tests=data.get("tests", {}),
         )
         point.rules = Rules(point.id, point.match, point.exclude, nlp.vocab)

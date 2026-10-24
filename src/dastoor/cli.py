@@ -11,6 +11,7 @@ from pathlib import Path
 
 import yaml
 
+from . import heard as heard_module
 from . import model as model_module
 from . import points as points_module
 from . import score as score_module
@@ -140,10 +141,34 @@ def serve(args) -> int:
     return 0
 
 
+def heard(args) -> int:
+    """Count how often each point is heard in a set of English subtitles,
+    and keep the counts (`data/heard.json`) for the export."""
+    nlp = model_module.load(args.model)
+    points = points_module.load(nlp)
+    files = heard_module.subtitle_files([Path(each) for each in args.paths])
+    if not files:
+        print("no English subtitles there", file=sys.stderr)
+        return 1
+    started = time.time()
+    counts = heard_module.count(nlp, points, files)
+    counts["model"] = args.model
+    heard_module.HEARD.parent.mkdir(exist_ok=True)
+    heard_module.HEARD.write_text(json.dumps(counts, ensure_ascii=False, indent=1) + "\n")
+    top = sorted(counts["points"].items(), key=lambda each: -each[1])[:5]
+    print(f"{counts['sentences']} sentences in {counts['files']} files ({time.time() - started:.1f} s); most heard: "
+          + ", ".join(f"{point} {n}" for point, n in top), file=sys.stderr)
+    return 0
+
+
 def export(args) -> int:
     """Every point's note and exercises, as one JSON file for a tool that
     fills them in (Bembegoo's build). Each carries `note_from`: its id and a
-    hash of its file, so a guide made from it can tell when it changed."""
+    hash of its file, so a guide made from it can tell when it changed; its
+    place in a book (`place`); and, once counted (`dastoor heard`), how many
+    of the subtitles' sentences use it (`heard`), the count's size in
+    `heard` at the top."""
+    counted = heard_module.load()
     points = {}
     for path in sorted(points_module.POINTS.glob("*.yaml")):
         data = yaml.safe_load(path.read_text())
@@ -161,11 +186,16 @@ def export(args) -> int:
             "needs_meaning": bool(data.get("needs_meaning", False)),
             "tag": data.get("tag", True),
             "example": data["note"]["forms"][0]["text"] if data["note"].get("forms") else "",
+            "place": data.get("place", {}),
+            "heard": counted["points"].get(data["id"]) if counted else None,
             "note": data["note"],
             "exercises": data.get("exercises", []),
             "note_from": f"dastoor:{data['id']}@{digest}",
         }
-    json.dump({"dastoor": 1, "points": points}, sys.stdout, ensure_ascii=False, indent=1)
+    out = {"dastoor": 1, "points": points}
+    if counted:
+        out["heard"] = {"files": counted["files"], "sentences": counted["sentences"]}
+    json.dump(out, sys.stdout, ensure_ascii=False, indent=1)
     print()
     return 0
 
@@ -179,6 +209,8 @@ def main(argv: list[str] | None = None) -> int:
     tagging.add_argument("file")
     tagging.add_argument("--json", action="store_true")
     tagging.add_argument("--all", action="store_true", help="lines with no point too")
+    hearing = commands.add_parser("heard", help="count how often each point is heard in English subtitles")
+    hearing.add_argument("paths", nargs="+", help="subtitle files, or folders of them")
     commands.add_parser("export", help="every point's note, as JSON")
     commands.add_parser("serve", help="answer texts line by line on stdin, the model loaded once")
     scoring = commands.add_parser("score", help="the spike's scoring against Bembegoo's guides")
@@ -189,7 +221,7 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     started = time.time()
     try:
-        code = {"test": test, "tag": tag, "export": export, "score": score_module.run, "serve": serve}[args.command](args)
+        code = {"test": test, "tag": tag, "heard": heard, "export": export, "score": score_module.run, "serve": serve}[args.command](args)
     except model_module.MissingModel as error:
         print(f"dastoor: {error}", file=sys.stderr)
         return 2

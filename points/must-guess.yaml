@@ -2,6 +2,10 @@ id: must-guess
 title: { en: "must be (a guess)", fa: "must be: حدس قوی" }
 # What a learner may search it by, in English and Persian.
 keywords: ["must be", "guess", "deduction", "حتماً", "حدس", "استنتاج"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  goal: guess
 topic: guessing
 cefrj: []
 # "You must be quiet" is an order: the words can't tell.

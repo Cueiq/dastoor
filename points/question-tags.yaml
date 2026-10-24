@@ -2,6 +2,10 @@ id: question-tags
 title: { en: "…, isn't it? / …, don't we?", fa: "سؤال تأییدی آخر جمله (…, isn't it?)" }
 # What a learner may search it by, in English and Persian.
 keywords: ["question tag", "tag question", "isn't it", "don't you", "سؤال تأییدی", "دنبالهٔ سؤالی", "مگه نه"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  goal: ask
 topic: questions
 cefrj: ["193", "193-1"]
 # Known false match: a short question after a comma ("Okay, is it?") looks

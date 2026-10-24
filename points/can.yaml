@@ -2,6 +2,10 @@ id: can
 title: { en: "can / can't + verb", fa: "can: توانستن، اجازه و درخواست" }
 # What a learner may search it by, in English and Persian.
 keywords: ["can", "can't", "cannot", "ability", "permission", "request", "توانستن", "می‌توانم", "اجازه", "درخواست"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  goal: able
 topic: ability
 cefrj: ["123", "123-1", "123-2", "123-3"]
 # One note for can and its uses: ability, permission, a request, a

@@ -2,6 +2,10 @@ id: look-adjective
 title: { en: "look / sound / feel + adjective", fa: "look / sound / feel + صفت: به نظر رسیدن" }
 # What a learner may search it by, in English and Persian.
 keywords: ["look", "sound", "feel", "seem", "smell", "taste", "linking verb", "به نظر رسیدن", "فعل ربطی"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  goal: combine-verbs
 topic: verb_patterns
 cefrj: ["195", "195-1", "195-2", "195-3"]
 match:

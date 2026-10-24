@@ -2,6 +2,10 @@ id: reported-speech
 title: { en: "said (that) he was… (reported speech)", fa: "نقل قول غیرمستقیم (said he was…)" }
 # What a learner may search it by, in English and Persian.
 keywords: ["reported speech", "indirect speech", "said that", "told me", "asked if", "نقل قول غیرمستقیم", "گفت که"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  goal: report
 topic: reporting
 cefrj: ["200", "201"]
 match:

@@ -4,6 +4,10 @@ title: { en: "verb + -ing (enjoy doing)", fa: "فعل + فعل ingدار (enjoy 
 keywords: ["enjoy doing", "stop doing", "keep doing", "gerund", "-ing", "اسم مصدر", "فعل ingدار"]
 # The ids guides gave the same point.
 aliases: [keep-ing, stop-ing, remember-ing]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  goal: combine-verbs
 topic: verb_patterns
 cefrj: ["112", "113"]
 match:

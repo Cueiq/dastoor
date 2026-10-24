@@ -2,6 +2,10 @@ id: some-any
 title: { en: "some / any (something, anything, nobody…)", fa: "some و any (و something، anything، nobody…)" }
 # What a learner may search it by, in English and Persian.
 keywords: ["some", "any", "something", "anything", "nobody", "nothing", "مقداری", "هیچ", "کسی", "چیزی"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  goal: everyday
 topic: determiners
 cefrj: ["15", "24"]
 match:

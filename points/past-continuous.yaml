@@ -2,6 +2,10 @@ id: past-continuous
 title: { en: "was / were + -ing", fa: "گذشتهٔ استمراری (was / were + -ing)" }
 # What a learner may search it by, in English and Persian.
 keywords: ["past continuous", "past progressive", "was -ing", "were -ing", "گذشتهٔ استمراری", "ماضی استمراری"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  timeline: { row: ongoing, when: past }
 topic: past
 cefrj: ["66", "66-1", "66-2", "66-3"]
 match:

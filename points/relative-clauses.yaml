@@ -2,6 +2,10 @@ id: relative-clauses
 title: { en: "who / which / that (the man who lives…)", fa: "جملهٔ موصولی با who، which، that" }
 # What a learner may search it by, in English and Persian.
 keywords: ["relative clause", "who", "which", "that", "جملهٔ موصولی", "ضمیر موصولی", "که"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  goal: report
 topic: linking
 cefrj: ["172", "173", "174", "175", "177", "178", "179"]
 match:

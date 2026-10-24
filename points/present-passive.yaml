@@ -2,6 +2,11 @@ id: present-passive
 title: { en: "am / is / are + past participle (it's made)", fa: "مجهول حال ساده (it's made)" }
 # What a learner may search it by, in English and Persian.
 keywords: ["passive", "present passive", "is made", "is called", "مجهول", "مجهول حال"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  timeline: { row: passive, when: now }
+  goal: passive
 topic: passive
 cefrj: ["73", "73-1", "73-2", "73-3"]
 match:

@@ -2,6 +2,10 @@ id: should
 title: { en: "should + verb", fa: "should: بهتر است (توصیه)" }
 # What a learner may search it by, in English and Persian.
 keywords: ["should", "shouldn't", "advice", "توصیه", "بهتره"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  goal: need
 topic: obligation
 cefrj: ["139", "139-1", "139-2", "139-3"]
 match:

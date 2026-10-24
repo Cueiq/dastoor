@@ -2,6 +2,10 @@ id: lets
 title: { en: "Let's + verb", fa: "Let's: بیایید … (پیشنهاد)" }
 # What a learner may search it by, in English and Persian.
 keywords: ["let's", "let us", "suggestion", "پیشنهاد", "بیا", "بیایید"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  goal: everyday
 topic: frames
 cefrj: ["120", "120-1"]
 match:

@@ -2,6 +2,10 @@ id: dont-imperative
 title: { en: "Don't + verb", fa: "امر منفی: Don't + فعل" }
 # What a learner may search it by, in English and Persian.
 keywords: ["don't", "do not", "imperative", "negative order", "امر منفی", "نکن", "دستور"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  goal: everyday
 topic: frames
 cefrj: ["117-1"]
 match:

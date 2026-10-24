@@ -52,6 +52,7 @@ transformer, sync with `--all-groups` and run with `uv run --all-groups`.
 dastoor test                                      # every point's tests
 dastoor --model en_core_web_trf tag episode.srt   # each line's points
 dastoor tag episode.srt --json                    # the same, as JSON
+dastoor --model en_core_web_trf heard <folder>    # how often each point is heard in its subtitles
 dastoor export                                    # every note, as one JSON file
 dastoor serve                                     # a text a line, the model loaded once
 dastoor score <courses folder> --split test       # score the rules on lessons whose grammar is marked
@@ -76,6 +77,14 @@ $ dastoor serve
 whose meaning its form can't settle comes as a `candidate`; points that ask
 not to be tagged are left out, as `tag` leaves them.
 
+`heard` counts, for each point, how many sentences of a set of English
+subtitles use it (files given, or every `.srt` and `.vtt` in a folder; a
+sentence said in two files counts once), and keeps the counts in
+[data/heard.json](data/heard.json). `export` gives each point its count as
+`heard`, and the count's size at the top, so a book can say which points
+films use most. The counts kept now are from 50 episodes of English TV
+series (about 10,000 sentences).
+
 ## A point
 
 One YAML file per point in [points/](points/), named by its id:
@@ -84,6 +93,8 @@ One YAML file per point in [points/](points/), named by its id:
 id: used-to
 title: { en: "used to + verb", fa: "used to: عادت یا حالتِ گذشته" }
 keywords: ["used to", "past habit", "قبلاً", "عادت گذشته"]   # to search it by
+place:                              # where a book shows it, beyond its topic
+  timeline: { row: habit, when: past }
 topic: past_habits
 cefrj: ["140", "140-1", "140-2"]   # its items in the CEFR-J Grammar Profile
 match:                              # what finds it: spaCy patterns
@@ -115,7 +126,14 @@ hangs on. The format is described in
 
 - `needs_meaning: true` when its words can't settle what it means;
 - `tag: false` when its rule shouldn't mark lines at all;
-- `aliases` for other ids the same point goes by.
+- `aliases` for other ids the same point goes by;
+- `place`: where a book shows it beyond its topic. On the tenses'
+  `timeline`, a `row` (`once`, `ongoing`, `up-to-now`, `habit`, `passive`)
+  and `when` (`past`, `now`, `future`; none for `up-to-now`, which runs
+  from the past to now); and a `goal`, what a learner wants to do with a
+  sentence (`ask`, `need`, `able`, `guess`, `if`, `compare`, `emphasise`,
+  `combine-verbs`, `report`, `passive`, `everyday`). Every point has one
+  or both.
 
 Every note has the same shape, so an app can show it, or a lesson take it,
 as it is.

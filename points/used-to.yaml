@@ -2,6 +2,10 @@ id: used-to
 title: { en: "used to + verb", fa: "used to: عادت یا حالتِ گذشته" }
 # What a learner may search it by, in English and Persian.
 keywords: ["used to", "didn't use to", "past habit", "قبلاً", "عادت گذشته"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  timeline: { row: habit, when: past }
 topic: past_habits
 cefrj: ["140", "140-1", "140-2"]
 match:

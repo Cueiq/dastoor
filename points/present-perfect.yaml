@@ -2,6 +2,10 @@ id: present-perfect
 title: { en: "have / has + past participle", fa: "حال کامل (have + اسم مفعول)" }
 # What a learner may search it by, in English and Persian.
 keywords: ["present perfect", "have done", "ever", "never", "already", "yet", "just", "حال کامل", "ماضی نقلی", "تجربه"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  timeline: { row: up-to-now }
 topic: perfect
 cefrj: ["62", "62-1", "62-2", "62-3"]
 # The guides taught it as two points: a result, and an experience (ever).

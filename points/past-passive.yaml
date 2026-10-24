@@ -2,6 +2,11 @@ id: past-passive
 title: { en: "was / were + past participle (it was made)", fa: "مجهول گذشتهٔ ساده (it was made)" }
 # What a learner may search it by, in English and Persian.
 keywords: ["passive", "past passive", "was made", "was born", "مجهول", "مجهول گذشته"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  timeline: { row: passive, when: past }
+  goal: passive
 topic: passive
 cefrj: ["76", "76-1", "76-2", "76-3"]
 match:

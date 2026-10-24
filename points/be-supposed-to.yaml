@@ -2,6 +2,10 @@ id: be-supposed-to
 title: { en: "be supposed to + verb", fa: "be supposed to: قرار بودن" }
 # What a learner may search it by, in English and Persian.
 keywords: ["supposed to", "expected", "قرار است", "قرار بود"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  goal: need
 topic: obligation
 cefrj: []
 match:

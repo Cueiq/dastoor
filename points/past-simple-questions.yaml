@@ -2,6 +2,11 @@ id: past-simple-questions
 title: { en: "Did + subject + verb?", fa: "سؤال در گذشتهٔ ساده (Did …?)" }
 # What a learner may search it by, in English and Persian.
 keywords: ["did", "past simple question", "گذشتهٔ ساده", "ماضی ساده", "سؤال"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  timeline: { row: once, when: past }
+  goal: ask
 topic: questions
 cefrj: ["65-2", "65-3"]
 match:

@@ -4,6 +4,10 @@ title: { en: "so + adjective, such (a) + noun (so tired, such a mess)", fa: "so 
 keywords: ["so", "such", "so ... that", "such a", "خیلی", "آن‌قدر", "چنان"]
 # The ids guides gave the same point.
 aliases: [such-a]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  goal: emphasise
 topic: comparing
 cefrj: ["45", "46", "47"]
 match:

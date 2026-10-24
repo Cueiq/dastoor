@@ -2,6 +2,10 @@ id: superlatives
 title: { en: "the + adjective + -est / the most + adjective", fa: "صفت عالی (ـ‌ترین)" }
 # What a learner may search it by, in English and Persian.
 keywords: ["superlative", "-est", "most", "the best", "صفت عالی", "ـ‌ترین"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  goal: compare
 topic: comparing
 cefrj: ["40", "41"]
 match:

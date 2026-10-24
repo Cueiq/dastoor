@@ -2,6 +2,10 @@ id: would-past-habit
 title: { en: "would + verb (what you used to do)", fa: "would: عادت گذشته" }
 # What a learner may search it by, in English and Persian.
 keywords: ["would", "past habit", "عادت گذشته"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  timeline: { row: habit, when: past }
 topic: past_habits
 cefrj: []
 # Most would + verb is a condition or a wish; the words rarely tell.
