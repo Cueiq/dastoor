@@ -79,12 +79,14 @@ class Piece:
         return [cue for cue, start, end in self.spans if start < end_char and start_char < end]
 
 
-# A cue ending on a comma or with no stop at all breaks a sentence off; one
-# trailing off ("I am going...") may, if the next cue carries on in small
-# letters ("to look for a job.").
-BROKEN_OFF = re.compile(r"(,|[A-Za-z0-9'])$")
+# A cue ending on a comma breaks a sentence off (always joins).
+COMMA = re.compile(r",$")
+# A cue ending with no stop at all (just a letter or number).
+NO_STOP = re.compile(r"[A-Za-z0-9']$")
+# A cue trailing off with ellipsis.
 TRAILS_OFF = re.compile(r"(\.\.\.|…)$")
-CARRIES_ON = re.compile(r"^(\.\.\.|…)?\s*[a-z]")
+# A cue that carries on: starts with a small letter, or a capitalized continuation word.
+CARRIES_ON = re.compile(r"^(\.\.\.|…)?\s*([a-z]|And\b|But\b|Or\b|So\b|Then\b|Because\b)")
 
 
 def pieces(lines: list[Line]) -> list[Piece]:
@@ -92,7 +94,14 @@ def pieces(lines: list[Line]) -> list[Piece]:
     carrying = ""
     for line in lines:
         for at, said in enumerate(line.said):
-            if at == 0 and out and (carrying == "broken" or (carrying == "trailing" and CARRIES_ON.search(said))):
+            join = False
+            if at == 0 and out:
+                if carrying == "comma":
+                    join = True
+                elif carrying in ("trailing", "no_stop") and CARRIES_ON.search(said):
+                    join = True
+
+            if join:
                 last = out[-1]
                 before = re.sub(r"(\.\.\.|…)$", "", last.text).rstrip()
                 after = re.sub(r"^(\.\.\.|…)\s*", "", said)
@@ -103,6 +112,14 @@ def pieces(lines: list[Line]) -> list[Piece]:
                 ] + [(line.cue, start, len(last.text))]
             else:
                 out.append(Piece(said, [(line.cue, 0, len(said))]))
+
         last = line.said[-1] if line.said else ""
-        carrying = "broken" if BROKEN_OFF.search(last) else "trailing" if TRAILS_OFF.search(last) else ""
+        if COMMA.search(last):
+            carrying = "comma"
+        elif TRAILS_OFF.search(last):
+            carrying = "trailing"
+        elif NO_STOP.search(last):
+            carrying = "no_stop"
+        else:
+            carrying = ""
     return out
