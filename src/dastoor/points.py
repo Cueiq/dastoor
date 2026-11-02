@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -9,7 +10,9 @@ import yaml
 
 from .rules import Found, Rules
 
-POINTS = Path(__file__).resolve().parents[2] / "points"
+_dev_path = Path(__file__).resolve().parents[2] / "points"
+_installed_path = Path(sys.prefix) / "dastoor-points"
+POINTS = _dev_path if _dev_path.exists() else _installed_path
 
 # Where a book shows a point beyond its topic (`place:` in its file): on the
 # tenses' timeline, by the kind of action and when it is (an action lasting
