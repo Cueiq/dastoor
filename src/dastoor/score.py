@@ -1,6 +1,6 @@
 """The spike's scoring (docs/spike-plan.md, "Scoring").
 
-Against the courses' guides: a grammar entry's anchors and `heard` lines are
+Against Bembegoo's guides: a grammar entry's anchors and `heard` lines are
 the lines of its episode that use its point, so in an episode that teaches
 a point the guide says which lines use it. A rule's recall is the share of
 those it finds. Its other matches there are listed, to be called right or
@@ -71,6 +71,9 @@ def run(args) -> int:
     points = points_module.load(nlp)
     wanted = {point.id for point in points}
 
+    # Initialize checker if requested
+    checker = model.FakeChecker() if getattr(args, "check", False) else None
+
     taught = episodes(courses)
     # Every English subtitle, each line once by what it says.
     files = sorted({*courses.glob("**/*.srt")})
@@ -99,8 +102,14 @@ def run(args) -> int:
             doc = docs[piece.text]
             for each in point.find(doc):
                 span = doc[each.start : each.end]
+                match_text = span.text
+
+                if point.needs_meaning and checker and point.check_question:
+                    ans = checker.check(point.id, piece.text, match_text, point.check_question)
+                    match_text = f"{match_text} [{ans}]"
+
                 for cue in piece.cues(span.start_char, span.end_char):
-                    by_cue[cue].append(span.text)
+                    by_cue[cue].append(match_text)
         return by_cue
 
     report = [
