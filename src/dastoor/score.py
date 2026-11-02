@@ -1,6 +1,6 @@
 """The spike's scoring (docs/spike-plan.md, "Scoring").
 
-Against Bembegoo's guides: a grammar entry's anchors and `heard` lines are
+Against the courses' guides: a grammar entry's anchors and `heard` lines are
 the lines of its episode that use its point, so in an episode that teaches
 a point the guide says which lines use it. A rule's recall is the share of
 those it finds. Its other matches there are listed, to be called right or

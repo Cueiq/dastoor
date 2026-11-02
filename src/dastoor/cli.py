@@ -163,7 +163,7 @@ def heard(args) -> int:
 
 def export(args) -> int:
     """Every point's note and exercises, as one JSON file for a tool that
-    fills them in (Bembegoo's build). Each carries `note_from`: its id and a
+    fills them in (an app's lesson build). Each carries `note_from`: its id and a
     hash of its file, so a guide made from it can tell when it changed; its
     place in a book (`place`); and, once counted (`dastoor heard`), how many
     of the subtitles' sentences use it (`heard`), the count's size in
@@ -213,8 +213,8 @@ def main(argv: list[str] | None = None) -> int:
     hearing.add_argument("paths", nargs="+", help="subtitle files, or folders of them")
     commands.add_parser("export", help="every point's note, as JSON")
     commands.add_parser("serve", help="answer texts line by line on stdin, the model loaded once")
-    scoring = commands.add_parser("score", help="the spike's scoring against Bembegoo's guides")
-    scoring.add_argument("courses", help="the folder of Bembegoo courses")
+    scoring = commands.add_parser("score", help="the spike's scoring against the courses' guides")
+    scoring.add_argument("courses", help="the folder of courses")
     scoring.add_argument("--out", default="spike", help="where the report and samples go")
     scoring.add_argument("--seed", type=int, default=7)
     scoring.add_argument("--split", choices=["dev", "test"], help="score on one half of the files only")

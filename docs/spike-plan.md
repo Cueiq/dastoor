@@ -2,14 +2,14 @@
 
 The question: can rules, with no language model, find grammar points in
 subtitle English accurately enough to replace Claude's grammar entries in a
-Bembegoo lesson? Subtitle English is hard on a parser: fragments, *gonna*,
+film lesson? Subtitle English is hard on a parser: fragments, *gonna*,
 two voices in one line, and lines cut mid-sentence.
 
 The spike answers it for 10 points before anything else is built.
 
 ## The 10 points
 
-All 10 are taught in Bembegoo's courses already, so there are real lines to
+All 10 are taught in the courses already, so there are real lines to
 test on. Seven can be told by form; three pairs are told apart by meaning,
 to see where rules stop.
 
@@ -97,7 +97,7 @@ the trade-off is measured, not guessed.
 
 ## Scoring
 
-**The lines.** Every subtitle of Bembegoo's guided courses: 10 episodes so
+**The lines.** Every subtitle of the guided courses: 10 episodes so
 far, 3,339 lines.
 
 **What counts as right.** Two sets:
@@ -128,7 +128,7 @@ the spike says why: the parser, the pattern, or the line itself.
 ## Not in the spike
 
 - The notes and exercises.
-- Bembegoo's side: prepare calling `dastoor tag`, and the short entry for a
+- The app's side: its lesson build calling `dastoor tag`, and the short entry for a
   point Dastoor has.
 - Points beyond these 10; the CEFR-J list sets which come next.
 - A public repository: it stays local until the owner says otherwise.
