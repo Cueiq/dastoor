@@ -45,78 +45,78 @@ level: A1
 level_from: egp
 note:
   gist:
-    en: 'Some in a sentence that says yes: some money, something. Any after not and in questions: any money, anything. Some in a question offers or asks for something.'
-    fa: 'some در جملهٔ مثبت: some money و something. any بعد از not و در سؤال: any money و anything. some در سؤالی که چیزی تعارف می‌کند یا می‌خواهد هم می‌آید.'
+    en: "Some in a sentence that says yes: some money, something. Any after not and in questions: any money, anything. Some in a question offers or asks for something."
+    fa: "استفاده از some در جملات مثبت (برای بیان وجود چیزی: some money یا something)؛ و کاربرد any بعد از ساختارهای منفی (not) و در جملات پرسشی. البته کلمهٔ some در جملات سؤالی که برای «تعارف کردن» یا «درخواست کردن» باشد نیز به کار می‌رود."
   forms:
-  - kind: positive
-    text: I've got some water.
-    mark: some
-  - kind: negative
-    text: There isn't any milk.
-    mark: any
-  - kind: question
-    text: Did you hear anything?
-    mark: anything
+    - kind: positive
+      text: I've got some water.
+      mark: some
+    - kind: negative
+      text: There isn't any milk.
+      mark: any
+    - kind: question
+      text: Did you hear anything?
+      mark: anything
   mistakes:
-  - wrong: I don't know nothing.
-    right: I don't know anything.
-    why:
-      en: 'One negative is enough: not + any, or no alone.'
-      fa: 'یک منفی کافی است: not با any، یا فقط no. در فارسی می‌گوییم «هیچ‌چیز نمی‌دانم» ولی انگلیسی دو منفی نمی‌گیرد.'
-  - wrong: There isn't some milk.
-    right: There isn't any milk.
-    why:
-      en: After not, use any.
-      fa: بعد از not، any بیاورید.
-  - wrong: I have any questions.
-    right: I have some questions.
-    why:
-      en: In a sentence that says yes, use some.
-      fa: در جملهٔ مثبت some بیاورید.
+    - wrong: I don't know nothing.
+      right: I don't know anything.
+      why:
+        en: "One negative is enough: not + any, or no alone."
+        fa: "در زبان انگلیسی برخلاف فارسی، استفاده از دو کلمهٔ منفی در یک جمله مجاز نیست؛ بنابراین یا باید از not + any استفاده کنید یا تنها از no/nothing بهره ببرید."
+    - wrong: There isn't some milk.
+      right: There isn't any milk.
+      why:
+        en: "After not, use any."
+        fa: "پس از افعال منفی‌شده با not، استفاده از any الزامی است و نمی‌توان از some استفاده کرد."
+    - wrong: I have any questions.
+      right: I have some questions.
+      why:
+        en: "In a sentence that says yes, use some."
+        fa: "در جملات خبریِ مثبت، برای اشاره به مقداری از چیزی یا تعدادی از موارد از some استفاده می‌شود، نه any."
   contrast:
-  - term: no / nothing / nobody
-    example: There's no milk.
-    why:
-      en: 'No already makes it negative: no not with it.'
-      fa: no خودش جمله را منفی می‌کند و not لازم ندارد.
-    point: null
-  - term: every / everyone
-    example: Everyone is here.
-    why:
-      en: Every means all of them, not some.
-      fa: every یعنی همه، نه چند تا.
-    point: null
+    - term: no / nothing / nobody
+      example: There's no milk.
+      why:
+        en: "No already makes it negative: no not with it."
+        fa: "کلمات منفی‌سازی مثل no خودشان جمله را منفی می‌کنند و نیازی به آوردن not ندارند."
+      point: null
+    - term: every / everyone
+      example: Everyone is here.
+      why:
+        en: "Every means all of them, not some."
+        fa: "کلمهٔ every به معنای «همه و تک‌تک افراد یا اشیاء» است، برخلاف some که به معنی «مقداری یا چند تا» است."
+      point: null
 exercises:
-- id: isnt-any
-  kind: choose
-  sentence: There isn't ___ milk in the fridge.
-  options:
-  - any
-  - some
-  - 'no'
-  answer: any
-  why:
-    en: not + any.
-    fa: not و any.
-- id: didnt-see
-  kind: fix
-  wrong: I didn't see nobody.
-  right:
-  - I didn't see anybody.
-  - I didn't see anyone.
-  - I saw nobody.
-  why:
-    en: 'One negative: not + anybody, or nobody alone.'
-    fa: 'یک منفی: not با anybody، یا فقط nobody.'
-- id: no-bread
-  kind: rewrite
-  instruction:
-    en: Say it with not + any.
-    fa: با not و any بگویید.
-  from: There's no bread.
-  answers:
-  - There isn't any bread.
-  - There is not any bread.
-  why:
-    en: no = not any.
-    fa: no یعنی not any.
+  - id: isnt-any
+    kind: choose
+    sentence: "There isn't ___ milk in the fridge."
+    options:
+      - any
+      - some
+      - 'no'
+    answer: any
+    why:
+      en: "not + any."
+      fa: "بعد از جملهٔ منفیِ دارای not، از any استفاده می‌شود."
+  - id: didnt-see
+    kind: fix
+    wrong: "I didn't see nobody."
+    right:
+      - "I didn't see anybody."
+      - "I didn't see anyone."
+      - "I saw nobody."
+    why:
+      en: "One negative: not + anybody, or nobody alone."
+      fa: "جلوگیری از دو منفی: یا ترکیبِ منفی با anybody/anyone یا استفاده از کلمهٔ nobody به‌تنهایی."
+  - id: no-bread
+    kind: rewrite
+    instruction:
+      en: "Say it with not + any."
+      fa: "این جمله را با استفاده از ساختار not + any بازنویسی کنید."
+    from: "There's no bread."
+    answers:
+      - "There isn't any bread."
+      - "There is not any bread."
+    why:
+      en: "no = not any."
+      fa: "معادلِ مثبت/منفی: no دقیقاً برابر با ساختار not + any است."

@@ -36,81 +36,81 @@ tests:
 
 # The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
 # English Grammar Profile's level as CEFR-J records it (egp), or Bembegoo's
-# guides' where no item has it (guides).
+# guides' where no item has one (guides).
 level: B1
 level_from: egp
 note:
   gist:
-    en: Used to + a plain verb, for something that happened often or was true in the past, and isn't now.
-    fa: used to و فعل ساده، برای کاری که در گذشته زیاد انجام می‌شد یا چیزی که قبلاً درست بود و حالا نیست؛ مثل «قبلاً … می‌…» در فارسی.
+    en: "Used to + a plain verb, for something that happened often or was true in the past, and isn't now."
+    fa: "استفاده از used to به‌علاوهٔ یک فعلِ ساده، برای بیان کاری که در گذشته به‌طور مرتب انجام می‌شده یا حالتی که قبلاً برقرار بوده اما امروزه دیگر وجود ندارد (معادل «قبلاً ... می‌...» در فارسی)."
   forms:
-  - kind: positive
-    text: I used to live in Tehran.
-    mark: used to live
-  - kind: negative
-    text: I didn't use to like coffee.
-    mark: didn't use to like
-  - kind: question
-    text: Did you use to play football?
-    mark: Did you use to play
+    - kind: positive
+      text: I used to live in Tehran.
+      mark: used to live
+    - kind: negative
+      text: I didn't use to like coffee.
+      mark: didn't use to like
+    - kind: question
+      text: Did you use to play football?
+      mark: Did you use to play
   mistakes:
-  - wrong: I am used to live here.
-    right: I used to live here.
-    why:
-      en: Used to + verb has no am, is or are before it.
-      fa: قبل از «used to» با فعل ساده، «am»، «is» یا «are» نمی‌آید.
-  - wrong: He used to played football.
-    right: He used to play football.
-    why:
-      en: After used to comes the plain verb.
-      fa: بعد از «used to» شکل سادهٔ فعل می‌آید.
-  - wrong: I didn't used to like coffee.
-    right: I didn't use to like coffee.
-    why:
-      en: After did or didn't, write use to, without -d.
-      fa: بعد از «did» یا «didn't»، «use to» بدون d نوشته می‌شود.
+    - wrong: I am used to live here.
+      right: I used to live here.
+      why:
+        en: "Used to + verb has no am, is or are before it."
+        fa: "برای بیان عادت گذشته با used to، پیش از آن از افعال am، is یا are استفاده نکنید (این افعال مختصِ ساختارِ عادت داشتن در زمان حال هستند)."
+    - wrong: He used to played football.
+      right: He used to play football.
+      why:
+        en: "After used to comes the plain verb."
+        fa: "پس از used to، فعل اصلی حتماً باید به صورتِ ساده بیاید و از پسوند گذشتگی (ed) بی‌بهره است."
+    - wrong: I didn't used to like coffee.
+      right: I didn't use to like coffee.
+      why:
+        en: "After did or didn't, write use to, without -d."
+        fa: "در جملات منفی و سؤالی، با حضور did یا didn't، کلمهٔ مورد نظر به شکل use to (بدون حرف d در انتهای used) نوشته می‌شود."
   contrast:
-  - term: be used to + -ing
-    example: I'm used to getting up early.
-    why:
-      en: Be used to + -ing means something is normal for you now, not a past habit.
-      fa: «be used to» با ing یعنی چیزی الان برایتان عادی است، نه عادتی در گذشته.
-    point: be-used-to
-  - term: would + verb (past habit)
-    example: Every summer we would go to the sea.
-    why:
-      en: Would also tells past habits, but only actions, not states like be or live.
-      fa: «would» هم عادت گذشته را می‌گوید، ولی فقط برای کارها، نه حالت‌هایی مثل «be» یا «live».
-    point: would-past-habit
+    - term: be used to + -ing
+      example: I'm used to getting up early.
+      why:
+        en: "Be used to + -ing means something is normal for you now, not a past habit."
+        fa: "ساختار be used to + فعل ingدار نشان‌دهندهٔ این است که چیزی در زمان حال برای شما عادی و جاافتاده است، و ارتباطی با عادت‌های گذشته ندارد."
+      point: be-used-to
+    - term: + verb (past habit)
+      example: Every summer we would go to the sea.
+      why:
+        en: "Would also tells past habits, but only actions, not states like be or live."
+        fa: "فعل کمکی would هم برای کارهای تکراریِ گذشته به کار می‌رود، اما فقط برای «اقدامات و اعمال»، و نه برای حالت‌ها یا وضعیت‌های پایدار (مثل be یا live)."
+      point: would-past-habit
 exercises:
-- id: live-shiraz
-  kind: choose
-  sentence: I ___ live in Tehran, but now I live in Shiraz.
-  options:
-  - used to
-  - use to
-  - was used to
-  answer: used to
-  why:
-    en: 'True in the past, not now: used to + verb.'
-    fa: 'در گذشته درست بود، حالا نه: used to + فعل.'
-- id: used-to-lives
-  kind: fix
-  wrong: She used to lives in Paris.
-  right:
-  - She used to live in Paris.
-  why:
-    en: 'After used to comes the plain verb: live.'
-    fa: 'بعد از used to فعل ساده می‌آید: live.'
-- id: was-a-cinema
-  kind: rewrite
-  instruction:
-    en: Say it with used to.
-    fa: با used to بگویید.
-  from: In the past this building was a cinema. Now it is a gym.
-  answers:
-  - This building used to be a cinema.
-  - It used to be a cinema.
-  why:
-    en: 'What was true before but isn''t now: used to + verb.'
-    fa: 'چیزی که قبلاً درست بود و حالا نیست: used to + فعل.'
+  - id: live-shiraz
+    kind: choose
+    sentence: "I ___ live in Tehran, but now I live in Shiraz."
+    options:
+      - used to
+      - use to
+      - was used to
+    answer: used to
+    why:
+      en: "True in the past, not now: used to + verb."
+      fa: "برای حقیقتی که در گذشته وجود داشته اما الان تغییر کرده است: used to + فعل ساده."
+  - id: used-to-lives
+    kind: fix
+    wrong: "She used to lives in Paris."
+    right:
+      - "She used to live in Paris."
+    why:
+      en: "After used to comes the plain verb: live."
+      fa: "پس از used to، فعل به صورت ساده (live) می‌آید."
+  - id: was-a-cinema
+    kind: rewrite
+    instruction:
+      en: "Say it with used to."
+      fa: "این وضعیتِ گذشته را با استفاده از used to بیان کنید."
+    from: "In the past this building was a cinema. Now it is a gym."
+    answers:
+      - "This building used to be a cinema."
+      - "It used to be a cinema."
+    why:
+      en: "What was true before but isn't now: used to + verb."
+      fa: "برای حالتی که در گذشته حقیقت داشت ولی الان فرق کرده است: used to + فعل."

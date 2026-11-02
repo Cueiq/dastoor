@@ -49,70 +49,70 @@ level: A2
 level_from: egp
 note:
   gist:
-    en: 'The + adjective + -est (the tallest), or the most + a longer adjective (the most beautiful): more than all the others.'
-    fa: 'the و صفت با est (the tallest)، یا the most و صفت بلندتر (the most beautiful): بیشتر از همهٔ بقیه؛ مثل «ـ‌ترین» در فارسی.'
+    en: "The + adjective + -est (the tallest), or the most + a longer adjective (the most beautiful): more than all the others."
+    fa: "استفاده از ساختار the + صفت با پسوند -est (مثل the tallest)، یا the most پیش از صفات بلندتر (مثل the most beautiful)، برای نشان دادن اینکه یک فرد یا شیء در میان همهٔ موارد مشابه در بالاترین درجه قرار دارد (معادل پسوند «ـ‌ترین» در زبان فارسی)."
   forms:
-  - kind: positive
-    text: He is the tallest boy in the class.
-    mark: the tallest
-  - kind: positive
-    text: It's the most beautiful place in the world.
-    mark: the most beautiful
-  - kind: positive
-    text: That was the worst day ever.
-    mark: the worst
+    - kind: positive
+      text: He is the tallest boy in the class.
+      mark: the tallest
+    - kind: positive
+      text: It's the most beautiful place in the world.
+      mark: the most beautiful
+    - kind: positive
+      text: That was the worst day ever.
+      mark: the worst
   mistakes:
-  - wrong: This is the most cheap shop.
-    right: This is the cheapest shop.
-    why:
-      en: Short words take -est, not most.
-      fa: کلمه‌های کوتاه est می‌گیرند، نه «most».
-  - wrong: He is tallest boy in the class.
-    right: He is the tallest boy in the class.
-    why:
-      en: Don't forget the before the -est word.
-      fa: «the» را قبل از کلمهٔ estدار جا نیندازید.
-  - wrong: She is the best student of the class.
-    right: She is the best student in the class.
-    why:
-      en: With a place or a group like a class, use in, not of.
-      fa: با مکان یا گروهی مثل کلاس «in» بیاورید، نه «of»؛ «بهترین شاگردِ کلاس» در انگلیسی in می‌خواهد.
+    - wrong: This is the most cheap shop.
+      right: This is the cheapest shop.
+      why:
+        en: "Short words take -est, not most."
+        fa: "برای صفات کوتاه (تک‌بخشی یا دوبخشیِ ساده)، از پسوند est استفاده می‌شود، نه کلمهٔ most."
+    - wrong: He is tallest boy in the class.
+      right: He is the tallest boy in the class.
+      why:
+        en: "Don't forget the before the -est word."
+        fa: "همیشه پیش از صفت عالی (est‌دار یا the most)، آوردن حرف تعریف معین the الزامی است و نباید آن را جا بیندازید."
+    - wrong: She is the best student of the class.
+      right: She is the best student in the class.
+      why:
+        en: "With a place or a group like a class, use in, not of."
+        fa: "برای اشاره به یک مکان یا گروه مشخص (مثل کلاس، شهر یا دنیا) در کنار صفت عالی، از حرف اضافهٔ in استفاده کنید، نه of."
   contrast:
-  - term: adjective + -er (than)
-    example: Ali is taller than Reza.
-    why:
-      en: -er compares two; the -est compares with all.
-      fa: er دو چیز را مقایسه می‌کند؛ the و est با همه.
-    point: comparatives
+    - term: adjective + -er (than)
+      example: Ali is taller than Reza.
+      why:
+        en: "-er compares two; the -est compares with all."
+        fa: "صفت تفضیلی (ba پسوند er) برای مقایسهٔ میان دو فرد یا شیء است، اما صفت عالی (est) یک مورد را با کلِ گروه مقایسه می‌کند."
+      point: comparatives
 exercises:
-- id: tallest-class
-  kind: choose
-  sentence: He is the ___ boy in the class.
-  options:
-  - tallest
-  - taller
-  - most tall
-  answer: tallest
-  why:
-    en: 'All the class: the + -est.'
-    fa: 'کل کلاس: the + est.'
-- id: most-cheap
-  kind: fix
-  wrong: This is the most cheap shop.
-  right:
-  - This is the cheapest shop.
-  why:
-    en: 'Cheap is short: cheapest.'
-    fa: 'cheap کوتاه است: cheapest.'
-- id: most-beautiful
-  kind: rewrite
-  instruction:
-    en: Say it with the most.
-    fa: با the most بگویید.
-  from: No place in the world is as beautiful as this.
-  answers:
-  - This is the most beautiful place in the world.
-  - It's the most beautiful place in the world.
-  why:
-    en: 'Beautiful is long: the most beautiful.'
-    fa: 'beautiful بلند است: the most beautiful.'
+  - id: tallest-class
+    kind: choose
+    sentence: "He is the ___ boy in the class."
+    options:
+      - tallest
+      - taller
+      - most tall
+    answer: tallest
+    why:
+      en: "All the class: the + -est."
+      fa: "برای مقایسه یک فرد با کل کلاس: ساختار صفت عالی با the + -est."
+  - id: most-cheap
+    kind: fix
+    wrong: "This is the most cheap shop."
+    right:
+      - "This is the cheapest shop."
+    why:
+      en: "Cheap is short: cheapest."
+      fa: "صفت cheap کوتاه است و به صورت cheapest نوشته می‌شود."
+  - id: most-beautiful
+    kind: rewrite
+    instruction:
+      en: "Say it with the most."
+      fa: "این مفهوم را با استفاده از ساختار the most بیان کنید."
+    from: "No place in the world is as beautiful as this."
+    answers:
+      - "This is the most beautiful place in the world."
+      - "It's the most beautiful place in the world."
+    why:
+      en: "Beautiful is long: the most beautiful."
+      fa: "برای صفات بلند (چندبخشی مثل beautiful): استفاده از the most."

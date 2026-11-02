@@ -43,75 +43,75 @@ level: A2
 level_from: egp
 note:
   gist:
-    en: 'Was or were + a past participle, for something done in the past when who did it doesn''t matter: I was born in Tehran.'
-    fa: 'was یا were و اسم مفعول، برای کاری که در گذشته انجام شده و مهم نیست چه کسی انجامش داده: I was born in Tehran.'
+    en: "Was or were + a past participle, for something done in the past when who did it doesn't matter: I was born in Tehran."
+    fa: "ترکیب was یا were به‌علاوهٔ اسم مفعول (قسمت سوم فعل)، برای کاری است که در گذشته انجام شده و مهم نیست (یا نمی‌دانیم) چه کسی آن را انجام داده است: I was born in Tehran (من در تهران به دنیا آمدم)."
   forms:
-  - kind: positive
-    text: It was made in China.
-    mark: was made
-  - kind: negative
-    text: We weren't told.
-    mark: weren't told
-  - kind: question
-    text: Was it stolen?
-    mark: Was it stolen
+    - kind: positive
+      text: It was made in China.
+      mark: was made
+    - kind: negative
+      text: We weren't told.
+      mark: weren't told
+    - kind: question
+      text: Was it stolen?
+      mark: Was it stolen
   mistakes:
-  - wrong: I born in 1990.
-    right: I was born in 1990.
-    why:
-      en: Born needs was or were.
-      fa: born بدون was یا were نمی‌آید؛ «به دنیا آمدم» در انگلیسی مجهول است.
-  - wrong: My phone was stole.
-    right: My phone was stolen.
-    why:
-      en: 'Use the past participle: stolen, not stole.'
-      fa: 'اسم مفعول بیاورید: stolen، نه stole.'
-  - wrong: The windows was broken.
-    right: The windows were broken.
-    why:
-      en: For more than one, use were.
-      fa: برای جمع were بیاورید.
+    - wrong: I born in 1990.
+      right: I was born in 1990.
+      why:
+        en: Born needs was or were.
+        fa: فعلِ born (به دنیا آمدن) در انگلیسی همیشه ساختار مجهول دارد؛ پس هرگز was یا were را قبل از آن فراموش نکنید.
+    - wrong: My phone was stole.
+      right: My phone was stolen.
+      why:
+        en: "Use the past participle: stolen, not stole."
+        fa: "در جملات مجهول باید از اسم مفعول (قسمت سوم فعل) استفاده کنید که می‌شود stolen، نه stole (که گذشتهٔ ساده است)."
+    - wrong: The windows was broken.
+      right: The windows were broken.
+      why:
+        en: For more than one, use were.
+        fa: برای اسم‌های جمع (مثل windows) باید از were استفاده کنید.
   contrast:
-  - term: am / is / are + past participle
-    example: It's made here.
-    why:
-      en: That is what is done now, or always.
-      fa: آن کاری است که حالا یا همیشه انجام می‌شود.
-    point: present-passive
-  - term: was / were + -ing
-    example: I was walking home.
-    why:
-      en: That is what someone was doing, not what was done to them.
-      fa: آن کاری است که کسی در حال انجامش بود، نه کاری که رویش انجام شد.
-    point: past-continuous
+    - term: am / is / are + past participle
+      example: It's made here.
+      why:
+        en: That is what is done now, or always.
+        fa: استفاده از am/is/are برای کاری است که در زمان حال یا به‌طور معمول و همیشه انجام می‌شود (مجهول حال ساده).
+      point: present-passive
+    - term: was / were + -ing
+      example: I was walking home.
+      why:
+        en: That is what someone was doing, not what was done to them.
+        fa: گذشتهٔ استمراری (was/were + ing) نشان می‌دهد کسی خودش در حال انجام کاری بود؛ اما مجهول گذشته نشان می‌دهد کاری روی آن چیز یا شخص انجام شده است.
+      point: past-continuous
 exercises:
-- id: built-1920
-  kind: choose
-  sentence: This house ___ in 1920.
-  options:
-  - was built
-  - built
-  - was build
-  answer: was built
-  why:
-    en: was + past participle.
-    fa: was و اسم مفعول.
-- id: were-given
-  kind: fix
-  wrong: We was given badges.
-  right:
-  - We were given badges.
-  why:
-    en: With we, were.
-    fa: با we، were بیاورید.
-- id: bike-stolen
-  kind: rewrite
-  instruction:
-    en: Say it in the passive.
-    fa: مجهولش را بگویید.
-  from: Someone stole my bike.
-  answers:
-  - My bike was stolen.
-  why:
-    en: What was done to comes first, with was + past participle.
-    fa: چیزی که کار رویش انجام شد اول می‌آید، با was و اسم مفعول.
+  - id: built-1920
+    kind: choose
+    sentence: This house ___ in 1920.
+    options:
+      - was built
+      - built
+      - was build
+    answer: was built
+    why:
+      en: 'was + past participle.'
+      fa: "فرمول مجهول گذشته: was + اسم مفعول (قسمت سوم فعل)."
+  - id: were-given
+    kind: fix
+    wrong: We was given badges.
+    right:
+      - We were given badges.
+    why:
+      en: With we, were.
+      fa: ضمیر we با فعل were همراه می‌شود.
+  - id: bike-stolen
+    kind: rewrite
+    instruction:
+      en: Say it in the passive.
+      fa: این جمله را به‌صورت مجهول بیان کنید.
+    from: Someone stole my bike.
+    answers:
+      - My bike was stolen.
+    why:
+      en: 'What was done to comes first, with was + past participle.'
+      fa: "چیزی که کار روی آن انجام شده اول می‌آید، و سپس was + اسم مفعول."

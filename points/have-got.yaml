@@ -10,6 +10,7 @@ topic: present
 cefrj: []
 # "I've got the job" is got as been given, not have: the words can't tell.
 needs_meaning: true
+check_question: "have, obtained, caught, or understood?"
 match:
   - form: all
     tree:

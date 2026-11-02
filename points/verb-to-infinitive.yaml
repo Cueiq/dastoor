@@ -67,77 +67,77 @@ level: A1
 level_from: egp
 note:
   gist:
-    en: 'Some verbs take to + a verb after them: want, need, decide, try, hope, forget, learn, would like. The second verb is in its base form.'
-    fa: 'بعد از بعضی فعل‌ها to و شکل سادهٔ فعل می‌آید: want، need، decide، try، hope، forget، learn و would like.'
+    en: "Some verbs take to + a verb after them: want, need, decide, try, hope, forget, learn, would like. The second verb is in its base form."
+    fa: "بعد از برخی از فعل‌ها در زبان انگلیسی، برای اتصال به فعلِ بعدی باید از حرفِ to به‌علاوهٔ شکل سادهٔ فعل استفاده کرد: مثل want، need، decide، try، hope، forget، learn و would like."
   forms:
-  - kind: positive
-    text: I want to go home.
-    mark: want to go
-  - kind: negative
-    text: She decided not to come.
-    mark: decided not to come
-  - kind: question
-    text: Do you need to leave now?
-    mark: need to leave
+    - kind: positive
+      text: I want to go home.
+      mark: want to go
+    - kind: negative
+      text: She decided not to come.
+      mark: decided not to come
+    - kind: question
+      text: Do you need to leave now?
+      mark: need to leave
   mistakes:
-  - wrong: I want go home.
-    right: I want to go home.
-    why:
-      en: After want, put to before the next verb.
-      fa: بعد از want قبل از فعل بعدی to بیاورید؛ در فارسی می‌گوییم «می‌خواهم بروم» و چیزی بینشان نیست.
-  - wrong: She decided to not come.
-    right: She decided not to come.
-    why:
-      en: Not goes before to.
-      fa: «not» قبل از to می‌آید، نه بعد از آن.
-  - wrong: I'd like going to the cinema.
-    right: I'd like to go to the cinema.
-    why:
-      en: Would like takes to + a verb, not -ing.
-      fa: «would like» با to و فعل ساده می‌آید، نه با ing.
+    - wrong: I want go home.
+      right: I want to go home.
+      why:
+        en: "After want, put to before the next verb."
+        fa: "بعد از فعل‌هایی مثل want، آوردن کلمهٔ to پیش از فعلِ بعدی الزامی است (برخلاف زبان فارسی که می‌گوییم «می‌خواهم بروم» و چیزی میان دو فعل فاصله نمی‌اندازد)."
+    - wrong: She decided to not come.
+      right: She decided not to come.
+      why:
+        en: "Not goes before to."
+        fa: "برای منفی کردنِ این ساختار، کلمهٔ not حتماً باید پیش از to قرار بگیرد (not to)، نه بعد از آن."
+    - wrong: I'd like going to the cinema.
+      right: I'd like to go to the cinema.
+      why:
+        en: "Would like takes to + a verb, not -ing."
+        fa: "عبارت would like با ساختار to به‌علاوهٔ فعلِ ساده می‌آید، و نه با پسوند ing."
   contrast:
-  - term: verb + -ing (enjoy doing)
-    example: I enjoy swimming.
-    why:
-      en: Verbs like enjoy, mind and finish take -ing, not to.
-      fa: فعل‌هایی مثل enjoy، mind و finish فعل ingدار می‌گیرند، نه to.
-    point: verb-ing
-  - term: be going to + verb
-    example: I'm going to call her.
-    why:
-      en: That is the future, a plan; want to is what you wish.
-      fa: آن آینده است و برنامه را می‌گوید؛ want to خواستن را.
-    point: be-going-to
+    - term: verb + -ing (enjoy doing)
+      example: I enjoy swimming.
+      why:
+        en: "Verbs like enjoy, mind and finish take -ing, not to."
+        fa: "برخلاف این ساختار، افعالی مثل enjoy، mind و finish به جای to، با پسوند ing همراه می‌شوند."
+      point: verb-ing
+    - term: be going to + verb
+      example: I'm going to call her.
+      why:
+        en: "That is the future, a plan; want to is what you wish."
+        fa: "ساختار be going to برای بیان آینده و برنامه‌ریزی است، در حالی که want به معنی خواستن و بیان تمایل درونی است."
+      point: be-going-to
 exercises:
-- id: need-talk
-  kind: choose
-  sentence: We need ___ to them.
-  options:
-  - to talk
-  - talking
-  - talk
-  answer: to talk
-  why:
-    en: need + to + verb.
-    fa: need و بعد to و فعل ساده.
-- id: forgot-call
-  kind: fix
-  wrong: He forgot call me.
-  right:
-  - He forgot to call me.
-  why:
-    en: 'forget + to + verb: he didn''t do it.'
-    fa: forget با to یعنی کاری را که باید می‌کرد یادش رفت.
-- id: decided-stay
-  kind: rewrite
-  instruction:
-    en: Say it with decide + to.
-    fa: با decide و to بگویید.
-  from: I've thought about it, and I'll stay here.
-  answers:
-  - I've decided to stay here.
-  - I have decided to stay here.
-  - I decided to stay here.
-  why:
-    en: decide + to + verb.
-    fa: decide و بعد to و فعل ساده.
+  - id: need-talk
+    kind: choose
+    sentence: "We need ___ to them."
+    options:
+      - to talk
+      - talking
+      - talk
+    answer: to talk
+    why:
+      en: "need + to + verb."
+      fa: "بعد از need از ساختار to به‌علاوهٔ فعل ساده استفاده می‌شود."
+  - id: forgot-call
+    kind: fix
+    wrong: "He forgot call me."
+    right:
+      - "He forgot to call me."
+    why:
+      en: "forget + to + verb: he didn't do it."
+      fa: "برای بیان فراموش کردنِ انجام یک کار: forget + to + فعل ساده."
+  - id: decided-stay
+    kind: rewrite
+    instruction:
+      en: "Say it with decide + to."
+      fa: "این جمله را با استفاده از ساختار decide + to بازنویسی کنید."
+    from: "I've thought about it, and I'll stay here."
+    answers:
+      - "I've decided to stay here."
+      - "I have decided to stay here."
+      - "I decided to stay here."
+    why:
+      en: "decide + to + verb."
+      fa: "برای بیان تصمیم‌گیری: decide + to + فعل ساده."

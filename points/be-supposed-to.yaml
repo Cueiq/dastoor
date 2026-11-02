@@ -1,5 +1,5 @@
 id: be-supposed-to
-title: { en: "be supposed to + verb", fa: "be supposed to: قرار بودن" }
+title: { en: "be supposed to + verb", fa: "be supposed to (قرار بودن)" }
 # What a learner may search it by, in English and Persian.
 keywords: ["supposed to", "expected", "قرار است", "قرار بود"]
 # Where a book shows it beyond its topic: on the tenses' timeline, and
@@ -35,68 +35,68 @@ level_from: guides
 note:
   gist:
     en: 'Be supposed to + a plain verb, for what is planned, expected or a rule, often by other people: The train is supposed to leave at six.'
-    fa: 'be supposed to و فعل ساده، برای کاری که برنامه، انتظار یا قانون می‌گوید، اغلب از طرف دیگران: The train is supposed to leave at six یعنی «قرار است قطار ساعت شش راه بیفتد».'
+    fa: 'عبارت be supposed to و بعد فعل ساده، برای کاری که از قبل برنامه‌ریزی شده، قانون است یا دیگران انتظار انجامش را دارند: The train is supposed to leave at six (قرار است قطار ساعت شش راه بیفتد).'
   forms:
-  - kind: positive
-    text: The train is supposed to leave at six.
-    mark: is supposed to leave
-  - kind: negative
-    text: You're not supposed to park here.
-    mark: '''re not supposed to park'
-  - kind: question
-    text: What time are we supposed to arrive?
-    mark: are we supposed to arrive
+    - kind: positive
+      text: The train is supposed to leave at six.
+      mark: is supposed to leave
+    - kind: negative
+      text: You're not supposed to park here.
+      mark: "'re not supposed to park"
+    - kind: question
+      text: What time are we supposed to arrive?
+      mark: are we supposed to arrive
   mistakes:
-  - wrong: You supposed to call me.
-    right: You were supposed to call me.
-    why:
-      en: 'Don''t forget be: am, is, are, was or were.'
-      fa: '«be» را جا نیندازید: am، is، are، was یا were.'
-  - wrong: The shop isn't suppose to open today.
-    right: The shop isn't supposed to open today.
-    why:
-      en: It is always supposed, with -d, though you hardly hear it.
-      fa: همیشه «supposed» با d است، هرچند تقریباً شنیده نمی‌شود.
-  - wrong: It's supposed working.
-    right: It's supposed to work.
-    why:
-      en: Supposed is followed by to and the plain verb.
-      fa: بعد از «supposed»، to و فعل ساده می‌آید.
+    - wrong: You supposed to call me.
+      right: You were supposed to call me.
+      why:
+        en: "Don't forget be: am, is, are, was or were."
+        fa: "فعل‌های be (شامل am، is، are، was یا were) را قبل از supposed جا نیندازید."
+    - wrong: The shop isn't suppose to open today.
+      right: The shop isn't supposed to open today.
+      why:
+        en: It is always supposed, with -d, though you hardly hear it.
+        fa: این کلمه همیشه با حرف d نوشته می‌شود (supposed)، حتی اگر در صحبت کردن صدای آن را به‌سختی بشنوید.
+    - wrong: It's supposed working.
+      right: It's supposed to work.
+      why:
+        en: Supposed is followed by to and the plain verb.
+        fa: بعد از supposed حتماً to و شکل سادهٔ فعل می‌آید (فعل ing نمی‌گیرد).
   contrast:
-  - term: should + verb
-    example: You should call your mother.
-    why:
-      en: Should is your own advice; be supposed to is what a plan or others expect.
-      fa: «should» توصیهٔ خودتان است؛ «be supposed to» چیزی است که برنامه یا دیگران انتظار دارند.
-    point: should
+    - term: should + verb
+      example: You should call your mother.
+      why:
+        en: Should is your own advice; be supposed to is what a plan or others expect.
+        fa: فعل should برای توصیه یا نظر شخصی شماست؛ اما be supposed to نشان‌دهندهٔ برنامه یا انتظاری است که قانون و دیگران از شما دارند.
+      point: should
 exercises:
-- id: call-arrived
-  kind: choose
-  sentence: You were ___ call me when you arrived.
-  options:
-  - supposed to
-  - suppose to
-  - supposed
-  answer: supposed to
-  why:
-    en: Be + supposed to + the plain verb.
-    fa: be + supposed to + فعل ساده.
-- id: suppose-to-open
-  kind: fix
-  wrong: The shop isn't suppose to open today.
-  right:
-  - The shop isn't supposed to open today.
-  why:
-    en: Supposed, with -d.
-    fa: supposed با d.
-- id: plan-train
-  kind: rewrite
-  instruction:
-    en: Say it with be supposed to.
-    fa: با be supposed to بگویید.
-  from: The plan says the train leaves at six.
-  answers:
-  - The train is supposed to leave at six.
-  why:
-    en: 'What a plan expects: be supposed to + verb.'
-    fa: 'چیزی که برنامه می‌گوید: be supposed to + فعل.'
+  - id: call-arrived
+    kind: choose
+    sentence: You were ___ call me when you arrived.
+    options:
+      - supposed to
+      - suppose to
+      - supposed
+    answer: supposed to
+    why:
+      en: Be + supposed to + the plain verb.
+      fa: ترکیب درست be + supposed to + فعل ساده است.
+  - id: suppose-to-open
+    kind: fix
+    wrong: The shop isn't suppose to open today.
+    right:
+      - The shop isn't supposed to open today.
+    why:
+      en: Supposed, with -d.
+      fa: املای درست supposed (همراه با حرف d) است.
+  - id: plan-train
+    kind: rewrite
+    instruction:
+      en: Say it with be supposed to.
+      fa: با be supposed to بگویید.
+    from: The plan says the train leaves at six.
+    answers:
+      - The train is supposed to leave at six.
+    why:
+      en: 'What a plan expects: be supposed to + verb.'
+      fa: 'وقتی برنامه چیزی را مشخص کرده است: be supposed to + فعل.'

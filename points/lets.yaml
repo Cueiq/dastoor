@@ -1,5 +1,5 @@
 id: lets
-title: { en: "Let's + verb", fa: "Let's: بیایید … (پیشنهاد)" }
+title: { en: "Let's + verb", fa: "Let's (بیایید / پیشنهاد دادن)" }
 # What a learner may search it by, in English and Persian.
 keywords: ["let's", "let us", "suggestion", "پیشنهاد", "بیا", "بیایید"]
 # Where a book shows it beyond its topic: on the tenses' timeline, and
@@ -35,72 +35,72 @@ level: A2
 level_from: egp
 note:
   gist:
-    en: 'Let''s + a plain verb asks the people with you to do something together: Let''s go!'
-    fa: 'let''s و فعل ساده از آدم‌هایی که با شما هستند می‌خواهد کاری را با هم بکنید: Let''s go! یعنی «بریم!»'
+    en: "Let's + a plain verb asks the people with you to do something together: Let's go!"
+    fa: "استفاده از Let's به‌علاوهٔ فعل ساده، برای زمانی است که از اطرافیان خود می‌خواهید کاری را با هم انجام دهید (بیان پیشنهاد): !Let's go یعنی «بریم!» یا «بیایید برویم!»."
   forms:
-  - kind: positive
-    text: Let's go home.
-    mark: Let's go
-  - kind: negative
-    text: Let's not watch TV tonight.
-    mark: Let's not watch
+    - kind: positive
+      text: Let's go home.
+      mark: Let's go
+    - kind: negative
+      text: Let's not watch TV tonight.
+      mark: Let's not watch
   mistakes:
-  - wrong: Let's to watch a film.
-    right: Let's watch a film.
-    why:
-      en: After let's comes the plain verb, with no to.
-      fa: بعد از «let's» فعل ساده می‌آید، بدون «to».
-  - wrong: Let's going to the park.
-    right: Let's go to the park.
-    why:
-      en: The plain verb, not -ing.
-      fa: فعل ساده، نه ingدار.
-  - wrong: Let's don't fight.
-    right: Let's not fight.
-    why:
-      en: The negative is let's not, not let's don't.
-      fa: منفی‌اش «let's not» است، نه «let's don't».
+    - wrong: Let's to watch a film.
+      right: Let's watch a film.
+      why:
+        en: After let's comes the plain verb, with no to.
+        fa: بعد از Let's حتماً فعل ساده می‌آید؛ از کلمهٔ to استفاده نکنید.
+    - wrong: Let's going to the park.
+      right: Let's go to the park.
+      why:
+        en: The plain verb, not -ing.
+        fa: بعد از این عبارت از فعلِ ساده استفاده می‌شود، نه فعلِ ingدار.
+    - wrong: Let's don't fight.
+      right: Let's not fight.
+      why:
+        en: The negative is let's not, not let's don't.
+        fa: حالت منفیِ این عبارت، let's not است، نه let's don't.
   contrast:
-  - term: Let me + verb
-    example: Let me help you.
-    why:
-      en: Let me is you alone; let's is all of us.
-      fa: «let me» یعنی فقط خودم؛ «let's» یعنی همه‌مان.
-  - term: Don't + verb
-    example: Don't go home.
-    why:
-      en: Don't tells someone else; let's not includes you.
-      fa: «don't» به دیگری می‌گوید؛ «let's not» خودتان را هم شامل می‌شود.
-    point: dont-imperative
+    - term: Let me + verb
+      example: Let me help you.
+      why:
+        en: Let me is you alone; let's is all of us.
+        fa: عبارت Let me یعنی «اجازه بده فقط من (انجام دهم)»؛ اما let's یعنی «بیایید همگی با هم (انجام دهیم)».
+    - term: Don't + verb
+      example: Don't go home.
+      why:
+        en: Don't tells someone else; let's not includes you.
+        fa: دستورِ Don't به شخص دیگری داده می‌شود (نرو)؛ اما let's not خود شما را هم در انجام نشدنِ آن کار شریک می‌کند (بیا نرویم).
+      point: dont-imperative
 exercises:
-- id: hot-beach
-  kind: choose
-  sentence: It's hot. Let's ___ to the beach.
-  options:
-  - go
-  - to go
-  - going
-  answer: go
-  why:
-    en: Let's + the plain verb.
-    fa: let's + فعل ساده.
-- id: lets-to-watch
-  kind: fix
-  wrong: Let's to watch a film.
-  right:
-  - Let's watch a film.
-  why:
-    en: No to after let's.
-    fa: بعد از let's حرف to نمی‌آید.
-- id: eat-now
-  kind: rewrite
-  instruction:
-    en: Suggest it with let's.
-    fa: با let's پیشنهاد بدهید.
-  from: We can eat now. Do you want to?
-  answers:
-  - Let's eat now.
-  - Let's eat.
-  why:
-    en: 'A suggestion for us: let''s + verb.'
-    fa: 'پیشنهاد برای همه‌مان: let''s + فعل.'
+  - id: hot-beach
+    kind: choose
+    sentence: It's hot. Let's ___ to the beach.
+    options:
+      - go
+      - to go
+      - going
+    answer: go
+    why:
+      en: Let's + the plain verb.
+      fa: "فرمول پیشنهاد: let's + فعل ساده."
+  - id: lets-to-watch
+    kind: fix
+    wrong: Let's to watch a film.
+    right:
+      - Let's watch a film.
+    why:
+      en: No to after let's.
+      fa: بعد از let's نیازی به حرف to نیست.
+  - id: eat-now
+    kind: rewrite
+    instruction:
+      en: Suggest it with let's.
+      fa: با let's پیشنهاد بدهید.
+    from: We can eat now. Do you want to?
+    answers:
+      - Let's eat now.
+      - Let's eat.
+    why:
+      en: "A suggestion for us: let's + verb."
+      fa: "برای پیشنهاد دادن به جمع: let's + فعل ساده."

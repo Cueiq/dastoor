@@ -41,75 +41,75 @@ level: A2
 level_from: egp
 note:
   gist:
-    en: 'Should + a plain verb, for advice, or for what is right to do: You should rest.'
-    fa: 'should و فعل ساده، برای توصیه یا کاری که درستش این است: You should rest یعنی «بهتره استراحت کنی».'
+    en: "Should + a plain verb, for advice, or for what is right to do: You should rest."
+    fa: "ترکیب should به‌علاوهٔ یک فعلِ ساده، برای ارائهٔ توصیه و پیشنهاد، یا بیان کاری که انجام دادنِ آن درست و پسندیده است: You should rest (بهتر است استراحت کنی)."
   forms:
-  - kind: positive
-    text: You should drink more water.
-    mark: should drink
-  - kind: negative
-    text: You shouldn't eat so late.
-    mark: shouldn't eat
-  - kind: question
-    text: What should I wear?
-    mark: should I wear
+    - kind: positive
+      text: You should drink more water.
+      mark: should drink
+    - kind: negative
+      text: You shouldn't eat so late.
+      mark: shouldn't eat
+    - kind: question
+      text: What should I wear?
+      mark: should I wear
   mistakes:
-  - wrong: You should to go home.
-    right: You should go home.
-    why:
-      en: After should comes the plain verb, with no to.
-      fa: بعد از «should» فعل ساده می‌آید، بدون «to».
-  - wrong: He shoulds go to bed.
-    right: He should go to bed.
-    why:
-      en: Should never takes -s.
-      fa: «should» هیچ‌وقت s نمی‌گیرد.
-  - wrong: You should went to bed early yesterday.
-    right: You should have gone to bed early yesterday.
-    why:
-      en: For the past, use should have + past participle.
-      fa: برای گذشته «should have» و اسم مفعول بیاورید.
+    - wrong: You should to go home.
+      right: You should go home.
+      why:
+        en: "After should comes the plain verb, with no to."
+        fa: "بعد از should حتماً باید از فعل ساده استفاده کنید و آوردن حرف اضافهٔ to پس از آن نادرست است."
+    - wrong: He shoulds go to bed.
+      right: He should go to bed.
+      why:
+        en: "Should never takes -s."
+        fa: "فعل‌های کمکی وجهی مثل should هرگز پسوند s یا es (سوم‌شخص) نمی‌گیرند."
+    - wrong: You should went to bed early yesterday.
+      right: You should have gone to bed early yesterday.
+      why:
+        en: "For the past, use should have + past participle."
+        fa: "برای بیان توصیه یا سرزنش دربارهٔ کاری در گذشته که انجام نشد، از should have به‌علاوهٔ اسم مفعول (قسمت سوم فعل) استفاده کنید."
   contrast:
-  - term: must + verb
-    example: You must stop at a red light.
-    why:
-      en: Should is advice; must says it is necessary.
-      fa: «should» توصیه است؛ «must» یعنی واجب است.
-    point: must-obligation
-  - term: have to + verb
-    example: I have to work tomorrow.
-    why:
-      en: Have to is a need from outside; should is what would be good.
-      fa: «have to» اجباری از بیرون است؛ «should» کاری است که بهتر است.
-    point: have-to
+    - term: must + verb
+      example: You must stop at a red light.
+      why:
+        en: "Should is advice; must says it is necessary."
+        fa: "کلمهٔ should فقط یک توصیه و پیشنهاد است؛ اما must نشان‌دهندهٔ ضرورت مطلق و الزامِ قانونی یا قطعی است."
+      point: must-obligation
+    - term: have to + verb
+      example: I have to work tomorrow.
+      why:
+        en: "Have to is a need from outside; should is what would be good."
+        fa: "عبارت have to یک اجبار بیرونی (مثل قوانین یا شرایط کاری) را نشان می‌دهد، اما should بیانگر کاری است که انجام دادنش عاقلانه و خوب است."
+      point: have-to
 exercises:
-- id: tired-early
-  kind: choose
-  sentence: She is tired. She ___ go to bed early.
-  options:
-  - should
-  - should to
-  - shoulds
-  answer: should
-  why:
-    en: 'Advice: should + the plain verb.'
-    fa: 'توصیه: should + فعل ساده.'
-- id: should-to-go
-  kind: fix
-  wrong: You should to go home.
-  right:
-  - You should go home.
-  why:
-    en: No to after should.
-    fa: بعد از should حرف to نمی‌آید.
-- id: advice-doctor
-  kind: rewrite
-  instruction:
-    en: Give the advice with should.
-    fa: توصیه را با should بگویید.
-  from: Seeing a doctor is a good idea for you.
-  answers:
-  - You should see a doctor.
-  why:
-    en: 'Advice: you should + verb.'
-    fa: 'توصیه: you should + فعل.'
+  - id: tired-early
+    kind: choose
+    sentence: "She is tired. She ___ to bed early."
+    options:
+      - should
+      - should to
+      - shoulds
+    answer: should
+    why:
+      en: "Advice: should + the plain verb."
+      fa: "برای دادن توصیه: should + فعل ساده."
+  - id: should-to-go
+    kind: fix
+    wrong: "You should to go home."
+    right:
+      - "You should go home."
+    why:
+      en: "No to after should."
+      fa: "بعد از should کلمهٔ to قرار نمی‌گیرد."
+  - id: advice-doctor
+    kind: rewrite
+    instruction:
+      en: "Give the advice with should."
+      fa: "این توصیه را با استفاده از should بیان کنید."
+    from: "Seeing a doctor is a good idea for you."
+    answers:
+      - "You should see a doctor."
+    why:
+      en: "Advice: you should + verb."
+      fa: "برای پیشنهاد و توصیه: you should + فعل ساده."

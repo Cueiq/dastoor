@@ -1,5 +1,5 @@
 id: dont-imperative
-title: { en: "Don't + verb", fa: "امر منفی: Don't + فعل" }
+title: { en: "Don't + verb", fa: "امر منفی (Don't + فعل)" }
 # What a learner may search it by, in English and Persian.
 keywords: ["don't", "do not", "imperative", "negative order", "امر منفی", "نکن", "دستور"]
 # Where a book shows it beyond its topic: on the tenses' timeline, and
@@ -16,7 +16,8 @@ match:
         - { DEP: aux, LOWER: { IN: [do, "don't"] } }
         - { DEP: neg }
       # Don't you dare: a subject makes it another frame.
-      lacks: [ { DEP: { IN: [nsubj, nsubjpass, expl] } } ]
+      lacks:
+        - { DEP: { IN: [nsubj, nsubjpass, expl] } }
 tests:
   words: ["don't", "do not"]
   match:
@@ -36,75 +37,75 @@ level: A2
 level_from: egp
 note:
   gist:
-    en: 'Don''t + a plain verb tells someone not to do something: Don''t touch that!'
-    fa: 'don''t و فعل ساده به کسی می‌گوید کاری را نکند: Don''t touch that! یعنی «به آن دست نزن!»'
+    en: "Don't + a plain verb tells someone not to do something: Don't touch that!"
+    fa: "ترکیب Don't به‌علاوهٔ فعل ساده، برای گفتن به کسی است که کاری را انجام ندهد (فعل امر منفی): Don't touch that! (به آن دست نزن!)."
   forms:
-  - kind: negative
-    text: Don't open the door.
-    mark: Don't open
-  - kind: negative
-    text: Please don't tell him.
-    mark: don't tell
-  - kind: negative
-    text: Don't be silly.
-    mark: Don't be
+    - kind: negative
+      text: Don't open the door.
+      mark: Don't open
+    - kind: negative
+      text: Please don't tell him.
+      mark: don't tell
+    - kind: negative
+      text: Don't be silly.
+      mark: Don't be
   mistakes:
-  - wrong: Not cry, please.
-    right: Please don't cry.
-    why:
-      en: To tell someone not to do something, start with don't, not not.
-      fa: برای «نکن» با «don't» شروع کنید، نه «not».
-  - wrong: Don't to go.
-    right: Don't go.
-    why:
-      en: After don't comes the plain verb, with no to.
-      fa: بعد از «don't» فعل ساده می‌آید، بدون «to».
-  - wrong: You don't go!
-    right: Don't go!
-    why:
-      en: An order has no you before don't.
-      fa: در دستور، قبل از «don't» کلمهٔ «you» نمی‌آید.
+    - wrong: Not cry, please.
+      right: Please don't cry.
+      why:
+        en: To tell someone not to do something, start with don't, not not.
+        fa: برای دستور دادن (نکن)، جمله را با don't شروع کنید، نه با not.
+    - wrong: Don't to go.
+      right: Don't go.
+      why:
+        en: After don't comes the plain verb, with no to.
+        fa: بعد از don't حتماً فعل ساده می‌آید؛ از کلمهٔ to استفاده نکنید.
+    - wrong: You don't go!
+      right: Don't go!
+      why:
+        en: An order has no you before don't.
+        fa: در جملات دستوری (امری)، کلمهٔ you (تو/شما) قبل از don't قرار نمی‌گیرد.
   contrast:
-  - term: Let's not + verb
-    example: Let's not go out tonight.
-    why:
-      en: Let's not includes you; don't tells someone else.
-      fa: «let's not» خودتان را هم شامل می‌شود؛ «don't» به دیگری می‌گوید.
-    point: lets
-  - term: I don't + verb
-    example: I don't like fish.
-    why:
-      en: With a subject, don't makes a plain negative, not an order.
-      fa: با فاعل، «don't» جملهٔ منفی معمولی می‌سازد، نه دستور.
+    - term: Let's not + verb
+      example: Let's not go out tonight.
+      why:
+        en: Let's not includes you; don't tells someone else.
+        fa: در Let's not، خود شما هم در انجام نشدن آن کار شریک هستید (بیا نرویم)؛ اما don't به شخص دیگری دستور می‌دهد (نرو).
+      point: lets
+    - term: I don't + verb
+      example: I don't like fish.
+      why:
+        en: With a subject, don't makes a plain negative, not an order.
+        fa: اگر قبل از don't یک فاعل (مثل I یا we) بیاید، فقط یک جملهٔ منفیِ خبری می‌سازد، نه یک دستور.
 exercises:
-- id: dont-be-late
-  kind: choose
-  sentence: Please don't ___ late.
-  options:
-  - be
-  - to be
-  - being
-  answer: be
-  why:
-    en: 'Don''t + the plain verb: be.'
-    fa: 'don''t + فعل ساده: be.'
-- id: not-cry
-  kind: fix
-  wrong: Not cry, please.
-  right:
-  - Please don't cry.
-  - Don't cry, please.
-  why:
-    en: Start with don't.
-    fa: با don't شروع کنید.
-- id: open-door
-  kind: rewrite
-  instruction:
-    en: Tell them not to do it.
-    fa: بگویید این کار را نکنند.
-  from: Open the door.
-  answers:
-  - Don't open the door.
-  why:
-    en: Don't + the plain verb.
-    fa: don't + فعل ساده.
+  - id: dont-be-late
+    kind: choose
+    sentence: Please don't ___ late.
+    options:
+      - be
+      - to be
+      - being
+    answer: be
+    why:
+      en: "Don't + the plain verb: be."
+      fa: "پس از Don't باید از فعل ساده (در اینجا be) استفاده کرد."
+  - id: not-cry
+    kind: fix
+    wrong: Not cry, please.
+    right:
+      - Please don't cry.
+      - Don't cry, please.
+    why:
+      en: Start with don't.
+      fa: جملهٔ امر منفی را با don't شروع کنید.
+  - id: open-door
+    kind: rewrite
+    instruction:
+      en: Tell them not to do it.
+      fa: به آن‌ها بگویید این کار را نکنند.
+    from: Open the door.
+    answers:
+      - Don't open the door.
+    why:
+      en: "Don't + the plain verb."
+      fa: "فرمول امر منفی : Don't + فعل ساده."

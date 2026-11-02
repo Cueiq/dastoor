@@ -56,79 +56,79 @@ level: B1
 level_from: egp
 note:
   gist:
-    en: 'So + an adjective or adverb, such (a) + a noun, to make it stronger: so tired, such a mess. Often with that and what came of it: so cold that we stayed in.'
-    fa: 'so قبل از صفت یا قید و such (a) قبل از اسم، برای تأکید: so tired و such a mess. خیلی وقت‌ها با that و نتیجه‌اش می‌آید: so cold that we stayed in.'
+    en: "So + an adjective or adverb, such (a) + a noun, to make it stronger: so tired, such a mess. Often with that and what came of it: so cold that we stayed in."
+    fa: "استفاده از so پیش از صفت یا قید، و such (یا such a) پیش از اسم، برای ایجاد تأکید و شدت‌بخشیدن به کلام (معادل «آن‌قدر»، «چنان» یا «خیلی» در فارسی): so tired (خیلی خسته) و such a mess (عجب وضع آشفته‌ای). این ساختار اغلب همراه با that برای بیان یک «نتیجه» به کار می‌رود."
   forms:
-  - kind: positive
-    text: I'm so tired.
-    mark: so tired
-  - kind: positive
-    text: It was such a mess.
-    mark: such a mess
-  - kind: negative
-    text: It's not such a bad world.
-    mark: such a bad world
-  - kind: question
-    text: Why are you so angry?
-    mark: so angry
+    - kind: positive
+      text: I'm so tired.
+      mark: so tired
+    - kind: positive
+      text: It was such a mess.
+      mark: such a mess
+    - kind: negative
+      text: It's not such a bad world.
+      mark: such a bad world
+    - kind: question
+      text: Why are you so angry?
+      mark: so angry
   mistakes:
-  - wrong: It was so a good film.
-    right: It was such a good film.
-    why:
-      en: Before a or a noun, use such, not so.
-      fa: قبل از a یا اسم such بیاورید، نه so.
-  - wrong: She is such kind.
-    right: She is so kind.
-    why:
-      en: Before an adjective alone, use so.
-      fa: قبل از صفتِ تنها so بیاورید.
-  - wrong: I'm very tired that I can't walk.
-    right: I'm so tired that I can't walk.
-    why:
-      en: With that and a result, use so, not very.
-      fa: وقتی نتیجه را با that می‌آورید so بیاورید، نه very؛ «آن‌قدر خسته‌ام که…» یعنی so tired that.
+    - wrong: It was so a good film.
+      right: It was such a good film.
+      why:
+        en: "Before a or a noun, use such, not so."
+        fa: "وقتی کلمهٔ a/an یا یک اسم در جمله حضور دارد، باید از such استفاده کنید، نه so."
+    - wrong: She is such kind.
+      right: She is so kind.
+      why:
+        en: "Before an adjective alone, use so."
+        fa: "قبل از صفتِ تنها (بدون اسم در ادامه)، حتماً از so استفاده کنید."
+    - wrong: I'm very tired that I can't walk.
+      right: I'm so tired that I can't walk.
+      why:
+        en: "With that and a result, use so, not very."
+        fa: "وقتی می‌خواهید نتیجهٔ کاری را با کلمهٔ that در ادامه بیان کنید، باید از so استفاده کنید (so ... that)، نه از very."
   contrast:
-  - term: too + adjective
-    example: It's too cold to swim.
-    why:
-      en: Too means more than is good; so only makes it stronger.
-      fa: too یعنی بیش از اندازه، تا حدی که مانع کاری شود؛ so فقط تأکید می‌کند.
-    point: too-adjective
-  - term: very + adjective
-    example: It's very cold.
-    why:
-      en: Very makes it stronger too, but takes no that after it.
-      fa: very هم تأکید می‌کند ولی بعدش that و نتیجه نمی‌آید.
-    point: null
+    - term: too + adjective
+      example: It's too cold to swim.
+      why:
+        en: "Too means more than is good; so only makes it stronger."
+        fa: "کلمهٔ too به معنای «بیش از اندازه و به طور منفی» است (تا حدی که مانع انجام کاری شود)؛ اما so فقط برای تأکید و شدت بخشیدن به کار می‌رود."
+      point: too-adjective
+    - term: very + adjective
+      example: It's very cold.
+      why:
+        en: "Very makes it stronger too, but takes no that after it."
+        fa: "فعل very هم برای تأکید است، اما برخلاف so، نمی‌تواند در ساختارِ نتیجه‌گیری با that قرار بگیرد."
+      point: null
 exercises:
-- id: such-nice
-  kind: choose
-  sentence: She's ___ a nice person.
-  options:
-  - such
-  - so
-  - very
-  answer: such
-  why:
-    en: such + a + noun.
-    fa: such و a و اسم.
-- id: such-long
-  kind: fix
-  wrong: It was so a long day.
-  right:
-  - It was such a long day.
-  why:
-    en: Before a, use such.
-    fa: قبل از a، such بیاورید.
-- id: so-cold-that
-  kind: rewrite
-  instruction:
-    en: Join them with so … that.
-    fa: با so … that وصلشان کنید.
-  from: It was very cold. We stayed at home.
-  answers:
-  - It was so cold that we stayed at home.
-  - It was so cold we stayed at home.
-  why:
-    en: so + adjective + that + what came of it.
-    fa: so و صفت و that و نتیجه.
+  - id: such-nice
+    kind: choose
+    sentence: "She's ___ a nice person."
+    options:
+      - such
+      - so
+      - very
+    answer: such
+    why:
+      en: "such + a + noun."
+      fa: "فرمول حضور اسم به همراه حرف تعریف a: کلمهٔ such."
+  - id: such-long
+    kind: fix
+    wrong: "It was so a long day."
+    right:
+      - "It was such a long day."
+    why:
+      en: "Before a, use such."
+      fa: "قبل از حرف تعریف a، استفاده از such الزامی است."
+  - id: so-cold-that
+    kind: rewrite
+    instruction:
+      en: "Join them with so … that."
+      fa: "این دو جمله را با استفاده از ساختار so ... that به هم متصل کنید."
+    from: "It was very cold. We stayed at home."
+    answers:
+      - "It was so cold that we stayed at home."
+      - "It was so cold we stayed at home."
+    why:
+      en: "so + adjective + that + what came of it."
+      fa: "ساختار نتیجه‌گیری: so + صفت + that + جملهٔ نتیجه."
