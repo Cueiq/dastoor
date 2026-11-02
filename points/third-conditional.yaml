@@ -1,0 +1,83 @@
+id: third-conditional
+title: { en: "if + past perfect, would have (third conditional)", fa: "شرطی نوع سوم (اگر شده بود، ... می‌شد)" }
+keywords: ["third conditional", "if I had known", "would have", "شرطی نوع سوم", "شرطی غیرممکن"]
+place:
+  goal: if
+topic: conditionals
+cefrj: ["131"]
+match:
+  - form: all
+    tree:
+      word: { TAG: { IN: [VB, VBN] } }
+      has:
+        - { DEP: aux, LOWER: { IN: [would, could, might, "'d"] } }
+        - { DEP: aux, LOWER: { IN: [have, "'ve", ve] } }
+        - word: { DEP: advcl }
+          has:
+            - { DEP: mark, LOWER: if }
+            - { DEP: aux, LOWER: { IN: [had, "'d"] } }
+exclude:
+  # Mixed conditionals where the result is present (If I had studied, I would be happy now)
+  - tokens: [ { LOWER: if }, { POS: PRON }, { LOWER: { IN: [had, "'d"] } }, { TAG: VBN }, { TEXT: "," }, { POS: PRON }, { LOWER: { IN: [would, could, might, "'d"] } }, { TAG: VB, LOWER: { NOT_IN: [have] } } ]
+tests:
+  words: [if, had, would, could, might, have]
+  match:
+    - "If I had known, I would have come."
+    - "We might have won if we had played better."
+    - "If you'd listened, you wouldn't have failed."
+  no_match:
+    - "If I knew, I would go."
+    - "If it rains, we will stay."
+    - "If I had money, I would buy it."
+
+level: B2
+level_from: egp
+note:
+  gist:
+    en: 'If + had + past participle, and would have + past participle. Use it to talk about the past and imagine a different outcome that is now impossible.'
+    fa: 'در قسمت شرط if و had و اسم مفعول، و در جواب شرط would have و اسم مفعول. برای حرف زدن از گذشته و تصور نتیجه‌ای متفاوت است که دیگر ممکن نیست.'
+  forms:
+    - kind: positive
+      text: If I had known, I would have gone.
+      mark: had known, would have gone
+    - kind: negative
+      text: If she hadn't helped, we would have lost.
+      mark: hadn't helped, would have lost
+  mistakes:
+    - wrong: If I would have known, I would have gone.
+      right: If I had known, I would have gone.
+      why:
+        en: Do not use would in the if-part of the sentence.
+        fa: در قسمت if جمله، از would استفاده نکنید.
+    - wrong: If we had run, we would caught the bus.
+      right: If we had run, we would have caught the bus.
+      why:
+        en: Always use have after would in the third conditional.
+        fa: در شرطی نوع سوم همیشه بعد از would، کلمه‌ی have را بیاورید.
+  contrast:
+    - term: second conditional (if + past, would)
+      example: If I had a car, I would drive.
+      why:
+        en: Second conditional is about an imagined present; third is about an impossible past.
+        fa: شرطی نوع دوم درباره‌ی زمان حالِ خیالی است؛ نوع سوم درباره‌ی گذشته‌ای است که قابل تغییر نیست.
+      point: second-conditional
+exercises:
+  - id: catch-train
+    kind: choose
+    sentence: If we had hurried, we ___ the train.
+    options:
+      - would have caught
+      - would catch
+      - had caught
+    answer: would have caught
+    why:
+      en: 'if + past perfect, then would have + past participle.'
+      fa: بعد از قسمتِ if، در جواب شرط would have و اسم مفعول می‌آید.
+  - id: fix-would
+    kind: fix
+    wrong: If I would have seen him, I would have said hello.
+    right:
+      - If I had seen him, I would have said hello.
+    why:
+      en: 'Use had + past participle in the if-part.'
+      fa: در قسمت if جمله، had و اسم مفعول بیاورید.
