@@ -1,0 +1,73 @@
+id: get-passive
+title: { en: "get + past participle (get fired)", fa: "مجهول با get (get fired)" }
+keywords: [ "get passive", "get fired", "got married", "مجهول با get", "شدن" ]
+place:
+  timeline: { row: passive, when: now }
+  goal: passive
+topic: passive
+cefrj: [ "77" ]
+match:
+  - form: all
+    tree:
+      word: { LOWER: { IN: [ get, gets, got, getting, gotten ] } }
+      has:
+        - { TAG: VBN, DEP: { IN: [ acomp, xcomp, dobj, root ] } }
+exclude:
+  - tokens: [ { LEMMA: get }, { LOWER: { IN: [ tired, bored, interested, excited, scared, worried, married, engaged, dressed, lost, stuck, involved, used, done ] } } ]
+tests:
+  words: [ get, gets, got, getting, gotten ]
+  match:
+    - "He got fired yesterday."
+    - "My car got stolen."
+    - "I hope you don't get hurt."
+  no_match:
+    - "He got tired."
+    - "They got married."
+    - "She is getting dressed."
+    - "I got a new car."
+level: B1
+level_from: egp
+note:
+  gist:
+    en: 'Get + a past participle, instead of be + past participle. It is often used in informal English for things that happen to someone, especially bad things: get fired, get hurt.'
+    fa: 'استفاده از get و اسم مفعول به جای be در جملات مجهول. بیشتر در زبان غیررسمی برای اتفاقاتی که برای کسی می‌افتد (مخصوصاً اتفاقات بد) استفاده می‌شود: get fired، get hurt.'
+  forms:
+    - kind: positive
+      text: He got fired.
+      mark: got fired
+    - kind: question
+      text: Did your car get fixed?
+      mark: get fixed
+  mistakes:
+    - wrong: He got fire yesterday.
+      right: He got fired yesterday.
+      why:
+        en: Use the past participle, not the base verb.
+        fa: بعد از get اسم مفعول بیاورید، نه شکل ساده‌ی فعل.
+  contrast:
+    - term: be + past participle
+      example: He was fired.
+      why:
+        en: Get passive is more informal and focuses on the action happening. Be passive is standard.
+        fa: مجهول با get غیررسمی‌تر است و روی خودِ اتفاق تمرکز دارد. مجهول با be ساختار استاندارد است.
+      point: past-passive
+exercises:
+  - id: got-stolen
+    kind: choose
+    sentence: Leave your bike here, or it might get ___.
+    options:
+      - stolen
+      - steal
+      - stole
+    answer: stolen
+    why:
+      en: 'get + past participle.'
+      fa: get به علاوه‌ی اسم مفعول (قسمت سوم فعل).
+  - id: fix-bite
+    kind: fix
+    wrong: He got bite by a dog.
+    right:
+      - He got bitten by a dog.
+    why:
+      en: 'The past participle of bite is bitten.'
+      fa: اسم مفعولِ فعلِ bite می‌شود bitten.
