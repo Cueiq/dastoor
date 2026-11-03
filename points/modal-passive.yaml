@@ -12,6 +12,8 @@ match:
       has:
         - { DEP: aux, TAG: MD }
         - { DEP: auxpass, LEMMA: be }
+exclude:
+  - tokens: [ { LOWER: { IN: [ concerned, honored ] } } ]
 tests:
   words: [ be ]
   match:

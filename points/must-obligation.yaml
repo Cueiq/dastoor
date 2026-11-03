@@ -15,6 +15,8 @@ match:
         - { DEP: aux, LOWER: { IN: [ must, mustn't ] } }
       lacks:
         - { DEP: aux, LOWER: { IN: [ have, "'ve", ve ] } }
+exclude:
+  - tokens: [ { LEMMA: look } ]
 tests:
   words: [ must, mustn't ]
   match:

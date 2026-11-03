@@ -19,6 +19,11 @@ match:
         - word: { DEP: advcl }
           has:
             - { DEP: mark, LOWER: if }
+exclude:
+  - form: all
+    tree:
+      has:
+        - { LOWER: again }
 tests:
   words: [ would ]
   match:
