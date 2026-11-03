@@ -2,7 +2,7 @@
 
 **The question** (docs/spike-plan.md): can rules, with no language model, find
 grammar points in subtitle English well enough to replace Claude's grammar
-entries in a Bembegoo lesson?
+entries in a film lesson?
 
 **The answer: yes, for points told by their form, but not for points told
 by their meaning.** Six of the seven form points matched with precision
@@ -14,7 +14,7 @@ found by rules.
 
 ## What was run
 
-- **Lines:** 42 English subtitle files in Bembegoo's courses (Extra English,
+- **Lines:** 42 English subtitle files in the courses (Extra English,
   Stuart Fails to Save the Universe, and a few more), 9,440 sentences once
   duplicates are dropped. Ten of the episodes have guides.
 - **Halves:** the files were split in two by a hash of their names. The
@@ -105,8 +105,8 @@ often.
 
 **Build the library this way, as a hybrid:**
 
-- **Form points by rules alone**, with the transformer model in Bembegoo's
-  prepare. These are most of what an A1–B2 learner meets: tenses, *going
+- **Form points by rules alone**, with the transformer model in the app's
+  lesson build. These are most of what an A1–B2 learner meets: tenses, *going
   to*, passives, comparatives, conditionals, *used to*, modals with *have*.
 - **Meaning points as candidates.** The rule finds the lines, and its
   default reading stands unless something checks it. *must* is right about
@@ -242,7 +242,7 @@ Claude settles (`must-obligation`, `must-guess`, `have-got`, and the untagged
 
 Every point has its note now: a gist in English and Persian, its forms, the
 mistakes learners make, what it is easily confused with, and three exercises.
-All 30 validate against Bembegoo's entry schema. The Persian passes the lint;
+All 30 validate against the app's entry schema. The Persian passes the lint;
 the only flags are English sentences quoted inside it.
 
 Where the guides had copies of a note, the new one starts from the best of
