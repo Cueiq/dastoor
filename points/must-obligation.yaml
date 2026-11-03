@@ -29,6 +29,10 @@ tests:
     - "She must have left."
     - "It must be done today."
     - "What must I look like?"
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), or a course
+# guide's where no item has it (guides).
 level: A2
 level_from: egp
 note:

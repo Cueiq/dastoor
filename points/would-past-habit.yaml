@@ -35,6 +35,10 @@ tests:
     - "I'd love to."
     - "I would have called."
     - "He would come to my apartment again."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), or a course
+# guide's where no item has it (guides).
 level: B1
 level_from: guides
 note:

@@ -27,6 +27,10 @@ tests:
     - "It was fixed yesterday."
     - "Should we be concerned?"
     - "We'd be honored to accept..."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), or a course
+# guide's where no item has it (guides).
 level: B2
 level_from: egp
 note:
