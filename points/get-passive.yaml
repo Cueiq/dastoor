@@ -9,9 +9,14 @@ cefrj: [ "77" ]
 match:
   - form: all
     tree:
-      word: { LOWER: { IN: [ get, gets, got, getting, gotten ] } }
+      word: { LEMMA: get }
       has:
-        - { TAG: VBN, DEP: { IN: [ acomp, xcomp, dobj, root ] } }
+        - { TAG: VBN }
+  - form: all
+    tree:
+      word: { TAG: VBN }
+      has:
+        - { LEMMA: get }
 exclude:
   - tokens: [ { LEMMA: get }, { LOWER: { IN: [ tired, bored, interested, excited, scared, worried, married, engaged, dressed, lost, stuck, involved, used, done ] } } ]
 tests:
