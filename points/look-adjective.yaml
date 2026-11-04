@@ -81,6 +81,12 @@ note:
         en: After an action verb comes well; after look or feel, good.
         fa: بعد از یک فعل حرکتی (مانند آواز خواندن) از قید well استفاده می‌شود؛ اما بعد از look یا feel صفتِ good قرار می‌گیرد.
       point: good-well
+    - term: get + adjective
+      example: You're getting tired.
+      why:
+        en: Look + adjective says how someone seems now; get + adjective says they are changing.
+        fa: look و صفت می‌گوید کسی الان چطور به نظر می‌رسد؛ get و صفت می‌گوید دارد تغییر می‌کند.
+      point: get-adjective
 exercises:
   - id: happy-today
     kind: choose

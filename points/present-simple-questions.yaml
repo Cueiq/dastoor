@@ -114,6 +114,12 @@ note:
         en: "That asks about right now; do you do asks about usually."
         fa: "ساختار am/is/are دربارهٔ همین لحظه می‌پرسد، در حالی که حال ساده (با do/does) دربارهٔ کارهای همیشگی و روتین است."
       point: present-continuous
+    - term: subject + verb? (do left out)
+      example: You want some tea?
+      why:
+        en: In casual speech do is often left out at the start; in writing, keep it.
+        fa: در حرف‌زدن خودمانی «do» اولِ سؤال اغلب حذف می‌شود؛ در نوشتن آن را نگه دارید.
+      point: question-without-do
 exercises:
   - id: annie-pizza
     kind: choose

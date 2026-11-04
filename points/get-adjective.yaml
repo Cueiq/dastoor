@@ -1,0 +1,149 @@
+id: get-adjective
+title: { en: "get / become + adjective (It's getting dark)", fa: "get / become + صفت: شدن" }
+# What a learner may search it by, in English and Persian.
+keywords: ["get", "become", "getting dark", "get angry", "change", "شدن", "تغییر حالت", "دارد … می‌شود"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  goal: combine-verbs
+topic: verb_patterns
+cefrj: ["195", "195-1", "195-2", "195-3"]
+match:
+  - form: adjective
+    tree:
+      word: { LOWER: { IN: &get-become [get, gets, got, gotten, getting, become, becomes, became, becoming] } }
+      # The small model hangs late on getting as an adverb: It's getting late.
+      # get used to and get rid of are phrases of their own.
+      has: [ { DEP: { IN: [acomp, advmod, oprd] }, POS: ADJ, LOWER: { NOT_IN: [used, rid] } } ]
+      # get it ready, get them wet: the object changes, not the subject.
+      lacks: [ { DEP: dobj } ]
+  # A participle that names a state, which get-passive leaves out: got tired,
+  # got lost. Every other get + past participle is get-passive's
+  # (tests/test_book.py checks the two never share a sentence).
+  - form: participle
+    tree:
+      word: { LOWER: { IN: *get-become } }
+      has: [ { DEP: acomp, LOWER: { IN: &states [tired, bored, interested, excited, scared, worried, married, engaged, dressed, lost, stuck, involved] } } ]
+  - form: participle
+    tree:
+      word: { LOWER: { IN: *states } }
+      # By its form: a helper getting keeps getting as its lemma.
+      has: [ { LOWER: { IN: [get, gets, got, gotten, getting] }, DEP: { IN: [aux, auxpass] } } ]
+exclude:
+  # Get lost!: go away, said to someone, nobody becomes lost. Don't get
+  # lost and to get lost keep a helper, and mean it.
+  # The parse hangs get on lost, and a helper on either.
+  - tree:
+      word: { LOWER: lost }
+      has: [ { word: { LOWER: get }, lacks: [ { DEP: { IN: [aux, neg] } } ] } ]
+      lacks: [ { DEP: { IN: [nsubj, nsubjpass, aux, neg] } } ]
+tests:
+  words: [get, gets, got, getting, gotten, become, becomes, became]
+  match:
+    - "It's getting dark."
+    - "She got angry."
+    - "Don't get too comfortable."
+    - "It became clear."
+    - "I'm getting old."
+    - "It's getting late."
+    - "We got lost."
+    - "He got bored."
+    - "I got tired of waiting."
+    - "They got married last year."
+    - "Things got worse."
+    - "We're thinking about getting married."
+    - "Don't get lost."
+    - "Try not to get lost."
+  no_match:
+    - "Get lost!"
+    - "I said get lost."
+    - "He got fired."
+    - "I got a car."
+    - "Get out!"
+    - "My bike got stolen."
+    - "I'm getting used to it."
+    - "Let's get rid of it."
+    - "Let's get it ready."
+    - "She became a doctor."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or a course guide's where no item has one (guides).
+# 195 is subject + become, feel, go, look, seem or sound + adjective: become
+# is among its verbs, get isn't.
+level: A2
+level_from: egp
+note:
+  gist:
+    en: "Get or become + an adjective says something changes: It's getting dark. She got angry. Get is the everyday word; become is more formal."
+    fa: "«get» یا «become» و صفت می‌گوید چیزی تغییر می‌کند: It's getting dark یعنی «دارد تاریک می‌شود». در فارسی «شدن» می‌گوییم؛ در انگلیسیِ گفتاری بیشتر «get» و در نوشتار «become»."
+  forms:
+  - kind: positive
+    text: It's getting cold.
+    mark: getting cold
+  - kind: negative
+    text: Don't get angry with me.
+    mark: get angry
+  - kind: question
+    text: Did you get bored?
+    mark: get bored
+  mistakes:
+  - wrong: He got anger.
+    right: He got angry.
+    why:
+      en: "After get comes an adjective (angry), not a noun (anger)."
+      fa: "بعد از «get» صفت می‌آید (angry)، نه اسم (anger)."
+  - wrong: I got boring in the lesson.
+    right: I got bored in the lesson.
+    why:
+      en: "Bored is how you feel; boring is what makes you feel it."
+      fa: "«bored» حسِ شماست؛ «boring» چیزی است که این حس را به شما می‌دهد."
+  - wrong: It's getting more cold.
+    right: It's getting colder.
+    why:
+      en: "With a short adjective, use -er: getting colder."
+      fa: "با صفت کوتاه، «er-» بیاورید: getting colder."
+  contrast:
+  - term: get + past participle (get fired)
+    example: He got fired.
+    why:
+      en: "Get fired is a passive: someone did it to him. Get tired, get lost and get married name a state the subject ends up in."
+      fa: "«get fired» مجهول است: کسی این کار را با او کرد. «get tired»، «get lost» و «get married» حالتی را می‌گویند که فاعل به آن می‌رسد."
+    point: get-passive
+  - term: look / feel + adjective
+    example: You look tired.
+    why:
+      en: "Look and feel say how something seems now; get says it changes."
+      fa: "«look» و «feel» می‌گویند چیزی الان چطور به نظر می‌رسد؛ «get» می‌گوید تغییر می‌کند."
+    point: look-adjective
+exercises:
+- id: getting-dark
+  kind: choose
+  sentence: Let's go home. It's getting ___.
+  options:
+  - dark
+  - darkness
+  - darkly
+  answer: dark
+  why:
+    en: "Get + an adjective: getting dark."
+    fa: "get و صفت: getting dark."
+- id: got-boring
+  kind: fix
+  wrong: I got boring and left the film early.
+  right:
+  - I got bored and left the film early.
+  why:
+    en: "How you felt: bored."
+    fa: "حسی که داشتید: bored."
+- id: became-hungry
+  kind: rewrite
+  instruction:
+    en: Say it with get, as people say it.
+    fa: با get بگویید، همان‌طور که در حرف‌زدن می‌گویند.
+  from: After the long walk, we became hungry.
+  answers:
+  - After the long walk, we got hungry.
+  why:
+    en: "In speech, become + adjective is usually get + adjective."
+    fa: "در گفتار، become و صفت معمولاً get و صفت می‌شود."

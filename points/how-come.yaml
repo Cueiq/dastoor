@@ -1,0 +1,107 @@
+id: how-come
+title: { en: "How come …? (= why)", fa: "How come: چطور شد که…؟ (چرا)" }
+# What a learner may search it by, in English and Persian.
+keywords: ["how come", "why", "informal question", "چرا", "چطور شد که", "چطور", "سؤال خودمانی"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  goal: ask
+topic: questions
+cefrj: []
+match:
+  - form: all
+    tokens: [ { LOWER: how }, { LOWER: come } ]
+tests:
+  words: [how]
+  match:
+    - "How come you never called?"
+    - "How come it's so cold?"
+    - "How come?"
+    - "So how come she left early?"
+    - "How come nobody told me?"
+    - "Then how come the door was open?"
+  no_match:
+    - "How did you come here?"
+    - "Come here, how about now?"
+    - "How did it come to this?"
+    - "How do they come up with these names?"
+    - "Come and see how it works."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or a course guide's where no item has one (guides).
+# No CEFR-J item has it: the lessons' level.
+level: B1
+level_from: guides
+note:
+  gist:
+    en: "How come …? asks why, in a casual way. After it, the words keep statement order: How come you're late? (not How come are you late?)"
+    fa: "«How come» یعنی «چرا»، ولی خودمانی‌تر، کمی مثل «چطور شد که…؟». بعد از آن ترتیب کلمه‌ها مثل جملهٔ خبری است: How come you're late? نه How come are you late?"
+  forms:
+  - kind: question
+    text: How come you're still awake?
+    mark: How come you're
+  - kind: negative
+    text: How come she didn't call?
+    mark: How come she didn't call
+  - kind: question
+    text: How come?
+    mark: How come
+  mistakes:
+  - wrong: How come are you here?
+    right: How come you're here?
+    why:
+      en: "After how come, no question order: the subject, then the verb."
+      fa: "بعد از «how come» ترتیب سؤالی نمی‌آید: اول فاعل، بعد فعل."
+  - wrong: How come did you leave?
+    right: How come you left?
+    why:
+      en: "No did after how come: put the verb itself in the past."
+      fa: "بعد از «how come»، «did» نمی‌آید؛ خود فعل را گذشته بیاورید."
+  - wrong: How come does she know?
+    right: How come she knows?
+    why:
+      en: "No does either: the verb takes its -s, as in a statement."
+      fa: "«does» هم نمی‌آید؛ فعل مثل جملهٔ خبری «s-» می‌گیرد."
+  contrast:
+  - term: Why …?
+    example: Why are you late?
+    why:
+      en: "Why takes question order (are you); how come takes statement order (you are)."
+      fa: "«why» ترتیب سؤالی می‌گیرد (are you)؛ «how come» ترتیب خبری (you are)."
+  - term: How …?
+    example: How did you come here?
+    why:
+      en: "How asks in what way; there, come is the sentence's own verb."
+      fa: "«how» می‌پرسد «چطور، به چه شکل»؛ آنجا «come» خودش فعل جمله است."
+exercises:
+- id: how-come-late
+  kind: choose
+  sentence: How come ___ late again?
+  options:
+  - you're
+  - are you
+  - do you
+  answer: you're
+  why:
+    en: "After how come: statement order."
+    fa: "بعد از how come: ترتیب جملهٔ خبری."
+- id: how-come-did
+  kind: fix
+  wrong: How come did you sell your car?
+  right:
+  - How come you sold your car?
+  why:
+    en: "No did after how come; the verb goes into the past."
+    fa: "بعد از how come، did نمی‌آید؛ فعل گذشته می‌شود."
+- id: why-not-tell
+  kind: rewrite
+  instruction:
+    en: Ask it with how come.
+    fa: با how come بپرسید.
+  from: Why didn't you tell me?
+  answers:
+  - How come you didn't tell me?
+  why:
+    en: "Why didn't you becomes how come you didn't: statement order."
+    fa: "Why didn't you می‌شود how come you didn't: ترتیب خبری."
