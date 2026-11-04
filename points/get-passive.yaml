@@ -5,31 +5,36 @@ place:
   timeline: { row: passive, when: now }
   goal: passive
 topic: passive
-cefrj: [ "77" ]
+cefrj: [ "87" ]
 match:
-  - form: all
-    tree:
-      word: { LEMMA: get }
-      has:
-        - { TAG: VBN }
+  # He got fired: get is the participle's helper. In got him arrested or get
+  # the car fixed the participle hangs on get with a subject of its own:
+  # someone else does it to something, not a passive.
   - form: all
     tree:
       word: { TAG: VBN }
       has:
-        - { LEMMA: get }
+        - { LEMMA: get, DEP: { IN: [ aux, auxpass ] } }
 exclude:
-  - tokens: [ { LEMMA: get }, { LOWER: { IN: [ tired, bored, interested, excited, scared, worried, married, engaged, dressed, lost, stuck, involved, used, done ] } } ]
+  - tokens: [ { LEMMA: get }, { LOWER: { IN: [ tired, bored, interested, excited, scared, worried, married, engaged, dressed, lost, stuck, involved, used, done, rid ] } } ]
 tests:
   words: [ get, gets, got, getting, gotten ]
   match:
     - "He got fired yesterday."
     - "My car got stolen."
     - "I hope you don't get hurt."
+    - "He got caught."
+    - "Did you get paid?"
   no_match:
     - "He got tired."
     - "They got married."
     - "She is getting dressed."
     - "I got a new car."
+    - "She got him arrested."
+    - "We need to get the car fixed."
+    - "Let's get this done."
+    - "I got my hair cut."
+    - "Let's get rid of it."
 level: B1
 level_from: egp
 note:
