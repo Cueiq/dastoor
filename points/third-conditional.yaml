@@ -4,33 +4,50 @@ keywords: ["third conditional", "if I had known", "would have", "شرطی نوع
 place:
   goal: if
 topic: conditionals
-cefrj: ["131"]
+cefrj: ["216", "216-1"]
 match:
+  # If I had known, I would have come. A result without have (I would be
+  # happy now) is a mixed conditional, and never matches.
   - form: all
     tree:
-      word: { TAG: { IN: [VB, VBN] } }
+      word: &result { TAG: { IN: [VB, VBN] } }
       has:
-        - { DEP: aux, LOWER: { IN: [would, could, might, "'d"] } }
-        - { DEP: aux, LOWER: { IN: [have, "'ve", ve] } }
-        - word: { DEP: advcl }
+        - &would { DEP: aux, LOWER: { IN: [would, could, might, "'d"] } }
+        - &have { DEP: aux, LOWER: { IN: [have, "'ve", ve] } }
+        # A participle: in If you'd listen, 'd is would.
+        - word: { DEP: advcl, TAG: VBN }
           has:
             - { DEP: mark, LOWER: if }
             - { DEP: aux, LOWER: { IN: [had, "'d"] } }
-exclude:
-  # Mixed conditionals where the result is present (If I had studied, I would be happy now)
-  - tokens: [ { LOWER: if }, { POS: PRON }, { LOWER: { IN: [had, "'d"] } }, { TAG: VBN }, { TEXT: "," }, { POS: PRON }, { LOWER: { IN: [would, could, might, "'d"] } }, { TAG: VB, LOWER: { NOT_IN: [have] } } ]
+  # Had I known, I would have come: had before its subject, and no if.
+  - form: all
+    tree:
+      word: *result
+      has:
+        - *would
+        - *have
+        - word: { DEP: advcl, TAG: VBN }
+          has: [ { DEP: aux, LOWER: had }, { DEP: nsubj } ]
+          # when I had finished: a time, not a condition.
+          lacks: [ { DEP: mark }, { TAG: WRB } ]
 tests:
   words: [if, had, would, could, might, have]
   match:
     - "If I had known, I would have come."
     - "We might have won if we had played better."
     - "If you'd listened, you wouldn't have failed."
+    - "Had I known, I would have come."
   no_match:
     - "If I knew, I would go."
     - "If it rains, we will stay."
     - "If I had money, I would buy it."
+    - "If I had studied, I would be happy now."
+    - "If you'd listen, you would have understood."
+    - "I would have gone when I had finished."
 
-level: B2
+# The English Grammar Profile has 216 at C1 and 216-1, the negative, at B1:
+# a point's level is the lowest.
+level: B1
 level_from: egp
 note:
   gist:
