@@ -1,0 +1,120 @@
+id: would-rather
+title: { en: "would rather + verb (I'd rather stay)", fa: "would rather: ترجیح دادن" }
+# What a learner may search it by, in English and Persian.
+keywords: ["would rather", "I'd rather", "would you rather", "prefer", "ترجیح دادن", "ترجیح می‌دهم", "ترجیح", "بیشتر دوست دارم"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  goal: compare
+topic: verb_patterns
+cefrj: ["143", "143-1", "143-2", "143-3"]
+match:
+  # I'd rather go. I'd rather you stayed. I'd rather not.
+  # Would you rather…? Wouldn't you rather…?
+  - form: all
+    tokens:
+      - { LOWER: { IN: [would, "'d"] } }
+      - { LOWER: "n't", OP: "?" }
+      - { POS: { IN: [PRON, PROPN] }, OP: "?" }
+      - { LOWER: { IN: [much, far, just, really] }, OP: "?" }
+      - { LOWER: rather }
+tests:
+  words: [rather]
+  match:
+    - "I'd rather die."
+    - "Would you rather push the button or not?"
+    - "I'd rather you stayed."
+    - "I'd rather not say."
+    - "I would rather walk than take the bus."
+    - "We'd much rather eat at home."
+    - "Wouldn't you rather sit down?"
+    - "I'd rather you didn't tell her."
+    - "Thanks, but I'd rather not."
+  no_match:
+    - "It's rather cold."
+    - "Rather than walking, we drove."
+    - "Or rather, the other one."
+    - "She would be rather upset."
+    - "I would like some tea."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or a course guide's where no item has one (guides).
+# CEFR-J's items for would rather (143) have no level, of their own or from
+# the English Grammar Profile: the lessons' level.
+level: B1
+level_from: guides
+note:
+  gist:
+    en: "Would rather + a plain verb says what you prefer, most often in one case, now: I'd rather walk. When it is about what someone else does, the next verb is in the past: I'd rather you stayed."
+    fa: "«would rather» و فعل ساده می‌گوید چه چیزی را ترجیح می‌دهید، بیشتر در همین موقعیت: I'd rather walk یعنی «ترجیح می‌دهم پیاده بروم». وقتی دربارهٔ کار کس دیگری است، فعل بعدی گذشته می‌آید: I'd rather you stayed یعنی «ترجیح می‌دهم بمانی». در فارسی «بمانی» می‌گوییم، ولی در انگلیسی «stayed»."
+  forms:
+  - kind: positive
+    text: I'd rather stay home tonight.
+    mark: "'d rather stay"
+  - kind: negative
+    text: I'd rather not talk about it.
+    mark: "'d rather not talk"
+  - kind: question
+    text: Would you rather have tea or coffee?
+    mark: Would you rather have
+  mistakes:
+  - wrong: I'd rather to stay home.
+    right: I'd rather stay home.
+    why:
+      en: "No to after would rather: the plain verb comes next."
+      fa: "بعد از «would rather»، «to» نمی‌آید؛ شکل سادهٔ فعل را بیاورید، برخلاف «prefer to»."
+  - wrong: I wouldn't rather go.
+    right: I'd rather not go.
+    why:
+      en: "Not goes after rather: I'd rather not."
+      fa: "«not» بعد از «rather» می‌آید: I'd rather not. «ترجیح نمی‌دهم» فارسی را «wouldn't rather» نگویید."
+  - wrong: I'd rather you stay here.
+    right: I'd rather you stayed here.
+    why:
+      en: "When someone else does it, use the past, though you mean now."
+      fa: "وقتی کار را کس دیگری انجام می‌دهد، فعل گذشته بیاورید، هرچند منظورتان حال است."
+  contrast:
+  - term: prefer + to + verb
+    example: I prefer to walk.
+    why:
+      en: "Prefer takes to or -ing; would rather takes the plain verb: I prefer to walk, I'd rather walk."
+      fa: "«prefer» با «to» یا «ing-» می‌آید؛ «would rather» با فعل ساده: I prefer to walk و I'd rather walk."
+  - term: had better + verb
+    example: You'd better hurry.
+    why:
+      en: "Both can be 'd + a plain verb, but had better is advice or a warning, not what you prefer."
+      fa: "هر دو ممکن است «d'» و فعل ساده باشند، ولی «had better» توصیه یا هشدار است، نه ترجیح."
+exercises:
+- id: rather-walk
+  kind: choose
+  sentence: It's a lovely day. I'd rather ___ to work.
+  options:
+  - walk
+  - to walk
+  - walking
+  answer: walk
+  why:
+    en: "Would rather + the plain verb."
+    fa: "would rather و فعل ساده."
+- id: rather-you-stay
+  kind: fix
+  wrong: I'd rather you stay here tonight.
+  right:
+  - I'd rather you stayed here tonight.
+  - I would rather you stayed here tonight.
+  why:
+    en: "Someone else's action after would rather: the past."
+    fa: "کار کس دیگری بعد از would rather: فعل گذشته."
+- id: prefer-not
+  kind: rewrite
+  instruction:
+    en: Say it with would rather.
+    fa: با would rather بگویید.
+  from: I prefer not to talk about it.
+  answers:
+  - I'd rather not talk about it.
+  - I would rather not talk about it.
+  why:
+    en: "Prefer not to + verb becomes would rather not + the plain verb."
+    fa: "prefer not to و فعل می‌شود would rather not و فعل ساده."

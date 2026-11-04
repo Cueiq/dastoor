@@ -1,0 +1,148 @@
+id: wish-past
+title: { en: "wish + past (I wish I knew)", fa: "wish + گذشته: کاش…" }
+# What a learner may search it by, in English and Persian.
+keywords: ["wish", "I wish", "regret", "if only", "کاش", "ای کاش", "آرزو", "حسرت"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  goal: if
+topic: conditions_wishes
+cefrj: ["218", "219"]
+match:
+  # I wish I knew. I wish I were taller.
+  - form: past
+    tree:
+      word: { LEMMA: wish, POS: VERB }
+      has: [ { DEP: ccomp, TAG: VBD } ]
+  # I wish I didn't have to. I wish it wasn't raining.
+  - form: past
+    tree:
+      word: { LEMMA: wish, POS: VERB }
+      has:
+        - word: { DEP: ccomp, TAG: { IN: [VB, VBG] } }
+          has: [ { DEP: aux, LOWER: { IN: [did, was, were] } } ]
+  # I wish I'd known. I wish I hadn't said it.
+  - form: past-perfect
+    tree:
+      word: { LEMMA: wish, POS: VERB }
+      has:
+        - word: { DEP: ccomp, TAG: VBN }
+          has: [ { DEP: aux, LOWER: { IN: [had, "'d"] } } ]
+  # I wish you would stop. I wish I could fly.
+  - form: would
+    tree:
+      word: { LEMMA: wish, POS: VERB }
+      has:
+        - word: { DEP: ccomp, TAG: VB }
+          has: [ { DEP: aux, LOWER: { IN: [would, "'d", could] } } ]
+  # I wish I could.: the verb left out.
+  - form: would
+    tree:
+      word: { LEMMA: wish, POS: VERB }
+      has: [ { DEP: ccomp, LOWER: { IN: [would, "'d", could] } } ]
+tests:
+  words: [wish, wishes, wished]
+  match:
+    - "I wish you had an appointment."
+    - "I wish I were taller."
+    - "I wish I'd known."
+    - "I wish you would stop."
+    - "I wish I knew the answer."
+    - "She wishes she lived by the sea."
+    - "I wish it wasn't raining."
+    - "I wish I could fly."
+    - "I wish I hadn't said that."
+    - "I wish I didn't have to work today."
+    - "Sorry, I wish I could."
+  no_match:
+    - "I wish you luck."
+    - "I wish to speak to her."
+    - "Make a wish."
+    - "We wish you a happy birthday."
+    - "Her wish was to travel."
+    - "I hope you have fun."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or a course guide's where no item has one (guides).
+level: B1
+level_from: egp
+note:
+  gist:
+    en: "I wish + the past says you want something to be different now: I wish I knew. I wish + had + past participle is a regret about the past: I wish I'd known. I wish + would is about something someone does, or won't do, that bothers you: I wish you would listen."
+    fa: "«I wish» و گذشته یعنی دلتان می‌خواهد چیزی الان جور دیگری بود: I wish I knew یعنی «کاش می‌دانستم». با «had» و اسم مفعول، حسرتی دربارهٔ گذشته است: I wish I'd known. در فارسی برای هر دو «کاش می‌دانستم» می‌گوییم، ولی انگلیسی آن‌ها را جدا می‌کند. با «would» از کاری گله می‌کنید که کسی می‌کند یا نمی‌کند: I wish you would listen."
+  forms:
+  - kind: positive
+    text: I wish I had more time.
+    mark: wish I had
+  - kind: negative
+    text: I wish I hadn't eaten so much.
+    mark: wish I hadn't eaten
+  - kind: positive
+    text: I wish you would listen to me.
+    mark: wish you would listen
+  mistakes:
+  - wrong: I wish I have a car.
+    right: I wish I had a car.
+    why:
+      en: "After wish, one step back: the past, for now."
+      fa: "بعد از «wish» یک زمان عقب بروید: برای حال، گذشته بیاورید؛ «کاش داشتم» در فارسی هم گذشته است."
+  - wrong: I wish I knew it yesterday.
+    right: I wish I had known it yesterday.
+    why:
+      en: "A regret about the past takes had + past participle."
+      fa: "حسرت دربارهٔ گذشته «had» و اسم مفعول می‌گیرد؛ «کاش دیروز می‌دانستم» در انگلیسی «had known» است."
+  - wrong: I wish I would be taller.
+    right: I wish I were taller.
+    why:
+      en: "Wish + would is for what others do; for yourself, or a state, use the past."
+      fa: "«wish» و «would» برای کار دیگران است؛ برای خودتان یا یک حالت، گذشته بیاورید."
+  contrast:
+  - term: hope + present
+    example: I hope you pass.
+    why:
+      en: "Hope is for something that may happen; wish + past is for something that isn't so."
+      fa: "«hope» برای چیزی است که ممکن است بشود؛ «wish» و گذشته برای چیزی که این‌طور نیست."
+  - term: If + past, … would + verb
+    example: If I had a car, I'd drive to work.
+    why:
+      en: "Both use the past for what isn't true now; if also says what would follow."
+      fa: "هر دو برای چیزی که الان درست نیست گذشته می‌آورند؛ «if» نتیجه‌اش را هم می‌گوید."
+    point: second-conditional
+  - term: wish + a noun, wish + to + verb
+    example: I wish you luck.
+    why:
+      en: "Wish + a noun, or to + a verb, is a kind wish or a formal want, with nothing untrue in it."
+      fa: "«wish» با اسم، یا با «to» و فعل، آرزوی خیر یا خواستنی رسمی است و چیزی ناراست در آن نیست."
+exercises:
+- id: wish-had-time
+  kind: choose
+  sentence: I'm so busy. I wish I ___ more free time.
+  options:
+  - had
+  - have
+  - will have
+  answer: had
+  why:
+    en: "Not true now: wish + the past."
+    fa: "چیزی که الان درست نیست: wish و گذشته."
+- id: wish-told-yesterday
+  kind: fix
+  wrong: I wish I told her the truth yesterday.
+  right:
+  - I wish I had told her the truth yesterday.
+  - I wish I'd told her the truth yesterday.
+  why:
+    en: "A regret about yesterday: had + past participle."
+    fa: "حسرتی دربارهٔ دیروز: had و اسم مفعول."
+- id: cant-swim
+  kind: rewrite
+  instruction:
+    en: Say it with I wish.
+    fa: با I wish بگویید.
+  from: I can't swim.
+  answers:
+  - I wish I could swim.
+  why:
+    en: "Can't, now, becomes wish + could."
+    fa: "can't در حال می‌شود wish و could."

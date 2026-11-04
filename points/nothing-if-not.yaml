@@ -1,0 +1,110 @@
+id: nothing-if-not
+title: { en: "be nothing if not + adjective (very, above all)", fa: "be nothing if not: اگر یک چیز باشد، همین است" }
+# What a learner may search it by, in English and Persian.
+keywords: ["nothing if not", "emphasis", "very", "تأکید", "بیش از هر چیز", "واقعاً"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  goal: emphasise
+topic: emphasis
+cefrj: []
+match:
+  - form: all
+    tokens:
+      - { LOWER: { IN: [am, is, are, was, were, be, been, being, "'s", "'re", "'m"] } }
+      - { LOWER: nothing }
+      - { LOWER: if }
+      - { LOWER: not }
+      # The adjective or noun: nothing if not patient, nothing if not a pro.
+      - { TAG: DT, OP: "?" }
+      - { IS_PUNCT: false, TAG: { NOT_IN: [DT] } }
+tests:
+  words: [nothing]
+  match:
+    - "I am nothing if not patient."
+    - "She's nothing if not a professional."
+    - "He was nothing if not loyal."
+    - "You're nothing if not honest."
+    - "My grandmother was nothing if not stubborn."
+    - "Our team is nothing if not hard-working."
+  no_match:
+    - "It's nothing. If not, call me."
+    - "Nothing, if not today."
+    - "If not now, then nothing."
+    - "It's nothing if you're careful."
+    - "Is it nothing? If not, tell me."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or a course guide's where no item has one (guides).
+# No CEFR-J item has it: the lessons' level.
+level: C1
+level_from: guides
+note:
+  gist:
+    en: "Be nothing if not + an adjective or a noun says it is the clearest thing about someone: She's nothing if not patient means she is very patient. It sounds a little formal, and is often a little funny."
+    fa: "«be nothing if not» و صفت یا اسم می‌گوید این روشن‌ترین ویژگی کسی است: She's nothing if not patient یعنی «اگر یک چیز باشد، صبور است»، یعنی خیلی صبور است. معنایش «هیچ» نیست. کمی رسمی است و اغلب کمی شوخی."
+  forms:
+  - kind: positive
+    text: He's nothing if not honest.
+    mark: nothing if not honest
+  - kind: positive
+    text: My dad was nothing if not a hard worker.
+    mark: nothing if not a hard worker
+  mistakes:
+  - wrong: I am nothing if not patience.
+    right: I am nothing if not patient.
+    why:
+      en: "Use the adjective (patient), or a noun for a person (a patient man), not the name of the quality (patience)."
+      fa: "صفت (patient) یا اسمِ آدم (a patient man) بیاورید، نه اسمِ خودِ ویژگی (patience)."
+  - wrong: She is nothing, if not kind.
+    right: She is nothing if not kind.
+    why:
+      en: "No comma: with one, it reads as 'she is nothing', which you don't mean."
+      fa: "ویرگول نگذارید؛ با ویرگول به نظر می‌رسد می‌گویید «او هیچ است»، که منظورتان نیست."
+  contrast:
+  - term: so + adjective
+    example: She is so patient.
+    why:
+      en: "So + adjective says it plainly; nothing if not says it is the clearest thing about her, and sounds more written."
+      fa: "«so» و صفت ساده و مستقیم تأکید می‌کند؛ «nothing if not» می‌گوید این روشن‌ترین ویژگی اوست و نوشتاری‌تر است."
+    point: so-such
+  - term: if not (= maybe even)
+    example: It took hours, if not days.
+    why:
+      en: "There, if not means 'and maybe even': hours, and maybe days."
+      fa: "آنجا «if not» یعنی «و شاید حتی»: چند ساعت، و شاید چند روز."
+exercises:
+- id: loyal-dog
+  kind: choose
+  sentence: My dog follows me everywhere. He's nothing if not ___.
+  options:
+  - loyal
+  - loyalty
+  - loyally
+  answer: loyal
+  why:
+    en: "An adjective after nothing if not."
+    fa: "بعد از nothing if not صفت می‌آید."
+- id: strict-comma
+  kind: fix
+  wrong: My teacher is nothing, if not strict.
+  right:
+  - My teacher is nothing if not strict.
+  why:
+    en: "No comma: the words go together."
+    fa: "ویرگول نگذارید: این کلمه‌ها با هم می‌آیند."
+- id: very-organised
+  kind: rewrite
+  instruction:
+    en: Say it with nothing if not.
+    fa: با nothing if not بگویید.
+  from: My sister is very organised.
+  answers:
+  - My sister is nothing if not organised.
+  - My sister's nothing if not organised.
+  - My sister is nothing if not organized.
+  - My sister's nothing if not organized.
+  why:
+    en: "Very + adjective becomes nothing if not + adjective."
+    fa: "very و صفت می‌شود nothing if not و صفت."

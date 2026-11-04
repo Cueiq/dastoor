@@ -1,0 +1,112 @@
+id: why-would-you
+title: { en: "Why would you …? (who would do that?)", fa: "Why would you …؟: چرا آخر باید…؟" }
+# What a learner may search it by, in English and Persian.
+keywords: ["why would you", "why would", "disbelief", "surprise", "چرا آخر", "چرا باید", "تعجب", "باور نکردن"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  goal: ask
+topic: questions
+cefrj: []
+match:
+  - form: all
+    tokens:
+      - { LOWER: why }
+      # why'd is why did: Why'd you say that?
+      - { LOWER: would }
+      # The subject, or its first word: Why would the bank…?
+      - { POS: { IN: [PRON, PROPN, NOUN, DET] } }
+tests:
+  words: [why]
+  match:
+    - "Why would you do that?"
+    - "Why would anyone believe him?"
+    - "Why would she lie to me?"
+    - "Why would I?"
+    - "Why would they sell such a nice house?"
+    - "Why would you even say that?"
+    - "Why would my brother take my car?"
+  no_match:
+    - "Why did you do that?"
+    - "Why'd you say that?"
+    - "I don't know why he would."
+    - "Why wouldn't you tell me?"
+    - "Would you tell me why?"
+    - "Why should I go?"
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or a course guide's where no item has one (guides).
+# No CEFR-J item has it: the lessons' level.
+level: B1
+level_from: guides
+note:
+  gist:
+    en: "Why would you + a plain verb? is less a question than surprise: you can't see any reason to do it. Why would anyone believe him? means no one should."
+    fa: "«Why would you» و فعل ساده بیشتر تعجب است تا سؤال: هیچ دلیلی برای آن کار نمی‌بینید. Why would you do that? یعنی «آخر چرا باید این کار را بکنی؟»."
+  forms:
+  - kind: question
+    text: Why would you say that?
+    mark: Why would you say
+  - kind: question
+    text: Why would anyone want to live there?
+    mark: Why would anyone want
+  mistakes:
+  - wrong: Why would you said that?
+    right: Why would you say that?
+    why:
+      en: "After would, the plain verb, even about the past."
+      fa: "بعد از «would» فعل ساده می‌آید، حتی وقتی دربارهٔ گذشته است."
+  - wrong: Why you would do that?
+    right: Why would you do that?
+    why:
+      en: "In the question, would comes before the subject."
+      fa: "در سؤال، «would» قبل از فاعل می‌آید."
+  - wrong: Why would you to leave?
+    right: Why would you leave?
+    why:
+      en: "No to after would."
+      fa: "بعد از «would»، «to» نمی‌آید."
+  contrast:
+  - term: Why did you …?
+    example: Why did you leave early?
+    why:
+      en: "Why did you asks for the reason; why would you says you see none."
+      fa: "«why did you» دلیل را می‌پرسد؛ «why would you» می‌گوید دلیلی نمی‌بینید."
+    point: past-simple-questions
+  - term: Why'd you …?
+    example: Why'd you say that?
+    why:
+      en: "Why'd is most often why did: a real question about the past."
+      fa: "«why'd» بیشتر وقت‌ها «why did» است: سؤالی واقعی دربارهٔ گذشته."
+exercises:
+- id: why-would-lie
+  kind: choose
+  sentence: Why would she ___ about something so small?
+  options:
+  - lie
+  - lied
+  - to lie
+  answer: lie
+  why:
+    en: "Why would + the plain verb."
+    fa: "Why would و فعل ساده."
+- id: why-you-would
+  kind: fix
+  wrong: Why you would sell your bike?
+  right:
+  - Why would you sell your bike?
+  why:
+    en: "Question order: why would you."
+    fa: "ترتیب سؤالی: why would you."
+- id: no-reason
+  kind: rewrite
+  instruction:
+    en: Say it with why would, to show you see no reason.
+    fa: با why would بگویید، تا نشان دهید دلیلی نمی‌بینید.
+  from: There's no reason for him to quit his job.
+  answers:
+  - Why would he quit his job?
+  why:
+    en: "No reason for it: why would + subject + verb?"
+    fa: "دلیلی ندارد: why would و فاعل و فعل؟"

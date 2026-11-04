@@ -89,6 +89,12 @@ note:
         en: Going to is a plan you made before; I'll is a decision you make now.
         fa: ساختار going to برای برنامه‌ای است که از قبل داشتید؛ اما I'll برای تصمیمی است که همین لحظه می‌گیرید.
       point: will
+    - term: be about to + verb
+      example: Quick, the film is about to start.
+      why:
+        en: Going to can be any time ahead; about to is the very next moment.
+        fa: «going to» ممکن است هر زمانی در آینده باشد؛ «about to» همین لحظهٔ بعد است.
+      point: be-about-to
 exercises:
   - id: parents-are
     kind: choose

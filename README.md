@@ -17,13 +17,13 @@ any English sentence.
 
 ## What it has
 
-**38 points, A1–B2**, each with its rules, its tests and its note. Most are
+**47 points, A1–C1**, each with its rules, its tests and its note. Most are
 told by their form:
 
 | told by | points | how well (on film subtitles) |
 |---|---|---|
-| form | 33: the present continuous and perfect, *going to*, *will*, *can*, *could*, *might*, *should*, *have to*, the passive, comparatives, superlatives, *so* and *such*, conditionals, question tags, *let's*, *some* and *any*, verb + *to* or *-ing*, relative clauses, reported speech… | most 0.96–1.00 precision, every match read on a held-out half of the subtitles; a few points have too few lines yet to tell |
-| meaning | 5: *must* (a guess or an obligation?), *must be*, *have got*, *would* for a past habit | the rule finds the line; its meaning is left to the reader |
+| form | 42: the present continuous and perfect, *going to*, *be about to*, *will*, *can*, *could*, *might*, *should*, *have to*, the passive, comparatives, superlatives, *so* and *such*, conditionals, *wish* + past, question tags, questions without *do*, *how come*, *why would you*, *let's*, *some* and *any*, verb + *to* or *-ing*, *would rather*, *get* + adjective, *nothing if not*, relative clauses, reported speech… | most 0.96–1.00 precision, every match read on a held-out half of the subtitles; a few points have too few lines yet to tell |
+| meaning | 5: *must* (a guess or an obligation?), *must be*, *have got*, *would* for a past habit, *would* / *could* / *might have* + past participle (imagined, or a guess?) | the rule finds the line; its meaning is left to the reader |
 
 A meaning point's matches are marked as candidates: the words alone can't
 settle them. *Would* for a past habit is right so rarely by its form that
@@ -68,7 +68,7 @@ line out says it is ready:
 
 ```console
 $ dastoor serve
-{"ready": true, "model": "en_core_web_sm", "points": 37}
+{"ready": true, "model": "en_core_web_sm", "points": 46}
 {"id": 1, "text": "She said she was tired."}
 {"id": 1, "sentences": [[0, 23]], "points": [{"point": "reported-speech", "form": "said", "words": "said she was", "start": 4, "end": 16, "candidate": false}]}
 ```

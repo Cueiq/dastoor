@@ -1,0 +1,159 @@
+id: question-without-do
+title: { en: "You want some? (a question without do)", fa: "سؤال بدون do: You want some?" }
+# What a learner may search it by, in English and Persian.
+keywords: ["question without do", "informal question", "you want", "you coming", "سؤال خودمانی", "سؤال بدون do", "حذف do"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  goal: ask
+topic: questions
+cefrj: []
+match:
+  # You want some? That bother you?: do or does left out.
+  - form: do
+    tree:
+      # be is there, not left out: You're here? How dare you? takes no do.
+      word: { DEP: ROOT, TAG: { IN: [VB, VBP] }, LEMMA: { NOT_IN: [be, dare] } }
+      has:
+        # I think so?: unsure, not a question without do.
+        - { DEP: nsubj, LOWER: { NOT_IN: [i, who, what, which] } }
+        - { DEP: punct, LOWER: "?" }
+      lacks: [ { DEP: { IN: [aux, auxpass] } } ]
+  # You coming? Where you going?: are or is left out.
+  - form: be
+    tree:
+      word: { DEP: ROOT, TAG: VBG }
+      has:
+        - { DEP: nsubj, LOWER: { NOT_IN: [i, who, what, which] } }
+        - { DEP: punct, LOWER: "?" }
+      lacks: [ { DEP: { IN: [aux, auxpass] } } ]
+  # Anybody seen my keys?: have left out.
+  - form: have
+    tree:
+      word: { DEP: ROOT, TAG: VBN }
+      has:
+        - { DEP: nsubj, LOWER: { NOT_IN: [i, who, what, which] } }
+        - { DEP: punct, LOWER: "?" }
+      lacks: [ { DEP: { IN: [aux, auxpass] } } ]
+  # The small model reads seen and been as a past: Anyone seen my phone?
+  - form: have
+    tree:
+      word: { DEP: ROOT, LOWER: { IN: [seen, been, done, gone, gotten] } }
+      has:
+        - { DEP: nsubj, LOWER: { NOT_IN: [i, who, what, which] } }
+        - { DEP: punct, LOWER: "?" }
+      lacks: [ { DEP: { IN: [aux, auxpass] } } ]
+exclude:
+  # Don't you? haven't we, Zeus?: do or have before its subject, a tag or a
+  # short question, nothing left out.
+  - tokens:
+      - { LOWER: { IN: [do, does, have, has, wo] } }
+      - { LOWER: "n't", OP: "?" }
+      - { POS: PRON }
+  # You do? You don't?: a short reply, nothing left out.
+  - tokens:
+      - { POS: PRON }
+      - { LOWER: { IN: [do, does, have, has] } }
+      - { LOWER: "n't", OP: "?" }
+      - { TEXT: "?" }
+tests:
+  words: [you, ya, anyone, anybody, someone, somebody, everyone, everybody]
+  match:
+    - "You ever wonder why?"
+    - "You want some coffee?"
+    - "Anyone seen my phone?"
+    - "Anybody seen my keys?"
+    - "You coming?"
+    - "That bother you?"
+    - "You need a hand?"
+    - "Where you going?"
+    - "Your sister know about this?"
+    - "You have any money?"
+  no_match:
+    - "Do you ever wonder why?"
+    - "You're coming?"
+    - "You want some coffee."
+    - "You saw that?"
+    - "He likes it?"
+    - "You do?"
+    - "Oh, you don't?"
+    - "You'll help me, won't you?"
+    - "I think so?"
+    - "We're late, don't you think?"
+    - "I love this song. Don't you?"
+    - "How dare you?"
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or a course guide's where no item has one (guides).
+# No CEFR-J item has it: the lessons' level.
+level: B1
+level_from: guides
+note:
+  gist:
+    en: "In casual speech, the do, does, are or have at the start of a question is often left out: You want some? You coming? The voice, or the question mark, makes it a question."
+    fa: "در حرف‌زدنِ خودمانی، «do»، «does»، «are» یا «have» اولِ سؤال اغلب حذف می‌شود: You want some? یا You coming? سؤال بودنش را لحن، یا علامت سؤال، نشان می‌دهد؛ مثل فارسی که «قهوه می‌خواهی؟» را فقط با لحن می‌پرسیم."
+  forms:
+  - kind: question
+    text: You want some coffee?
+    mark: You want
+  - kind: question
+    text: Anybody seen my keys?
+    mark: Anybody seen
+  - kind: negative
+    text: You not coming?
+    mark: You not coming
+  mistakes:
+  - wrong: You know the answer to question three?
+    right: Do you know the answer to question three?
+    why:
+      en: "Leave do out only when you talk casually. In writing, an exam or a polite request, keep it."
+      fa: "«do» را فقط در حرف‌زدن خودمانی حذف کنید. در نوشتن، امتحان یا درخواست مؤدبانه آن را بیاورید، هرچند در فارسی فقط لحن کافی است."
+  - wrong: Where you live?
+    right: Where do you live?
+    why:
+      en: "After where, what or why, keep do. It is left out mostly at the very start of a question."
+      fa: "بعد از «where»، «what» یا «why»، «do» را نگه دارید. حذفش بیشتر اولِ سؤال است."
+  contrast:
+  - term: Do you …? (the full question)
+    example: Do you want some coffee?
+    why:
+      en: "The full question is right everywhere; without do, it is only casual."
+      fa: "سؤال کامل همه‌جا درست است؛ بدون «do» فقط خودمانی است."
+    point: present-simple-questions
+  - term: a statement said as a question
+    example: You're coming?
+    why:
+      en: "Here nothing is left out: are is there, and only the voice makes it a question, often in surprise."
+      fa: "اینجا چیزی حذف نشده: «are» هست و فقط لحن آن را سؤال می‌کند، اغلب از سر تعجب."
+exercises:
+- id: want-some
+  kind: choose
+  sentence: Hey, ___ want some pizza?
+  options:
+  - you
+  - you do
+  - are you
+  answer: you
+  why:
+    en: "Casual: do is left out, the subject stays."
+    fa: "خودمانی: do حذف می‌شود و فاعل می‌ماند."
+- id: where-you-live
+  kind: fix
+  wrong: Where you live?
+  right:
+  - Where do you live?
+  why:
+    en: "After where, keep do."
+    fa: "بعد از where، do را نگه دارید."
+- id: need-a-lift
+  kind: rewrite
+  instruction:
+    en: Ask it the casual way, without do.
+    fa: خودمانی و بدون do بپرسید.
+  from: Do you need a lift?
+  answers:
+  - You need a lift?
+  why:
+    en: "Drop do; the question mark, or your voice, keeps it a question."
+    fa: "do را حذف کنید؛ علامت سؤال، یا لحن، آن را سؤال نگه می‌دارد."

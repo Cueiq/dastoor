@@ -1,0 +1,136 @@
+id: would-have-past-participle
+title: { en: "would have + past participle (I would've called)", fa: "would have + اسم مفعول: گذشتهٔ خیالی" }
+# What a learner may search it by, in English and Persian.
+keywords: ["would have", "would've", "could have", "might have", "imagined past", "گذشتهٔ خیالی", "می‌توانستم", "اگر … بود", "حسرت"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  goal: if
+topic: conditions_wishes
+cefrj: ["145", "145-1", "145-2"]
+# could have and might have are as often a guess about the past (It could
+# have been the cat) as a past that didn't happen (You could have told me);
+# the words don't tell which.
+needs_meaning: true
+match:
+  - form: all
+    tree:
+      # The transformer model reads some participles as a past (could have told).
+      word: { TAG: { IN: [VBN, VBD] } }
+      has:
+        - { DEP: aux, LOWER: { IN: [would, "'d", could, might] } }
+        - { DEP: aux, LOWER: { IN: [have, "'ve", ve] } }
+      lacks:
+        # if + had + past participle beside it: the third conditional.
+        - word: { DEP: advcl }
+          has:
+            - { DEP: mark, LOWER: if }
+            - { DEP: aux, LOWER: { IN: [had, "'d"] } }
+exclude:
+  # 'd better have + past participle is had better: You'd better have left.
+  - tokens: [ { LOWER: { IN: ["'d", had] } }, { LOWER: better } ]
+tests:
+  words: [would, could, might]
+  match:
+    - "I would've used the GPS, but it was gone."
+    - "You could have told me."
+    - "That would have been fun."
+    - "I wouldn't have said that."
+    - "We could've won the game."
+    - "He'd have loved this place."
+    - "I would have called, but my phone died."
+    - "She might have been hurt."
+  no_match:
+    - "If I'd known, I would have come."
+    - "We could have won if we had tried harder."
+    - "I must have left it."
+    - "I would like to have one."
+    - "We would have to leave early."
+    - "You should have asked."
+    - "You'd better have finished by six."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or a course guide's where no item has one (guides).
+level: B1
+level_from: egp
+note:
+  gist:
+    en: "Would have + a past participle imagines a past that didn't happen: I would've called, but my phone died. Could have and might have say what was possible then, and didn't happen: You could have told me."
+    fa: "«would have» و اسم مفعول گذشته‌ای را تصور می‌کند که اتفاق نیفتاد: I would've called یعنی «زنگ می‌زدم» (ولی نزدم). «could have» و «might have» می‌گویند آن موقع چه کاری ممکن بود و نشد: You could have told me یعنی «می‌توانستی به من بگویی». در فارسی یک فعل است، در انگلیسی سه کلمه."
+  forms:
+  - kind: positive
+    text: I would've called, but my phone died.
+    mark: would've called
+  - kind: negative
+    text: She wouldn't have liked that film.
+    mark: wouldn't have liked
+  - kind: question
+    text: What would you have done?
+    mark: would you have done
+  mistakes:
+  - wrong: I would have call you.
+    right: I would have called you.
+    why:
+      en: "After have comes the past participle, not the plain verb."
+      fa: "بعد از «have» اسم مفعول (شکل سوم فعل) می‌آید، نه فعل ساده."
+  - wrong: I would called you, but I was busy.
+    right: I would have called you, but I was busy.
+    why:
+      en: "For the past, would needs have: would have called."
+      fa: "برای گذشته، «would» به «have» نیاز دارد: would have called. «زنگ می‌زدم» را با «would called» نگویید."
+  - wrong: You could of told me.
+    right: You could have told me.
+    why:
+      en: "Could've sounds like could of, but it is could have."
+      fa: "«could've» شبیه «could of» شنیده می‌شود، ولی درستش «could have» است."
+  contrast:
+  - term: If + had + past participle, … would have
+    example: If I had known, I would have come.
+    why:
+      en: "With an if part about the past beside it, it is the third conditional. Without one, the reason is said another way, or only understood."
+      fa: "وقتی بخش «if» با گذشتهٔ کامل کنارش باشد، شرطی نوع سوم است. بدون آن، دلیل جور دیگری گفته می‌شود یا فقط فهمیده می‌شود."
+    point: third-conditional
+  - term: must have + past participle
+    example: It must have been the cat.
+    why:
+      en: "Must have is a guess about what did happen. Could have and might have can be such a guess too: It could have been the cat."
+      fa: "«must have» حدسی است دربارهٔ چیزی که واقعاً اتفاق افتاد. «could have» و «might have» هم گاهی همین حدس‌اند: It could have been the cat."
+    point: must-have-past-participle
+exercises:
+- id: busy-yesterday
+  kind: choose
+  sentence: I ___ you, but I was too busy yesterday.
+  options:
+  - would have helped
+  - would help
+  - would helped
+  answer: would have helped
+  why:
+    en: "A past that didn't happen: would have + past participle."
+    fa: "گذشته‌ای که اتفاق نیفتاد: would have و اسم مفعول."
+- id: could-of
+  kind: fix
+  wrong: You could of told me.
+  right:
+  - You could have told me.
+  - You could've told me.
+  why:
+    en: "It's could have, said as could've."
+    fa: "درستش could have است که could've تلفظ می‌شود."
+- id: birthday-cake
+  kind: rewrite
+  instruction:
+    en: Say what you would have done, with would have.
+    fa: با would have بگویید چه می‌کردید.
+  from: I didn't know it was your birthday, so I didn't buy a cake.
+  answers:
+  - I would have bought a cake.
+  - I would've bought a cake.
+  - I'd have bought a cake.
+  - I would have bought a cake, but I didn't know it was your birthday.
+  - I would've bought a cake, but I didn't know it was your birthday.
+  - I'd have bought a cake, but I didn't know it was your birthday.
+  why:
+    en: "The cake you didn't buy: would have + bought."
+    fa: "کیکی که نخریدید: would have و bought."

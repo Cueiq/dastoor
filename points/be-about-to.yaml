@@ -1,0 +1,117 @@
+id: be-about-to
+title: { en: "be about to + verb (It's about to rain)", fa: "be about to: در آستانهٔ کاری بودن" }
+# What a learner may search it by, in English and Persian.
+keywords: ["about to", "be about to", "near future", "just going to", "داشتن (دارد می‌شود)", "نزدیک بودن", "در آستانه", "همین الان"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
+place:
+  timeline: { row: once, when: future }
+topic: future
+cefrj: ["100", "100-1"]
+match:
+  - form: all
+    tokens:
+      - { LOWER: { IN: [am, is, are, was, were, be, been, being, "'s", "'re", "'m"] } }
+      # Are you about to…?
+      - { POS: { IN: [PRON, PROPN] }, OP: "?" }
+      - { LOWER: { IN: [not, "n't", just, only, really, already, now, still, finally] }, OP: "*" }
+      - { LOWER: about }
+      - { LOWER: to }
+      # to-do and to + a number aren't a verb.
+      - { TAG: VB }
+tests:
+  words: [about]
+  match:
+    - "I was about to buy that."
+    - "It's about to rain."
+    - "We're not about to give up."
+    - "I was just about to call you."
+    - "The film is about to start."
+    - "Are you about to leave?"
+    - "They were about to close the shop."
+  no_match:
+    - "She talked about to-do lists."
+    - "It's about two o'clock."
+    - "The book is about a girl who wants to fly."
+    - "I'm worried about tomorrow."
+    - "Tell me about it."
+
+# The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
+# English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
+# (cefrj), or a course guide's where no item has one (guides).
+level: B2
+level_from: egp
+note:
+  gist:
+    en: "Be about to + a plain verb says something will happen in a moment: The film is about to start. With was or were, it was just going to happen: I was about to call you. Not about to can mean not willing to: I'm not about to give up."
+    fa: "«be about to» و فعل ساده یعنی چیزی همین حالا اتفاق می‌افتد: The film is about to start یعنی «فیلم دارد شروع می‌شود». با «was» یا «were» یعنی داشت اتفاق می‌افتاد: I was about to call you یعنی «داشتم به تو زنگ می‌زدم». «not about to» گاهی یعنی «قصدش را ندارم»: I'm not about to give up."
+  forms:
+  - kind: positive
+    text: Hurry, the train is about to leave.
+    mark: is about to leave
+  - kind: negative
+    text: I'm not about to give up now.
+    mark: "'m not about to give"
+  - kind: question
+    text: Were you about to say something?
+    mark: Were you about to say
+  mistakes:
+  - wrong: The film is about to starting.
+    right: The film is about to start.
+    why:
+      en: "After about to, the plain verb."
+      fa: "بعد از «about to» فعل ساده می‌آید."
+  - wrong: The film about to start.
+    right: The film is about to start.
+    why:
+      en: "Don't leave out be: is, are, was."
+      fa: "«be» (is، are، was) را جا نیندازید."
+  - wrong: The film is about to start in two hours.
+    right: The film is going to start in two hours.
+    why:
+      en: "About to is for the next moment; for a time later, use another future."
+      fa: "«about to» برای همین لحظه است؛ برای زمانی دورتر، شکل دیگری از آینده بیاورید."
+  contrast:
+  - term: be going to + verb
+    example: It's going to rain this afternoon.
+    why:
+      en: "Going to is a plan, or a sign of what will come; about to is the very next moment."
+      fa: "«going to» برنامه یا نشانه‌ای از آینده است؛ «about to» همین لحظهٔ بعد."
+    point: be-going-to
+  - term: about + noun
+    example: It's a film about a dog.
+    why:
+      en: "There, about means 'on the subject of', and no to + verb follows."
+      fa: "آنجا «about» یعنی «دربارهٔ»، و بعدش «to» و فعل نمی‌آید."
+exercises:
+- id: about-to-rain
+  kind: choose
+  sentence: Look at those clouds. It's about to ___.
+  options:
+  - rain
+  - raining
+  - rains
+  answer: rain
+  why:
+    en: "About to + the plain verb."
+    fa: "about to و فعل ساده."
+- id: bus-leaving
+  kind: fix
+  wrong: Quick, the bus is about to leaving!
+  right:
+  - Quick, the bus is about to leave!
+  why:
+    en: "After about to, the plain verb."
+    fa: "بعد از about to، فعل ساده."
+- id: just-going-to-call
+  kind: rewrite
+  instruction:
+    en: Say it with about to.
+    fa: با about to بگویید.
+  from: I was just going to call you.
+  answers:
+  - I was about to call you.
+  - I was just about to call you.
+  why:
+    en: "Was going to, the very next moment: was about to."
+    fa: "was going to، وقتی همان لحظهٔ بعد بود: was about to."
