@@ -10,7 +10,6 @@ topic: guessing
 cefrj: []
 # "You must be quiet" is an order: the words can't tell.
 needs_meaning: true
-check_question: "guess or obligation?"
 match:
   - form: be
     tree:

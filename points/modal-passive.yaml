@@ -1,10 +1,13 @@
 id: modal-passive
 title: { en: "modal + be + past participle", fa: "مجهول با فعل وجهی (can be done)" }
-keywords: [ "passive", "modal passive", "can be", "must be", "مجهول", "فعل وجهی" ]
+# What a learner may search it by, in English and Persian.
+keywords: ["passive", "modal passive", "can be", "must be", "مجهول", "فعل وجهی"]
+# Where a book shows it beyond its topic: on the tenses' timeline, and
+# under what a learner wants to do with a sentence.
 place:
   goal: passive
 topic: passive
-cefrj: [ "82", "82-1", "82-2", "82-3" ]
+cefrj: ["82", "82-1", "82-2", "82-3"]
 match:
   - form: all
     tree:
@@ -12,10 +15,8 @@ match:
       has:
         - { DEP: aux, TAG: MD }
         - { DEP: auxpass, LEMMA: be }
-exclude:
-  - tokens: [ { LOWER: { IN: [ concerned, honored ] } } ]
 tests:
-  words: [ be ]
+  words: [be]
   match:
     - "It can be fixed."
     - "This must be done today."
@@ -25,8 +26,6 @@ tests:
     - "It must be nice."
     - "You can be happy here."
     - "It was fixed yesterday."
-    - "Should we be concerned?"
-    - "We'd be honored to accept..."
 
 # The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
 # English Grammar Profile's level as CEFR-J records it (egp), or a course

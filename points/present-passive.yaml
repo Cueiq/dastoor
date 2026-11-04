@@ -108,4 +108,33 @@ note:
         fa: "اگر بخواهیم ساختار مجهول را همراه با افعال وجهی (مثل can، must یا will) به کار ببریم، بعد از آن‌ها از be به‌علاوهٔ اسم مفعول استفاده می‌شود."
       point: modal-passive
 exercises:
-  -
+- id: are-made
+  kind: choose
+  sentence: Cars ___ in this factory.
+  options:
+  - are made
+  - make
+  - are make
+  answer: are made
+  why:
+    en: are + past participle.
+    fa: are و اسم مفعول.
+- id: shop-closed
+  kind: fix
+  wrong: The shop close on Sundays.
+  right:
+  - The shop is closed on Sundays.
+  why:
+    en: 'The shop doesn''t close itself here: is + closed.'
+    fa: 'مغازه خودش کاری نمی‌کند، بسته می‌شود: is closed.'
+- id: spoken-here
+  kind: rewrite
+  instruction:
+    en: Say it in the passive.
+    fa: مجهولش را بگویید.
+  from: They speak English here.
+  answers:
+  - English is spoken here.
+  why:
+    en: The thing done comes first, with is + past participle.
+    fa: چیزی که کار رویش انجام می‌شود اول می‌آید، با is و اسم مفعول.

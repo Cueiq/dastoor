@@ -66,36 +66,36 @@ note:
       why:
         en: The past simple tells a finished action; was + -ing, an action in progress then.
         fa: گذشتهٔ ساده به یک اتفاقِ کامل تمام‌شده در گذشته اشاره می‌کند؛ اما گذشتهٔ استمراری (was/were + ing) به کاری که در آن موقعِ خاص در جریان بوده است.
-  exercises:
-    - id: rain-shop
-      kind: choose
-      sentence: I ___ to the shop when it started to rain.
-      options:
-        - was walking
-        - walking
-        - was walk
-      answer: was walking
-      why:
-        en: 'In progress then: was + -ing.'
-        fa: 'برای کاری که در جریانِ آن لحظه بوده: was/were + ing.'
-    - id: was-save
-      kind: fix
-      wrong: I was save it for my birthday, but I spent it.
-      right:
-        - I was saving it for my birthday, but I spent it.
-      why:
-        en: 'Was + -ing: saving.'
-        fa: 'فعل بعد از was باید ing بگیرد: saving.'
-    - id: phone-rang
-      kind: rewrite
-      instruction:
-        en: Say it with was + -ing and when.
-        fa: این دو جمله را با استفاده از was/were + ing و کلمهٔ when ترکیب کنید.
-      from: I had a shower. In the middle of it, the phone rang.
-      answers:
-        - I was having a shower when the phone rang.
-        - The phone rang when I was having a shower.
-        - The phone rang while I was having a shower.
-      why:
-        en: 'The longer action: was + -ing; what cut in: past simple.'
-        fa: 'برای کاری که طولانی‌تر بوده و در جریان است: was/were + ing؛ و برای اتفاق کوتاهی که وسطش افتاده: گذشتهٔ ساده.'
+exercises:
+  - id: rain-shop
+    kind: choose
+    sentence: I ___ to the shop when it started to rain.
+    options:
+      - was walking
+      - walking
+      - was walk
+    answer: was walking
+    why:
+      en: 'In progress then: was + -ing.'
+      fa: 'برای کاری که در جریانِ آن لحظه بوده: was/were + ing.'
+  - id: was-save
+    kind: fix
+    wrong: I was save it for my birthday, but I spent it.
+    right:
+      - I was saving it for my birthday, but I spent it.
+    why:
+      en: 'Was + -ing: saving.'
+      fa: 'فعل بعد از was باید ing بگیرد: saving.'
+  - id: phone-rang
+    kind: rewrite
+    instruction:
+      en: Say it with was + -ing and when.
+      fa: این دو جمله را با استفاده از was/were + ing و کلمهٔ when ترکیب کنید.
+    from: I had a shower. In the middle of it, the phone rang.
+    answers:
+      - I was having a shower when the phone rang.
+      - The phone rang when I was having a shower.
+      - The phone rang while I was having a shower.
+    why:
+      en: 'The longer action: was + -ing; what cut in: past simple.'
+      fa: 'برای کاری که طولانی‌تر بوده و در جریان است: was/were + ing؛ و برای اتفاق کوتاهی که وسطش افتاده: گذشتهٔ ساده.'

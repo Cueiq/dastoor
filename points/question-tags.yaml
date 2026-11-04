@@ -55,7 +55,7 @@ level_from: egp
 note:
   gist:
     en: "A short question at the end of a sentence, to check something or ask someone to agree: It's cold, isn't it? You like tea, don't you?"
-    fa: "استفاده از یک سؤالِ کوتاه در انتهای جمله برای کسب اطمینان یا گرفتن تأیید از طرف مقابل (معادل «مگه نه؟» یا «نه؟» در زبان فارسی): It's cold, isn't it؟ (هوا سرد است، مگه نه؟)."
+    fa: "استفاده از یک سؤالِ کوتاه در انتهای جمله برای کسب اطمینان یا گرفتن تأیید از طرف مقابل (معادل «مگه نه؟» یا «نه؟» در زبان فارسی): It's cold, isn't it? (هوا سرد است، مگه نه؟)."
   forms:
     - kind: positive
       text: You like tea, don't you?
