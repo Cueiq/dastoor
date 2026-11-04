@@ -14,39 +14,40 @@ match:
     tree:
       # be is there, not left out: You're here? How dare you? takes no do.
       word: { DEP: ROOT, TAG: { IN: [VB, VBP] }, LEMMA: { NOT_IN: [be, dare] } }
-      has:
+      # Every form: a subject, a question mark, and no helper verb.
+      has: &asked
         # I think so?: unsure, not a question without do.
         - { DEP: nsubj, LOWER: { NOT_IN: [i, who, what, which] } }
         - { DEP: punct, LOWER: "?" }
-      lacks: [ { DEP: { IN: [aux, auxpass] } } ]
+      lacks: &no-helper [ { DEP: { IN: [aux, auxpass] } } ]
   # You coming? Where you going?: are or is left out.
   - form: be
     tree:
       word: { DEP: ROOT, TAG: VBG }
-      has:
-        - { DEP: nsubj, LOWER: { NOT_IN: [i, who, what, which] } }
-        - { DEP: punct, LOWER: "?" }
-      lacks: [ { DEP: { IN: [aux, auxpass] } } ]
+      has: *asked
+      lacks: *no-helper
   # Anybody seen my keys?: have left out.
   - form: have
     tree:
       word: { DEP: ROOT, TAG: VBN }
-      has:
-        - { DEP: nsubj, LOWER: { NOT_IN: [i, who, what, which] } }
-        - { DEP: punct, LOWER: "?" }
-      lacks: [ { DEP: { IN: [aux, auxpass] } } ]
+      has: *asked
+      lacks: *no-helper
   # The small model reads seen and been as a past: Anyone seen my phone?
   - form: have
     tree:
       word: { DEP: ROOT, LOWER: { IN: [seen, been, done, gone, gotten] } }
-      has:
-        - { DEP: nsubj, LOWER: { NOT_IN: [i, who, what, which] } }
-        - { DEP: punct, LOWER: "?" }
-      lacks: [ { DEP: { IN: [aux, auxpass] } } ]
+      has: *asked
+      lacks: *no-helper
 exclude:
   # Don't you? haven't we, Zeus?: do or have before its subject, a tag or a
   # short question, nothing left out.
   - tokens:
+      - { LOWER: { IN: [do, does, have, has, wo] }, IS_SENT_START: true }
+      - { LOWER: "n't", OP: "?" }
+      - { POS: PRON }
+  # …but in You have it? a subject comes first: there do is left out.
+  - tokens:
+      - { POS: { NOT_IN: [PRON] } }
       - { LOWER: { IN: [do, does, have, has, wo] } }
       - { LOWER: "n't", OP: "?" }
       - { POS: PRON }
@@ -69,6 +70,8 @@ tests:
     - "Where you going?"
     - "Your sister know about this?"
     - "You have any money?"
+    - "You have it?"
+    - "You have my number?"
   no_match:
     - "Do you ever wonder why?"
     - "You're coming?"
