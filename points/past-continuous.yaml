@@ -33,69 +33,69 @@ level_from: egp
 note:
   gist:
     en: 'Was or were + an -ing verb, for something going on at a time in the past, often when something else happened: I was sleeping when you called.'
-    fa: 'was یا were و بعد فعل ingدار، برای کاری که در زمانی از گذشته در جریان بود، اغلب وقتی اتفاق دیگری افتاد: I was sleeping when you called یعنی «وقتی زنگ زدی خواب بودم».'
+    fa: 'ترکیب فعل‌های was یا were به‌علاوهٔ یک فعلِ ingدار، برای بیان کاری است که در لحظهٔ خاصی از گذشته در حال انجام و جریان بوده است (اغلب وقتی که یک اتفاقِ دیگر رُخ می‌دهد): I was sleeping when you called (وقتی زنگ زدی، من خواب بودم).'
   forms:
-  - kind: positive
-    text: I was sleeping when you called.
-    mark: was sleeping
-  - kind: negative
-    text: She wasn't listening to me.
-    mark: wasn't listening
-  - kind: question
-    text: What were you doing at eight?
-    mark: were you doing
+    - kind: positive
+      text: I was sleeping when you called.
+      mark: was sleeping
+    - kind: negative
+      text: She wasn't listening to me.
+      mark: wasn't listening
+    - kind: question
+      text: What were you doing at eight?
+      mark: were you doing
   mistakes:
-  - wrong: I was knowing the answer.
-    right: I knew the answer.
-    why:
-      en: Verbs like know, like and want don't usually take -ing.
-      fa: فعل‌هایی مثل «know»، «like» و «want» معمولاً ing نمی‌گیرند.
-  - wrong: I was save it for my birthday.
-    right: I was saving it for my birthday.
-    why:
-      en: After was or were, the verb takes -ing.
-      fa: بعد از «was» یا «were» فعل ing می‌گیرد.
-  - wrong: They was watching TV.
-    right: They were watching TV.
-    why:
-      en: You, we and they take were.
-      fa: you، we و they با «were» می‌آیند.
+    - wrong: I was knowing the answer.
+      right: I knew the answer.
+      why:
+        en: Verbs like know, like and want don't usually take -ing.
+        fa: فعل‌های حسی و حالتی (مثل know، like و want) معمولاً در زبان انگلیسی ing نمی‌گیرند و به صورت استمراری نمی‌آیند.
+    - wrong: I was save it for my birthday.
+      right: I was saving it for my birthday.
+      why:
+        en: After was or were, the verb takes -ing.
+        fa: بعد از افعال was یا were، فعل اصلی باید حتماً ing بگیرد.
+    - wrong: They was watching TV.
+      right: They were watching TV.
+      why:
+        en: You, we and they take were.
+        fa: ضمایر جمع (you، we و they) با were همراه می‌شوند.
   contrast:
-  - term: past simple
-    example: I watched a film last night.
-    why:
-      en: The past simple tells a finished action; was + -ing, an action in progress then.
-      fa: گذشتهٔ ساده کاری تمام‌شده را می‌گوید؛ was و ing کاری که آن موقع در جریان بود.
+    - term: past simple
+      example: I watched a film last night.
+      why:
+        en: The past simple tells a finished action; was + -ing, an action in progress then.
+        fa: گذشتهٔ ساده به یک اتفاقِ کامل تمام‌شده در گذشته اشاره می‌کند؛ اما گذشتهٔ استمراری (was/were + ing) به کاری که در آن موقعِ خاص در جریان بوده است.
 exercises:
-- id: rain-shop
-  kind: choose
-  sentence: I ___ to the shop when it started to rain.
-  options:
-  - was walking
-  - walking
-  - was walk
-  answer: was walking
-  why:
-    en: 'In progress then: was + -ing.'
-    fa: 'در جریانِ آن موقع: was + ing.'
-- id: was-save
-  kind: fix
-  wrong: I was save it for my birthday, but I spent it.
-  right:
-  - I was saving it for my birthday, but I spent it.
-  why:
-    en: 'Was + -ing: saving.'
-    fa: 'was + ing: saving.'
-- id: phone-rang
-  kind: rewrite
-  instruction:
-    en: Say it with was + -ing and when.
-    fa: با was + ing و when بگویید.
-  from: I had a shower. In the middle of it, the phone rang.
-  answers:
-  - I was having a shower when the phone rang.
-  - The phone rang when I was having a shower.
-  - The phone rang while I was having a shower.
-  why:
-    en: 'The longer action: was + -ing; what cut in: past simple.'
-    fa: 'کار طولانی‌تر: was + ing؛ آنچه وسطش آمد: گذشتهٔ ساده.'
+  - id: rain-shop
+    kind: choose
+    sentence: I ___ to the shop when it started to rain.
+    options:
+      - was walking
+      - walking
+      - was walk
+    answer: was walking
+    why:
+      en: 'In progress then: was + -ing.'
+      fa: 'برای کاری که در جریانِ آن لحظه بوده: was/were + ing.'
+  - id: was-save
+    kind: fix
+    wrong: I was save it for my birthday, but I spent it.
+    right:
+      - I was saving it for my birthday, but I spent it.
+    why:
+      en: 'Was + -ing: saving.'
+      fa: 'فعل بعد از was باید ing بگیرد: saving.'
+  - id: phone-rang
+    kind: rewrite
+    instruction:
+      en: Say it with was + -ing and when.
+      fa: این دو جمله را با استفاده از was/were + ing و کلمهٔ when ترکیب کنید.
+    from: I had a shower. In the middle of it, the phone rang.
+    answers:
+      - I was having a shower when the phone rang.
+      - The phone rang when I was having a shower.
+      - The phone rang while I was having a shower.
+    why:
+      en: 'The longer action: was + -ing; what cut in: past simple.'
+      fa: 'برای کاری که طولانی‌تر بوده و در جریان است: was/were + ing؛ و برای اتفاق کوتاهی که وسطش افتاده: گذشتهٔ ساده.'

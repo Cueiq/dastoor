@@ -66,47 +66,47 @@ level: A2
 level_from: egp
 note:
   gist:
-    en: 'Am, is or are + a past participle, when what is done matters more than who does it: English is spoken here. By + the doer, when it''s worth saying.'
-    fa: 'am، is یا are و اسم مفعول، وقتی کاری که انجام می‌شود مهم‌تر از کسی است که انجامش می‌دهد: English is spoken here. اگر گفتنِ انجام‌دهنده لازم باشد، با by می‌آید.'
+    en: "Am, is or are + a past participle, when what is done matters more than who does it: English is spoken here. By + the doer, when it's worth saying."
+    fa: "ترکیب am، is یا are به‌علاوهٔ اسم مفعول (قسمت سوم فعل)، برای زمانی است که «کاری که انجام می‌شود» برای ما مهم‌تر از «انجام‌دهنده‌ی آن» است (مجهول حال ساده): English is spoken here (اینجا انگلیسی صحبت می‌شود). اگر هم بخواهیم به انجام‌دهنده اشاره کنیم، از حرف اضافهٔ by استفاده می‌کنیم."
   forms:
-  - kind: positive
-    text: It's called a centaur.
-    mark: '''s called'
-  - kind: negative
-    text: I'm not invited.
-    mark: '''m not invited'
-  - kind: question
-    text: Is it made of wood?
-    mark: Is it made
+    - kind: positive
+      text: It's called a centaur.
+      mark: "'s called"
+    - kind: negative
+      text: I'm not invited.
+      mark: "'m not invited"
+    - kind: question
+      text: Is it made of wood?
+      mark: Is it made
   mistakes:
-  - wrong: This cake is make by my mum.
-    right: This cake is made by my mum.
-    why:
-      en: 'After is, use the past participle: made, not make.'
-      fa: 'بعد از is اسم مفعول بیاورید: made، نه make.'
-  - wrong: English speaks here.
-    right: English is spoken here.
-    why:
-      en: English doesn't speak; people speak it. Use is + spoken.
-      fa: زبان انگلیسی حرف نمی‌زند، مردم آن را حرف می‌زنند؛ is spoken بیاورید. «اینجا انگلیسی صحبت می‌شود» در فارسی هم مجهول است.
-  - wrong: The windows is cleaned every week.
-    right: The windows are cleaned every week.
-    why:
-      en: For more than one, use are.
-      fa: برای جمع are بیاورید.
+    - wrong: This cake is make by my mum.
+      right: This cake is made by my mum.
+      why:
+        en: "After is, use the past participle: made, not make."
+        fa: "بعد از افعال am/is/are در ساختار مجهول، حتماً باید از اسم مفعول (قسمت سوم فعل) استفاده کنید؛ یعنی made، نه make."
+    - wrong: English speaks here.
+      right: English is spoken here.
+      why:
+        en: "English doesn't speak; people speak it. Use is + spoken."
+        fa: "زبان انگلیسی خودش حرف نمی‌زند، بلکه مردم آن را صحبت می‌کنند؛ بنابراین این جمله باید به‌صورت مجهول (is spoken) بیان شود."
+    - wrong: The windows is cleaned every week.
+      right: The windows are cleaned every week.
+      why:
+        en: "For more than one, use are."
+        fa: "چون فاعل ما در اینجا جمع است (windows)، باید به‌جای is از are استفاده کنیم."
   contrast:
-  - term: was / were + past participle
-    example: It was made in China.
-    why:
-      en: That tells what was done in the past.
-      fa: آن کاری را می‌گوید که در گذشته انجام شده.
-    point: past-passive
-  - term: modal + be + past participle
-    example: It can be fixed.
-    why:
-      en: With can, must or will, the passive takes be.
-      fa: با can، must یا will، مجهول be می‌گیرد.
-    point: modal-passive
+    - term: was / were + past participle
+      example: It was made in China.
+      why:
+        en: "That tells what was done in the past."
+        fa: "استفاده از was یا were به‌جای am/is/are نشان‌دهندهٔ این است که آن کار در زمان گذشته انجام شده است (مجهول گذشته)."
+      point: past-passive
+    - term: modal + be + past participle
+      example: It can be fixed.
+      why:
+        en: "With can, must or will, the passive takes be."
+        fa: "اگر بخواهیم ساختار مجهول را همراه با افعال وجهی (مثل can، must یا will) به کار ببریم، بعد از آن‌ها از be به‌علاوهٔ اسم مفعول استفاده می‌شود."
+      point: modal-passive
 exercises:
 - id: are-made
   kind: choose

@@ -72,77 +72,77 @@ level: A2
 level_from: hand
 note:
   gist:
-    en: 'After some verbs the next verb takes -ing: enjoy, mind, finish, keep, stop, avoid, imagine, give up. Love, like, hate and start take -ing or to.'
-    fa: 'بعد از بعضی فعل‌ها فعل بعدی ing می‌گیرد: enjoy، mind، finish، keep، stop، avoid، imagine و give up. فعل‌های love، like، hate و start هم با ing می‌آیند و هم با to.'
+    en: "After some verbs the next verb takes -ing: enjoy, mind, finish, keep, stop, avoid, imagine, give up. Love, like, hate and start take -ing or to."
+    fa: "بعد از برخی از فعل‌ها در زبان انگلیسی، فعلِ بعدی باید به صورت ingدار (اسم مصدر) بیاید: مثل enjoy، mind، finish، keep، stop، avoid، imagine و give up. همچنین فعل‌هایی مثل love، like، hate و start قابلیت استفاده با هر دو حالتِ ingدار یا to را دارند."
   forms:
-  - kind: positive
-    text: I enjoy swimming.
-    mark: enjoy swimming
-  - kind: negative
-    text: She doesn't mind waiting.
-    mark: mind waiting
-  - kind: question
-    text: Have you finished cleaning the kitchen?
-    mark: finished cleaning
+    - kind: positive
+      text: I enjoy swimming.
+      mark: enjoy swimming
+    - kind: negative
+      text: She doesn't mind waiting.
+      mark: mind waiting
+    - kind: question
+      text: Have you finished cleaning the kitchen?
+      mark: finished cleaning
   mistakes:
-  - wrong: I enjoy to swim.
-    right: I enjoy swimming.
-    why:
-      en: Enjoy takes -ing, never to.
-      fa: enjoy همیشه با ing می‌آید، هیچ‌وقت با to.
-  - wrong: Do you mind to wait?
-    right: Do you mind waiting?
-    why:
-      en: Mind takes -ing.
-      fa: mind با ing می‌آید.
-  - wrong: I stopped to smoke last year.
-    right: I stopped smoking last year.
-    why:
-      en: Stop + -ing is not doing it any more; stop + to is stopping in order to do it.
-      fa: stop با ing یعنی دیگر آن کار را نکردن؛ stop با to یعنی دست نگه داشتن تا کار دیگری بکنی.
+    - wrong: I enjoy to swim.
+      right: I enjoy swimming.
+      why:
+        en: "Enjoy takes -ing, never to."
+        fa: "فعل enjoy همیشه با پسوند ing همراه می‌شود و هرگز پس از آن از کلمهٔ to استفاده نمی‌شود."
+    - wrong: Do you mind to wait?
+      right: Do you mind waiting?
+      why:
+        en: "Mind takes -ing."
+        fa: "فعل mind در این ساختار حتماً با فعل ingدار می‌آید."
+    - wrong: I stopped to smoke last year.
+      right: I stopped smoking last year.
+      why:
+        en: "Stop + -ing is not doing it any more; stop + to is stopping in order to do it."
+        fa: "عبارت stop + ing یعنی «برای همیشه ترک کردن یا متوقف کردنِ آن کار»؛ اما stop + to یعنی «ایستادن (متوقف شدن) به قصدِ انجام دادنِ کاری دیگر»."
   contrast:
-  - term: verb + to + verb (want to go)
-    example: I want to swim.
-    why:
-      en: Verbs like want, need and decide take to + a verb.
-      fa: فعل‌هایی مثل want، need و decide با to و فعل ساده می‌آیند.
-    point: verb-to-infinitive
-  - term: am / is / are + -ing
-    example: I'm swimming.
-    why:
-      en: That is what is going on now; here -ing follows another verb.
-      fa: آن کاری است که همین حالا در جریان است؛ اینجا ing بعد از فعل دیگری می‌آید.
-    point: present-continuous
+    - term: verb + to + verb (want to go)
+      example: I want to swim.
+      why:
+        en: "Verbs like want, need and decide take to + a verb."
+        fa: "برخی دیگر از فعل‌ها مانند want، need و decide نیازمند ساختار to به‌علاوهٔ فعل ساده هستند."
+      point: verb-to-infinitive
+    - term: am / is / are + -ing
+      example: I'm swimming.
+      why:
+        en: "That is what is going on now; here -ing follows another verb."
+        fa: "ساختار حال استمراری (am/is/are + ing) برای نشان دادنِ کار در حال جریان است، اما در الگوی فعلِ دوم، پسوند ing مستقیماً دنباله‌روِ یک فعلِ اصلی دیگر است."
+      point: present-continuous
 exercises:
-- id: mind-opening
-  kind: choose
-  sentence: Do you mind ___ the window?
-  options:
-  - opening
-  - to open
-  - open
-  answer: opening
-  why:
-    en: mind + -ing.
-    fa: mind و فعل ingدار.
-- id: keeps-calling
-  kind: fix
-  wrong: She keeps to call me.
-  right:
-  - She keeps calling me.
-  why:
-    en: 'keep + -ing: again and again.'
-    fa: keep با ing یعنی پشت سر هم.
-- id: gave-up
-  kind: rewrite
-  instruction:
-    en: Say it with give up + -ing.
-    fa: با give up و فعل ingدار بگویید.
-  from: He doesn't smoke any more.
-  answers:
-  - He's given up smoking.
-  - He has given up smoking.
-  - He gave up smoking.
-  why:
-    en: 'give up + -ing: stop doing it for good.'
-    fa: give up با ing یعنی برای همیشه کنار گذاشتن.
+  - id: mind-opening
+    kind: choose
+    sentence: "Do you mind ___ the window?"
+    options:
+      - opening
+      - to open
+      - open
+    answer: opening
+    why:
+      en: "mind + -ing."
+      fa: "بعد از فعل mind از فرم ingدار استفاده می‌شود."
+  - id: keeps-calling
+    kind: fix
+    wrong: "She keeps to call me."
+    right:
+      - "She keeps calling me."
+    why:
+      en: "keep + -ing: again and again."
+      fa: "فعل keep با پسوند ing یعنی تکرار مداومِ یک کار."
+  - id: gave-up
+    kind: rewrite
+    instruction:
+      en: "Say it with give up + -ing."
+      fa: "این مفهوم را با استفاده از give up + فعل ingدار بازنویسی کنید."
+    from: "He doesn't smoke any more."
+    answers:
+      - "He's given up smoking."
+      - "He has given up smoking."
+      - "He gave up smoking."
+    why:
+      en: "give up + -ing: stop doing it for good."
+      fa: "ترکیب give up + فعل ingدار یعنی کنار گذاشتنیش برای همیشه."

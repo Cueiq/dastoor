@@ -91,72 +91,72 @@ level_from: egp
 note:
   gist:
     en: 'If + the present, then the result: something that may really happen, and what happens then, often with will: If it rains, we''ll stay home.'
-    fa: 'if با زمان حال و بعد نتیجه: چیزی که واقعاً ممکن است اتفاق بیفتد و آنچه آن‌وقت می‌شود، اغلب با will: If it rains, we''ll stay home یعنی «اگر باران بیاید، خانه می‌مانیم».'
+    fa: 'ترکیب if با زمان حال، و سپس نتیجهٔ آن در ادامهٔ جمله: برای بیان چیزی که واقعاً ممکن است اتفاق بیفتد و اینکه در آن صورت چه پیش می‌آید (اغلب با فعل will): If it rains, we''ll stay home (اگر باران بیاید، در خانه می‌مانیم).'
   forms:
-  - kind: positive
-    text: If it rains, I will stay at home.
-    mark: If it rains, I will stay
-  - kind: negative
-    text: If you don't eat, you will be hungry.
-    mark: If you don't eat, you will be
-  - kind: question
-    text: What will you do if it rains?
-    mark: will you do if it rains
+    - kind: positive
+      text: If it rains, I will stay at home.
+      mark: If it rains, I will stay
+    - kind: negative
+      text: If you don't eat, you will be hungry.
+      mark: If you don't eat, you will be
+    - kind: question
+      text: What will you do if it rains?
+      mark: will you do if it rains
   mistakes:
-  - wrong: If you will come, I will be happy.
-    right: If you come, I will be happy.
-    why:
-      en: After if comes the present, not will.
-      fa: بعد از «if» زمان حال می‌آید، نه «will»؛ مثل «اگر بیایی» در فارسی.
-  - wrong: If I see him, I tell him.
-    right: If I see him, I will tell him.
-    why:
-      en: A result in the future usually takes will.
-      fa: نتیجه‌ای در آینده معمولاً «will» می‌گیرد.
+    - wrong: If you will come, I will be happy.
+      right: If you come, I will be happy.
+      why:
+        en: After if comes the present, not will.
+        fa: بعد از کلمهٔ if باید از زمان حال استفاده کنید، نه will؛ دقیقاً مثل زبان فارسی که می‌گوییم «اگر بیایی»، نه «اگر خواهی آمد».
+    - wrong: If I see him, I tell him.
+      right: If I see him, I will tell him.
+      why:
+        en: A result in the future usually takes will.
+        fa: برای بیان نتیجهٔ یک شرط در آینده، در بخش دومِ جمله معمولاً باید از will استفاده کرد.
   contrast:
-  - term: If + past, … would + verb
-    example: If I had money, I would buy it.
-    why:
-      en: If + present is a real possibility; if + past is imagined.
-      fa: «if» با حال احتمالی واقعی است؛ «if» با گذشته خیالی.
-    point: second-conditional
-  - term: when + present
-    example: When I get home, I'll call you.
-    why:
-      en: When is sure to happen; if may not.
-      fa: «when» حتماً اتفاق می‌افتد؛ «if» شاید نیفتد.
+    - term: If + past, … would + verb
+      example: If I had money, I would buy it.
+      why:
+        en: If + present is a real possibility; if + past is imagined.
+        fa: استفاده از if به‌علاوهٔ زمان حال (نوع اول) برای احتمالِ واقعی در آینده است؛ اما if با گذشته (نوع دوم) برای تصور و خیال‌پردازی است.
+      point: second-conditional
+    - term: when + present
+      example: When I get home, I'll call you.
+      why:
+        en: When is sure to happen; if may not.
+        fa: کلمهٔ when برای چیزی است که حتماً اتفاق می‌افتد؛ اما if یک شرط است و ممکن است اصلاً رخ ندهد.
 exercises:
-- id: rains-tomorrow
-  kind: choose
-  sentence: If it ___ tomorrow, we will stay home.
-  options:
-  - rains
-  - will rain
-  - rained
-  answer: rains
-  why:
-    en: 'After if: the present.'
-    fa: 'بعد از if: زمان حال.'
-- id: if-will-see
-  kind: fix
-  wrong: If I will see Anna, I will tell her.
-  right:
-  - If I see Anna, I will tell her.
-  - If I see Anna, I'll tell her.
-  why:
-    en: No will after if.
-    fa: بعد از if کلمهٔ will نمی‌آید.
-- id: cold-coat
-  kind: rewrite
-  instruction:
-    en: Say it as one sentence with if.
-    fa: در یک جمله با if بگویید.
-  from: Maybe it will be cold. Then I will wear a coat.
-  answers:
-  - If it is cold, I will wear a coat.
-  - If it's cold, I'll wear a coat.
-  - If it is cold, I'll wear a coat.
-  - If it's cold, I will wear a coat.
-  why:
-    en: If + present, will + verb.
-    fa: If + حال، will + فعل.
+  - id: rains-tomorrow
+    kind: choose
+    sentence: If it ___ tomorrow, we will stay home.
+    options:
+      - rains
+      - will rain
+      - rained
+    answer: rains
+    why:
+      en: 'After if: the present.'
+      fa: 'چون بعد از if فعل به صورت زمان حال می‌آید.'
+  - id: if-will-see
+    kind: fix
+    wrong: If I will see Anna, I will tell her.
+    right:
+      - If I see Anna, I will tell her.
+      - If I see Anna, I'll tell her.
+    why:
+      en: No will after if.
+      fa: بعد از کلمهٔ if نباید از will استفاده کرد.
+  - id: cold-coat
+    kind: rewrite
+    instruction:
+      en: Say it as one sentence with if.
+      fa: این دو قسمت را در قالب یک جملهٔ واحد با if بگویید.
+    from: Maybe it will be cold. Then I will wear a coat.
+    answers:
+      - If it is cold, I will wear a coat.
+      - If it's cold, I'll wear a coat.
+      - If it is cold, I'll wear a coat.
+      - If it's cold, I will wear a coat.
+    why:
+      en: 'If + present, will + verb.'
+      fa: "فرمول شرطی نوع اول: If به‌علاوهٔ زمان حال، و در نتیجهٔ آن will به‌علاوهٔ فعل ساده."

@@ -1,5 +1,5 @@
 id: have-to
-title: { en: "have to + verb", fa: "have to: مجبور بودن" }
+title: { en: "have to + verb", fa: "have to (مجبور بودن / باید)" }
 # What a learner may search it by, in English and Persian.
 keywords: ["have to", "has to", "had to", "gotta", "got to", "obligation", "مجبور", "باید", "لازم"]
 # Where a book shows it beyond its topic: on the tenses' timeline, and
@@ -15,7 +15,8 @@ match:
       has:
         - word: { DEP: xcomp, TAG: VB }
           has: [ { DEP: aux, LOWER: to } ]
-      lacks: [ { DEP: dobj } ]
+      lacks:
+        - { DEP: dobj }
   # have got to, gotta: the same, said more.
   - form: got-to
     tree:
@@ -45,78 +46,78 @@ level_from: egp
 note:
   gist:
     en: 'Have to (or have got to, gotta) + a plain verb: something is necessary, often because of a rule or the situation: I have to work tomorrow.'
-    fa: 'have to (یا have got to و gotta) و فعل ساده: کاری لازم است، اغلب به خاطر قانون یا شرایط: I have to work tomorrow یعنی «فردا باید کار کنم».'
+    fa: 'عبارت have to (یا شکل‌های عامیانه‌ترِ have got to و gotta) به‌علاوهٔ فعل ساده: انجام کاری لازم و ضروری است، که این اجبار معمولاً از سمت قانون یا شرایط بیرونی ایجاد شده: I have to work tomorrow (فردا مجبورم/باید کار کنم).'
   forms:
-  - kind: positive
-    text: I have to go now.
-    mark: have to go
-  - kind: negative
-    text: You don't have to come.
-    mark: don't have to come
-  - kind: question
-    text: Do we have to wait?
-    mark: Do we have to wait
-  - kind: positive
-    text: I've got to go.
-    mark: '''ve got to go'
+    - kind: positive
+      text: I have to go now.
+      mark: have to go
+    - kind: negative
+      text: You don't have to come.
+      mark: don't have to come
+    - kind: question
+      text: Do we have to wait?
+      mark: Do we have to wait
+    - kind: positive
+      text: I've got to go.
+      mark: "'ve got to go"
   mistakes:
-  - wrong: She have to go home now.
-    right: She has to go home now.
-    why:
-      en: With he, she and it, it is has to.
-      fa: با he، she و it می‌شود «has to».
-  - wrong: I have go to school.
-    right: I have to go to school.
-    why:
-      en: Don't forget to after have.
-      fa: «to» را بعد از «have» جا نیندازید.
-  - wrong: You don't have to smoke here.
-    right: You mustn't smoke here.
-    why:
-      en: Don't have to means it isn't needed; to say it isn't allowed, use mustn't.
-      fa: «don't have to» یعنی لازم نیست؛ برای «اجازه نیست» بگویید «mustn't»، هرچند در فارسی هر دو ممکن است «نباید» ترجمه شوند.
+    - wrong: She have to go home now.
+      right: She has to go home now.
+      why:
+        en: With he, she and it, it is has to.
+        fa: برای ضمایر سوم‌شخص (he, she, it) باید از has to استفاده کنید.
+    - wrong: I have go to school.
+      right: I have to go to school.
+      why:
+        en: Don't forget to after have.
+        fa: کلمهٔ to را بعد از have فراموش نکنید.
+    - wrong: You don't have to smoke here.
+      right: You mustn't smoke here.
+      why:
+        en: Don't have to means it isn't needed; to say it isn't allowed, use mustn't.
+        fa: عبارت don't have to یعنی «لازم نیست» (اجباری در کار نیست). اما برای نشان دادن «ممنوعیت» و اینکه نباید کاری را انجام دهید، از mustn't استفاده کنید.
   contrast:
-  - term: must + verb
-    example: I must call my mum.
-    why:
-      en: Must is often what the speaker feels; have to, a rule or the situation.
-      fa: «must» بیشتر حس خودِ گوینده است؛ «have to» قانون یا شرایط.
-    point: must-obligation
-  - term: have got (= have)
-    example: I've got a car.
-    why:
-      en: Without to and a verb, have got means have.
-      fa: بدون to و فعل، «have got» یعنی «داشتن».
-    point: have-got
+    - term: must + verb
+      example: I must call my mum.
+      why:
+        en: Must is often what the speaker feels; have to, a rule or the situation.
+        fa: فعل must معمولاً نشان‌دهندهٔ حس ضرورت از سمت خودِ گوینده است؛ اما have to یک اجبار بیرونی (مثل قانون یا شرایط) را نشان می‌دهد.
+      point: must-obligation
+    - term: have got (= have)
+      example: I've got a car.
+      why:
+        en: Without to and a verb, have got means have.
+        fa: اگر have got بدونِ to و یک فعل دیگر بیاید، به معنای «داشتن» (مالکیت) است.
+      point: have-got
 exercises:
-- id: homework
-  kind: choose
-  sentence: I can't play now. I ___ do my homework.
-  options:
-  - have to
-  - has to
-  - have
-  answer: have to
-  why:
-    en: I + have to + verb.
-    fa: I + have to + فعل.
-- id: she-have-to
-  kind: fix
-  wrong: She have to go home now.
-  right:
-  - She has to go home now.
-  why:
-    en: She takes has to.
-    fa: she با has to می‌آید.
-- id: not-necessary
-  kind: rewrite
-  instruction:
-    en: Say it isn't necessary, with don't have to.
-    fa: با don't have to بگویید لازم نیست.
-  from: It isn't necessary for you to come.
-  answers:
-  - You don't have to come.
-  - You do not have to come.
-  why:
-    en: 'Not necessary: don''t have to.'
-    fa: 'لازم نیست: don''t have to.'
+  - id: homework
+    kind: choose
+    sentence: I can't play now. I ___ do my homework.
+    options:
+      - have to
+      - has to
+      - have
+    answer: have to
+    why:
+      en: I + have to + verb.
+      fa: ضمیر I با have to همراه می‌شود.
+  - id: she-have-to
+    kind: fix
+    wrong: She have to go home now.
+    right:
+      - She has to go home now.
+    why:
+      en: She takes has to.
+      fa: ضمیر She باید با has to بیاید.
+  - id: not-necessary
+    kind: rewrite
+    instruction:
+      en: Say it isn't necessary, with don't have to.
+      fa: با استفاده از don't have to بگویید که انجام این کار لازم نیست.
+    from: It isn't necessary for you to come.
+    answers:
+      - You don't have to come.
+      - You do not have to come.
+    why:
+      en: 'Not necessary: don''t have to.'
+      fa: 'وقتی چیزی لازم نیست: don''t have to.'

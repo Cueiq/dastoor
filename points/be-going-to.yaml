@@ -1,5 +1,5 @@
 id: be-going-to
-title: { en: "be going to + verb", fa: "be going to: برنامهٔ آینده" }
+title: { en: "be going to + verb", fa: "be going to (برنامهٔ آینده)" }
 # What a learner may search it by, in English and Persian.
 keywords: ["going to", "gonna", "plan", "future", "آینده", "برنامه", "قصد"]
 # Where a book shows it beyond its topic: on the tenses' timeline, and
@@ -55,72 +55,72 @@ level_from: egp
 note:
   gist:
     en: Am, is or are + going to + a plain verb, for a plan you have already made, or for something you can see is about to happen.
-    fa: am، is یا are و بعد going to و فعل ساده، برای برنامه‌ای که از قبل دارید، یا چیزی که از نشانه‌هایش پیداست به‌زودی اتفاق می‌افتد.
+    fa: فعل‌های am، is یا are و بعد going to و فعل ساده، برای برنامه‌ای که از قبل چیده‌اید، یا اتفاقی که علائمش نشان می‌دهد به‌زودی رخ می‌دهد.
   forms:
-  - kind: positive
-    text: I'm going to cook tonight.
-    mark: '''m going to cook'
-  - kind: negative
-    text: We aren't going to play today.
-    mark: aren't going to play
-  - kind: question
-    text: Are you going to call her?
-    mark: Are you going to call
+    - kind: positive
+      text: I'm going to cook tonight.
+      mark: "'m going to cook"
+    - kind: negative
+      text: We aren't going to play today.
+      mark: aren't going to play
+    - kind: question
+      text: Are you going to call her?
+      mark: Are you going to call
   mistakes:
-  - wrong: I going to buy a dress.
-    right: I'm going to buy a dress.
-    why:
-      en: Don't drop am, is or are before going to.
-      fa: «am»، «is» یا «are» را قبل از «going to» جا نیندازید.
-  - wrong: She's going to buys a car.
-    right: She's going to buy a car.
-    why:
-      en: After going to comes the plain verb, without -s.
-      fa: بعد از «going to» فعل ساده می‌آید، بدون s.
-  - wrong: Tomorrow I visit my grandma.
-    right: Tomorrow I'm going to visit my grandma.
-    why:
-      en: For a plan, English doesn't use the present simple the way Persian does.
-      fa: برای برنامهٔ آینده، انگلیسی مثل فارسی زمان حال نمی‌آورد؛ «فردا می‌روم پیش مادربزرگ» در انگلیسی با going to گفته می‌شود.
+    - wrong: I going to buy a dress.
+      right: I'm going to buy a dress.
+      why:
+        en: Don't drop am, is or are before going to.
+        fa: فعل‌های am، is یا are را قبل از going to جا نیندازید.
+    - wrong: She's going to buys a car.
+      right: She's going to buy a car.
+      why:
+        en: After going to comes the plain verb, without -s.
+        fa: بعد از going to فعل همیشه ساده می‌آید، بدون -s.
+    - wrong: Tomorrow I visit my grandma.
+      right: Tomorrow I'm going to visit my grandma.
+      why:
+        en: For a plan, English doesn't use the present simple the way Persian does.
+        fa: برای برنامهٔ آینده، در انگلیسی برخلاف فارسی از زمان حال ساده استفاده نمی‌کنیم؛ «فردا می‌روم...» با going to گفته می‌شود.
   contrast:
-  - term: I'll + verb
-    example: The phone is ringing. I'll answer it.
-    why:
-      en: Going to is a plan you made before; I'll is a decision you make now.
-      fa: «going to» برنامه‌ای است که از قبل داشتید؛ «I'll» تصمیمی است که همین لحظه می‌گیرید.
-    point: will
+    - term: I'll + verb
+      example: The phone is ringing. I'll answer it.
+      why:
+        en: Going to is a plan you made before; I'll is a decision you make now.
+        fa: ساختار going to برای برنامه‌ای است که از قبل داشتید؛ اما I'll برای تصمیمی است که همین لحظه می‌گیرید.
+      point: will
 exercises:
-- id: parents-are
-  kind: choose
-  sentence: My parents ___ going to visit us on Friday.
-  options:
-  - are
-  - is
-  - will
-  answer: are
-  why:
-    en: My parents means they, so we say are going to.
-    fa: «my parents» یعنی «they»؛ پس «are going to» می‌گوییم.
-- id: i-going-to
-  kind: fix
-  wrong: I going to buy a dress.
-  right:
-  - I'm going to buy a dress.
-  - I am going to buy a dress.
-  why:
-    en: Am is needed before going to.
-    fa: پیش از going to به am نیاز داریم.
-- id: plan-tonight
-  kind: rewrite
-  instruction:
-    en: Say your plan with going to.
-    fa: برنامه‌تان را با going to بگویید.
-  from: 'My plan for tonight: watch a film.'
-  answers:
-  - I'm going to watch a film tonight.
-  - I am going to watch a film tonight.
-  - Tonight I'm going to watch a film.
-  - Tonight I am going to watch a film.
-  why:
-    en: 'A plan you already have: am going to + verb.'
-    fa: 'برنامه‌ای که از قبل دارید: am going to + فعل.'
+  - id: parents-are
+    kind: choose
+    sentence: My parents ___ going to visit us on Friday.
+    options:
+      - are
+      - is
+      - will
+    answer: are
+    why:
+      en: My parents means they, so we say are going to.
+      fa: عبارت my parents جمع است (they)؛ پس از are going to استفاده می‌کنیم.
+  - id: i-going-to
+    kind: fix
+    wrong: I going to buy a dress.
+    right:
+      - I'm going to buy a dress.
+      - I am going to buy a dress.
+    why:
+      en: Am is needed before going to.
+      fa: قبل از going to باید فعل am بیاورید.
+  - id: plan-tonight
+    kind: rewrite
+    instruction:
+      en: Say your plan with going to.
+      fa: برنامه‌تان را با going to بگویید.
+    from: 'My plan for tonight: watch a film.'
+    answers:
+      - I'm going to watch a film tonight.
+      - I am going to watch a film tonight.
+      - Tonight I'm going to watch a film.
+      - Tonight I am going to watch a film.
+    why:
+      en: 'A plan you already have: am going to + verb.'
+      fa: 'برای برنامه‌ای که از قبل دارید: am going to و سپس فعل ساده.'

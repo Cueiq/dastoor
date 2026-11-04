@@ -57,80 +57,80 @@ level: A2
 level_from: egp
 note:
   gist:
-    en: 'Who for people, which for things, that for either, to say which one you mean: the man who lives next door. When it is the object of what follows, you can leave it out: the film (that) I saw.'
-    fa: 'who برای آدم، which برای چیز و that برای هر دو، تا بگویید منظورتان کدام است: the man who lives next door. وقتی مفعولِ جملهٔ بعدش است، می‌شود نیاوردش: the film (that) I saw.'
+    en: "Who for people, which for things, that for either, to say which one you mean: the man who lives next door. When it is the object of what follows, you can leave it out: the film (that) I saw."
+    fa: "استفاده از who برای افراد، which برای اشیاء و that برای هر دو، جهت مشخص کردن اینکه دقیقا دربارهٔ چه کسی یا چه چیزی صحبت می‌کنیم: the man who lives next door (مردی که در خانهٔ مجاور زندگی می‌کند). همچنین اگر ضمیر موصولی مفعولِ جملهٔ بعد باشد، می‌توان آن را حذف کرد: the film (that) I saw (فیلمی که دیدم)."
   forms:
-  - kind: positive
-    text: The man who lives next door is a doctor.
-    mark: who lives
-  - kind: positive
-    text: Is that all the money you've got?
-    mark: money you've got
-  - kind: negative
-    text: It's a shop that doesn't open on Sundays.
-    mark: that doesn't open
-  - kind: question
-    text: Who's the girl that called you?
-    mark: that called
+    - kind: positive
+      text: The man who lives next door is a doctor.
+      mark: who lives
+    - kind: positive
+      text: Is that all the money you've got?
+      mark: money you've got
+    - kind: negative
+      text: It's a shop that doesn't open on Sundays.
+      mark: that doesn't open
+    - kind: question
+      text: Who's the girl that called you?
+      mark: that called
   mistakes:
-  - wrong: The man who he lives next door is a doctor.
-    right: The man who lives next door is a doctor.
-    why:
-      en: 'Who already stands for him: don''t add he.'
-      fa: who خودش جای او را می‌گیرد، he را تکرار نکنید؛ در فارسی می‌گوییم «مردی که او…» ولی انگلیسی ضمیر دوباره نمی‌خواهد.
-  - wrong: The book what I read was good.
-    right: The book that I read was good.
-    why:
-      en: After a noun, use that or which, not what.
-      fa: بعد از اسم that یا which بیاورید، نه what.
-  - wrong: The girl which I met is French.
-    right: The girl who I met is French.
-    why:
-      en: For people, who or that.
-      fa: برای آدم who یا that بیاورید.
+    - wrong: The man who he lives next door is a doctor.
+      right: The man who lives next door is a doctor.
+      why:
+        en: "Who already stands for him: don't add he."
+        fa: "ضمیر موصولی who خودش جایگزین فاعل می‌شود؛ بنابراین نباید بعد از آن دوباره ضمیر he را تکرار کنید (برخلاف زبان فارسی که می‌گوییم «مردی که او...»)."
+    - wrong: The book what I read was good.
+      right: The book that I read was good.
+      why:
+        en: "After a noun, use that or which, not what."
+        fa: "برای اتصال به اسم پیش از آن، باید از that یا which استفاده کنید، نه از what."
+    - wrong: The girl which I met is French.
+      right: The girl who I met is French.
+      why:
+        en: "For people, who or that."
+        fa: "برای افراد (اشخاص) باید از who یا that استفاده کرد، نه which."
   contrast:
-  - term: who / which in a question
-    example: Who are you?
-    why:
-      en: That asks; a relative clause tells which one.
-      fa: آن سؤال می‌پرسد؛ جملهٔ موصولی می‌گوید کدام.
-    point: null
-  - term: where for a place
-    example: That's the place where we met.
-    why:
-      en: For a place, where.
-      fa: برای مکان where می‌آید.
-    point: null
+    - term: who / which in a question
+      example: Who are you?
+      why:
+        en: "That asks; a relative clause tells which one."
+        fa: "کلماتی مثل who و which در ابتدای جمله برای «پرسیدن سؤال» هستند، اما در جملات موصولی برای توصیف و مشخص کردنِ «کدام‌یک» به کار می‌روند."
+      point: null
+    - term: where for a place
+      example: That's the place where we met.
+      why:
+        en: "For a place, where."
+        fa: "برای اشاره به مکان‌ها در جملات موصولی از where استفاده می‌شود."
+      point: null
 exercises:
-- id: whose-son
-  kind: choose
-  sentence: I know a woman ___ son is a pilot.
-  options:
-  - whose
-  - who
-  - which
-  answer: whose
-  why:
-    en: 'whose: her son.'
-    fa: whose یعنی «پسرِ او».
-- id: who-called
-  kind: fix
-  wrong: The man who he called me is my uncle.
-  right:
-  - The man who called me is my uncle.
-  - The man that called me is my uncle.
-  why:
-    en: 'Who is the subject: no he.'
-    fa: who فاعل است و he لازم نیست.
-- id: friend-who
-  kind: rewrite
-  instruction:
-    en: Join them with who.
-    fa: با who وصلشان کنید.
-  from: I have a friend. She speaks five languages.
-  answers:
-  - I have a friend who speaks five languages.
-  - I have a friend that speaks five languages.
-  why:
-    en: who + verb, for a person.
-    fa: who و فعل، برای آدم.
+  - id: whose-son
+    kind: choose
+    sentence: "I know a woman ___ son is a pilot."
+    options:
+      - whose
+      - who
+      - which
+    answer: whose
+    why:
+      en: "whose: her son."
+      fa: "برای نشان دادن مالکیت (پسرِ آن زن) از whose استفاده می‌شود."
+  - id: who-called
+    kind: fix
+    wrong: "The man who he called me is my uncle."
+    right:
+      - "The man who called me is my uncle."
+      - "The man that called me is my uncle."
+    why:
+      en: "Who is the subject: no he."
+      fa: "از آنجا که who نقش فاعل را دارد، نیازی به آوردن ضمیر اضافی he نیست."
+  - id: friend-who
+    kind: rewrite
+    instruction:
+      en: "Join them with who."
+      fa: "این دو جمله را با استفاده از who به هم متصل کنید."
+    from: "I have a friend. She speaks five languages."
+    answers:
+      - "I have a friend who speaks five languages."
+      - "I have a friend that speaks five languages."
+    why:
+      en: "who + verb, for a person."
+      fa: "برای توصیف شخص: who + فعل."

@@ -48,77 +48,77 @@ level: A1
 level_from: egp
 note:
   gist:
-    en: 'Will (''ll) + a plain verb, for the future: a decision made as you speak (I''ll answer it), an offer or promise (I''ll help you), or what you think will happen (It''ll rain).'
-    fa: 'will (یا ''ll) و فعل ساده، برای آینده: تصمیمی که همین حالا می‌گیرید (I''ll answer it)، پیشنهاد یا قول (I''ll help you)، یا چیزی که فکر می‌کنید اتفاق می‌افتد (It''ll rain).'
+    en: "Will ('ll) + a plain verb, for the future: a decision made as you speak (I'll answer it), an offer or promise (I'll help you), or what you think will happen (It'll rain)."
+    fa: "استفاده از will (یا فرمِ مخففِ آن یعنی 'll) به‌علاوهٔ یک فعلِ ساده، برای صحبت دربارهٔ آینده: مثل تصمیمی که همین الآن و همزمان با صحبت کردن گرفته می‌شود (I'll answer it)، دادنِ قول یا پیشنهاد (I'll help you)، یا بیانِ پیش‌بینی و چیزی که فکر می‌کنیم رخ خواهد داد (It'll rain)."
   forms:
-  - kind: positive
-    text: The phone's ringing. I'll answer it.
-    mark: '''ll answer'
-  - kind: negative
-    text: I won't tell anyone.
-    mark: won't tell
-  - kind: question
-    text: Will you help me?
-    mark: Will you help
+    - kind: positive
+      text: The phone's ringing. I'll answer it.
+      mark: "'ll answer"
+    - kind: negative
+      text: I won't tell anyone.
+      mark: won't tell
+    - kind: question
+      text: Will you help me?
+      mark: Will you help
   mistakes:
-  - wrong: I will to help you.
-    right: I will help you.
-    why:
-      en: After will or 'll comes the plain verb, with no to.
-      fa: بعد از «will» یا «'ll» فعل ساده می‌آید، بدون «to».
-  - wrong: The phone is ringing. I answer it.
-    right: The phone is ringing. I'll answer it.
-    why:
-      en: For a decision as you speak, use I'll, not the present, though Persian says «جواب می‌دم».
-      fa: برای تصمیمِ همین لحظه «I'll» بگویید، نه زمان حال، هرچند در فارسی می‌گوییم «جواب می‌دم».
-  - wrong: If it will rain, we'll stay home.
-    right: If it rains, we'll stay home.
-    why:
-      en: 'No will after if: the present.'
-      fa: 'بعد از «if» کلمهٔ «will» نمی‌آید: زمان حال.'
+    - wrong: I will to help you.
+      right: I will help you.
+      why:
+        en: "After will or 'll comes the plain verb, with no to."
+        fa: "پس از will یا مخففِ آن ('ll)، فعلِ ساده بدون حرفِ اضافهٔ to می‌آید."
+    - wrong: The phone is ringing. I answer it.
+      right: The phone is ringing. I'll answer it.
+      why:
+        en: "For a decision as you speak, use I'll, not the present, though Persian says «جواب می‌دم»."
+        fa: "برای تصمیمی که همین لحظه و در پاسخ به شرایطِ پیش‌آمده گرفته می‌شود، باید از ساختار I'll استفاده کرد، نه زمان حال (حتی اگر در فارسی بگوییم «جواب می‌دهم»)."
+    - wrong: If it will rain, we'll stay home.
+      right: If it rains, we'll stay home.
+      why:
+        en: "No will after if: the present."
+        fa: "هرگز بلافاصله بعد از کلمهٔ if از will استفاده نکنید و در بخش شرطی از زمان حال ساده بهره ببرید."
   contrast:
-  - term: be going to + verb
-    example: I'm going to visit Ali on Sunday.
-    why:
-      en: Going to is a plan made before; I'll is often decided now.
-      fa: «going to» برنامه‌ای از قبل است؛ «I'll» اغلب همین حالا تصمیم گرفته می‌شود.
-    point: be-going-to
-  - term: If + present, … will
-    example: If it rains, we'll stay home.
-    why:
-      en: Will goes in the result, not after if.
-      fa: «will» در نتیجه می‌آید، نه بعد از if.
-    point: if-present
+    - term: be going to + verb
+      example: I'm going to visit Ali on Sunday.
+      why:
+        en: "Going to is a plan made before; I'll is often decided now."
+        fa: "ساختار be going to برای بیان برنامه‌ها و تصمیماتی است که از قبل تعیین شده‌اند، اما will (مخصوصاً I'll) اغلب برای تصمیماتِ آنیِ همان لحظه است."
+      point: be-going-to
+    - term: If + present, … will
+      example: If it rains, we'll stay home.
+      why:
+        en: "Will goes in the result, not after if."
+        fa: "کلمهٔ will در بخشِ «نتیجهٔ» جملهٔ شرطی می‌آید و نه در بخشِ دارای if."
+      point: if-present
 exercises:
-- id: phone-answer
-  kind: choose
-  sentence: The phone is ringing. ___ answer it.
-  options:
-  - I'll
-  - I
-  - I'm going to
-  answer: I'll
-  why:
-    en: 'Decided just now: I''ll.'
-    fa: 'همین حالا تصمیم گرفتید: I''ll.'
-- id: will-to-help
-  kind: fix
-  wrong: I will to help you.
-  right:
-  - I will help you.
-  - I'll help you.
-  why:
-    en: No to after will.
-    fa: بعد از will حرف to نمی‌آید.
-- id: promise-call
-  kind: rewrite
-  instruction:
-    en: Make it a promise with will.
-    fa: با will قول بدهید.
-  from: 'I promise: a phone call from me tomorrow.'
-  answers:
-  - I'll call you tomorrow.
-  - I will call you tomorrow.
-  why:
-    en: 'A promise: I''ll + verb.'
-    fa: 'قول: I''ll + فعل.'
+  - id: phone-answer
+    kind: choose
+    sentence: "The phone is ringing. ___ answer it."
+    options:
+      - I'll
+      - I
+      - I'm going to
+    answer: I'll
+    why:
+      en: "Decided just now: I'll."
+      fa: "تصمیمی که همین الآن و در لحظه گرفته شده است با I'll بیان می‌شود."
+  - id: will-to-help
+    kind: fix
+    wrong: "I will to help you."
+    right:
+      - "I will help you."
+      - "I'll help you."
+    why:
+      en: "No to after will."
+      fa: "بعد از will کلمهٔ to قرار نمی‌گیرد."
+  - id: promise-call
+    kind: rewrite
+    instruction:
+      en: "Make it a promise with will."
+      fa: "این جمله را به عنوان یک قول و تعهد با استفاده از will بیان کنید."
+    from: "I promise: a phone call from me tomorrow."
+    answers:
+      - "I'll call you tomorrow."
+      - "I will call you tomorrow."
+    why:
+      en: "A promise: I'll + verb."
+      fa: "برای دادن قول و وعده: I'll + فعل ساده."

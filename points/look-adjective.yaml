@@ -1,5 +1,5 @@
 id: look-adjective
-title: { en: "look / sound / feel + adjective", fa: "look / sound / feel + صفت: به نظر رسیدن" }
+title: { en: "look / sound / feel + adjective", fa: "افعال ربطی: به نظر رسیدن (look / sound / feel + صفت)" }
 # What a learner may search it by, in English and Persian.
 keywords: ["look", "sound", "feel", "seem", "smell", "taste", "linking verb", "به نظر رسیدن", "فعل ربطی"]
 # Where a book shows it beyond its topic: on the tenses' timeline, and
@@ -42,73 +42,73 @@ level_from: egp
 note:
   gist:
     en: 'Look, sound, feel, smell, taste or seem + an adjective, for how something seems to you: You look tired.'
-    fa: 'look، sound، feel، smell، taste یا seem و بعد صفت، برای اینکه چیزی به نظرتان چطور می‌آید: You look tired یعنی «خسته به نظر می‌رسی».'
+    fa: 'ترکیب افعال حسی (look، sound، feel، smell، taste یا seem) به‌علاوهٔ یک صفت، برای این است که چیزی چطور به نظر می‌رسد: You look tired (خسته به نظر می‌رسی).'
   forms:
-  - kind: positive
-    text: You look happy.
-    mark: look happy
-  - kind: negative
-    text: The soup doesn't smell good.
-    mark: doesn't smell good
-  - kind: question
-    text: Does it taste good?
-    mark: Does it taste good
+    - kind: positive
+      text: You look happy.
+      mark: look happy
+    - kind: negative
+      text: The soup doesn't smell good.
+      mark: doesn't smell good
+    - kind: question
+      text: Does it taste good?
+      mark: Does it taste good
   mistakes:
-  - wrong: She looks beautifully.
-    right: She looks beautiful.
-    why:
-      en: After look, sound and smell comes an adjective, not a word with -ly.
-      fa: بعد از look، sound و smell صفت می‌آید، نه کلمهٔ lyدار.
-  - wrong: You look like tired.
-    right: You look tired.
-    why:
-      en: Before an adjective, no like.
-      fa: قبل از صفت، like نمی‌آید.
-  - wrong: It sounds a good idea.
-    right: It sounds like a good idea.
-    why:
-      en: 'Before a noun, use like: sound like, look like.'
-      fa: 'قبل از اسم، like لازم است: sound like و look like.'
+    - wrong: She looks beautifully.
+      right: She looks beautiful.
+      why:
+        en: After look, sound and smell comes an adjective, not a word with -ly.
+        fa: بعد از افعالی مانند look، sound و smell حتماً صفت می‌آید، نه قیدهایی که ly دارند.
+    - wrong: You look like tired.
+      right: You look tired.
+      why:
+        en: Before an adjective, no like.
+        fa: وقتی می‌خواهید صفت بیاورید، کلمهٔ like را حذف کنید.
+    - wrong: It sounds a good idea.
+      right: It sounds like a good idea.
+      why:
+        en: 'Before a noun, use like: sound like, look like.'
+        fa: 'اما اگر می‌خواهید از یک «اسم» استفاده کنید، به کلمهٔ like نیاز دارید: sound like و look like.'
   contrast:
-  - term: look like + noun
-    example: He looks like his father.
-    why:
-      en: Look + adjective says how someone seems; look like + noun says who or what they are like.
-      fa: look و صفت می‌گوید کسی چطور به نظر می‌رسد؛ look like و اسم می‌گوید شبیه چه کسی یا چه چیزی است.
-  - term: good / well
-    example: She sings well.
-    why:
-      en: After an action verb comes well; after look or feel, good.
-      fa: بعد از فعلِ کاری مثل sing، well می‌آید؛ بعد از look یا feel، good.
-    point: good-well
+    - term: look like + noun
+      example: He looks like his father.
+      why:
+        en: Look + adjective says how someone seems; look like + noun says who or what they are like.
+        fa: ترکیب look + صفت نشان می‌دهد کسی در حال حاضر چه حس‌وحالی دارد؛ اما look like + اسم نشان می‌دهد شبیه به چه کس یا چه چیزی است.
+    - term: good / well
+      example: She sings well.
+      why:
+        en: After an action verb comes well; after look or feel, good.
+        fa: بعد از یک فعل حرکتی (مانند آواز خواندن) از قید well استفاده می‌شود؛ اما بعد از look یا feel صفتِ good قرار می‌گیرد.
+      point: good-well
 exercises:
-- id: happy-today
-  kind: choose
-  sentence: You ___ happy today.
-  options:
-  - look
-  - look like
-  - are looking like
-  answer: look
-  why:
-    en: 'Look + an adjective: look happy.'
-    fa: 'look + صفت: look happy.'
-- id: looks-beautifully
-  kind: fix
-  wrong: She looks beautifully.
-  right:
-  - She looks beautiful.
-  why:
-    en: After look comes an adjective, not -ly.
-    fa: بعد از look صفت می‌آید، نه lyدار.
-- id: seem-tired
-  kind: rewrite
-  instruction:
-    en: Say it with look.
-    fa: با look بگویید.
-  from: I think you are tired.
-  answers:
-  - You look tired.
-  why:
-    en: 'How you seem: look + adjective.'
-    fa: 'اینکه کسی چطور به نظر می‌رسد: look + صفت.'
+  - id: happy-today
+    kind: choose
+    sentence: You ___ happy today.
+    options:
+      - look
+      - look like
+      - are looking like
+    answer: look
+    why:
+      en: 'Look + an adjective: look happy.'
+      fa: 'فرمول درست: look + صفت (happy).'
+  - id: looks-beautifully
+    kind: fix
+    wrong: She looks beautifully.
+    right:
+      - She looks beautiful.
+    why:
+      en: After look comes an adjective, not -ly.
+      fa: بعد از فعل look از صفت استفاده می‌شود، نه قید (ly دار).
+  - id: seem-tired
+    kind: rewrite
+    instruction:
+      en: Say it with look.
+      fa: این جمله را با فعل look بیان کنید.
+    from: I think you are tired.
+    answers:
+      - You look tired.
+    why:
+      en: 'How you seem: look + adjective.'
+      fa: 'وقتی کسی خسته به نظر می‌رسد: look + صفت.'

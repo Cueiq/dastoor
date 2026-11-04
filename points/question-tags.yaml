@@ -54,66 +54,66 @@ level: A2
 level_from: egp
 note:
   gist:
-    en: 'A short question at the end of a sentence, to check something or ask someone to agree: It''s cold, isn''t it? You like tea, don''t you?'
-    fa: 'سؤال کوتاهی در آخر جمله، برای اطمینان یا اینکه طرف موافقت کند: It''s cold, isn''t it? مثل «سرده، نه؟» در فارسی.'
+    en: "A short question at the end of a sentence, to check something or ask someone to agree: It's cold, isn't it? You like tea, don't you?"
+    fa: "استفاده از یک سؤالِ کوتاه در انتهای جمله برای کسب اطمینان یا گرفتن تأیید از طرف مقابل (معادل «مگه نه؟» یا «نه؟» در زبان فارسی): It's cold, isn't it? (هوا سرد است، مگه نه؟)."
   forms:
-  - kind: positive
-    text: You like tea, don't you?
-    mark: don't you
-  - kind: negative
-    text: It isn't cold, is it?
-    mark: is it
+    - kind: positive
+      text: You like tea, don't you?
+      mark: don't you
+    - kind: negative
+      text: It isn't cold, is it?
+      mark: is it
   mistakes:
-  - wrong: You like tea, isn't it?
-    right: You like tea, don't you?
-    why:
-      en: The tag copies the sentence's verb and person; isn't it is not a tag for everything.
-      fa: سؤال کوتاه فعل و شخصِ جمله را تکرار می‌کند؛ «isn't it» برای همه‌چیز نیست، هرچند «نه؟» فارسی برای همه است.
-  - wrong: She lives here, don't she?
-    right: She lives here, doesn't she?
-    why:
-      en: With he, she and it, the tag uses doesn't.
-      fa: با he، she و it سؤال کوتاه «doesn't» می‌گیرد.
-  - wrong: It's late, is it?
-    right: It's late, isn't it?
-    why:
-      en: After a positive sentence, the tag is negative.
-      fa: بعد از جملهٔ مثبت، سؤال کوتاه منفی است.
+    - wrong: You like tea, isn't it?
+      right: You like tea, don't you?
+      why:
+        en: "The tag copies the sentence's verb and person; isn't it is not a tag for everything."
+        fa: "سؤالِ کوتاه آخرِ جمله باید با فعل و ضمیرِ همان جمله هماهنگ باشد؛ بنابراین برخلاف زبان فارسی که از یک کلمهٔ ثابت («مگه نه؟») استفاده می‌کنیم، در انگلیسی نمی‌توانیم همه‌جا بگوییم isn't it."
+    - wrong: She lives here, don't she?
+      right: She lives here, doesn't she?
+      why:
+        en: "With he, she and it, the tag uses doesn't."
+        fa: "برای ضمایر سوم‌شخص مفرد (he، she، it) در زمان حال ساده، بخشِ سؤال کوتاه باید با doesn't ساخته شود، نه don't."
+    - wrong: It's late, is it?
+      right: It's late, isn't it?
+      why:
+        en: "After a positive sentence, the tag is negative."
+        fa: "قانون کلیدی: اگر جملهٔ اصلی مثبت باشد، سؤال کوتاه (تگ) باید به شکل منفی بیاید."
   contrast:
-  - term: so + auxiliary + subject
-    example: I like tea. So do I.
-    why:
-      en: So do I agrees; a tag asks.
-      fa: «so do I» موافقت است؛ سؤال کوتاه می‌پرسد.
-    point: so-do-i
+    - term: so + auxiliary + subject
+      example: I like tea. So do I.
+      why:
+        en: "So do I agrees; a tag asks."
+        fa: "عبارت So do I برای ابراز موافقت و هم‌نظری است، اما سؤال کوتاه (Tag question) برای پرسیدن و گرفتن تأیید به کار می‌رود."
+      point: so-do-i
 exercises:
-- id: like-tea
-  kind: choose
-  sentence: You like tea, ___?
-  options:
-  - don't you
-  - isn't it
-  - do you
-  answer: don't you
-  why:
-    en: Like takes do; positive sentence, negative tag.
-    fa: like با do می‌آید؛ جملهٔ مثبت، سؤال منفی.
-- id: lives-dont-she
-  kind: fix
-  wrong: She lives here, don't she?
-  right:
-  - She lives here, doesn't she?
-  why:
-    en: She takes doesn't.
-    fa: she با doesn't می‌آید.
-- id: isnt-cold
-  kind: choose
-  sentence: It isn't cold, ___?
-  options:
-  - is it
-  - isn't it
-  - doesn't it
-  answer: is it
-  why:
-    en: Negative sentence, positive tag.
-    fa: جملهٔ منفی، سؤال مثبت.
+  - id: like-tea
+    kind: choose
+    sentence: "You like tea, ___?"
+    options:
+      - don't you
+      - isn't it
+      - do you
+    answer: don't you
+    why:
+      en: "Like takes do; positive sentence, negative tag."
+      fa: "فعل like با do سؤالی می‌شود؛ از آنجا که جمله مثبت است، تگِ پایانی باید منفی باشد (don't you)."
+  - id: lives-dont-she
+    kind: fix
+    wrong: "She lives here, don't she?"
+    right:
+      - "She lives here, doesn't she?"
+    why:
+      en: "She takes doesn't."
+      fa: "ضمیر she در زمان حال ساده با doesn't همراه می‌شود."
+  - id: isnt-cold
+    kind: choose
+    sentence: "It isn't cold, ___?"
+    options:
+      - is it
+      - isn't it
+      - doesn't it
+    answer: is it
+    why:
+      en: "Negative sentence, positive tag."
+      fa: "چون جملهٔ اصلی منفی است (isn't)، سؤال کوتاه پایانی باید مثبت باشد (is it)."

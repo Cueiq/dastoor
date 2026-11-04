@@ -1,5 +1,5 @@
 id: might
-title: { en: "might + verb", fa: "might / may: شاید" }
+title: { en: "might + verb", fa: "might / may (شاید / احتمال)" }
 # What a learner may search it by, in English and Persian.
 keywords: ["might", "may", "possibility", "maybe", "شاید", "احتمال", "ممکن است"]
 # Where a book shows it beyond its topic: on the tenses' timeline, and
@@ -45,72 +45,72 @@ level_from: egp
 note:
   gist:
     en: 'Might (or may) + a plain verb: something is possible, but not sure: It might rain later.'
-    fa: 'might (یا may) و فعل ساده: چیزی ممکن است، ولی مطمئن نیست: It might rain later یعنی «شاید بعداً باران بیاید».'
+    fa: 'استفاده از might (یا may) به‌علاوهٔ فعل ساده، نشان‌دهندهٔ احتمال رخ دادن چیزی است که از آن مطمئن نیستید: It might rain later (شاید بعداً باران ببارد).'
   forms:
-  - kind: positive
-    text: It might rain later.
-    mark: might rain
-  - kind: negative
-    text: He might not come.
-    mark: might not come
+    - kind: positive
+      text: It might rain later.
+      mark: might rain
+    - kind: negative
+      text: He might not come.
+      mark: might not come
   mistakes:
-  - wrong: He might to come late.
-    right: He might come late.
-    why:
-      en: After might comes the plain verb, with no to.
-      fa: بعد از «might» فعل ساده می‌آید، بدون «to».
-  - wrong: She might comes today.
-    right: She might come today.
-    why:
-      en: After might, the verb has no -s.
-      fa: بعد از «might» فعل s نمی‌گیرد.
-  - wrong: Maybe he might come.
-    right: He might come.
-    why:
-      en: Might already means maybe; don't say both.
-      fa: «might» خودش یعنی «شاید»؛ هر دو را با هم نگویید.
+    - wrong: He might to come late.
+      right: He might come late.
+      why:
+        en: After might comes the plain verb, with no to.
+        fa: کلمهٔ to را بعد از might اضافه نکنید؛ بعد از آن مستقیماً فعل ساده می‌آید.
+    - wrong: She might comes today.
+      right: She might come today.
+      why:
+        en: After might, the verb has no -s.
+        fa: فعل اصلیِ بعد از might، نیازی به s (سوم‌شخص) ندارد.
+    - wrong: Maybe he might come.
+      right: He might come.
+      why:
+        en: Might already means maybe; don't say both.
+        fa: کلمهٔ might در دلِ خودش معنیِ Maybe (شاید) را دارد؛ بنابراین نیازی نیست هر دو را در یک جمله بیاورید.
   contrast:
-  - term: must be (a guess)
-    example: The lights are on. She must be home.
-    why:
-      en: Must is almost sure; might is only maybe.
-      fa: «must» یعنی تقریباً مطمئنید؛ «might» یعنی شاید.
-    point: must-guess
-  - term: will + verb
-    example: It will rain tomorrow.
-    why:
-      en: Will is what you expect; might is only possible.
-      fa: «will» چیزی است که انتظارش را دارید؛ «might» فقط ممکن است.
-    point: will
+    - term: must be (a guess)
+      example: The lights are on. She must be home.
+      why:
+        en: Must is almost sure; might is only maybe.
+        fa: حدس زدن با must نشان‌دهندهٔ این است که شما تقریباً از آن اتفاق مطمئن هستید؛ اما might فقط یک احتمال ضعیف است.
+      point: must-guess
+    - term: will + verb
+      example: It will rain tomorrow.
+      why:
+        en: Will is what you expect; might is only possible.
+        fa: استفاده از will زمانی است که شما انتظار رخ دادن آن اتفاق را دارید؛ اما might نشان می‌دهد که فقط ممکن است رخ بدهد.
+      point: will
 exercises:
-- id: umbrella
-  kind: choose
-  sentence: Take an umbrella. It ___ rain later.
-  options:
-  - might
-  - might to
-  - mights
-  answer: might
-  why:
-    en: 'Possible, not sure: might + verb.'
-    fa: 'ممکن، ولی نامطمئن: might + فعل.'
-- id: might-to-come
-  kind: fix
-  wrong: He might to come late.
-  right:
-  - He might come late.
-  why:
-    en: No to after might.
-    fa: بعد از might حرف to نمی‌آید.
-- id: maybe-home
-  kind: rewrite
-  instruction:
-    en: Say it with might.
-    fa: با might بگویید.
-  from: Maybe Anna is at home.
-  answers:
-  - Anna might be at home.
-  - Anna may be at home.
-  why:
-    en: Maybe → might + be.
-    fa: maybe ← might + be.
+  - id: umbrella
+    kind: choose
+    sentence: Take an umbrella. It ___ rain later.
+    options:
+      - might
+      - might to
+      - mights
+    answer: might
+    why:
+      en: 'Possible, not sure: might + verb.'
+      fa: 'وقتی وقوع چیزی ممکن است، اما قطعی نیست: might + فعل ساده.'
+  - id: might-to-come
+    kind: fix
+    wrong: He might to come late.
+    right:
+      - He might come late.
+    why:
+      en: No to after might.
+      fa: نیازی به حرف to بعد از might نیست.
+  - id: maybe-home
+    kind: rewrite
+    instruction:
+      en: Say it with might.
+      fa: با فعل might بگویید.
+    from: Maybe Anna is at home.
+    answers:
+      - Anna might be at home.
+      - Anna may be at home.
+    why:
+      en: 'Maybe → might + be.'
+      fa: "کلمهٔ Maybe حذف می‌شود و به‌جای آن might + be قرار می‌گیرد."

@@ -1,5 +1,5 @@
 id: too-adjective
-title: { en: "too + adjective", fa: "too + صفت: زیادی" }
+title: { en: "too + adjective", fa: "too + صفت (زیادی / بیش از حد)" }
 # What a learner may search it by, in English and Persian.
 keywords: ["too", "زیادی", "بیش از حد"]
 # Where a book shows it beyond its topic: on the tenses' timeline, and
@@ -42,76 +42,76 @@ level: A2
 level_from: guides
 note:
   gist:
-    en: 'Too + an adjective: more than is good or possible, a problem: It''s too expensive for me.'
-    fa: 'too و صفت: بیشتر از آنچه خوب یا ممکن است، یعنی مشکل: It''s too expensive for me یعنی «برای من زیادی گران است».'
+    en: "Too + an adjective: more than is good or possible, a problem: It's too expensive for me."
+    fa: "استفاده از too پیش از صفت، برای نشان دادن اینکه میزانِ آن ویژگی «بیشتر از حدِ خوب، منطقی یا ممکن است» و معمولاً تبدیل به یک مشکل یا مانع می‌شود (معادل «زیادی» یا «بیش از حد» در فارسی): It's too expensive for me (برای من زیادی گران است)."
   forms:
-  - kind: positive
-    text: This tea is too hot.
-    mark: too hot
-  - kind: positive
-    text: It's too expensive for me.
-    mark: too expensive
-  - kind: positive
-    text: He's too young to drive.
-    mark: too young to
+    - kind: positive
+      text: This tea is too hot.
+      mark: too hot
+    - kind: positive
+      text: It's too expensive for me.
+      mark: too expensive
+    - kind: positive
+      text: He's too young to drive.
+      mark: too young to
   mistakes:
-  - wrong: This cake is too delicious!
-    right: This cake is very delicious!
-    why:
-      en: Too shows a problem; to say something is nice, use very.
-      fa: «too» مشکل را نشان می‌دهد؛ برای تعریف «very» بگویید، هرچند در فارسی «خیلی» برای هر دو است.
-  - wrong: The shoes are too much expensive.
-    right: The shoes are too expensive.
-    why:
-      en: Before an adjective, too alone, not too much.
-      fa: قبل از صفت فقط «too»، نه «too much».
-  - wrong: She is too young for drive.
-    right: She is too young to drive.
-    why:
-      en: Too + adjective + to + verb.
-      fa: too + صفت + to + فعل.
+    - wrong: This cake is too delicious!
+      right: This cake is very delicious!
+      why:
+        en: "Too shows a problem; to say something is nice, use very."
+        fa: "کلمهٔ too بارِ منفی دارد و نشان‌دهندهٔ دردسر یا مشکل است؛ برای تعریف و تمجید از چیزی (مثل خوشمزگی)، از very استفاده کنید، نه too."
+    - wrong: The shoes are too much expensive.
+      right: The shoes are too expensive.
+      why:
+        en: "Before an adjective, too alone, not too much."
+        fa: "پیش از صفات، تنها از too استفاده می‌شود و آوردن too much پیش از صفت اشتباه است."
+    - wrong: She is too young for drive.
+      right: She is too young to drive.
+      why:
+        en: "Too + adjective + to + verb."
+        fa: "ساختار استاندارد برای بیانِ مانع: too + صفت + to + فعل ساده."
   contrast:
-  - term: very + adjective
-    example: This tea is very hot, but I like it.
-    why:
-      en: Very only makes it stronger; too says it's a problem.
-      fa: «very» فقط شدیدترش می‌کند؛ «too» می‌گوید مشکل است.
-  - term: too many / too much
-    example: There are too many eggs.
-    why:
-      en: 'Before a noun: too many or too much.'
-      fa: 'قبل از اسم: too many یا too much.'
-    point: too-many-much
+    - term: very + adjective
+      example: This tea is very hot, but I like it.
+      why:
+        en: "Very only makes it stronger; too says it's a problem."
+        fa: "کلمهٔ very فقط صفت را تقویت می‌کند و لزوماً به معنی مشکل نیست؛ اما too نشان می‌دهد که این میزانِ زیاد، دردسرساز یا غیرقابل‌قبول است."
+    - term: too many / too much
+      example: There are too many eggs.
+      why:
+        en: "Before a noun: too many or too much."
+        fa: "برای اسم‌ها (به‌جای صفت)، از عبارت‌های too many (برای قابل‌شمارش) یا too much (برای غیرقابل‌شمارش) استفاده می‌شود."
+      point: too-many-much
 exercises:
-- id: soup-hot
-  kind: choose
-  sentence: The soup is ___ hot to eat.
-  options:
-  - too
-  - too much
-  - very
-  answer: too
-  why:
-    en: 'A problem: too + adjective + to.'
-    fa: 'مشکل: too + صفت + to.'
-- id: too-much-expensive
-  kind: fix
-  wrong: The shoes are too much expensive.
-  right:
-  - The shoes are too expensive.
-  why:
-    en: Too alone before an adjective.
-    fa: قبل از صفت فقط too.
-- id: room-small
-  kind: rewrite
-  instruction:
-    en: Say it in one sentence with too.
-    fa: در یک جمله با too بگویید.
-  from: This room is very small. We can't sleep here.
-  answers:
-  - This room is too small to sleep in.
-  - This room is too small for us to sleep in.
-  - This room is too small.
-  why:
-    en: 'Too + adjective: the problem.'
-    fa: 'too + صفت: مشکل.'
+  - id: soup-hot
+    kind: choose
+    sentence: "The soup is ___ hot to eat."
+    options:
+      - too
+      - too much
+      - very
+    answer: too
+    why:
+      en: "A problem: too + adjective + to."
+      fa: "برای نشان دادن یک مانع یا مشکل به همراه to: استفاده از too."
+  - id: too-much-expensive
+    kind: fix
+    wrong: "The shoes are too much expensive."
+    right:
+      - "The shoes are too expensive."
+    why:
+      en: "Too alone before an adjective."
+      fa: "پیش از صفت، فقط too به تنهایی به کار می‌رود."
+  - id: room-small
+    kind: rewrite
+    instruction:
+      en: "Say it in one sentence with too."
+      fa: "این مفاهیم را در قالب یک جمله و با استفاده از too بیان کنید."
+    from: "This room is very small. We can't sleep here."
+    answers:
+      - "This room is too small to sleep in."
+      - "This room is too small for us to sleep in."
+      - "This room is too small."
+    why:
+      en: "Too + adjective: the problem."
+      fa: "بیان مانع و مشکل با استفاده از ساختار too + صفت."

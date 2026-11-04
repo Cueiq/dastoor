@@ -1,5 +1,5 @@
 id: present-perfect
-title: { en: "have / has + past participle", fa: "حال کامل (have + اسم مفعول)" }
+title: { en: "have / has + past participle", fa: "حال کامل / ماضی نقلی (have + اسم مفعول)" }
 # What a learner may search it by, in English and Persian.
 keywords: ["present perfect", "have done", "ever", "never", "already", "yet", "just", "حال کامل", "ماضی نقلی", "تجربه"]
 # Where a book shows it beyond its topic: on the tenses' timeline, and
@@ -66,74 +66,74 @@ level: B1
 level_from: egp
 note:
   gist:
-    en: 'Have or has + a past participle, for something done before now whose time isn''t said: what you have done in your life (Have you ever been to London?), or what has happened with a result now (I''ve lost my keys).'
-    fa: 'have یا has و بعد اسم مفعول، برای کاری که پیش از حالا انجام شده و زمانش گفته نمی‌شود: تجربه‌های زندگی (Have you ever been to London?) یا اتفاقی که نتیجه‌اش الان پیداست (I''ve lost my keys).'
+    en: "Have or has + a past participle, for something done before now whose time isn't said: what you have done in your life (Have you ever been to London?), or what has happened with a result now (I've lost my keys)."
+    fa: "ترکیب have یا has به‌علاوهٔ اسم مفعول (قسمت سوم فعل)، برای کاری است که پیش از زمان حال انجام شده اما زمان دقیقِ وقوع آن گفته نمی‌شود: مثل بیان تجربه‌های زندگی (Have you ever been to London?) یا اتفاقی که در گذشته افتاده اما اثر یا نتیجه‌اش هم‌اکنون باقی است (I've lost my keys)."
   forms:
-  - kind: positive
-    text: I have seen this film.
-    mark: have seen
-  - kind: negative
-    text: She hasn't finished her homework.
-    mark: hasn't finished
-  - kind: question
-    text: Have you ever been to London?
-    mark: Have you ever been
+    - kind: positive
+      text: I have seen this film.
+      mark: have seen
+    - kind: negative
+      text: She hasn't finished her homework.
+      mark: hasn't finished
+    - kind: question
+      text: Have you ever been to London?
+      mark: Have you ever been
   mistakes:
-  - wrong: I have seen him yesterday.
-    right: I saw him yesterday.
-    why:
-      en: With a finished time like yesterday, use the past simple.
-      fa: با زمانی تمام‌شده مثل «yesterday» گذشتهٔ ساده بیاورید؛ در فارسی «دیروز دیدمش» است، نه «دیده‌ام».
-  - wrong: Have you ever went to Rome?
-    right: Have you ever been to Rome?
-    why:
-      en: After have comes the past participle (been, seen), not the past (went, saw).
-      fa: بعد از «have» اسم مفعول (been، seen) می‌آید، نه گذشته (went، saw).
-  - wrong: She have been to Paris.
-    right: She has been to Paris.
-    why:
-      en: He, she and it take has.
-      fa: he، she و it با «has» می‌آیند.
+    - wrong: I have seen him yesterday.
+      right: I saw him yesterday.
+      why:
+        en: "With a finished time like yesterday, use the past simple."
+        fa: "وقتی زمانِ مشخص و تمام‌شده‌ای مثل yesterday (دیروز) در جمله ذکر می‌شود، نباید از حال کامل استفاده کرد؛ بلکه باید سراغ گذشتهٔ ساده رفت."
+    - wrong: Have you ever went to Rome?
+      right: Have you ever been to Rome?
+      why:
+        en: "After have comes the past participle (been, seen), not the past (went, saw)."
+        fa: "بعد از have یا has حتماً باید از اسم مفعول (قسمت سوم فعل مثل been یا seen) استفاده کنید، نه شکلِ گذشتهٔ ساده (مثل went یا saw)."
+    - wrong: She have been to Paris.
+      right: She has been to Paris.
+      why:
+        en: "He, she and it take has."
+        fa: "ضمایر سوم‌شخص مفرد (he، she، it) با has همراه می‌شوند، نه have."
   contrast:
-  - term: past simple
-    example: I went to London last year.
-    why:
-      en: The past simple says when; the present perfect doesn't.
-      fa: گذشتهٔ ساده می‌گوید کی؛ حال کامل زمان را نمی‌گوید.
-  - term: have been + -ing
-    example: I've been watching this show all week.
-    why:
-      en: That one is an activity still going on.
-      fa: آن یکی کاری است که هنوز ادامه دارد.
-    point: present-perfect-continuous
+    - term: past simple
+      example: I went to London last year.
+      why:
+        en: "The past simple says when; the present perfect doesn't."
+        fa: "گذشتهٔ ساده زمانِ دقیقِ انجام کار را بیان می‌کند (چه زمانی؟)، اما حال کامل کاری با زمانِ دقیق ندارد و روی تجربه یا نتیجه تمرکز می‌کند."
+    - term: have been + -ing
+      example: I've been watching this show all week.
+      why:
+        en: "That one is an activity still going on."
+        fa: "ساختار حال کامل استمراری (have been + ing) برای کاری است که از گذشته شروع شده و هنوز هم در حال ادامه داشتن است."
+      point: present-perfect-continuous
 exercises:
-- id: never-london
-  kind: choose
-  sentence: I ___ never been to London.
-  options:
-  - have
-  - has
-  - am
-  answer: have
-  why:
-    en: I + have + past participle.
-    fa: I + have + اسم مفعول.
-- id: seen-yesterday
-  kind: fix
-  wrong: I have seen him yesterday.
-  right:
-  - I saw him yesterday.
-  why:
-    en: 'Yesterday is a finished time: past simple.'
-    fa: 'yesterday زمانی تمام‌شده است: گذشتهٔ ساده.'
-- id: ever-ride
-  kind: rewrite
-  instruction:
-    en: Ask with Have you ever…?
-    fa: با Have you ever…? بپرسید.
-  from: Did you ride a horse at any time in your life?
-  answers:
-  - Have you ever ridden a horse?
-  why:
-    en: 'At any time in your life: have + ever + past participle.'
-    fa: 'در هر زمانی از زندگی: have + ever + اسم مفعول.'
+  - id: never-london
+    kind: choose
+    sentence: "I ___ never been to London."
+    options:
+      - have
+      - has
+      - am
+    answer: have
+    why:
+      en: "I + have + past participle."
+      fa: "ضمیر I با فعل کمکی have و سپس اسم مفعول می‌آید."
+  - id: seen-yesterday
+    kind: fix
+    wrong: I have seen him yesterday.
+    right:
+      - I saw him yesterday.
+    why:
+      en: "Yesterday is a finished time: past simple."
+      fa: "کلمهٔ yesterday نشان‌دهندهٔ زمانِ تمام‌شده در گذشته است و نیاز به گذشتهٔ ساده دارد."
+  - id: ever-ride
+    kind: rewrite
+    instruction:
+      en: "Ask with Have you ever…?"
+      fa: "این جمله را به صورت یک پرسش دربارهٔ تجربه با Have you ever…? بنویسید."
+    from: "Did you ride a horse at any time in your life?"
+    answers:
+      - "Have you ever ridden a horse?"
+    why:
+      en: "At any time in your life: have + ever + past participle."
+      fa: "برای پرسیدن دربارهٔ تجربیات زندگی: Have you ever + اسم مفعول."
