@@ -57,6 +57,12 @@ exclude:
       - { LOWER: { IN: [do, does, have, has] } }
       - { LOWER: "n't", OP: "?" }
       - { TEXT: "?" }
+  # Where you live? What you want?: after a question word do stays, as the
+  # note's mistakes say. Where you going? leaves out are, and is kept.
+  - tokens:
+      - { TAG: { IN: [WRB, WP] } }
+      - { POS: { IN: [DET, PRON, NOUN, PROPN, ADJ] }, OP: "+" }
+      - { TAG: { IN: [VB, VBP] }, DEP: ROOT }
 tests:
   words: [you, ya, anyone, anybody, someone, somebody, everyone, everybody]
   match:
@@ -85,6 +91,10 @@ tests:
     - "We're late, don't you think?"
     - "I love this song. Don't you?"
     - "How dare you?"
+    - "Where you live?"
+    - "What you want?"
+    - "Why you ask?"
+    - "Where your sister live?"
 
 # The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
 # English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own

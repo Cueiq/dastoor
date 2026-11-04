@@ -29,6 +29,14 @@ match:
       word: { LOWER: { IN: *states } }
       # By its form: a helper getting keeps getting as its lemma.
       has: [ { LOWER: { IN: [get, gets, got, gotten, getting] }, DEP: { IN: [aux, auxpass] } } ]
+exclude:
+  # Get lost!: go away, said to someone, nobody becomes lost. Don't get
+  # lost and to get lost keep a helper, and mean it.
+  # The parse hangs get on lost, and a helper on either.
+  - tree:
+      word: { LOWER: lost }
+      has: [ { word: { LOWER: get }, lacks: [ { DEP: { IN: [aux, neg] } } ] } ]
+      lacks: [ { DEP: { IN: [nsubj, nsubjpass, aux, neg] } } ]
 tests:
   words: [get, gets, got, getting, gotten, become, becomes, became]
   match:
@@ -44,7 +52,11 @@ tests:
     - "They got married last year."
     - "Things got worse."
     - "We're thinking about getting married."
+    - "Don't get lost."
+    - "Try not to get lost."
   no_match:
+    - "Get lost!"
+    - "I said get lost."
     - "He got fired."
     - "I got a car."
     - "Get out!"
