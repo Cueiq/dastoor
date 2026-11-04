@@ -32,19 +32,21 @@ class Place(unittest.TestCase):
                 points.check_place(place, "x.yaml")
 
 
-class GetApart(unittest.TestCase):
-    """get-adjective takes the participles get-passive leaves out (got tired,
-    got married): the two lists are kept by hand, so check neither point
-    finds the other's sentences."""
+class KeptApart(unittest.TestCase):
+    """Points that split one form by rules kept by hand: get-adjective takes
+    the participles get-passive leaves out (got tired, got married), and
+    would-have-past-participle every would have third-conditional leaves
+    out. Check neither of a pair finds the other's sentences."""
 
     @unittest.skipUnless((points.POINTS / "get-passive.yaml").is_file(), "no get-passive yet")
     def test_neither_finds_the_others_sentences(self):
         nlp = model.load("en_core_web_sm")
-        loaded = {point.id: point for point in points.load(nlp, only={"get-adjective", "get-passive"})}
-        for one, other in (("get-adjective", "get-passive"), ("get-passive", "get-adjective")):
-            for sentence in loaded[one].tests["match"]:
-                with self.subTest(sentence=sentence, found_by=other):
-                    self.assertEqual(loaded[other].find(nlp(sentence)), [])
+        for pair in (("get-adjective", "get-passive"), ("would-have-past-participle", "third-conditional")):
+            loaded = {point.id: point for point in points.load(nlp, only=set(pair))}
+            for one, other in (pair, pair[::-1]):
+                for sentence in loaded[one].tests["match"]:
+                    with self.subTest(sentence=sentence, found_by=other):
+                        self.assertEqual(loaded[other].find(nlp(sentence)), [])
 
 
 class Heard(unittest.TestCase):

@@ -21,11 +21,16 @@ match:
         - { DEP: aux, LOWER: { IN: [would, "'d", could, might] } }
         - { DEP: aux, LOWER: { IN: [have, "'ve", ve] } }
       lacks:
-        # if + had + past participle beside it: the third conditional.
-        - word: { DEP: advcl }
+        # The third conditional, as third-conditional finds it: if + had +
+        # participle beside it (If I'd known), or had before its subject
+        # (Had I known). In If you'd listen, 'd is would: this point's.
+        - word: { DEP: advcl, TAG: VBN }
           has:
             - { DEP: mark, LOWER: if }
             - { DEP: aux, LOWER: { IN: [had, "'d"] } }
+        - word: { DEP: advcl, TAG: VBN }
+          has: [ { DEP: aux, LOWER: had }, { DEP: nsubj } ]
+          lacks: [ { DEP: mark }, { TAG: WRB } ]
 exclude:
   # 'd better have + past participle is had better: You'd better have left.
   - tokens: [ { LOWER: { IN: ["'d", had] } }, { LOWER: better } ]
@@ -40,8 +45,10 @@ tests:
     - "He'd have loved this place."
     - "I would have called, but my phone died."
     - "She might have been hurt."
+    - "If you'd listen, you would have understood."
   no_match:
     - "If I'd known, I would have come."
+    - "Had I known, I would have come."
     - "We could have won if we had tried harder."
     - "I must have left it."
     - "I would like to have one."
