@@ -30,6 +30,8 @@ class Point:
     exclude: list[dict] = field(default_factory=list)
     # The rule can't settle what the words mean: its matches are candidates.
     needs_meaning: bool = False
+    # The question asked to an LLM to resolve a candidate's meaning.
+    check_question: str | None = None
     # Whether `tag` marks it: a rule right too rarely misleads.
     tag: bool = True
     # Other ids the guides gave the same point, for scoring against them.
@@ -103,6 +105,7 @@ def load(nlp, folder: Path = POINTS, only: set[str] | None = None) -> list[Point
             match=data["match"],
             exclude=data.get("exclude", []),
             needs_meaning=bool(data.get("needs_meaning", False)),
+            check_question=data.get("check_question"),
             tag=bool(data.get("tag", True)),
             aliases=list(data.get("aliases", [])),
             keywords=[str(word) for word in data.get("keywords", [])],

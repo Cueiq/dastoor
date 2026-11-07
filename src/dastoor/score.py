@@ -1,6 +1,6 @@
 """The spike's scoring (docs/spike-plan.md, "Scoring").
 
-Against the courses' guides: a grammar entry's anchors and `heard` lines are
+Against the guides: a grammar entry's anchors and `heard` lines are
 the lines of its episode that use its point, so in an episode that teaches
 a point the guide says which lines use it. A rule's recall is the share of
 those it finds. Its other matches there are listed, to be called right or
@@ -98,9 +98,11 @@ def run(args) -> int:
         for piece in pieces_of[path]:
             doc = docs[piece.text]
             for each in point.find(doc):
-                span = doc[each.start : each.end]
+                span = doc[each.start: each.end]
+                match_text = span.text
+
                 for cue in piece.cues(span.start_char, span.end_char):
-                    by_cue[cue].append(span.text)
+                    by_cue[cue].append(match_text)
         return by_cue
 
     report = [
@@ -168,10 +170,10 @@ def run(args) -> int:
             writer = csv.writer(file, delimiter="\t")
             writer.writerow(["verdict", "kind", "where", "cue", "found", "line"])
             for kind, rows in (
-                ("guide-miss", misses),
-                ("guide-unmarked", extra),
-                ("matched", matched[:SAMPLE]),
-                ("not-matched", unmatched[:SAMPLE]),
+                    ("guide-miss", misses),
+                    ("guide-unmarked", extra),
+                    ("matched", matched[:SAMPLE]),
+                    ("not-matched", unmatched[:SAMPLE]),
             ):
                 for where, cue, words, said in rows:
                     writer.writerow(["", kind, where, cue, words, said])
