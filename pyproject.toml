@@ -3,7 +3,7 @@ name = "dastoor"
 version = "0.1.0"
 description = "Finds the grammar points an English sentence uses, by tested rules, and gives each one's note"
 readme = "README.md"
-license = "MIT"
+license = "MIT AND CC-BY-SA-4.0"
 requires-python = ">=3.11"
 dependencies = [
     "pyyaml>=6",
@@ -48,3 +48,7 @@ torch = [{ index = "pytorch-cpu", marker = "sys_platform == 'linux'" }]
 name = "pytorch-cpu"
 url = "https://download.pytorch.org/whl/cpu"
 explicit = true
+
+[tool.hatch.build.targets.wheel.force-include]
+"points" = "dastoor/points"
+"data" = "dastoor/data"
