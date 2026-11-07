@@ -48,3 +48,6 @@ torch = [{ index = "pytorch-cpu", marker = "sys_platform == 'linux'" }]
 name = "pytorch-cpu"
 url = "https://download.pytorch.org/whl/cpu"
 explicit = true
+
+[tool.hatch.build.targets.wheel.force-include]
+"points" = "dastoor/points"

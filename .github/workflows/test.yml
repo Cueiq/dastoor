@@ -25,6 +25,13 @@ jobs:
       - run: uv run --locked dastoor test
       - run: uv run --locked dastoor export > /dev/null
       - run: uv run --locked python -m unittest discover -s tests
+      - name: Test packaging and runtime discovery
+        run: |
+          uv build --wheel
+          uv venv test_venv
+          source test_venv/bin/activate
+          uv pip install dist/*.whl "en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl"
+          dastoor test
 
   transformer:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
@@ -37,3 +44,4 @@ jobs:
           enable-cache: true
       - run: uv sync --locked --all-groups
       - run: uv run --locked --all-groups dastoor --model en_core_web_trf test
+

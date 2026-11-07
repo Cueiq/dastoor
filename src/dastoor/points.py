@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-import sys
+import importlib.resources
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -10,9 +10,11 @@ import yaml
 
 from .rules import Found, Rules
 
-_dev_path = Path(__file__).resolve().parents[2] / "points"
-_installed_path = Path(sys.prefix) / "dastoor-points"
-POINTS = _dev_path if _dev_path.exists() else _installed_path
+# During development, points are at the repo root.
+# When installed via the wheel, they are inside the dastoor package.
+_pkg = importlib.resources.files("dastoor").joinpath("points")
+_dev = Path(__file__).resolve().parents[2] / "points"
+POINTS = _pkg if _pkg.is_dir() else _dev
 
 # Where a book shows a point beyond its topic (`place:` in its file): on the
 # tenses' timeline, by the kind of action and when it is (an action lasting
@@ -87,11 +89,14 @@ def check_place(place, where: str) -> None:
         raise ValueError(f"{where}: goal {goal!r} isn't one of {GOALS}")
 
 
-def load(nlp, folder: Path = POINTS, only: set[str] | None = None) -> list[Point]:
+def load(nlp, folder=POINTS, only: set[str] | None = None) -> list[Point]:
     points = []
-    for path in sorted(folder.glob("*.yaml")):
+    # Traversable objects from importlib don't reliably support .glob()
+    yaml_files = [p for p in folder.iterdir() if p.name.endswith(".yaml")]
+    for path in sorted(yaml_files, key=lambda x: x.name):
         data = yaml.safe_load(path.read_text())
-        if data["id"] != path.stem:
+        stem = path.name[:-5]  # Safer than path.stem for Traversable
+        if data["id"] != stem:
             raise ValueError(f"{path.name}: its id is {data['id']}")
         _no_booleans(data.get("match"), f"{path.name}: match")
         _no_booleans(data.get("exclude"), f"{path.name}: exclude")
