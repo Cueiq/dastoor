@@ -10,7 +10,9 @@ from pathlib import Path
 from .score import english
 from .subtitles import pieces, read
 
-HEARD = Path(__file__).resolve().parents[2] / "data" / "heard.json"
+_here = Path(__file__).resolve().parent
+# Installed: shipped in the package (force-include); in the repo: its data/.
+HEARD = _here / "data" / "heard.json" if (_here / "data").is_dir() else _here.parents[1] / "data" / "heard.json"
 
 
 def subtitle_files(paths: list[Path]) -> list[Path]:
