@@ -44,21 +44,3 @@ class FakeChecker(CandidateChecker):
     def check(self, point_id: str, sentence: str, words: str, question: str) -> str:
         key = f"{point_id}|{sentence}"
         return self.answers.get(key, "unclear (fake check)")
-
-
-class LLMChecker(CandidateChecker):
-    """A real language model checker."""
-
-    def __init__(self, model_name: str = "gpt-4o-mini"):
-        self.model_name = model_name
-        # TODO: Initialize LLM client (e.g., OpenAI, Ollama) here.
-
-    def check(self, point_id: str, sentence: str, words: str, question: str) -> str:
-        prompt = (
-            f"Sentence: \"{sentence}\"\n"
-            f"Phrase: \"{words}\"\n"
-            f"Question: {question}\n"
-            "Answer briefly in 1 to 3 words."
-        )
-        # TODO: Call API and return the response.
-        return f"api_response_for_{point_id}"

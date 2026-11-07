@@ -22,7 +22,7 @@ MODEL = "en_core_web_sm"
 
 def found_in(point, nlp, sentence: str) -> list[str]:
     doc = nlp(sentence)
-    return [doc[each.start : each.end].text for each in point.find(doc)]
+    return [doc[each.start: each.end].text for each in point.find(doc)]
 
 
 def test(args) -> int:
@@ -54,26 +54,17 @@ def test(args) -> int:
 def tag(args) -> int:
     """Each cue's points. A sentence broken across cues is parsed whole, and
     a match counts for every cue its words are in. Points that ask not to be
-    tagged (`tag: false`) are left out, unless --check is enabled and they need meaning."""
+    tagged (`tag: false`) are left out."""
     nlp = model_module.load(args.model)
-    points = [point for point in points_module.load(nlp) if point.tag or (args.check and point.needs_meaning)]
+    points = [point for point in points_module.load(nlp) if point.tag]
     lines = read(Path(args.file))
     by_cue: dict[int, list[dict]] = {}
-
-    # Initialize checker if requested
-    checker = model_module.FakeChecker() if args.check else None
 
     for piece in pieces(lines):
         doc = nlp(piece.text)
         for point in points:
             for each in point.find(doc):
-                span = doc[each.start : each.end]
-
-                # Check candidate meaning if enabled
-                llm_answer = None
-                if point.needs_meaning and checker and point.check_question:
-                    llm_answer = checker.check(point.id, piece.text, span.text, point.check_question)
-
+                span = doc[each.start: each.end]
                 for cue in piece.cues(span.start_char, span.end_char):
                     match_data = {
                         "point": point.id,
@@ -81,9 +72,6 @@ def tag(args) -> int:
                         "words": span.text,
                         "candidate": point.needs_meaning,
                     }
-                    if llm_answer is not None:
-                        match_data["llm_answer"] = llm_answer
-
                     by_cue.setdefault(cue, []).append(match_data)
 
     out = [
@@ -99,8 +87,7 @@ def tag(args) -> int:
         for line in out:
             marks = []
             for each in line["points"]:
-                ans = f" [{each['llm_answer']}]" if "llm_answer" in each else ""
-                marks.append(f"{each['point']} «{each['words']}»{ans}")
+                marks.append(f"{each['point']} «{each['words']}»")
             marks_str = ", ".join(marks)
             print(f"#{line['cue']:<4} {line['text']}\n      {marks_str}")
     return 0
@@ -114,7 +101,7 @@ def marks(nlp, points, text: str) -> dict:
     found = []
     for point in points:
         for each in point.find(doc):
-            span = doc[each.start : each.end]
+            span = doc[each.start: each.end]
             found.append(
                 {
                     "point": point.id,
@@ -181,11 +168,10 @@ def heard(args) -> int:
 
 def export(args) -> int:
     """Every point's note and exercises, as one JSON file for a tool that
-    fills them in (Bembegoo's build). Each carries `note_from`: its id and a
-    hash of its file, so a guide made from it can tell when it changed; its
-    place in a book (`place`); and, once counted (`dastoor heard`), how many
-    of the subtitles' sentences use it (`heard`), the count's size in
-    `heard` at the top."""
+    fills them in. Each carries `note_from`: its id and a hash of its file,
+    so a guide made from it can tell when it changed; its place in a book
+    (`place`); and, once counted (`dastoor heard`), how many of the subtitles'
+    sentences use it (`heard`), the count's size in `heard` at the top."""
     counted = heard_module.load()
     points = {}
     for path in sorted(points_module.POINTS.glob("*.yaml")):
@@ -227,21 +213,20 @@ def main(argv: list[str] | None = None) -> int:
     tagging.add_argument("file")
     tagging.add_argument("--json", action="store_true")
     tagging.add_argument("--all", action="store_true", help="lines with no point too")
-    tagging.add_argument("--check", action="store_true", help="ask a model to resolve candidate points")
     hearing = commands.add_parser("heard", help="count how often each point is heard in English subtitles")
     hearing.add_argument("paths", nargs="+", help="subtitle files, or folders of them")
     commands.add_parser("export", help="every point's note, as JSON")
     commands.add_parser("serve", help="answer texts line by line on stdin, the model loaded once")
-    scoring = commands.add_parser("score", help="the spike's scoring against Bembegoo's guides")
-    scoring.add_argument("courses", help="the folder of Bembegoo courses")
+    scoring = commands.add_parser("score", help="the spike's scoring against the guides")
+    scoring.add_argument("courses", help="the folder of courses")
     scoring.add_argument("--out", default="spike", help="where the report and samples go")
     scoring.add_argument("--seed", type=int, default=7)
     scoring.add_argument("--split", choices=["dev", "test"], help="score on one half of the files only")
-    scoring.add_argument("--check", action="store_true", help="ask a model to resolve candidate points")
     args = parser.parse_args(argv)
     started = time.time()
     try:
-        code = {"test": test, "tag": tag, "heard": heard, "export": export, "score": score_module.run, "serve": serve}[args.command](args)
+        code = {"test": test, "tag": tag, "heard": heard, "export": export, "score": score_module.run, "serve": serve}[
+            args.command](args)
     except model_module.MissingModel as error:
         print(f"dastoor: {error}", file=sys.stderr)
         return 2
