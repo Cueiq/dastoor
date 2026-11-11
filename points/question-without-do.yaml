@@ -57,6 +57,13 @@ exclude:
       - { LOWER: { IN: [do, does, have, has] } }
       - { LOWER: "n't", OP: "?" }
       - { TEXT: "?" }
+  # You know what? And you know what, Linda?: a fixed way to start what
+  # you say next, not a question; You know what this is? still asks.
+  - tokens:
+      - { LOWER: you }
+      - { LOWER: know }
+      - { LOWER: what }
+      - { IS_PUNCT: true }
   # Where you live? What you want?: after a question word do stays, as the
   # note's mistakes say. Where you going? leaves out are, and is kept.
   - tokens:
@@ -78,6 +85,7 @@ tests:
     - "You have any money?"
     - "You have it?"
     - "You have my number?"
+    - "You know what this calls for?"
   no_match:
     - "Do you ever wonder why?"
     - "You're coming?"
@@ -95,6 +103,8 @@ tests:
     - "What you want?"
     - "Why you ask?"
     - "Where your sister live?"
+    - "You know what? Forget it."
+    - "And you know what, Linda? I'm proud of us."
 
 # The learner's note (CC BY-SA 4.0, points/LICENSE.md). level_from: the
 # English Grammar Profile's level as CEFR-J records it (egp), CEFR-J's own
