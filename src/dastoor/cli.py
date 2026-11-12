@@ -11,6 +11,7 @@ from pathlib import Path
 
 import yaml
 
+from . import check as check_module
 from . import heard as heard_module
 from . import model as model_module
 from . import points as points_module
@@ -54,17 +55,24 @@ def test(args) -> int:
 def tag(args) -> int:
     """Each cue's points. A sentence broken across cues is parsed whole, and
     a match counts for every cue its words are in. Points that ask not to be
-    tagged (`tag: false`) are left out."""
+    tagged (`tag: false`) are left out: their rules mislead more than help."""
     nlp = model_module.load(args.model)
     points = [point for point in points_module.load(nlp) if point.tag]
     lines = read(Path(args.file))
     by_cue: dict[int, list[dict]] = {}
+
+    checker = check_module.LLMChecker() if args.check else None
 
     for piece in pieces(lines):
         doc = nlp(piece.text)
         for point in points:
             for each in point.find(doc):
                 span = doc[each.start: each.end]
+
+                answer = None
+                if checker and point.needs_meaning and point.check_question:
+                    answer = checker.check(point, piece.text, span.text)
+
                 for cue in piece.cues(span.start_char, span.end_char):
                     match_data = {
                         "point": point.id,
@@ -72,24 +80,24 @@ def tag(args) -> int:
                         "words": span.text,
                         "candidate": point.needs_meaning,
                     }
-                    by_cue.setdefault(cue, []).append(match_data)
+                    if answer is not None:
+                        match_data["answer"] = answer
 
+                    by_cue.setdefault(cue, []).append(match_data)
     out = [
         {"cue": line.cue, "text": " / ".join(line.said), "points": by_cue.get(line.cue, [])}
         for line in lines
         if line.cue in by_cue or args.all
     ]
-
     if args.json:
         json.dump({"model": args.model, "lines": out}, sys.stdout, ensure_ascii=False, indent=1)
         print()
     else:
         for line in out:
-            marks = []
-            for each in line["points"]:
-                marks.append(f"{each['point']} «{each['words']}»")
-            marks_str = ", ".join(marks)
-            print(f"#{line['cue']:<4} {line['text']}\n      {marks_str}")
+            marks = ", ".join(
+                f"{each['point']} «{each['words']}»" + (f" [{each['answer']}]" if "answer" in each else "") for each in
+                line["points"])
+            print(f"#{line['cue']:<4} {line['text']}\n      {marks}")
     return 0
 
 
@@ -168,10 +176,11 @@ def heard(args) -> int:
 
 def export(args) -> int:
     """Every point's note and exercises, as one JSON file for a tool that
-    fills them in. Each carries `note_from`: its id and a hash of its file,
-    so a guide made from it can tell when it changed; its place in a book
-    (`place`); and, once counted (`dastoor heard`), how many of the subtitles'
-    sentences use it (`heard`), the count's size in `heard` at the top."""
+    fills them in (an app's lesson build). Each carries `note_from`: its id and a
+    hash of its file, so a guide made from it can tell when it changed; its
+    place in a book (`place`); and, once counted (`dastoor heard`), how many
+    of the subtitles' sentences use it (`heard`), the count's size in
+    `heard` at the top."""
     counted = heard_module.load()
     points = {}
     for path in sorted(points_module.POINTS.glob("*.yaml")):
@@ -213,15 +222,17 @@ def main(argv: list[str] | None = None) -> int:
     tagging.add_argument("file")
     tagging.add_argument("--json", action="store_true")
     tagging.add_argument("--all", action="store_true", help="lines with no point too")
+    tagging.add_argument("--check", action="store_true", help="ask a model to resolve candidate points")
     hearing = commands.add_parser("heard", help="count how often each point is heard in English subtitles")
     hearing.add_argument("paths", nargs="+", help="subtitle files, or folders of them")
     commands.add_parser("export", help="every point's note, as JSON")
     commands.add_parser("serve", help="answer texts line by line on stdin, the model loaded once")
-    scoring = commands.add_parser("score", help="the spike's scoring against the guides")
+    scoring = commands.add_parser("score", help="the spike's scoring against the courses' guides")
     scoring.add_argument("courses", help="the folder of courses")
     scoring.add_argument("--out", default="spike", help="where the report and samples go")
     scoring.add_argument("--seed", type=int, default=7)
     scoring.add_argument("--split", choices=["dev", "test"], help="score on one half of the files only")
+    scoring.add_argument("--check", action="store_true", help="ask a model to resolve candidate points")
     args = parser.parse_args(argv)
     started = time.time()
     try:
