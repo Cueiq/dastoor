@@ -23,6 +23,7 @@ import zlib
 from collections import defaultdict
 from pathlib import Path
 
+from . import check as check_module
 from . import model
 from . import points as points_module
 from .subtitles import pieces, read
@@ -71,6 +72,8 @@ def run(args) -> int:
     points = points_module.load(nlp)
     wanted = {point.id for point in points}
 
+    checker = check_module.LLMChecker() if getattr(args, "check", False) else None
+
     taught = episodes(courses)
     # Every English subtitle, each line once by what it says.
     files = sorted({*courses.glob("**/*.srt")})
@@ -98,9 +101,15 @@ def run(args) -> int:
         for piece in pieces_of[path]:
             doc = docs[piece.text]
             for each in point.find(doc):
-                span = doc[each.start : each.end]
+                span = doc[each.start: each.end]
+                match_text = span.text
+
+                if checker and point.needs_meaning and point.check_question:
+                    ans = checker.check(point, piece.text, match_text)
+                    match_text = f"{match_text} [{ans}]"
+
                 for cue in piece.cues(span.start_char, span.end_char):
-                    by_cue[cue].append(span.text)
+                    by_cue[cue].append(match_text)
         return by_cue
 
     report = [
@@ -168,10 +177,10 @@ def run(args) -> int:
             writer = csv.writer(file, delimiter="\t")
             writer.writerow(["verdict", "kind", "where", "cue", "found", "line"])
             for kind, rows in (
-                ("guide-miss", misses),
-                ("guide-unmarked", extra),
-                ("matched", matched[:SAMPLE]),
-                ("not-matched", unmatched[:SAMPLE]),
+                    ("guide-miss", misses),
+                    ("guide-unmarked", extra),
+                    ("matched", matched[:SAMPLE]),
+                    ("not-matched", unmatched[:SAMPLE]),
             ):
                 for where, cue, words, said in rows:
                     writer.writerow(["", kind, where, cue, words, said])
