@@ -9,7 +9,9 @@ import yaml
 
 from .rules import Found, Rules
 
-POINTS = Path(__file__).resolve().parents[2] / "points"
+_here = Path(__file__).resolve().parent
+# Installed: shipped in the package (force-include); in the repo: its points/.
+POINTS = _here / "points" if (_here / "points").is_dir() else _here.parents[1] / "points"
 
 # Where a book shows a point beyond its topic (`place:` in its file): on the
 # tenses' timeline, by the kind of action and when it is (an action lasting

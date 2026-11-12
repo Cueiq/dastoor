@@ -22,14 +22,18 @@ MODEL = "en_core_web_sm"
 
 def found_in(point, nlp, sentence: str) -> list[str]:
     doc = nlp(sentence)
-    return [doc[each.start : each.end].text for each in point.find(doc)]
+    return [doc[each.start: each.end].text for each in point.find(doc)]
 
 
 def test(args) -> int:
     nlp = model_module.load(args.model)
+    points = points_module.load(nlp)
+    if not points:
+        print("FAIL: no points loaded", file=sys.stderr)
+        return 1
     failed = 0
     total = 0
-    for point in points_module.load(nlp):
+    for point in points:
         # A learner finds a point by its names: one in Persian, and words
         # to search it by.
         total += 1
@@ -63,7 +67,7 @@ def tag(args) -> int:
         doc = nlp(piece.text)
         for point in points:
             for each in point.find(doc):
-                span = doc[each.start : each.end]
+                span = doc[each.start: each.end]
                 for cue in piece.cues(span.start_char, span.end_char):
                     by_cue.setdefault(cue, []).append(
                         {
@@ -96,7 +100,7 @@ def marks(nlp, points, text: str) -> dict:
     found = []
     for point in points:
         for each in point.find(doc):
-            span = doc[each.start : each.end]
+            span = doc[each.start: each.end]
             found.append(
                 {
                     "point": point.id,
@@ -221,7 +225,8 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     started = time.time()
     try:
-        code = {"test": test, "tag": tag, "heard": heard, "export": export, "score": score_module.run, "serve": serve}[args.command](args)
+        code = {"test": test, "tag": tag, "heard": heard, "export": export, "score": score_module.run, "serve": serve}[
+            args.command](args)
     except model_module.MissingModel as error:
         print(f"dastoor: {error}", file=sys.stderr)
         return 2
