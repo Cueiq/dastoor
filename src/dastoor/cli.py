@@ -11,6 +11,7 @@ from pathlib import Path
 
 import yaml
 
+from . import check as check_module
 from . import heard as heard_module
 from . import model as model_module
 from . import points as points_module
@@ -55,12 +56,19 @@ def test(args) -> int:
     return 1 if failed else 0
 
 
-def tag(args) -> int:
+def tag(args, checker: check_module.Checker | None = None) -> int:
     """Each cue's points. A sentence broken across cues is parsed whole, and
     a match counts for every cue its words are in. Points that ask not to be
-    tagged (`tag: false`) are left out: their rules mislead more than help."""
+    tagged (`tag: false`) are left out: their rules mislead more than help.
+
+    With --check, a model is asked about each match of a point with a
+    `check`: its answer is kept beside the match, a match it says isn't the
+    point is dropped, and a point not tagged by its rule alone is tagged
+    where the model says it is there (would for a past habit)."""
+    if getattr(args, "check", False) and checker is None:
+        checker = check_module.LLMChecker()
     nlp = model_module.load(args.model)
-    points = [point for point in points_module.load(nlp) if point.tag]
+    points = [point for point in points_module.load(nlp) if point.tag or (checker and point.check)]
     lines = read(Path(args.file))
     by_cue: dict[int, list[dict]] = {}
     for piece in pieces(lines):
@@ -68,15 +76,14 @@ def tag(args) -> int:
         for point in points:
             for each in point.find(doc):
                 span = doc[each.start: each.end]
+                found = {"point": point.id, "form": each.form, "words": span.text, "candidate": point.needs_meaning}
+                if checker and point.check:
+                    answer = checker.check(point, piece.text, span.text)
+                    if not check_module.keeps(point, answer):
+                        continue
+                    found.update(answer=answer, candidate=answer == check_module.UNCLEAR)
                 for cue in piece.cues(span.start_char, span.end_char):
-                    by_cue.setdefault(cue, []).append(
-                        {
-                            "point": point.id,
-                            "form": each.form,
-                            "words": span.text,
-                            "candidate": point.needs_meaning,
-                        }
-                    )
+                    by_cue.setdefault(cue, []).append(dict(found))
     out = [
         {"cue": line.cue, "text": " / ".join(line.said), "points": by_cue.get(line.cue, [])}
         for line in lines
@@ -87,7 +94,10 @@ def tag(args) -> int:
         print()
     else:
         for line in out:
-            marks = ", ".join(f"{each['point']} «{each['words']}»" for each in line["points"])
+            marks = ", ".join(
+                f"{each['point']} «{each['words']}»" + (f" [{each['answer']}]" if "answer" in each else "")
+                for each in line["points"]
+            )
             print(f"#{line['cue']:<4} {line['text']}\n      {marks}")
     return 0
 
@@ -213,6 +223,7 @@ def main(argv: list[str] | None = None) -> int:
     tagging.add_argument("file")
     tagging.add_argument("--json", action="store_true")
     tagging.add_argument("--all", action="store_true", help="lines with no point too")
+    tagging.add_argument("--check", action="store_true", help="ask a model about the meaning points' matches")
     hearing = commands.add_parser("heard", help="count how often each point is heard in English subtitles")
     hearing.add_argument("paths", nargs="+", help="subtitle files, or folders of them")
     commands.add_parser("export", help="every point's note, as JSON")
@@ -222,12 +233,13 @@ def main(argv: list[str] | None = None) -> int:
     scoring.add_argument("--out", default="spike", help="where the report and samples go")
     scoring.add_argument("--seed", type=int, default=7)
     scoring.add_argument("--split", choices=["dev", "test"], help="score on one half of the files only")
+    scoring.add_argument("--check", action="store_true", help="ask a model about the meaning points' matches")
     args = parser.parse_args(argv)
     started = time.time()
     try:
         code = {"test": test, "tag": tag, "heard": heard, "export": export, "score": score_module.run, "serve": serve}[
             args.command](args)
-    except model_module.MissingModel as error:
+    except (model_module.MissingModel, check_module.CheckFailed) as error:
         print(f"dastoor: {error}", file=sys.stderr)
         return 2
     print(f"({time.time() - started:.1f} s)", file=sys.stderr)

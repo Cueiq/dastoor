@@ -10,6 +10,12 @@ For precision, and for misses outside the guides, samples are drawn from
 the lines of every English subtitle in the courses outside the episodes
 teaching the point: 50 it matched and 50 it didn't that have the point's
 words in them. Each sample is a file to fill in, one verdict a line.
+
+With --check, a point with a `check` is scored as `tag --check` tags it: a
+match the model says isn't the point is dropped. The model is asked about
+the guides' episodes, and about lines drawn at random elsewhere until 50
+are kept; the lines it dropped are a sample of their own, to read for
+what the check loses.
 """
 
 from __future__ import annotations
@@ -68,11 +74,10 @@ def run(args) -> int:
     courses = Path(args.courses).expanduser()
     out = Path(args.out)
     (out / "samples").mkdir(parents=True, exist_ok=True)
+    checker = check_module.LLMChecker() if getattr(args, "check", False) else None
     nlp = model.load(args.model)
     points = points_module.load(nlp)
     wanted = {point.id for point in points}
-
-    checker = check_module.LLMChecker() if getattr(args, "check", False) else None
 
     taught = episodes(courses)
     # Every English subtitle, each line once by what it says.
@@ -94,23 +99,26 @@ def run(args) -> int:
     docs = dict(zip(sentences, nlp.pipe(sentences, batch_size=256)))
     parsing_s = time.time() - started
 
-    def found_by_cue(point, path: Path) -> dict[int, list[str]]:
-        """Each cue's matches: a match in a sentence broken across cues
-        counts for every cue its words are in."""
-        by_cue: dict[int, list[str]] = defaultdict(list)
+    def found_by_cue(point, path: Path) -> dict[int, list[tuple[str, str]]]:
+        """Each cue's matches, their words and sentence: a match in a
+        sentence broken across cues counts for every cue its words are in."""
+        by_cue: dict[int, list[tuple[str, str]]] = defaultdict(list)
         for piece in pieces_of[path]:
             doc = docs[piece.text]
             for each in point.find(doc):
-                span = doc[each.start: each.end]
-                match_text = span.text
-
-                if checker and point.needs_meaning and point.check_question:
-                    ans = checker.check(point, piece.text, match_text)
-                    match_text = f"{match_text} [{ans}]"
-
+                span = doc[each.start : each.end]
                 for cue in piece.cues(span.start_char, span.end_char):
-                    by_cue[cue].append(match_text)
+                    by_cue[cue].append((span.text, piece.text))
         return by_cue
+
+    def kept(point, found: list[tuple[str, str]]) -> list[str]:
+        """The words of a line's matches that stay once checked."""
+        if not (checker and point.check):
+            return [words for words, _ in found]
+        return [
+            words for words, sentence in found
+            if check_module.keeps(point, checker.check(point, sentence, words))
+        ]
 
     report = [
         f"# Spike report ({args.model}{', ' + args.split + ' half' if args.split else ''})",
@@ -141,7 +149,7 @@ def run(args) -> int:
                     docs.setdefault(piece.text, nlp(piece.text))
             by_cue = found_by_cue(point, srt)
             for line in lines_of[srt]:
-                words = by_cue.get(line.cue, [])
+                words = kept(point, by_cue.get(line.cue, []))
                 if line.cue in cues:
                     marked_total += 1
                     if words:
@@ -166,28 +174,47 @@ def run(args) -> int:
                 if not said or said in seen:
                     continue
                 seen.add(said)
-                words = by_cue.get(line.cue, [])
-                if words:
-                    matched.append((path.parent.name or path.name, line.cue, ", ".join(words), said))
+                found = by_cue.get(line.cue, [])
+                if found:
+                    matched.append((path.parent.name or path.name, line.cue, found, said))
                 elif keys and re.search(r"\b(" + "|".join(map(re.escape, keys)) + r")\b", said, re.IGNORECASE):
                     unmatched.append((path.parent.name or path.name, line.cue, "", said))
         rng.shuffle(matched)
         rng.shuffle(unmatched)
+        elsewhere = len(matched)
+        # Checked in the drawn order until enough are kept: the lines nobody
+        # reads aren't asked about.
+        dropped = []
+        if checker and point.check:
+            sample = []
+            for where, cue, found, said in matched:
+                words = kept(point, found)
+                if words:
+                    sample.append((where, cue, ", ".join(words), said))
+                else:
+                    dropped.append((where, cue, ", ".join(w for w, _ in found), said))
+                if len(sample) == SAMPLE:
+                    break
+            matched = sample
+            elsewhere = f"{len(sample)} kept of {len(sample) + len(dropped)} checked"
+        else:
+            matched = [(where, cue, ", ".join(w for w, _ in found), said) for where, cue, found, said in matched]
         with open(out / "samples" / f"{point.id}.tsv", "w", newline="") as file:
             writer = csv.writer(file, delimiter="\t")
             writer.writerow(["verdict", "kind", "where", "cue", "found", "line"])
             for kind, rows in (
-                    ("guide-miss", misses),
-                    ("guide-unmarked", extra),
-                    ("matched", matched[:SAMPLE]),
-                    ("not-matched", unmatched[:SAMPLE]),
+                ("guide-miss", misses),
+                ("guide-unmarked", extra),
+                ("matched", matched[:SAMPLE]),
+                ("check-dropped", dropped),
+                ("not-matched", unmatched[:SAMPLE]),
             ):
                 for where, cue, words, said in rows:
                     writer.writerow(["", kind, where, cue, words, said])
         recall = f"{found_total / marked_total:.2f}" if marked_total else "–"
         report.append(
             f"| `{point.id}`{' (meaning)' if point.needs_meaning else ''} | {len(teaching)} | {marked_total} | "
-            f"{found_total} | {recall} | {unmarked} | {len(matched)} |"
+            f"{found_total} | {recall} | {unmarked} | {elsewhere} |"
         )
     report += [
         "",
