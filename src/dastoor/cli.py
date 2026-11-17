@@ -11,7 +11,6 @@ from pathlib import Path
 
 import yaml
 
-from . import check as check_module
 from . import heard as heard_module
 from . import model as model_module
 from . import points as points_module
@@ -28,9 +27,13 @@ def found_in(point, nlp, sentence: str) -> list[str]:
 
 def test(args) -> int:
     nlp = model_module.load(args.model)
+    points = points_module.load(nlp)
+    if not points:
+        print("FAIL: no points loaded", file=sys.stderr)
+        return 1
     failed = 0
     total = 0
-    for point in points_module.load(nlp):
+    for point in points:
         # A learner finds a point by its names: one in Persian, and words
         # to search it by.
         total += 1
@@ -60,30 +63,20 @@ def tag(args) -> int:
     points = [point for point in points_module.load(nlp) if point.tag]
     lines = read(Path(args.file))
     by_cue: dict[int, list[dict]] = {}
-
-    checker = check_module.LLMChecker() if args.check else None
-
     for piece in pieces(lines):
         doc = nlp(piece.text)
         for point in points:
             for each in point.find(doc):
                 span = doc[each.start: each.end]
-
-                answer = None
-                if checker and point.needs_meaning and point.check_question:
-                    answer = checker.check(point, piece.text, span.text)
-
                 for cue in piece.cues(span.start_char, span.end_char):
-                    match_data = {
-                        "point": point.id,
-                        "form": each.form,
-                        "words": span.text,
-                        "candidate": point.needs_meaning,
-                    }
-                    if answer is not None:
-                        match_data["answer"] = answer
-
-                    by_cue.setdefault(cue, []).append(match_data)
+                    by_cue.setdefault(cue, []).append(
+                        {
+                            "point": point.id,
+                            "form": each.form,
+                            "words": span.text,
+                            "candidate": point.needs_meaning,
+                        }
+                    )
     out = [
         {"cue": line.cue, "text": " / ".join(line.said), "points": by_cue.get(line.cue, [])}
         for line in lines
@@ -94,9 +87,7 @@ def tag(args) -> int:
         print()
     else:
         for line in out:
-            marks = ", ".join(
-                f"{each['point']} «{each['words']}»" + (f" [{each['answer']}]" if "answer" in each else "") for each in
-                line["points"])
+            marks = ", ".join(f"{each['point']} «{each['words']}»" for each in line["points"])
             print(f"#{line['cue']:<4} {line['text']}\n      {marks}")
     return 0
 
@@ -222,7 +213,6 @@ def main(argv: list[str] | None = None) -> int:
     tagging.add_argument("file")
     tagging.add_argument("--json", action="store_true")
     tagging.add_argument("--all", action="store_true", help="lines with no point too")
-    tagging.add_argument("--check", action="store_true", help="ask a model to resolve candidate points")
     hearing = commands.add_parser("heard", help="count how often each point is heard in English subtitles")
     hearing.add_argument("paths", nargs="+", help="subtitle files, or folders of them")
     commands.add_parser("export", help="every point's note, as JSON")
@@ -232,7 +222,6 @@ def main(argv: list[str] | None = None) -> int:
     scoring.add_argument("--out", default="spike", help="where the report and samples go")
     scoring.add_argument("--seed", type=int, default=7)
     scoring.add_argument("--split", choices=["dev", "test"], help="score on one half of the files only")
-    scoring.add_argument("--check", action="store_true", help="ask a model to resolve candidate points")
     args = parser.parse_args(argv)
     started = time.time()
     try:

@@ -40,6 +40,9 @@ note:
     en: "Don't + a plain verb tells someone not to do something: Don't touch that!"
     fa: "ترکیب Don't به‌علاوهٔ فعل ساده، برای گفتن به کسی است که کاری را انجام ندهد (فعل امر منفی): Don't touch that! (به آن دست نزن!)."
   forms:
+    - kind: positive
+      text: Open the door.
+      mark: Open
     - kind: negative
       text: Don't open the door.
       mark: Don't open
