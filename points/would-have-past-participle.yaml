@@ -12,6 +12,11 @@ cefrj: ["145", "145-1", "145-2"]
 # have been the cat) as a past that didn't happen (You could have told me);
 # the words don't tell which.
 needs_meaning: true
+# What a model is asked about each match (dastoor tag --check).
+check:
+  question: 'Do these words imagine a past that did not happen (I would have called, but my phone died), or guess at what probably happened (It could have been the cat)?'
+  answers: [unreal, guess]
+  keep: unreal
 match:
   - form: all
     tree:

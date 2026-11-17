@@ -10,6 +10,11 @@ topic: past_habits
 cefrj: []
 # Most would + verb is a condition or a wish; the words rarely tell.
 needs_meaning: true
+# What a model is asked about each match (dastoor tag --check).
+check:
+  question: 'Is "would" here about something that happened again and again in the past (a past habit), or something else (a condition, a wish, a request, the future seen from the past)?'
+  answers: [habit, other]
+  keep: habit
 # Right one time in twenty in the spike (docs/spike-report.md): not tagged.
 tag: false
 match:

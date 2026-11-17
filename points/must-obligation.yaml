@@ -10,6 +10,11 @@ topic: obligation
 cefrj: ["135", "135-1", "135-2", "135-3"]
 # "You must love her" is a guess: the words can't tell.
 needs_meaning: true
+# What a model is asked about each match (dastoor tag --check).
+check:
+  question: 'Is "must" here a guess, someone almost sure something is true, or an obligation, something that has to be done?'
+  answers: [guess, obligation]
+  keep: obligation
 match:
   - form: all
     tree:

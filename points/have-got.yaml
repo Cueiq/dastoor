@@ -10,6 +10,11 @@ topic: present
 cefrj: []
 # "I've got the job" is got as been given, not have: the words can't tell.
 needs_meaning: true
+# What a model is asked about each match (dastoor tag --check).
+check:
+  question: 'Does "have got" here mean have (own, have as family or looks, have an illness), or got as in obtained, received, caught or understood?'
+  answers: [have, obtained]
+  keep: have
 match:
   - form: all
     tree:

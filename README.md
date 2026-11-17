@@ -52,6 +52,7 @@ transformer, sync with `--all-groups` and run with `uv run --all-groups`.
 dastoor test                                      # every point's tests
 dastoor --model en_core_web_trf tag episode.srt   # each line's points
 dastoor tag episode.srt --json                    # the same, as JSON
+dastoor tag episode.srt --check                   # a model settles what the meaning points' matches mean
 dastoor --model en_core_web_trf heard <folder>    # how often each point is heard in its subtitles
 dastoor export                                    # every note, as one JSON file
 dastoor serve                                     # a text a line, the model loaded once
@@ -59,6 +60,21 @@ dastoor score <courses folder> --split test       # score the rules on lessons w
 ```
 
 `--model` picks the spaCy pipeline; the small one is the default.
+
+`--check` (for `tag` and `score`) asks a model about each match of a point
+whose words can't settle its meaning, such as *must*: a guess or an
+obligation? The point's `check` gives the question and the answers. The
+answer is kept beside the match, a match the answer says isn't the point
+is dropped, and *would* for a past habit, which its rule alone doesn't
+tag, is tagged where the model says it is a habit. Each such match's
+sentence is sent to the model: OpenAI's API by default (`OPENAI_API_KEY`,
+model `gpt-4o-mini`), or any OpenAI-compatible server named by
+`DASTOOR_CHECK_URL`, with `DASTOOR_CHECK_MODEL` for its model; a local
+Ollama needs no key:
+
+```bash
+DASTOOR_CHECK_URL=http://localhost:11434/v1 DASTOOR_CHECK_MODEL=qwen3:8b dastoor tag episode.srt --check
+```
 
 `serve` is for an app that asks about one text at a time: loading the model
 takes a few seconds, answering a sentence a few milliseconds (3 ms with the
@@ -125,6 +141,9 @@ hangs on. The format is described in
 [src/dastoor/rules.py](src/dastoor/rules.py). A point may also say:
 
 - `needs_meaning: true` when its words can't settle what it means;
+- `check`, for such a point: the `question` a model is asked about each
+  match, its `answers` (single words), and the answer that `keep`s the
+  match (`--check`);
 - `tag: false` when its rule shouldn't mark lines at all;
 - `aliases` for other ids the same point goes by;
 - `place`: where a book shows it beyond its topic. On the tenses'
