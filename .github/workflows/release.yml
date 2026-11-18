@@ -1,0 +1,39 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+# Required for Trusted Publishing to PyPI and GitHub Releases
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync --locked
+
+      - name: Build wheel and sdist
+        run: uv build
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+
+      - name: Generate points export (Release Asset)
+        run: uv run --locked dastoor export > dastoor-points.json
+
+      - name: Upload export to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dastoor-points.json

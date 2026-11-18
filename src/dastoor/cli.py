@@ -7,6 +7,7 @@ import hashlib
 import json
 import sys
 import time
+import importlib.metadata
 from pathlib import Path
 
 import yaml
@@ -205,7 +206,11 @@ def export(args) -> int:
             "exercises": data.get("exercises", []),
             "note_from": f"dastoor:{data['id']}@{digest}",
         }
-    out = {"dastoor": 1, "points": points}
+    try:
+        version = importlib.metadata.version("dastoor")
+    except importlib.metadata.PackageNotFoundError:
+        version = "dev"
+    out = {"dastoor": 1, "version": version, "points": points}
     if counted:
         out["heard"] = {"files": counted["files"], "sentences": counted["sentences"]}
     json.dump(out, sys.stdout, ensure_ascii=False, indent=1)
